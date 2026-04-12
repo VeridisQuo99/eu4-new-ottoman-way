@@ -47,9 +47,9 @@ political_gridlock = {
 
 # Applied when a faction exerts absolute dominance over the state
 faction_dominance_modifier = {
-	global_autonomy_growth = 0.05
-	global_tax_modifier = -0.10
-	administrative_efficiency = 0.05 # Increased efficiency due to faction cohesion
+    global_autonomy = 0.05
+    global_tax_modifier = -0.10
+    administrative_efficiency = 0.05 
 }
 
 # Applied during the Sultan's forced dissolution of the council
