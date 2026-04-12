@@ -45,14 +45,20 @@ political_gridlock = {
 	administrative_efficiency = -0.05
 }
 
-# Applied when the Sultan dissolves the parliament while RT is relatively high (60-79)
-sultan_dissolves_parliament_unrest = {
-    global_unrest = 5
+# Applied when a faction exerts absolute dominance over the state
+faction_dominance_modifier = {
+	global_autonomy_growth = 0.05
+	global_tax_modifier = -0.10
+	administrative_efficiency = 0.05 # Increased efficiency due to faction cohesion
 }
 
-# Applied when the Sultan dissolves the parliament while RT is low (<60)
+# Applied during the Sultan's forced dissolution of the council
+sultan_dissolves_parliament_unrest = {
+	global_unrest = 5
+}
+
 sultan_dissolves_parliament_minor_unrest = {
-    global_unrest = 3
+	global_unrest = 2
 }
 
 # 10-year cooldown to prevent exploiting the early election mechanic

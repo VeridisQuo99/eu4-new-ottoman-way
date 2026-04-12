@@ -442,3 +442,63 @@ country_event = {
         add_prestige = -5
     }
 }
+
+# EVENT 10: Yearly Faction Dynamics
+country_event = {
+	id = pasha_events.10
+	title = "pasha_events.10.t"
+	desc = "pasha_events.10.d"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "pasha_events.10.a" # Savaşta isek Seyfiye (Askeriye) güçlenir
+		trigger = { is_in_war = yes }
+		add_faction_influence = { faction = seyfiye_faction influence = 5 }
+		add_faction_influence = { faction = kalemiye_faction influence = -2 }
+	}
+	option = {
+		name = "pasha_events.10.b" # Barışta isek Kalemiye (Ticaret) güçlenir
+		trigger = { is_in_war = no }
+		add_faction_influence = { faction = kalemiye_faction influence = 5 }
+		add_faction_influence = { faction = ilmiye_faction influence = -2 }
+	}
+}
+
+# EVENT 11: Faction Overextension (Hizip Tahakkümü)
+# Bu event bir hizip 80 influence'ı geçerse rastgele tetiklenir
+country_event = {
+	id = pasha_events.11
+	title = "pasha_events.11.t"
+	desc = "pasha_events.11.d"
+	picture = PARLIAMENT_eventPicture
+
+	trigger = {
+		has_reform = pasha_council_republic
+		OR = {
+			faction_influence = { faction = seyfiye_faction value = 80 }
+			faction_influence = { faction = ilmiye_faction value = 80 }
+			faction_influence = { faction = kalemiye_faction value = 80 }
+		}
+        NOT = { has_country_flag = { name = "faction_dominance_modifier" } }
+	}
+
+	mean_time_to_happen = { months = 24 }
+
+	# Option 1: Onları destekle (Maliyetli Bonus)
+	option = {
+		name = "pasha_events.11.a"
+		add_years_of_income = -0.5
+		add_corruption = 2
+		add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
+	}
+
+	# Option 2: Güçlerini kır (İsyan Riski ve Nüfuz Kaybı)
+	option = {
+		name = "pasha_events.11.b"
+		add_stability = -1
+		add_faction_influence = { faction = seyfiye_faction influence = -30 }
+		add_faction_influence = { faction = ilmiye_faction influence = -30 }
+		add_faction_influence = { faction = kalemiye_faction influence = -30 }
+	}
+}

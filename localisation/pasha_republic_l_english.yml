@@ -16,7 +16,7 @@
  sultan_dissolves_parliament_unrest: "Divan Dissolved (Major Outrage)"
  sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
  sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
- palace_power_balance: "Palace Power Balance"
+ faction_dominance_modifier: "Faction Dominance"
 
  ### FACTIONS ###
  seyfiye_faction: "Men of the Sword (Seyfiye)"
