@@ -5,22 +5,22 @@ crisis_of_the_state = {
 	}
 
 	can_start = {
-		has_republican_tradition = { value = 0.10 } 
-		NOT = { has_republican_tradition = { value = 0.40 } }
+		republican_tradition = 0.10 
+		NOT = { republican_tradition = 0.40
 	}
 
 	can_stop = {
-		has_republican_tradition = { value = 0.50 }
+		republican_tradition = 0.50
 	}
 
 	progress = {
 		modifier = {
 			factor = 1
-			NOT = { has_republican_tradition = { value = 0.40 } }
+			NOT = { republican_tradition = 0.40
 		}
 		modifier = {
 			factor = 1
-			NOT = { has_republican_tradition = { value = 0.30 } }
+			NOT = { republican_tradition = 0.30
 		}
 	}
 

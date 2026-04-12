@@ -9,7 +9,7 @@ country_decisions = {
             # The Palace must have the balance of power (Value > 50)
             check_variable = { which = palace_power_balance value = 51 }
             # Republican Tradition must be below 80
-            NOT = { has_republican_tradition = { value = 0.80 } }
+            NOT = { republican_tradition = 0.80
             # Must not have recently used this decision (10-year cooldown)
             NOT = { has_country_modifier = sultan_dissolves_parliament_cooldown }
         }
@@ -17,7 +17,7 @@ country_decisions = {
         effect = {
             # If RT is between 60 and 79
             if = {
-                limit = { has_republican_tradition = { value = 0.60 } }
+                limit = { republican_tradition = 0.60
                 add_stability = -2
                 add_country_modifier = {
                     name = "sultan_dissolves_parliament_unrest"
@@ -27,7 +27,7 @@ country_decisions = {
             
             # If RT is below 60
             if = {
-                limit = { NOT = { has_republican_tradition = { value = 0.60 } } }
+                limit = { NOT = { republican_tradition = 0.60
                 add_stability = -1
                 add_country_modifier = {
                     name = "sultan_dissolves_parliament_minor_unrest"

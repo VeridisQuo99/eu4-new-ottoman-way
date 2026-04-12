@@ -1,36 +1,27 @@
 pasha_council_republic = {
-    icon = "republic"
+    icon = "administrative_republic"
     allow_normal_conversion = no
-    
-    # Locks this reform to prevent the player from switching out of the unique system
     lock_level_when_selected = yes 
     
-    # Ensures only the Ottomans can use or see this reform
-    potentials = {
+    potential = {
         tag = TUR
     }
     
+    custom_attributes = {
+        parliament_name = "Senate"
+    }
+    
     republican_name = yes
-    
-    # Republics generally do not have royal marriages unless specified
     royal_marriage = no
-    
-    # 4-year election cycle as requested
     duration = 4 
-    
-    # --- BICAMERAL SYSTEM ENABLERS ---
-    
-    # Activates the Upper House (Senate / Ayanlar Meclisi)
     has_parliament = yes 
     
-    # Activates the Lower House (Factions / Divan-i Avam)
     factions = {
         seyfiye_faction
         ilmiye_faction
         kalemiye_faction
     }
 
-    # Baseline modifiers for the Pasha Republic
     modifiers = {
         republican_tradition = 0.5
         possible_policy = 1

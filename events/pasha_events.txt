@@ -29,7 +29,7 @@ country_event = {
         change_variable = { which = palace_power_balance value = -10 }
         every_owned_province = {
             limit = {
-                has_parliament_seat = yes
+                has_seat_in_parliament = yes
             }
             add_local_autonomy = 10
         }
@@ -62,21 +62,19 @@ country_event = {
     }
 
     immediate = {
-        set_country_flag = pasha_system_initialized
-        change_government = republic
-        add_government_reform = pasha_council_republic
-        
-        # CRITICAL: Initialize power balance at 50 (Middle Ground)
-        set_variable = { which = palace_power_balance value = 50 }
-        
-        # Install Candarli Halil Pasha
-        define_ruler = {
-            name = "Halil"
-            dynasty = "Çandarli"
-            adm = 4
-            dip = 4
-            mil = 3
-            age = 50
+        hidden_effect = {
+            set_country_flag = pasha_system_initialized
+            change_government = republic
+            add_government_reform = pasha_council_republic
+            set_variable = { which = palace_power_balance value = 50 }
+            define_ruler = {
+                name = "Halil"
+                dynasty = "Candarli"
+                adm = 4
+                dip = 4
+                mil = 3
+                age = 50
+            }
         }
     }
 
@@ -311,7 +309,7 @@ country_event = {
     trigger = {
         has_disaster = crisis_of_the_state
         has_country_flag = disaster_sided_with_status_quo
-        has_republican_tradition = { value = 0.50 }
+        republican_tradition = 50
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
     }
