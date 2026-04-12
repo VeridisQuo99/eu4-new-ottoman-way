@@ -327,3 +327,37 @@ country_event = {
         remove_country_modifier = political_gridlock
     }
 }
+
+# EVENT 9: Power Struggle in the Capital (Periodic dynamic shifts)
+country_event = {
+    id = pasha_events.9
+    title = "pasha_events.9.t"
+    desc = "pasha_events.9.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_government_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+    }
+
+    # Triggers roughly every 10 years to keep the balance shifting
+    mean_time_to_happen = {
+        months = 120 
+    }
+
+    # Option A: The Sultan exerts influence
+    option = {
+        name = "pasha_events.9.a"
+        change_variable = { which = palace_power_balance value = 10 }
+        add_prestige = 5
+        add_republican_tradition = -2
+    }
+
+    # Option B: The Pashas solidify their grip
+    option = {
+        name = "pasha_events.9.b"
+        change_variable = { which = palace_power_balance value = -10 }
+        add_republican_tradition = 2
+        add_prestige = -5
+    }
+}

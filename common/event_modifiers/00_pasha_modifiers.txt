@@ -15,6 +15,14 @@ sultan_mehmed_ii_modifier = {
     icon = 2 # Military icon
 }
 
+# Historical: Bayezid II
+sultan_bayezid_ii_modifier = {
+    global_tax_modifier = 0.10
+    tolerance_own = 1
+    technology_cost = -0.05
+    icon = 3 # Administrative icon
+}
+
 # Random: Militarist
 random_sultan_militarist = {
     land_morale = 0.10
