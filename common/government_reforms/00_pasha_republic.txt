@@ -1,5 +1,5 @@
 pasha_council_republic = {
-    icon = "merchant_republic"
+    icon = "administrative_republic"
     allow_normal_conversion = no
     lock_level_when_selected = yes 
     

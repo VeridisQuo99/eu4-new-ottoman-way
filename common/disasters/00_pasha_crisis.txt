@@ -9,7 +9,7 @@ crisis_of_the_state = {
 	}
 
 	can_stop = {
-		republican_tradition = 80
+		republican_tradition = 50
 	}
 
 	progress = {
@@ -20,10 +20,6 @@ crisis_of_the_state = {
 		modifier = {
 			factor = 1
 			NOT = { republican_tradition = 25 }
-		}
-		modifier = {
-			factor = 1
-			NOT = { republican_tradition = 15}
 		}
 	}
 
