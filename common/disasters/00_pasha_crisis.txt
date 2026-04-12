@@ -4,7 +4,15 @@ crisis_of_the_state = {
 	}
 
 	can_start = {
-		NOT = { republican_tradition = 35 }
+		has_government_reform = pasha_council_republic
+		OR = {
+			NOT = { republican_tradition = 30 }
+			has_government_power = {
+				mechanic_type = pasha_power_mechanic
+				power_type = pasha_power
+				value = 90
+			}
+		}
 	}
 
 	can_stop = {

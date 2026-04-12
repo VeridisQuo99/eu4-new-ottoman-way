@@ -7,9 +7,14 @@ country_decisions = {
         }
         
         allow = {
-            check_variable = { which = palace_power_balance value = 51 }
             NOT = { republican_tradition = 80 }
             NOT = { has_country_modifier = sultan_dissolves_parliament_cooldown }
+
+            has_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 50
+            }
         }
         
         effect = {
@@ -30,7 +35,11 @@ country_decisions = {
                 }
             }
             
-            change_variable = { which = palace_power_balance value = -15 }
+            add_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = -15
+            }
             
             add_country_modifier = {
                 name = "sultan_dissolves_parliament_cooldown"

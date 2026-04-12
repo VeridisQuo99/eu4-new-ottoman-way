@@ -14,7 +14,11 @@ country_event = {
         name = "pasha_events.1.a" 
         add_years_of_income = -0.25 
         add_corruption = 1.0
-        change_variable = { which = palace_power_balance value = -5 }
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
         custom_tooltip = "The Senate has been bribed to accept the new Pasha."
     }
 
@@ -22,7 +26,11 @@ country_event = {
     option = {
         name = "pasha_events.1.b" 
         add_prestige = -5
-        change_variable = { which = palace_power_balance value = -10 }
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -20
+        }
         every_owned_province = {
             limit = {
                 has_seat_in_parliament = yes
@@ -36,7 +44,11 @@ country_event = {
         name = "pasha_events.1.c" 
         add_stability = -1
         add_republican_tradition = -5
-        change_variable = { which = palace_power_balance value = 15 }
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 10
+        }
         add_country_modifier = {
             name = "angry_senate_modifier"
             duration = 1460
@@ -62,10 +74,6 @@ country_event = {
             set_country_flag = pasha_system_initialized
             change_government = republic
             add_government_reform = pasha_council_republic
-            set_variable = { 
-                which = palace_power_balance 
-                value = 50 
-            }
             set_variable = {
                 which = sultan_count_var
                 value = 0
@@ -125,7 +133,11 @@ country_event = {
 		# If the Palace has the balance of power (Value >= 50)
 		if = {
 			limit = {
-				check_variable = { which = palace_power_balance value = 50 }
+				has_government_power = {
+                    mechanic_type = pasha_power_mechanic
+                    power_type = pasha_power
+                    value = 50
+                }
 			}
 			add_stability = -1
 			capital_scope = { spawn_rebels = { type = noble_rebels size = 1 } }
@@ -134,7 +146,13 @@ country_event = {
 		# If the Parliament has the balance of power (Value < 50)
 		if = {
 			limit = {
-				NOT = { check_variable = { which = palace_power_balance value = 50 } }
+				NOT = { 
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 50
+                    } 
+                }
 			}
 			add_stability = -3
 			capital_scope = { spawn_rebels = { type = noble_rebels size = 3 } }
@@ -163,7 +181,11 @@ country_event = {
 		# If the Palace has the balance of power (Value >= 50)
 		if = {
 			limit = {
-				check_variable = { which = palace_power_balance value = 50 }
+				has_government_power = {
+                    mechanic_type = pasha_power_mechanic
+                    power_type = pasha_power
+                    value = 50
+                } 
 			}
 			add_stability = -3
 			capital_scope = { spawn_rebels = { type = pretender_rebels size = 3 } }
@@ -172,7 +194,13 @@ country_event = {
 		# If the Parliament has the balance of power (Value < 50)
 		if = {
 			limit = {
-				NOT = { check_variable = { which = palace_power_balance value = 50 } }
+				NOT = { 
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 50
+                    } 
+                }
 			}
 			add_stability = -1
 			capital_scope = { spawn_rebels = { type = pretender_rebels size = 1 } }
@@ -425,7 +453,11 @@ country_event = {
     # Option A: The Sultan exerts influence
     option = {
         name = "pasha_events.9.a"
-        change_variable = { which = palace_power_balance value = 10 }
+        has_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 10
+        } 
         add_prestige = 5
         add_republican_tradition = -2
     }
@@ -433,7 +465,11 @@ country_event = {
     # Option B: The Pashas solidify their grip
     option = {
         name = "pasha_events.9.b"
-        change_variable = { which = palace_power_balance value = -10 }
+        has_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        } 
         add_republican_tradition = 2
         add_prestige = -5
     }
@@ -441,25 +477,27 @@ country_event = {
 
 # EVENT 10: Yearly Faction Dynamics
 country_event = {
-    id = pasha_events.10
-    title = "pasha_events.10.t"
-    desc = "pasha_events.10.d"
-    picture = COURT_eventPicture
-    is_triggered_only = yes
+	id = pasha_events.10
+	title = "pasha_events.10.t"
+	desc = "pasha_events.10.d"
+	picture = COURT_eventPicture
+	is_triggered_only = yes
 
-    option = {
-        name = "pasha_events.10.a" 
-        trigger = { is_at_war = yes }
-        add_faction_influence = { faction = seyfiye_faction influence = 5 }
-        add_faction_influence = { faction = kalemiye_faction influence = -2 }
-    }
-    
-    option = {
-        name = "pasha_events.10.b" 
-        trigger = { is_at_war = no }
-        add_faction_influence = { faction = kalemiye_faction influence = 5 }
-        add_faction_influence = { faction = ilmiye_faction influence = -2 }
-    }
+	# Option for war-time dynamics
+	option = {
+		name = "pasha_events.10.a" 
+		trigger = { is_at_war = yes }
+		add_faction_influence = { faction = seyfiye_faction influence = 5 }
+		add_faction_influence = { faction = kalemiye_faction influence = -2 }
+	}
+	
+	# Option for peace-time dynamics
+	option = {
+		name = "pasha_events.10.b" 
+		trigger = { is_at_war = no }
+		add_faction_influence = { faction = kalemiye_faction influence = 5 }
+		add_faction_influence = { faction = ilmiye_faction influence = -2 }
+	}
 }
 
 # EVENT 11: Faction Overextension

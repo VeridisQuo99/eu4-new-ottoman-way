@@ -27,8 +27,8 @@
  kalemiye_faction_FACTION_DESC: "The civil and administrative class, consisting of Defterdars and prominent merchants. They strive for economic prosperity and diplomatic finesse."
 
  ### GOVERNMENT MECHANICS ###
- pasha_power: "Balance of Power"
- pasha_power_desc: "This bar represents the ongoing struggle for absolute authority between the Sublime Porte and the Imperial Senate. A value of 0 means the Senate dictates the state, while 100 means the Sultan's word is absolute law."
+ pasha_power: "Imperial Authority Balance"
+ pasha_power_desc: "The scale of power between the Palace and the Senate. 0 represents total Senate dominance, while 100 represents the Sultan's absolute rule."
 
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
