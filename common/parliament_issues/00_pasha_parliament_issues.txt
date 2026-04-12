@@ -2,22 +2,20 @@
 issue_military_campaign_funding = {
 	category = 1
 	
-	# Only the Pasha Republic can see and debate this issue
 	allow = {
 		has_government_reform = pasha_council_republic
 	}
 
-	# What happens immediately when the issue is successfully passed
 	effect = {
-		# Increases Seyfiye influence by 15
 		add_faction_influence = {
 			faction = seyfiye_faction
 			influence = 15
 		}
 		add_army_tradition = 10
+		# Shift power towards the Parliament (-5)
+		change_variable = { which = palace_power_balance value = -5 }
 	}
 
-	# The passive bonus the country receives while this act is in effect (10 years)
 	modifier = {
 		global_manpower_modifier = 0.10
 		land_maintenance_modifier = -0.05
@@ -33,13 +31,14 @@ issue_judicial_and_religious_reform = {
 	}
 
 	effect = {
-		# Increases Ilmiye influence by 15
 		add_faction_influence = {
 			faction = ilmiye_faction
 			influence = 15
 		}
-		add_devotion = 10 # Optional, adds some religious flavor
+		add_devotion = 10 
 		add_stability = 1
+		# Shift power towards the Parliament (-5)
+		change_variable = { which = palace_power_balance value = -5 }
 	}
 
 	modifier = {
@@ -57,12 +56,13 @@ issue_expand_trade_privileges = {
 	}
 
 	effect = {
-		# Increases Kalemiye influence by 15
 		add_faction_influence = {
 			faction = kalemiye_faction
 			influence = 15
 		}
 		add_mercantilism = 1
+		# Shift power towards the Parliament (-5)
+		change_variable = { which = palace_power_balance value = -5 }
 	}
 
 	modifier = {
