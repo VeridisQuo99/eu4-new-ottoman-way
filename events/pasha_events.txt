@@ -9,10 +9,6 @@ country_event = {
 
     is_triggered_only = yes
 
-    trigger = {
-        has_reform = pasha_council_republic
-    }
-
     # Option A: Bribe the Senate (Shifts power to Parliament)
     option = {
         name = "pasha_events.1.a" 
@@ -478,15 +474,15 @@ country_event = {
         OR = {
             faction_influence = { 
                 faction = seyfiye_faction 
-                value = 80 
+                influence = 80 
             }
             faction_influence = { 
                 faction = ilmiye_faction 
-                value = 80 
+                influence = 80 
             }
             faction_influence = { 
                 faction = kalemiye_faction 
-                value = 80 
+                influence = 80 
             }            
         }
     }
