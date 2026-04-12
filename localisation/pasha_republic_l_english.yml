@@ -1,19 +1,9 @@
 ﻿l_english:
- pasha_council_republic: "Pasha Republic"
- pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
- 
- pasha_council_republic_parliament: "Senate"
+ ### DISASTERS ###
+ crisis_of_the_state: "Internal Power Struggle"
+ crisis_of_the_state_desc: "The delicate balance of power between the Palace and the Pashas has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
 
- seyfiye_faction: "Men of the Sword (Seyfiye)"
- seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, discipline, and the glory of the army."
- ilmiye_faction: "Men of the Pen (Ilmiye)"
- ilmiye_faction_FACTION_DESC: "The judicial and religious authorities, including the Kazaskers and Ulema. They focus on internal stability, justice, and religious devotion."
- kalemiye_faction: "Men of the Bureaucracy (Kalemiye)"
- kalemiye_faction_FACTION_DESC: "The civil and administrative class, consisting of Defterdars and prominent merchants. They strive for economic prosperity and diplomatic finesse."
-
- sultan_dissolves_parliament: "Dissolve the Divan"
- sultan_dissolves_parliament_desc: "The current Pasha has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the council and force early elections, though this will anger the established elites."
-
+ ### EVENT MODIFIERS ###
  angry_senate_modifier: "Senate Outrage"
  sultan_mehmed_ii_modifier: "Reign of Mehmed the Conqueror"
  sultan_bayezid_ii_modifier: "Reign of Bayezid the Just"
@@ -26,13 +16,26 @@
  sultan_dissolves_parliament_unrest: "Divan Dissolved (Major Outrage)"
  sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
  sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
- pasha_senate: "Senate"
- sultan_dissolves_parliament_title: "Dissolve the Divan"
  palace_power_balance: "Palace Power Balance"
 
- crisis_of_the_state: "Crisis of the State"
- crisis_of_the_state_desc: "The delicate balance of power between the Palace and the Pashas has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
+ ### FACTIONS ###
+ seyfiye_faction: "Men of the Sword (Seyfiye)"
+ seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, discipline, and the glory of the army."
+ ilmiye_faction: "Men of the Pen (Ilmiye)"
+ ilmiye_faction_FACTION_DESC: "The judicial and religious authorities, including the Kazaskers and Ulema. They focus on internal stability, justice, and religious devotion."
+ kalemiye_faction: "Men of the Bureaucracy (Kalemiye)"
+ kalemiye_faction_FACTION_DESC: "The civil and administrative class, consisting of Defterdars and prominent merchants. They strive for economic prosperity and diplomatic finesse."
 
+ ### GOVERNMENT REFORMS ###
+ pasha_council_republic: "Pasha Republic"
+ pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
+
+ ### DECISIONS ###
+ sultan_dissolves_parliament_title: "Dissolve the Divan"
+ sultan_dissolves_parliament: "Dissolve the Divan"
+ sultan_dissolves_parliament_desc: "The current Pasha has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the council and force early elections, though this will anger the established elites."
+
+ ### EVENTS ###
  pasha_events.1.t: "The Grand Vizier's Confirmation"
  pasha_events.1.d: "A new Pasha has been chosen by the Divan to lead the state. However, the Ayanlar (Senate) demand their traditional respects and privileges before confirming the appointment. How shall we handle them?"
  pasha_events.1.a: "Distribute bribes from the treasury."
@@ -75,4 +78,7 @@
  pasha_events.9.a: "The Sultan exerts his royal prerogative."
  pasha_events.9.b: "The Pashas solidify their grip on the administration."
 
+ ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
+ crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
+ crisis_sided_with_pasha_or_padisah: "(If sided with the Pasha or Padisah) Stability must be at least 1"

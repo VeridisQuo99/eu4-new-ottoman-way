@@ -23,6 +23,7 @@ pasha_council_republic = {
     royal_marriage = no
     duration = 4 
     has_parliament = yes 
+    has_janissaries = yes
     
     factions = {
         seyfiye_faction
@@ -35,13 +36,13 @@ pasha_council_republic = {
         cannot_become_dictatorship = yes
         enables_plutocratic_idea_group = no
 		enables_aristocratic_idea_group = yes
-	}
+        enables_estate_janissaries = no
+    }
 
     modifiers = {
         republican_tradition = 0.5
         possible_policy = 1
         global_unrest = -1
         governing_capacity = 250 
-        allowed_special_infantry = janissary_infantry
     }
 }

@@ -66,7 +66,14 @@ country_event = {
             set_country_flag = pasha_system_initialized
             change_government = republic
             add_government_reform = pasha_council_republic
-            set_variable = { which = palace_power_balance value = 50 }
+            set_variable = { 
+                which = palace_power_balance 
+                value = 50 
+            }
+            set_variable = {
+                which = sultan_count_var
+                value = 0
+            }
             define_ruler = {
                 name = "Halil"
                 dynasty = "Candarli"
@@ -85,6 +92,12 @@ country_event = {
         add_country_modifier = {
             name = "sultan_mehmed_ii_modifier"
             duration = -1 
+        }
+        hidden_effect = {
+            change_variable = {
+                which = sultan_count_var
+                value = 1
+            }
         }
     }
 
@@ -141,7 +154,7 @@ country_event = {
 		add_stability = -2
 		add_country_modifier = {
 			name = "political_gridlock"
-			duration = 3650
+			duration = 1800
 		}
 		
 		set_country_flag = disaster_sided_with_status_quo
@@ -198,6 +211,13 @@ country_event = {
             name = "sultan_bayezid_ii_modifier"
             duration = -1
         }
+
+        hidden_effect = {
+            change_variable = {
+                which = sultan_count_var
+                value = 1
+            }
+        }
     }
 }
 
@@ -251,6 +271,7 @@ country_event = {
         has_country_flag = disaster_sided_with_sultan
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
+        stability = 1
     }
 
     mean_time_to_happen = {
@@ -263,15 +284,56 @@ country_event = {
         change_government = monarchy
         add_government_reform = ottoman_government
         
-        define_ruler = {
-            dynasty = "Osmanli"
-            claim = 100
+        if = {
+            limit = {
+                has_country_flag = random_sultans_path
+            }
+            define_ruler = {
+                dynasty = "Osmanloglu"
+                claim = 100
+            }
         }
+
+        if = {
+            limit = {
+                has_country_flag = historical_sultans_path
+            }
+
+            hidden_effect = {
+                set_variable = {
+                    which = current_sultan_age
+                    value = monarch_age
+                }
+            }
+
+            if = {
+                limit = { has_country_modifier = sultan_mehmed_ii_modifier }
+                define_ruler = {
+                    name = "Mehmed II"
+                    dynasty = "Osmanloglu"
+                    claim = 100
+                    age = current_sultan_age
+                }
+            }
+            
+            if = {
+                limit = { has_country_modifier = sultan_bayezid_ii_modifier }
+                define_ruler = {
+                    name = "Bayezid II"
+                    dynasty = "Osmanloglu"
+                    claim = 100
+                    age = current_sultan_age
+                }
+            }
+        }
+
+        clr_country_flag = disaster_sided_with_sultan
+        clr_country_flag = disaster_sided_with_status_quo
+        clr_country_flag = disaster_sided_with_pasha
+        clr_country_flag = pasha_system_initialized
         
         remove_country_modifier = sultan_mehmed_ii_modifier
         remove_country_modifier = sultan_bayezid_ii_modifier
-        remove_country_modifier = sultan_selim_i_modifier
-        remove_country_modifier = sultan_suleiman_i_modifier
         remove_country_modifier = random_sultan_militarist
         remove_country_modifier = random_sultan_diplomat
         remove_country_modifier = random_sultan_administrator
@@ -290,6 +352,7 @@ country_event = {
         has_country_flag = disaster_sided_with_pasha
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
+        stability = 1
     }
 
     mean_time_to_happen = {
@@ -301,11 +364,14 @@ country_event = {
         set_country_flag = crisis_of_the_state_resolved
         change_government = monarchy
         add_government_reform = autocracy_reform
+
+        clr_country_flag = disaster_sided_with_sultan
+        clr_country_flag = disaster_sided_with_status_quo
+        clr_country_flag = disaster_sided_with_pasha
+        clr_country_flag = pasha_system_initialized
         
         remove_country_modifier = sultan_mehmed_ii_modifier
         remove_country_modifier = sultan_bayezid_ii_modifier
-        remove_country_modifier = sultan_selim_i_modifier
-        remove_country_modifier = sultan_suleiman_i_modifier
         remove_country_modifier = random_sultan_militarist
         remove_country_modifier = random_sultan_diplomat
         remove_country_modifier = random_sultan_administrator
@@ -324,6 +390,8 @@ country_event = {
         has_country_flag = disaster_sided_with_status_quo
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
+        NOT = { has_country_modifier = political_gridlock }
+        republican_tradition = 50
     }
 
     mean_time_to_happen = {
@@ -335,6 +403,9 @@ country_event = {
         set_country_flag = crisis_of_the_state_resolved
         add_stability = 1
         remove_country_modifier = political_gridlock
+        clr_country_flag = disaster_sided_with_sultan
+        clr_country_flag = disaster_sided_with_status_quo
+        clr_country_flag = disaster_sided_with_pasha
     }
 }
 

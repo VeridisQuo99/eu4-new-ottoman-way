@@ -1,6 +1,5 @@
 crisis_of_the_state = {
 	potential = {
-
 		has_reform = pasha_council_republic
 	}
 
@@ -36,10 +35,36 @@ crisis_of_the_state = {
 	}
 
 	can_end = {
+		NOT = { num_of_rebel_armies = 1 }
+
 		custom_trigger_tooltip = {
 			tooltip = crisis_resolved_tooltip
 			has_country_flag = crisis_of_the_state_resolved
 		}
+		
+		if = {
+			limit = {
+				has_country_flag = disaster_sided_with_status_quo
+			}
+			custom_trigger_tooltip = {
+				tooltip = crisis_sided_with_divan
+				NOT = { has_country_modifier = political_gridlock }	
+				republican_tradition = 50		
+			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = disaster_sided_with_pasha
+					has_country_flag = disaster_sided_with_sultan
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = crisis_sided_with_pasha_or_padisah
+				stability = 1
+			}
+		}			
 	}
 
 	modifier = {
@@ -49,4 +74,8 @@ crisis_of_the_state = {
 	}
 
 	on_start = pasha_events.3
+
+	on_end = {
+		clr_country_flag = crisis_of_the_state_resolved
+	}
 }
