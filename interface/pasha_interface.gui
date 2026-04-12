@@ -1,14 +1,9 @@
-# interface/pasha_interface.gui
-
 guiTypes = {
 	windowType = {
 		name = "pasha_power_mechanic_gui"
-		backGround = ""
 		position = { x = 0 y = 0 }
 		size = { x = 300 y = 80 }
 		moveable = 0
-		dontRender = ""
-		horizontalBorder = ""
 		
 		# 1. EN ALT KATMAN: Ana Arka Plan
 		iconType = {
@@ -21,14 +16,14 @@ guiTypes = {
 		iconType = {
 			name = "pasha_power_bar_icon"
 			spriteType = "GFX_pasha_power_bar_bg"
-			position = { x = 25 y = 20 } # Adjusted to center inside the new container
+			position = { x = 25 y = 20 }
 		}
 		
 		# 3. ÜST KATMAN: Dolgu Çubuğu
 		iconType = {
 			name = "pasha_power_progress"
 			spriteType = "GFX_pasha_power_bar"
-			position = { x = 40 y = 35 } # Adjusted to center inside the frame
+			position = { x = 40 y = 35 } 
 		}
 	}
 }
