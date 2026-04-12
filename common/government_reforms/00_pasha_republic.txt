@@ -1,11 +1,13 @@
 pasha_council_republic = {
-    icon = "administrative_republic"
+    icon = "merchant_republic"
     allow_normal_conversion = no
     lock_level_when_selected = yes 
     
     potential = {
         tag = TUR
     }
+    
+    parliament_name = "pasha_senate"
     
     republican_name = yes
     royal_marriage = no

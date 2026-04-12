@@ -26,6 +26,9 @@
  sultan_dissolves_parliament_unrest: "Divan Dissolved (Major Outrage)"
  sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
  sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
+ pasha_senate: "Senate"
+ sultan_dissolves_parliament_title: "Dissolve the Divan"
+ palace_power_balance: "Palace Power Balance"
 
  crisis_of_the_state: "Crisis of the State"
  crisis_of_the_state_desc: "The delicate balance of power between the Palace and the Pashas has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."

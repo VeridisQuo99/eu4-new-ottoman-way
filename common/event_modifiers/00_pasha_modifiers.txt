@@ -2,7 +2,6 @@
 angry_senate_modifier = {
     global_unrest = 2
     global_tax_modifier = -0.10
-    icon = 4 # Unrest icon
 }
 
 # --- BACKGROUND SULTAN MODIFIERS ---
@@ -12,7 +11,6 @@ sultan_mehmed_ii_modifier = {
     land_morale = 0.10
     siege_ability = 0.10
     technology_cost = -0.05
-    icon = 2 # Military icon
 }
 
 # Historical: Bayezid II
@@ -20,28 +18,24 @@ sultan_bayezid_ii_modifier = {
     global_tax_modifier = 0.10
     tolerance_own = 1
     technology_cost = -0.05
-    icon = 3 # Administrative icon
 }
 
 # Random: Militarist
 random_sultan_militarist = {
     land_morale = 0.10
     manpower_recovery_speed = 0.10
-    icon = 2
 }
 
 # Random: Diplomat
 random_sultan_diplomat = {
     diplomatic_reputation = 1
     improve_relation_modifier = 0.20
-    icon = 1 # Diplomatic icon
 }
 
 # Random: Administrator
 random_sultan_administrator = {
     global_tax_modifier = 0.10
     stability_cost_modifier = -0.10
-    icon = 3 # Administrative icon
 }
 
 # Applied when maintaining the status quo during the crisis
@@ -49,19 +43,16 @@ political_gridlock = {
 	global_trade_goods_size_modifier = -0.10
 	global_tax_modifier = -0.20
 	administrative_efficiency = -0.05
-	icon = 4
 }
 
 # Applied when the Sultan dissolves the parliament while RT is relatively high (60-79)
 sultan_dissolves_parliament_unrest = {
     global_unrest = 5
-    icon = 4 # Unrest icon
 }
 
 # Applied when the Sultan dissolves the parliament while RT is low (<60)
 sultan_dissolves_parliament_minor_unrest = {
     global_unrest = 3
-    icon = 4 
 }
 
 # 10-year cooldown to prevent exploiting the early election mechanic
