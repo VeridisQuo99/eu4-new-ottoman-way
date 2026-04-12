@@ -43,6 +43,35 @@
  pasha_events.2.a: "Follow the historical path of the Sultans."
  pasha_events.2.b: "Let fate decide the rulers of the shadows."
 
+# --- CRISIS OUTBREAK (EVENT 3) ---
+ pasha_events.3.t: "The Crisis of the State"
+ pasha_events.3.d: "The political maneuvering has finally broken the fragile peace. Partisans of the Palace and ambitious supporters of the Divan are clashing in the streets. The balance of power is entirely shattered. We must decide who to back in this civil strife, or risk watching the state tear itself apart."
+ pasha_events.3.a: "Rally the Janissaries! The Sultan is the true ruler."
+ pasha_events.3.b: "Try to maintain order. The state must endure."
+ pasha_events.3.c: "The Divan is the state! Support the Pasha."
+
+ # --- DEATH OF SULTANS (EVENTS 4 & 5) ---
+ pasha_events.4.t: "The Death of Mehmed the Conqueror"
+ pasha_events.4.d: "The great Sultan Mehmed II has passed away. While the true administrative power remains heavily in the hands of the Pasha Republic, the ascension of his son, Bayezid II, as the figurehead Padishah brings new religious and administrative focus to the realm."
+ pasha_events.4.a: "Long live Sultan Bayezid II!"
+
+ pasha_events.5.t: "A New Padishah Ascends"
+ pasha_events.5.d: "The old Sultan has passed into the afterlife. A new heir of the House of Osman has been recognized by the Divan. Though they dwell in the shadows of the council, their personal disposition will undoubtedly influence the nation's political currents."
+ pasha_events.5.a: "May their reign be prosperous."
+
+ # --- CRISIS RESOLUTIONS (EVENTS 6, 7 & 8) ---
+ pasha_events.6.t: "The Restoration of the Monarchy"
+ pasha_events.6.d: "The partisans of the Palace have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
+ pasha_events.6.a: "Absolute power to the House of Osman!"
+
+ pasha_events.7.t: "A New Dynasty"
+ pasha_events.7.d: "The House of Osman has been effectively cast aside. The victorious Grand Vizier has consolidated all power, eliminating royalist opposition. The Republic's facade has crumbled, giving way to a new autocracy ruled by the Pasha's own bloodline."
+ pasha_events.7.a: "A new era of strongman rule begins."
+
+ pasha_events.8.t: "The Divan Prevails"
+ pasha_events.8.d: "Despite the chaos and bloodshed, the institutions of the Pasha Republic have survived. The radical elements of both the Palace and the dictatorial Pashas have been sidelined, restoring the delicate balance of the council. The Republic lives to see another day."
+ pasha_events.8.a: "The Republic stands strong."
+
  pasha_events.9.t: "Power Struggle in the Capital"
  pasha_events.9.d: "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
  pasha_events.9.a: "The Sultan exerts his royal prerogative."
