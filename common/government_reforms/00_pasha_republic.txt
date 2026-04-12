@@ -40,8 +40,8 @@ pasha_council_republic = {
 
     # Links the visual bar to this reform
     government_abilities = {
-        pasha_power_mechanic
-    }
+		pasha_power_mechanic
+	}
 
     modifiers = {
         republican_tradition = 0.5

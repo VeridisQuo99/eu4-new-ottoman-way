@@ -1,15 +1,6 @@
-# common/government_powers/00_pasha_powers.txt
-
-pasha_power_mechanic = {
-	# Range is 0 to 100
+pasha_power = {
 	min = 0
 	max = 100
-	default = 50 # Starts at equilibrium
-	
-	# This power resets or changes based on specific actions
-	# For now, we keep it as a persistent bar
+	default = 50
 	reset_on_new_ruler = no
-	
-	# Passive decay or gain can be added here
-	# But we will use our existing events to change this value
 }
