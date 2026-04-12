@@ -240,3 +240,90 @@ country_event = {
         }
     }
 }
+
+# EVENT 6: The Sultan Restores the Monarchy
+country_event = {
+    id = pasha_events.6
+    title = "pasha_events.6.t"
+    desc = "pasha_events.6.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_disaster = crisis_of_the_state
+        has_country_flag = disaster_sided_with_sultan
+        stability = 1
+        NOT = { num_of_rebel_armies = 1 }
+        NOT = { has_country_flag = crisis_of_the_state_resolved }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "pasha_events.6.a" # Long live the Sultan!
+        set_country_flag = crisis_of_the_state_resolved
+        change_government = monarchy
+        add_government_reform = ottoman_government
+        
+        # Kills the active Pasha to allow the background Sultan's dynasty to take over
+        kill_ruler = yes 
+        add_stability = 1
+    }
+}
+
+# EVENT 7: The Pasha Dynasty (Dictatorship)
+country_event = {
+    id = pasha_events.7
+    title = "pasha_events.7.t"
+    desc = "pasha_events.7.d"
+    picture = DICTATORSHIP_eventPicture
+
+    trigger = {
+        has_disaster = crisis_of_the_state
+        has_country_flag = disaster_sided_with_pasha
+        stability = 1
+        NOT = { num_of_rebel_armies = 1 }
+        NOT = { has_country_flag = crisis_of_the_state_resolved }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "pasha_events.7.a" # A new era begins!
+        set_country_flag = crisis_of_the_state_resolved
+        change_government = monarchy
+        add_government_reform = autocracy_reform
+        add_stability = 1
+        # The current Pasha stays in power, effectively starting a new dynasty
+    }
+}
+
+# EVENT 8: The Republic Survives
+country_event = {
+    id = pasha_events.8
+    title = "pasha_events.8.t"
+    desc = "pasha_events.8.d"
+    picture = REPUBLIC_eventPicture
+
+    trigger = {
+        has_disaster = crisis_of_the_state
+        has_country_flag = disaster_sided_with_status_quo
+        has_republican_tradition = { value = 0.50 }
+        NOT = { num_of_rebel_armies = 1 }
+        NOT = { has_country_flag = crisis_of_the_state_resolved }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "pasha_events.8.a" # The Council stands strong.
+        set_country_flag = crisis_of_the_state_resolved
+        add_stability = 1
+        remove_country_modifier = political_gridlock
+    }
+}
