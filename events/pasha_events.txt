@@ -504,3 +504,22 @@ country_event = {
         add_faction_influence = { faction = kalemiye_faction influence = -30 }
     }
 }
+
+# EVENT 12: Hidden cleanup event to make the disaster repeatable
+country_event = {
+	id = pasha_events.12
+    title = none
+    desc = none
+    picture = none 
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_country_flag = crisis_of_the_state_resolved
+	}
+
+    option = {
+        name = none
+    }
+}

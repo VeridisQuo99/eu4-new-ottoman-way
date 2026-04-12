@@ -74,8 +74,5 @@ crisis_of_the_state = {
 	}
 
 	on_start = pasha_events.3
-
-	on_end = {
-		clr_country_flag = crisis_of_the_state_resolved
-	}
+	on_end = pasha_events.12
 }
