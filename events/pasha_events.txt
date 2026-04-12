@@ -1,0 +1,170 @@
+namespace = pasha_events
+
+# EVENT 1: The Senate Confirmation Event (Triggered on election)
+country_event = {
+    id = pasha_events.1
+    title = "pasha_events.1.t"
+    desc = "pasha_events.1.d"
+    picture = PARLIAMENT_eventPicture
+
+    is_triggered_only = yes
+
+    trigger = {
+        has_government_reform = pasha_council_republic
+    }
+
+    # Option A: Bribe the Senate
+    option = {
+        name = "pasha_events.1.a" 
+        add_years_of_income = -0.25 
+        add_corruption = 1.0
+        custom_tooltip = "The Senate has been bribed to accept the new Pasha."
+    }
+
+    # Option B: Concede to the Senate
+    option = {
+        name = "pasha_events.1.b" 
+        add_prestige = -5
+        every_owned_province = {
+            limit = {
+                has_parliament_seat = yes
+            }
+            add_local_autonomy = 10
+        }
+    }
+
+    # Option C: Bypass the Senate
+    option = {
+        name = "pasha_events.1.c" 
+        add_stability = -1
+        add_republican_tradition = -5
+        add_country_modifier = {
+            name = "angry_senate_modifier"
+            duration = 1460
+        }
+    }
+}
+
+# EVENT 2: The 1444 Setup Event: Fate of the Sultanate (Triggered on startup)
+country_event = {
+    id = pasha_events.2
+    title = "pasha_events.2.t"
+    desc = "pasha_events.2.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        tag = TUR
+        is_year = 1444
+        NOT = { has_country_flag = pasha_system_initialized }
+    }
+
+    immediate = {
+        set_country_flag = pasha_system_initialized
+        change_government = republic
+        add_government_reform = pasha_council_republic
+        
+        # Remove Mehmed II and install Çandarlı Halil Pasha
+        define_ruler = {
+            name = "Halil"
+            dynasty = "Çandarli"
+            adm = 4
+            dip = 4
+            mil = 3
+            age = 50
+        }
+    }
+
+    # Option A: Historical Path
+    option = {
+        name = "pasha_events.2.a" 
+        set_country_flag = historical_sultans_path
+        add_country_modifier = {
+            name = "sultan_mehmed_ii_modifier"
+            duration = -1 
+        }
+    }
+
+    # Option B: Random Path
+    option = {
+        name = "pasha_events.2.b" 
+        set_country_flag = random_sultans_path
+        random_list = {
+            33 = { add_country_modifier = { name = "random_sultan_militarist" duration = -1 } }
+            33 = { add_country_modifier = { name = "random_sultan_diplomat" duration = -1 } }
+            34 = { add_country_modifier = { name = "random_sultan_administrator" duration = -1 } }
+        }
+    }
+}
+
+# EVENT 3: The Outbreak of the Crisis (Disaster triggered)
+country_event = {
+	id = pasha_events.3
+	title = "pasha_events.3.t"
+	desc = "pasha_events.3.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	# Option A: Side with the Sultan
+	option = {
+		name = "pasha_events.3.a"
+		
+		# If the Palace has the balance of power (Value >= 50)
+		if = {
+			limit = {
+				check_variable = { which = palace_power_balance value = 50 }
+			}
+			add_stability = -1
+			capital_scope = { spawn_rebels = { type = noble_rebels size = 1 } }
+		}
+		
+		# If the Parliament has the balance of power (Value < 50)
+		if = {
+			limit = {
+				NOT = { check_variable = { which = palace_power_balance value = 50 } }
+			}
+			add_stability = -3
+			capital_scope = { spawn_rebels = { type = noble_rebels size = 3 } }
+		}
+		
+		set_country_flag = disaster_sided_with_sultan
+	}
+
+	# Option B: Maintain the Status Quo
+	option = {
+		name = "pasha_events.3.b"
+		
+		add_stability = -2
+		add_country_modifier = {
+			name = "political_gridlock"
+			duration = 3650
+		}
+		
+		set_country_flag = disaster_sided_with_status_quo
+	}
+
+	# Option C: Side with the Pasha
+	option = {
+		name = "pasha_events.3.c"
+		
+		# If the Palace has the balance of power (Value >= 50)
+		if = {
+			limit = {
+				check_variable = { which = palace_power_balance value = 50 }
+			}
+			add_stability = -3
+			capital_scope = { spawn_rebels = { type = pretender_rebels size = 3 } }
+		}
+		
+		# If the Parliament has the balance of power (Value < 50)
+		if = {
+			limit = {
+				NOT = { check_variable = { which = palace_power_balance value = 50 } }
+			}
+			add_stability = -1
+			capital_scope = { spawn_rebels = { type = pretender_rebels size = 1 } }
+		}
+		
+		set_country_flag = disaster_sided_with_pasha
+	}
+}

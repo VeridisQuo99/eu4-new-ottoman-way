@@ -1,0 +1,36 @@
+# Seyfiye (Men of the Sword) - Represents the military elite and Janissaries
+seyfiye_faction = {
+	icon = 1 # Refers to the icon index in faction interface
+	
+	# Modifiers applied when this faction has influence
+	modifier = {
+		land_discipline = 0.05           # 5% Discipline
+		land_morale = 0.10               # 10% Morale of Armies
+		manpower_recovery_speed = 0.15   # 15% Manpower Recovery
+		yearly_army_tradition = 0.5      # +0.5 Army Tradition
+	}
+}
+
+# İlmiye (Men of the Pen) - Represents the judicial and religious authority
+ilmiye_faction = {
+	icon = 2
+	
+	modifier = {
+		stability_cost_modifier = -0.10  # -10% Stability Cost
+		global_tax_modifier = 0.10       # 10% National Tax Income
+		adm_tech_cost_modifier = -0.05   # -5% Administrative Tech Cost
+		global_missionary_strength = 0.01 # +1% Missionary Strength
+	}
+}
+
+# Kalemiye (Men of the Bureaucracy) - Represents the administrative and mercantile class
+kalemiye_faction = {
+	icon = 3
+	
+	modifier = {
+		trade_efficiency = 0.10          # 10% Trade Efficiency
+		diplomatic_reputation = 1        # +1 Diplomatic Reputation
+		dip_tech_cost_modifier = -0.05   # -5% Diplomatic Tech Cost
+		global_trade_goods_size_modifier = 0.05 # 5% Production Efficiency
+	}
+}

@@ -1,0 +1,39 @@
+crisis_of_the_state = {
+	potential = {
+		tag = TUR
+		has_government_reform = pasha_council_republic
+	}
+
+	can_start = {
+		has_republican_tradition = { value = 0.10 } 
+		NOT = { has_republican_tradition = { value = 0.40 } }
+	}
+
+	can_stop = {
+		has_republican_tradition = { value = 0.50 }
+	}
+
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { has_republican_tradition = { value = 0.40 } }
+		}
+		modifier = {
+			factor = 1
+			NOT = { has_republican_tradition = { value = 0.30 } }
+		}
+	}
+
+	can_end = {
+		has_country_flag = crisis_of_the_state_resolved
+	}
+
+	modifier = {
+		global_unrest = 3
+		stability_cost_modifier = 0.50
+		global_tax_modifier = -0.15
+	}
+
+	# Points to the event merged into our existing pasha_events.txt
+	on_start = pasha_events.3
+}

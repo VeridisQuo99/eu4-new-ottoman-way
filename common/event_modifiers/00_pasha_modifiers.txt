@@ -1,0 +1,45 @@
+# --- ELECTION PENALTIES ---
+angry_senate_modifier = {
+    global_unrest = 2
+    global_tax_modifier = -0.10
+    icon = 4 # Unrest icon
+}
+
+# --- BACKGROUND SULTAN MODIFIERS ---
+
+# Historical: Mehmed II
+sultan_mehmed_ii_modifier = {
+    land_morale = 0.10
+    siege_ability = 0.10
+    technology_cost = -0.05
+    icon = 2 # Military icon
+}
+
+# Random: Militarist
+random_sultan_militarist = {
+    land_morale = 0.10
+    manpower_recovery_speed = 0.10
+    icon = 2
+}
+
+# Random: Diplomat
+random_sultan_diplomat = {
+    diplomatic_reputation = 1
+    improve_relation_modifier = 0.20
+    icon = 1 # Diplomatic icon
+}
+
+# Random: Administrator
+random_sultan_administrator = {
+    global_tax_modifier = 0.10
+    stability_cost_modifier = -0.10
+    icon = 3 # Administrative icon
+}
+
+# Applied when maintaining the status quo during the crisis
+political_gridlock = {
+	global_trade_goods_size_modifier = -0.10
+	global_tax_modifier = -0.20
+	administrative_efficiency = -0.05
+	icon = 4
+}
