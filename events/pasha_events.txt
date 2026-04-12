@@ -263,9 +263,18 @@ country_event = {
         change_government = monarchy
         add_government_reform = ottoman_government
         
-        # Kills the active Pasha to allow the background Sultan's dynasty to take over
-        kill_ruler = yes 
-        add_stability = 1
+        define_ruler = {
+            dynasty = "Osmanli"
+            claim = 100
+        }
+        
+        remove_country_modifier = sultan_mehmed_ii_modifier
+        remove_country_modifier = sultan_bayezid_ii_modifier
+        remove_country_modifier = sultan_selim_i_modifier
+        remove_country_modifier = sultan_suleiman_i_modifier
+        remove_country_modifier = random_sultan_militarist
+        remove_country_modifier = random_sultan_diplomat
+        remove_country_modifier = random_sultan_administrator
     }
 }
 
@@ -292,8 +301,14 @@ country_event = {
         set_country_flag = crisis_of_the_state_resolved
         change_government = monarchy
         add_government_reform = autocracy_reform
-        add_stability = 1
-        # The current Pasha stays in power, effectively starting a new dynasty
+        
+        remove_country_modifier = sultan_mehmed_ii_modifier
+        remove_country_modifier = sultan_bayezid_ii_modifier
+        remove_country_modifier = sultan_selim_i_modifier
+        remove_country_modifier = sultan_suleiman_i_modifier
+        remove_country_modifier = random_sultan_militarist
+        remove_country_modifier = random_sultan_diplomat
+        remove_country_modifier = random_sultan_administrator
     }
 }
 

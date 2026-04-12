@@ -36,7 +36,10 @@ crisis_of_the_state = {
 	}
 
 	can_end = {
-		has_country_flag = crisis_of_the_state_resolved
+		custom_trigger_tooltip = {
+			tooltip = crisis_resolved_tooltip
+			has_country_flag = crisis_of_the_state_resolved
+		}
 	}
 
 	modifier = {

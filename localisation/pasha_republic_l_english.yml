@@ -74,3 +74,5 @@
  pasha_events.9.d: "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
  pasha_events.9.a: "The Sultan exerts his royal prerogative."
  pasha_events.9.b: "The Pashas solidify their grip on the administration."
+
+ crisis_resolved_tooltip: "The crisis has been definitively resolved."

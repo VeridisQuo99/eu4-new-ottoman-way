@@ -41,5 +41,7 @@ pasha_council_republic = {
         republican_tradition = 0.5
         possible_policy = 1
         global_unrest = -1
+        governing_capacity = 250 
+        allowed_special_infantry = janissary_infantry
     }
 }
