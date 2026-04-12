@@ -1,3 +1,4 @@
+# interface/pasha_interface.gfx
 spriteTypes = {
 	spriteType = {
 		name = "GFX_faction_bg_seyfiye_faction"
@@ -35,4 +36,28 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+}
+
+spriteTypes = {
+	spriteType = {
+		name = "GFX_pasha_power_container_bg"
+		texturefile = "gfx//interface//pasha_power_container_bg.dds"
+	}
+
+	# The background frame of the bar
+	spriteType = {
+		name = "GFX_pasha_power_bar_bg"
+		texturefile = "gfx//interface//government_mechanic_pasha_bg.dds" # You will need to create/copy this .dds
+	}
+	
+# 	# The actual progress color/texture
+# 	progressbartype = {
+# 		name = "GFX_pasha_power_bar"
+# 		color = { 1.0 0.0 0.0 }
+# 		colortwo = { 1.0 1.0 1.0 }
+# 		textureFile1 = "gfx//interface//government_mechanic_pasha_bar.dds"
+# 		textureFile2 = "gfx//interface//government_mechanic_pasha_bar_empty.dds"
+# 		size = { x = 240 y = 20 }
+# 		horizontal = yes
+# 	}
 }

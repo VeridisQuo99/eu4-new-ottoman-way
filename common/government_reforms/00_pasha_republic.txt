@@ -36,7 +36,11 @@ pasha_council_republic = {
         cannot_become_dictatorship = yes
         enables_plutocratic_idea_group = no
 		enables_aristocratic_idea_group = yes
-        enables_estate_janissaries = no
+    }
+
+    # Links the visual bar to this reform
+    government_abilities = {
+        pasha_power_mechanic
     }
 
     modifiers = {

@@ -26,6 +26,10 @@
  kalemiye_faction: "Men of the Bureaucracy (Kalemiye)"
  kalemiye_faction_FACTION_DESC: "The civil and administrative class, consisting of Defterdars and prominent merchants. They strive for economic prosperity and diplomatic finesse."
 
+ ### GOVERNMENT POWERS ###
+ pasha_power_mechanic: "Balance of Power"
+ pasha_power_mechanic_desc: "The struggle for supremacy between the Sublime Porte (Palace) and the Imperial Senate."
+
  ### GOVERNMENT REFORMS ###
  pasha_council_republic: "Pasha Republic"
  pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
