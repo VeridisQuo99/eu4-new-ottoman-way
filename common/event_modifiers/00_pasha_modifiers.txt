@@ -43,3 +43,20 @@ political_gridlock = {
 	administrative_efficiency = -0.05
 	icon = 4
 }
+
+# Applied when the Sultan dissolves the parliament while RT is relatively high (60-79)
+sultan_dissolves_parliament_unrest = {
+    global_unrest = 5
+    icon = 4 # Unrest icon
+}
+
+# Applied when the Sultan dissolves the parliament while RT is low (<60)
+sultan_dissolves_parliament_minor_unrest = {
+    global_unrest = 3
+    icon = 4 
+}
+
+# 10-year cooldown to prevent exploiting the early election mechanic
+sultan_dissolves_parliament_cooldown = {
+    # No visible effects needed, acts only as a timer
+}
