@@ -7,8 +7,6 @@ pasha_council_republic = {
         tag = TUR
     }
     
-    parliament_name = "pasha_senate"
-    
     republican_name = yes
     royal_marriage = no
     duration = 4 
