@@ -2,32 +2,26 @@ country_decisions = {
     sultan_dissolves_parliament = {
         potential = {
             tag = TUR
-            has_government_reform = pasha_council_republic
+            has_reform = pasha_council_republic
         }
         
         allow = {
-            # The Palace must have the balance of power (Value > 50)
             check_variable = { which = palace_power_balance value = 51 }
-            # Republican Tradition must be below 80
-            NOT = { republican_tradition = 0.80
-            # Must not have recently used this decision (10-year cooldown)
+            NOT = { republican_tradition = 80 }
             NOT = { has_country_modifier = sultan_dissolves_parliament_cooldown }
         }
         
         effect = {
-            # If RT is between 60 and 79
             if = {
-                limit = { republican_tradition = 0.60
+                limit = { republican_tradition = 60 }
                 add_stability = -2
                 add_country_modifier = {
                     name = "sultan_dissolves_parliament_unrest"
-                    duration = 730 # 2 years
+                    duration = 730
                 }
             }
-            
-            # If RT is below 60
             if = {
-                limit = { NOT = { republican_tradition = 0.60
+                limit = { NOT = { republican_tradition = 60 } }
                 add_stability = -1
                 add_country_modifier = {
                     name = "sultan_dissolves_parliament_minor_unrest"
@@ -35,21 +29,18 @@ country_decisions = {
                 }
             }
             
-            # The Sultan spends political capital to do this
             change_variable = { which = palace_power_balance value = -15 }
             
-            # Adds the 10-year cooldown
             add_country_modifier = {
                 name = "sultan_dissolves_parliament_cooldown"
                 duration = 3650
             }
             
-            # Killing the ruler in a republic forces an immediate election
             kill_ruler = yes
         }
         
         ai_will_do = {
-            factor = 0 # AI should not use this complex political tool
+            factor = 0 
         }
     }
 }

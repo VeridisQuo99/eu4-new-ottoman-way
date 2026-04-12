@@ -2,6 +2,8 @@
  pasha_council_republic: "Pasha Republic"
  pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
  
+ pasha_council_republic_parliament: "Senate"
+
  seyfiye_faction: "Men of the Sword (Seyfiye)"
  seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, discipline, and the glory of the army."
  ilmiye_faction: "Men of the Pen (Ilmiye)"

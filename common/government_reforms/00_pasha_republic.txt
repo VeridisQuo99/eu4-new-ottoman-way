@@ -7,10 +7,6 @@ pasha_council_republic = {
         tag = TUR
     }
     
-    custom_attributes = {
-        parliament_name = "Senate"
-    }
-    
     republican_name = yes
     royal_marriage = no
     duration = 4 

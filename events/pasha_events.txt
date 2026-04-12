@@ -10,7 +10,7 @@ country_event = {
     is_triggered_only = yes
 
     trigger = {
-        has_government_reform = pasha_council_republic
+        has_reform = pasha_council_republic
     }
 
     # Option A: Bribe the Senate (Shifts power to Parliament)
@@ -334,7 +334,7 @@ country_event = {
     picture = COURT_eventPicture
 
     trigger = {
-        has_government_reform = pasha_council_republic
+        has_reform = pasha_council_republic
         has_country_flag = pasha_system_initialized
     }
 

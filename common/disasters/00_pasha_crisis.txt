@@ -1,26 +1,26 @@
 crisis_of_the_state = {
 	potential = {
 		tag = TUR
-		has_government_reform = pasha_council_republic
+		has_reform = pasha_council_republic
 	}
 
 	can_start = {
-		republican_tradition = 0.10 
-		NOT = { republican_tradition = 0.40
+		republican_tradition = 10 
+		NOT = { republican_tradition = 40 }
 	}
 
 	can_stop = {
-		republican_tradition = 0.50
+		republican_tradition = 50
 	}
 
 	progress = {
 		modifier = {
 			factor = 1
-			NOT = { republican_tradition = 0.40
+			NOT = { republican_tradition = 40 }
 		}
 		modifier = {
 			factor = 1
-			NOT = { republican_tradition = 0.30
+			NOT = { republican_tradition = 30 }
 		}
 	}
 
@@ -34,6 +34,5 @@ crisis_of_the_state = {
 		global_tax_modifier = -0.15
 	}
 
-	# Points to the event merged into our existing pasha_events.txt
 	on_start = pasha_events.3
 }
