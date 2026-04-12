@@ -1,5 +1,6 @@
 country_decisions = {
     sultan_dissolves_parliament = {
+        major = yes
         potential = {
             tag = TUR
             has_reform = pasha_council_republic

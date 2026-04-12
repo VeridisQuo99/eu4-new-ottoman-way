@@ -2,10 +2,22 @@ pasha_council_republic = {
     icon = "administrative_republic"
     allow_normal_conversion = no
     lock_level_when_selected = yes 
+	valid_for_nation_designer = yes
+	nation_designer_cost = 25
     
-    potential = {
-        tag = TUR
-    }
+	potential = {
+		religion_group = muslim
+		OR = {
+			AND = {
+				tag = TUR
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = ottoman_government
+			}
+		}
+	}
     
     republican_name = yes
     royal_marriage = no
@@ -17,6 +29,13 @@ pasha_council_republic = {
         ilmiye_faction
         kalemiye_faction
     }
+
+	custom_attributes = {
+		locked_government_type = yes
+        cannot_become_dictatorship = yes
+        enables_plutocratic_idea_group = no
+		enables_aristocratic_idea_group = yes
+	}
 
     modifiers = {
         republican_tradition = 0.5

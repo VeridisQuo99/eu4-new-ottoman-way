@@ -249,7 +249,6 @@ country_event = {
     trigger = {
         has_disaster = crisis_of_the_state
         has_country_flag = disaster_sided_with_sultan
-        stability = 1
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
     }
@@ -280,7 +279,6 @@ country_event = {
     trigger = {
         has_disaster = crisis_of_the_state
         has_country_flag = disaster_sided_with_pasha
-        stability = 1
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
     }
@@ -309,7 +307,6 @@ country_event = {
     trigger = {
         has_disaster = crisis_of_the_state
         has_country_flag = disaster_sided_with_status_quo
-        republican_tradition = 50
         NOT = { num_of_rebel_armies = 1 }
         NOT = { has_country_flag = crisis_of_the_state_resolved }
     }

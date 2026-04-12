@@ -1,6 +1,6 @@
 crisis_of_the_state = {
 	potential = {
-		tag = TUR
+
 		has_reform = pasha_council_republic
 	}
 
@@ -9,17 +9,29 @@ crisis_of_the_state = {
 	}
 
 	can_stop = {
-		republican_tradition = 50
+		republican_tradition = 80
 	}
 
 	progress = {
+		modifier = {
+			factor = 1
+			NOT = { republican_tradition = 55 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { republican_tradition = 45}
+		}
 		modifier = {
 			factor = 1
 			NOT = { republican_tradition = 35 }
 		}
 		modifier = {
 			factor = 1
-			NOT = { republican_tradition = 25 }
+			NOT = { republican_tradition = 25 } 
+		}
+		modifier = {
+			factor = 1
+			NOT = { republican_tradition = 15}
 		}
 	}
 
