@@ -9,7 +9,38 @@ country_event = {
 
     is_triggered_only = yes
 
-    # Option A: Bribe the Senate (Shifts power to Parliament)
+    # Seçilen adayın yeteneğine göre arka planda hizip güçlendirme
+    immediate = {
+        # Kalemiye (ADM) adayı seçildiyse
+        if = {
+            limit = { 
+                adm = 4 
+                NOT = { dip = 4 } 
+                NOT = { mil = 4 } 
+            }
+            add_faction_influence = { faction = kalemiye_faction influence = 15 }
+        }
+        # İlmiye (DIP) adayı seçildiyse
+        if = {
+            limit = { 
+                dip = 4 
+                NOT = { adm = 4 } 
+                NOT = { mil = 4 } 
+            }
+            add_faction_influence = { faction = ilmiye_faction influence = 15 }
+        }
+        # Seyfiye (MIL) adayı seçildiyse
+        if = {
+            limit = { 
+                mil = 4 
+                NOT = { adm = 4 } 
+                NOT = { dip = 4 } 
+            }
+            add_faction_influence = { faction = seyfiye_faction influence = 15 }
+        }
+    }
+
+    # Option A: Bribe the Senate
     option = {
         name = "pasha_events.1.a" 
         add_years_of_income = -0.25 
@@ -22,7 +53,7 @@ country_event = {
         custom_tooltip = "The Senate has been bribed to accept the new Pasha."
     }
 
-    # Option B: Concede to the Senate (Shifts power heavily to Parliament)
+    # Option B: Concede to the Senate
     option = {
         name = "pasha_events.1.b" 
         add_prestige = -5
@@ -39,7 +70,7 @@ country_event = {
         }
     }
 
-    # Option C: Bypass the Senate (Shifts power to the Palace)
+    # Option C: Bypass the Senate
     option = {
         name = "pasha_events.1.c" 
         add_stability = -1
