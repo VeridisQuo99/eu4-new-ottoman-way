@@ -5,40 +5,44 @@ spriteTypes = {
 		texturefile = "gfx//interface//faction_purple_frame.dds"
 		transparencecheck = yes
 	}
+	
 	spriteType = {
 		name = "GFX_faction_seyfiye_faction"
 		texturefile = "gfx//interface//pasha_seyfiye_faction.dds"
 		legacy_lazy_load = no
 	}
+
 	spriteType = {
 		name = "GFX_faction_bg_ilmiye_faction"
 		texturefile = "gfx//interface//faction_blue_frame.dds"
 		transparencecheck = yes
 	}
+
 	spriteType = {
 		name = "GFX_faction_ilmiye_faction"
 		texturefile = "gfx//interface//pasha_ilmiye_faction.dds"
 		legacy_lazy_load = no
 	}
+
 	spriteType = {
 		name = "GFX_faction_bg_kalemiye_faction"
 		texturefile = "gfx//interface//faction_red_frame.dds"
 		transparencecheck = yes
 	}
+
 	spriteType = {
 		name = "GFX_faction_kalemiye_faction"
 		texturefile = "gfx//interface//pasha_kalemiye_faction.dds"
 		legacy_lazy_load = no
 	}
+
 	spriteType = {
 		name = "GFX_disaster_crisis_of_the_state"
 		texturefile = "gfx//interface//disasters//internal_conflicts.dds"
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
-}
 
-spriteTypes = {
 	spriteType = {
 		name = "GFX_pasha_power_container_bg"
 		texturefile = "gfx//interface//pasha_power_container_bg.dds"

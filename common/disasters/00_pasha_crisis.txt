@@ -4,7 +4,7 @@ crisis_of_the_state = {
 	}
 
 	can_start = {
-		has_government_reform = pasha_council_republic
+		has_reform = pasha_council_republic
 		OR = {
 			NOT = { republican_tradition = 30 }
 			has_government_power = {
