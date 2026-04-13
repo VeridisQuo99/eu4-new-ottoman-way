@@ -453,7 +453,7 @@ country_event = {
     # Option A: The Sultan exerts influence
     option = {
         name = "pasha_events.9.a"
-        has_government_power = {
+        add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
             value = 10
@@ -465,7 +465,7 @@ country_event = {
     # Option B: The Pashas solidify their grip
     option = {
         name = "pasha_events.9.b"
-        has_government_power = {
+        add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
             value = -10
