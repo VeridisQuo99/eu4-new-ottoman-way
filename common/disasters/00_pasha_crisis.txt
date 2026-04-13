@@ -40,6 +40,14 @@ crisis_of_the_state = {
 			factor = 1
 			NOT = { republican_tradition = 15}
 		}
+		modifier = {
+			factor = 1
+			has_government_power = {
+				mechanic_type = pasha_power_mechanic
+				power_type = pasha_power
+				value = 90
+			}
+		}
 	}
 
 	can_end = {
