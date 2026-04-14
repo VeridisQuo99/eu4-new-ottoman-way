@@ -1,32 +1,22 @@
-# interface/pasha_interface.gui
 guiTypes = {
 	windowType = {
-		# İSİM KRİTİK: Oyun bu ismi otomatik arar.
 		name = "government_mechanic_pasha_power_mechanic"
 		position = { x = 0 y = 0 }
-		size = { x = 320 y = 100 }
+		size = { x = 300 y = 80 }
 		moveable = 0
 		
-		# 1. En Arka Katman (Container)
-		iconType = {
-			name = "pasha_power_container"
-			spriteType = "GFX_pasha_power_container_bg"
-			position = { x = 5 y = 0 }
-		}
-		
-		# 2. Bar Çerçevesi (Frame) - Konteynırın içine ortalandı
+		# Vanilla Prusya Bar Çerçevesi (Arka Plan)
 		iconType = {
 			name = "pasha_power_bar_icon"
-			spriteType = "GFX_pasha_power_bar_bg"
-			position = { x = 10 y = 10 }
+			spriteType = "GFX_militarization_frame"
+			position = { x = 10 y = 20 }
 		}
 		
-		# 3. İlerleme Barı (Progress Bar) - Çerçevenin tam içine oturdu
-		# İSİM KRİTİK: "government_power_bar" olmalı ki oyun barı doldurabilsin.
+		# Vanilla Prusya İlerleme Barı (Dolgu)
 		iconType = {
 			name = "government_power_bar"
-			spriteType = "GFX_pasha_power_bar"
-			position = { x = 40 y = 43 } # Çerçevenin içindeki boşluğa göre ayarlandı
+			spriteType = "GFX_militarization_power_bar"
+			position = { x = 24 y = 25 } 
 		}
 	}
 }
