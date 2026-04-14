@@ -117,7 +117,12 @@ country_event = {
                 mil = 3
                 age = 50
             }
-        }
+            add_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 50
+            }
+        }        
     }
 
     # Option A: Historical Path

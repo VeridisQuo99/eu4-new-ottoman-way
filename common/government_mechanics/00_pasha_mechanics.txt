@@ -1,7 +1,6 @@
+# common/government_mechanics/00_pasha_mechanics.txt
 pasha_power_mechanic = {
 	powers = {
-		pasha_power = {
-			gui = "government_mechanic_pasha_power_mechanic"
-		}
+		pasha_power
 	}
 }
