@@ -1,5 +1,6 @@
-# common/government_mechanics/00_pasha_mechanics.txt
 pasha_power_mechanic = {
+	alert_icon_gfx = "GFX_alert_pick_church_aspect"
+	alert_icon_shift = 65
 	powers = {
 		pasha_power
 	}

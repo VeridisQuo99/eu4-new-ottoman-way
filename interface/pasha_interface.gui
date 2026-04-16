@@ -1,20 +1,18 @@
-guiTypes = {
+﻿guiTypes = {
 	windowType = {
 		name = "government_mechanic_pasha_power_mechanic"
 		position = { x = 0 y = 0 }
 		size = { x = 300 y = 80 }
 		moveable = 0
 		
-		# Vanilla Prusya Bar Çerçevesi (Arka Plan)
 		iconType = {
 			name = "pasha_power_bar_icon"
 			spriteType = "GFX_militarization_frame"
 			position = { x = 10 y = 20 }
 		}
 		
-		# Vanilla Prusya İlerleme Barı (Dolgu)
 		iconType = {
-			name = "government_power_bar"
+			name = "government_power_bar" 
 			spriteType = "GFX_militarization_power_bar"
 			position = { x = 24 y = 25 } 
 		}
