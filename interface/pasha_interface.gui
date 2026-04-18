@@ -1,24 +1,26 @@
 guiTypes = {
     windowType = {
-        name = "pasha_power_window" 
+        name = "pasha_power_window"
+        backGround = ""
         position = { x = 0 y = 0 }
         size = { x = 320 y = 100 }
         moveable = 0
+        dontRender = ""
+        horizontalBorder = ""
 
-        # 1. Layer: Progress Bar
+        # Layer 1: Background frame must be defined first to stay in the back
+        iconType = {
+            name = "pasha_power_frame"
+            spriteType = "GFX_pasha_power_container_bg"
+            position = { x = 0 y = 0 }
+            alwaystransparent = yes
+        }
+
+        # Layer 2: Progress bar must be defined second to render on top
         iconType = {
             name = "government_power_bar"
             spriteType = "GFX_pasha_power_bar"
             position = { x = 25 y = 20 } 
-        }
-
-        # 2. Layer: Custom Frame (Covers the vanilla UI box)
-        iconType = {
-            name = "pasha_power_frame"
-            # This must exactly match the name defined in the .gfx file
-            spriteType = "GFX_pasha_power_container_bg"
-            position = { x = 0 y = 0 }
-            alwaystransparent = yes 
         }
     }
 }
