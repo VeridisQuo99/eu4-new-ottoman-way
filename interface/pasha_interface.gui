@@ -1,12 +1,11 @@
 guiTypes = {
     windowType = {
-        # Must match the 'gui' parameter in 00_pasha_mechanics.txt
-        name = "government_mechanic_pasha_power_mechanic" 
+        name = "government_mechanic_pasha_power_mechanic"
         position = { x = 0 y = 0 }
         size = { x = 300 y = 80 }
         moveable = 0
         
-        # Background container
+        # Arka plan
         iconType = {
             name = "pasha_power_container"
             spriteType = "GFX_pasha_power_container_bg"
@@ -14,12 +13,13 @@ guiTypes = {
             alwaystransparent = yes
         }
         
-        # The dynamic progress bar
-        # CRITICAL: The name must exactly match the power defined in 00_pasha_powers.txt
+        # Dinamik Bar (Puan mekanizmasını tetikleyen ana parça)
+        # ÖNEMLİ: İsim 'government_power_bar' olmalı, aksi halde puanlar barı doldurmaz.
         iconType = {
-            name = "pasha_power" 
+            name = "government_power_bar" 
             spriteType = "GFX_pasha_power_bar"
-            position = { x = 20 y = 20 } # Adjust X and Y to center the bar inside the container
+            # Bu koordinatlar barı konteynırın tam ortasına yerleştirmene yarar:
+            position = { x = 0 y = 0 } 
         }
     }
 }
