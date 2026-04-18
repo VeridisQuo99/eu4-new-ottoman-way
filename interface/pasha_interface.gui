@@ -1,11 +1,11 @@
+# interface/pasha_interface.gui
 guiTypes = {
     windowType = {
         name = "government_mechanic_pasha_power_mechanic"
         position = { x = 0 y = 0 }
-        size = { x = 300 y = 80 }
+        size = { x = 320 y = 80 }
         moveable = 0
         
-        # Arka plan
         iconType = {
             name = "pasha_power_container"
             spriteType = "GFX_pasha_power_container_bg"
@@ -13,13 +13,11 @@ guiTypes = {
             alwaystransparent = yes
         }
         
-        # Dinamik Bar (Puan mekanizmasını tetikleyen ana parça)
-        # ÖNEMLİ: İsim 'government_power_bar' olmalı, aksi halde puanlar barı doldurmaz.
+        # CRITICAL: Name must exactly match the power defined in 00_pasha_powers.txt
         iconType = {
-            name = "government_power_bar" 
+            name = "pasha_power" 
             spriteType = "GFX_pasha_power_bar"
-            # Bu koordinatlar barı konteynırın tam ortasına yerleştirmene yarar:
-            position = { x = 0 y = 0 } 
+            position = { x = 35 y = 28 } 
         }
     }
 }
