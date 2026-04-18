@@ -1,23 +1,24 @@
 guiTypes = {
     windowType = {
-        name = "pasha_power_window" # common/government_mechanics içindeki gui ismiyle ayn? olmal?
+        name = "pasha_power_window" 
         position = { x = 0 y = 0 }
         size = { x = 320 y = 100 }
         moveable = 0
 
-        # 1. Katman: ?lerleme Bar?
+        # 1. Layer: Progress Bar
         iconType = {
             name = "government_power_bar"
             spriteType = "GFX_pasha_power_bar"
-            position = { x = 25 y = 20 } # Çerçevenin içine ortalamak için burayla oyna
+            position = { x = 25 y = 20 } 
         }
 
-        # 2. Katman: Özel Çerçeve (En üstte durur ve vanilla kutuyu kapat?r)
+        # 2. Layer: Custom Frame (Covers the vanilla UI box)
         iconType = {
             name = "pasha_power_frame"
-            spriteType = "GFX_pasha_power_frame"
+            # This must exactly match the name defined in the .gfx file
+            spriteType = "GFX_pasha_power_container_bg"
             position = { x = 0 y = 0 }
-            alwaystransparent = yes # Mouse t?klamalar?n?n bar? alg?lamas? için ?art
+            alwaystransparent = yes 
         }
     }
 }
