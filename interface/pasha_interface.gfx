@@ -46,21 +46,20 @@ spriteTypes = {
 
 spriteTypes = {
     # Pasha Power Frame (Background Container)
-    spriteType = {
+	spriteType = {
         name = "GFX_pasha_power_container_bg"
-        texturefile = "gfx/interface/pasha_power_container_bg.dds"
-        loadType = "INGAME"
-        transparencecheck = yes
-    }
+		texturefile = "gfx/interface/government_mechanics/parliament_vs_monarchy/parliament_vs_monarchy_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
 
-    # Pasha Power Progress Bar
-    progressbartype = {
+	progressbartype = {
         name = "GFX_pasha_power_bar"
-        color = { 1.0 0.0 0.0 }
-        colortwo = { 1.0 1.0 1.0 }
-        textureFile1 = "gfx/interface/government_mechanic_pasha_bar.dds"
-        textureFile2 = "gfx/interface/government_mechanic_pasha_bar_empty.dds"
-        size = { x = 250 y = 20 } # Note: Adjust X and Y to match your exact .dds pixel dimensions
-        effectFile = "gfx/FX/progress.lua"
-    }
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/parliament_vs_monarchy/parliament_vs_monarchy_progressbar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/parliament_vs_monarchy/parliament_vs_monarchy_progressbar_frame.dds"
+		size = { x = 232 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}	
 }
