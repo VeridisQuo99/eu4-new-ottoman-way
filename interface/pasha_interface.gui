@@ -1,4 +1,4 @@
-﻿guiTypes = {
+guiTypes = {
 	windowType = {
 		name = "government_mechanic_pasha_power_mechanic"
 		position = { x = 0 y = 0 }

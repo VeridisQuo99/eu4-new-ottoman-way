@@ -1,9 +1,6 @@
-pasha_power_mechanic = {
-    # Engine requires these parameters to properly initialize the mechanic
-    alert_icon_gfx = "GFX_alert_pick_church_aspect"
-    alert_icon_shift = 65
-
-    powers = {
-        pasha_power
-    }
+pasha_power = {
+	min = 0
+	max = 100
+	default = 50
+	reset_on_new_ruler = no
 }
