@@ -1,14 +1,14 @@
 guiTypes = {
 	windowType = { # Copied and adjusted from government_interaction_type
 		name = "pasha_power_window"
-		size = { x = 300 y = 20 }
+		size = { x = 300 y = 60 }
 		moveable = 0
 		
 		# bar and frame for the power type associated with this interaction (if it's unique to the interaction - if not, these will be hidden)
 		iconType = { 
 			name = "government_power_bar"
 			spriteType = "GFX_pasha_power_bar"
-			position = { x = 24 y = 8 }
+			position = { x = 30 y = 20 }
 		}	
 
 		# Frame
