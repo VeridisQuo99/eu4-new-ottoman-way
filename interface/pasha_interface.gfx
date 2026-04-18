@@ -45,21 +45,13 @@ spriteTypes = {
 }
 
 spriteTypes = {
-    # Arka plan konteynırı
-    spriteType = {
-        name = "GFX_pasha_power_container_bg"
-        texturefile = "gfx/interface/pasha_power_container_bg.dds"
-    }
-    
-    # Dinamik ilerleme barı
-    # ÖNEMLİ: 'size' değerleri kendi .dds dosyanın piksel boyutlarıyla (Genişlik x Yükseklik) birebir aynı olmalıdır.
     progressbartype = {
         name = "GFX_pasha_power_bar"
         color = { 1.0 0.0 0.0 }
         colortwo = { 1.0 1.0 1.0 }
-        textureFile1 = "gfx/interface/government_mechanic_pasha_bar.dds"
-        textureFile2 = "gfx/interface/government_mechanic_pasha_bar_empty.dds"
-        size = { x = 240 y = 20 } # Buradaki X ve Y değerlerini .dds boyutuna göre güncelle
+        textureFile1 = "gfx/interface/government_mechanic_pasha_bar.dds" # Dolu kısım
+        textureFile2 = "gfx/interface/government_mechanic_pasha_bar_empty.dds" # Boş kısım
+        size = { x = 250 y = 20 }
         effectFile = "gfx/FX/progress.lua"
     }
 }

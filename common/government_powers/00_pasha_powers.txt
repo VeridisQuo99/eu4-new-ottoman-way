@@ -1,6 +1,0 @@
-pasha_power = {
-	min = 0
-	max = 100
-	default = 50
-	reset_on_new_ruler = no
-}

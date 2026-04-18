@@ -1,11 +1,15 @@
-# common/government_mechanics/00_pasha_mechanics.txt
 pasha_power_mechanic = {
-    alert_icon_gfx = "GFX_alert_pick_church_aspect"
-    
-    # Assigning GUI here overrides the default background frame entirely
-    gui = "government_mechanic_pasha_power_mechanic"
-    
-    powers = {
-        pasha_power
-    }
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 10 # Paşalar için uygun bir ikon indeksi
+
+	powers = {
+		pasha_power = {
+			gui = pasha_power_window # .gui dosyasındaki windowType ismiyle eşleşmeli
+			min = 0
+			max = 100
+			default = 50
+			reset_on_new_ruler = no
+			base_monthly_growth = 0
+		}
+	}
 }

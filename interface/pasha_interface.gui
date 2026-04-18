@@ -1,23 +1,24 @@
-# interface/pasha_interface.gui
 guiTypes = {
     windowType = {
-        name = "government_mechanic_pasha_power_mechanic"
+        name = "pasha_power_window"
         position = { x = 0 y = 0 }
-        size = { x = 320 y = 80 }
+        size = { x = 300 y = 100 }
         moveable = 0
-        
+
+        # İlerleme Barı (Dolgu kısmı)
         iconType = {
-            name = "pasha_power_container"
+            name = "government_power_bar"
+            spriteType = "GFX_pasha_power_bar"
+            position = { x = 15 y = 15 } # Konteynerin içine ortala
+        }
+
+        # Dekoratif Çerçeve ve Arka Plan
+        # Barın üstüne biner ve görsel nizami durur
+        iconType = {
+            name = "pasha_frame"
             spriteType = "GFX_pasha_power_container_bg"
             position = { x = 0 y = 0 }
             alwaystransparent = yes
-        }
-        
-        # CRITICAL: Name must exactly match the power defined in 00_pasha_powers.txt
-        iconType = {
-            name = "pasha_power" 
-            spriteType = "GFX_pasha_power_bar"
-            position = { x = 35 y = 28 } 
         }
     }
 }
