@@ -45,20 +45,22 @@ spriteTypes = {
 }
 
 spriteTypes = {
-    # Arka Plan Çerçevesi (Frame)
+    # Pasha Power Frame (Background Container)
     spriteType = {
-        name = "GFX_pasha_power_frame"
+        name = "GFX_pasha_power_container_bg"
         texturefile = "gfx/interface/pasha_power_container_bg.dds"
+        loadType = "INGAME"
+        transparencecheck = yes
     }
 
-    # İlerleme Barı (Progress Bar)
+    # Pasha Power Progress Bar
     progressbartype = {
         name = "GFX_pasha_power_bar"
         color = { 1.0 0.0 0.0 }
         colortwo = { 1.0 1.0 1.0 }
         textureFile1 = "gfx/interface/government_mechanic_pasha_bar.dds"
         textureFile2 = "gfx/interface/government_mechanic_pasha_bar_empty.dds"
-        size = { x = 250 y = 20 } # Kendi .dds dosyanın boyutuna göre güncelle
+        size = { x = 250 y = 20 } # Note: Adjust X and Y to match your exact .dds pixel dimensions
         effectFile = "gfx/FX/progress.lua"
     }
 }

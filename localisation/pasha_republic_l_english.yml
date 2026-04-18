@@ -28,7 +28,7 @@
 
  ### GOVERNMENT MECHANICS ###
  pasha_power: "Imperial Authority"
- pasha_power_desc: "The scale of power between the Sublime Porte (Palace) and the Imperial Senate.\n\n0 represents total Senate dominance, while 100 represents the Sultan's absolute rule."
+ pasha_power_desc: "The scale of power between the Sublime Porte (Palace) and the Imperial Senate.\n\n0 represents total Senate dominance, while 100 represents the Sultan's absolute rule.\n"
 
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
