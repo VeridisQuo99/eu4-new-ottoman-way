@@ -1,24 +1,23 @@
 guiTypes = {
     windowType = {
-        name = "pasha_power_window"
+        name = "pasha_power_window" # common/government_mechanics içindeki gui ismiyle ayn? olmal?
         position = { x = 0 y = 0 }
-        size = { x = 300 y = 100 }
+        size = { x = 320 y = 100 }
         moveable = 0
 
-        # Ä°lerleme BarÄ± (Dolgu kÄ±smÄ±)
+        # 1. Katman: ?lerleme Bar?
         iconType = {
             name = "government_power_bar"
             spriteType = "GFX_pasha_power_bar"
-            position = { x = 15 y = 15 } # Konteynerin iÃ§ine ortala
+            position = { x = 25 y = 20 } # Çerçevenin içine ortalamak için burayla oyna
         }
 
-        # Dekoratif Ã‡erÃ§eve ve Arka Plan
-        # BarÄ±n Ã¼stÃ¼ne biner ve gÃ¶rsel nizami durur
+        # 2. Katman: Özel Çerçeve (En üstte durur ve vanilla kutuyu kapat?r)
         iconType = {
-            name = "pasha_frame"
-            spriteType = "GFX_pasha_power_container_bg"
+            name = "pasha_power_frame"
+            spriteType = "GFX_pasha_power_frame"
             position = { x = 0 y = 0 }
-            alwaystransparent = yes
+            alwaystransparent = yes # Mouse t?klamalar?n?n bar? alg?lamas? için ?art
         }
     }
 }

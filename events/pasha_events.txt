@@ -120,7 +120,7 @@ country_event = {
             add_government_power = {
                 mechanic_type = pasha_power_mechanic
                 power_type = pasha_power
-                value = 50
+                value = 0
             }
         }        
     }
