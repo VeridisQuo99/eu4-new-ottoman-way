@@ -5,10 +5,69 @@ pasha_power_mechanic = {
     powers = {
         pasha_power = {
             gui = pasha_power_window
-            min = 0
-            max = 100
-            default = 50
+            min = -50
+            max = 50
+            default = 0
             reset_on_new_ruler = no
+            
+            # Scales towards -50 (Pasha/Divan Extreme)
+            scaled_modifier = {
+                modifier = {
+                    # Positive effects
+                    technology_cost = -0.1
+                    development_cost = -0.1
+                    # Negative effect
+                    max_absolutism = -15 
+                }
+                trigger = {
+                    has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -50 }
+                }
+            }
+
+            # Scales towards +50 (Sultan Extreme)
+            scaled_modifier = {
+                modifier = {
+                    # Positive effects
+                    global_unrest = -2.0
+                    yearly_absolutism = 0.5
+                    # Negative effect
+                    reform_progress_growth = -0.2 
+                }
+                trigger = {
+                    has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 50 }
+                }
+            }
+        }
+    }
+
+    interactions = {
+        # Favor the Sultan: Shifting power to authoritarian rule
+        pasha_favor_sultan = {
+            icon = GFX_pasha_button_sultan
+            cost_type = republican_tradition
+            cost = 10 # 10 RT is a massive, highly punishing cost in EU4
+            trigger = {
+                republican_tradition = 10
+            }
+            effect = {
+                add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
+                # Additional heavy penalty
+                add_mil_power = -50 
+            }
+        }
+
+        # Favor the Pashas: Bribing the council and giving concessions
+        pasha_favor_pashas = {
+            icon = GFX_pasha_button_pashas
+            cost_type = adm_power
+            cost = 50 
+            # No trigger needed for adm_power as cost_type inherently checks it
+            effect = {
+                add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
+                # Extremely punishing long-term economic and structural costs
+                add_corruption = 2 
+                add_years_of_income = -0.5 # Deducts 6 months of gross income
+            }
         }
     }
 }

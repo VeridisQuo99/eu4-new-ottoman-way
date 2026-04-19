@@ -61,5 +61,21 @@ spriteTypes = {
 		textureFile2 = "gfx/interface/government_mechanic_pasha_bar_empty.dds"
 		size = { x = 232 y = 20 }
 		effectFile = "gfx/FX/progress.lua"
-	}	
+	}
+
+	# Sultan Interaction Button (Vanilla Iqta Button 1)
+    spriteType = {
+        name = "GFX_pasha_button_sultan"
+        texturefile = "gfx/interface/government_mechanics/iqta/iqta_button_1.dds"
+        loadType = "INGAME"
+        transparencecheck = yes
+    }
+
+    # Pasha Interaction Button (Vanilla Iqta Button 2)
+    spriteType = {
+        name = "GFX_pasha_button_pashas"
+        texturefile = "gfx/interface/government_mechanics/iqta/iqta_button_2.dds"
+        loadType = "INGAME"
+        transparencecheck = yes
+    }
 }

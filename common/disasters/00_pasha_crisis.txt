@@ -7,16 +7,39 @@ crisis_of_the_state = {
 		has_reform = pasha_council_republic
 		OR = {
 			NOT = { republican_tradition = 30 }
-			has_government_power = {
-				mechanic_type = pasha_power_mechanic
-				power_type = pasha_power
-				value = 90
+			OR = {
+				has_government_power = { 
+					mechanic_type = pasha_power_mechanic 
+					power_type = pasha_power 
+					value = 39
+				}
+				NOT = { 
+					has_government_power = { 
+						mechanic_type = pasha_power_mechanic 
+						power_type = pasha_power 
+						value = -39 
+					} 
+				}
 			}
 		}
 	}
 
 	can_stop = {
 		republican_tradition = 80
+		OR = {
+			has_government_power = { 
+				mechanic_type = pasha_power_mechanic 
+				power_type = pasha_power 
+				value = -39
+			}
+			NOT = { 
+				has_government_power = { 
+					mechanic_type = pasha_power_mechanic 
+					power_type = pasha_power 
+					value = 39
+				} 
+			}
+		}
 	}
 
 	progress = {
@@ -41,13 +64,42 @@ crisis_of_the_state = {
 			NOT = { republican_tradition = 15}
 		}
 		modifier = {
-			factor = 1
-			has_government_power = {
-				mechanic_type = pasha_power_mechanic
-				power_type = pasha_power
-				value = 90
+            factor = 1 # Adds 1% progress per month
+            has_government_power = { 
+				mechanic_type = pasha_power_mechanic 
+				power_type = pasha_power 
+				value = 39 
 			}
-		}
+        }
+        modifier = {
+            factor = 1 # Adds 1% progress per month
+            NOT = { 
+				has_government_power = { 
+					mechanic_type = pasha_power_mechanic 
+					power_type = pasha_power 
+					value = -39 
+				} 
+			}
+        }
+        # Progresses faster if hitting the absolute limits (-50 or +50)
+        modifier = {
+            factor = 1.5 
+            has_government_power = { 
+				mechanic_type = pasha_power_mechanic 
+				power_type = pasha_power 
+				value = 49
+			}
+        }
+        modifier = {
+            factor = 1.5
+            NOT = { 
+				has_government_power = { 
+					mechanic_type = pasha_power_mechanic 
+					power_type = pasha_power 
+					value = -49 
+				} 
+			}
+        }
 	}
 
 	can_end = {
@@ -85,8 +137,8 @@ crisis_of_the_state = {
 
 	modifier = {
 		global_unrest = 3
-		stability_cost_modifier = 0.50
-		global_tax_modifier = -0.15
+		stability_cost_modifier = 0.25
+		global_tax_modifier = -0.10
 	}
 
 	on_start = pasha_events.3
