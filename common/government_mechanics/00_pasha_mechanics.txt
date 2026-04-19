@@ -5,61 +5,25 @@ pasha_power_mechanic = {
     powers = {
         pasha_power = {
             gui = pasha_power_window
-            min = 0
-            max = 100
-            default = 50
+            min = -50
+            max = 50
+            default = 0
             reset_on_new_ruler = no
             
-            # Tier 1: Absolute Pasha Power (0 - 20)
+            # Tek Scaled Modifier: Değerler +50 ve -50 ile çarpılarak çift yönlü etki yaratır.
             scaled_modifier = {
                 modifier = {
-                    technology_cost = -0.15
-                    development_cost = -0.15
-                    max_absolutism = -20
-                    trigger = {
-                        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 20 } }
-                    }
-                }
-
-                # Tier 2: Pasha Dominant (20 - 40)
-                modifier = {
-                    technology_cost = -0.05
-                    development_cost = -0.05
-                    max_absolutism = -10
-                    trigger = {
-                        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 20 }
-                        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 40 } }
-                    }
-                }
-
-                # Center/Balanced (40 - 60) -> No active modifiers applied
-
-                # Tier 3: Sultan Dominant (60 - 80)
-                modifier = {
-                    global_unrest = -1.0
-                    yearly_absolutism = 0.25
-                    reform_progress_growth = -0.1
-                    trigger = {
-                        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 60 }
-                        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 80 } }
-                    }
-                }
-
-                # Tier 4: Absolute Sultan Power (80 - 100)
-                modifier = {
-                    global_unrest = -2.0
-                    yearly_absolutism = 0.5
-                    reform_progress_growth = -0.2
-                    trigger = {
-                        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 80 }
-                    }
+                    global_unrest = -0.04           # +50'de: -2 Unrest | -50'de: +2 Unrest
+                    max_absolutism = 0.3            # +50'de: +15 Mutlakiyet | -50'de: -15 Mutlakiyet
+                    technology_cost = 0.002         # +50'de: +%10 Ceza | -50'de: -%10 İndirim
+                    reform_progress_growth = -0.004 # +50'de: -%20 Büyüme | -50'de: +%20 Büyüme
                 }
             }
         }
     }
 
     interactions = {
-        # Button 1 (Left Side): Decreases power towards 0
+        # Sol Buton: Gücü eksiye (-50'ye) çeker (Paşaları Destekle)
         pasha_favor_pashas = {
             gui = "pasha_interaction_button_template"
             icon = GFX_russian_ability_DIP
@@ -68,11 +32,11 @@ pasha_power_mechanic = {
             effect = {
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
                 add_corruption = 2 
-                add_years_of_income = -1
+                add_years_of_income = -0.5 
             }
         }
 
-        # Button 2 (Right Side): Increases power towards 100
+        # Sağ Buton: Gücü artıya (+50'ye) çeker (Padişahı Destekle)
         pasha_favor_sultan = {
             gui = "pasha_interaction_button_template"
             icon = GFX_russian_ability_ADM
