@@ -25,7 +25,7 @@ crisis_of_the_state = {
 	}
 
 	can_stop = {
-		republican_tradition = 80
+		republican_tradition = 50
 		OR = {
 			has_government_power = { 
 				mechanic_type = pasha_power_mechanic 
@@ -43,10 +43,6 @@ crisis_of_the_state = {
 	}
 
 	progress = {
-		modifier = {
-			factor = 1
-			NOT = { republican_tradition = 55 }
-		}
 		modifier = {
 			factor = 1
 			NOT = { republican_tradition = 45}

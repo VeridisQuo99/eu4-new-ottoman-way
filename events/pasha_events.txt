@@ -386,7 +386,7 @@ country_event = {
         clr_country_flag = disaster_sided_with_sultan
         clr_country_flag = disaster_sided_with_status_quo
         clr_country_flag = disaster_sided_with_pasha
-        clr_country_flag = pasha_system_initialized
+        # clr_country_flag = pasha_system_initialized
         
         remove_country_modifier = sultan_mehmed_ii_modifier
         remove_country_modifier = sultan_bayezid_ii_modifier
@@ -424,7 +424,7 @@ country_event = {
         clr_country_flag = disaster_sided_with_sultan
         clr_country_flag = disaster_sided_with_status_quo
         clr_country_flag = disaster_sided_with_pasha
-        clr_country_flag = pasha_system_initialized
+        # clr_country_flag = pasha_system_initialized
         
         remove_country_modifier = sultan_mehmed_ii_modifier
         remove_country_modifier = sultan_bayezid_ii_modifier
@@ -491,7 +491,7 @@ country_event = {
             value = 10
         } 
         add_prestige = 5
-        add_republican_tradition = -2
+        add_republican_tradition = -10
     }
 
     # Option B: The Pashas solidify their grip
@@ -502,8 +502,8 @@ country_event = {
             power_type = pasha_power
             value = -10
         } 
-        add_republican_tradition = 2
-        add_prestige = -5
+        add_republican_tradition = 10
+        add_prestige = -25
     }
 }
 
@@ -585,11 +585,9 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	immediate = {
-		clr_country_flag = crisis_of_the_state_resolved
-	}
-
     option = {
         name = none
+
+        clr_country_flag = crisis_of_the_state_resolved
     }
 }

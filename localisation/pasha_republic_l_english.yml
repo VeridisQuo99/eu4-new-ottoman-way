@@ -33,6 +33,7 @@
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
  pasha_power_mechanic_desc: "The struggle for supremacy between the Sublime Porte (Palace) and the Imperial Senate."
+ ability_pasha_power_mechanic: "Balance of Power"
 
  ### GOVERNMENT REFORMS ###
  pasha_council_republic: "Pasha Republic"
