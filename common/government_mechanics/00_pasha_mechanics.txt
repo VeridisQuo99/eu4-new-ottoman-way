@@ -17,11 +17,11 @@ pasha_power_mechanic = {
         pasha_favor_pashas = {
             gui = "pasha_interaction_button_template"
             icon = GFX_pasha_button_pashas_custom
-            cost_type = adm_power
+            cost_type = adm_power # 50 İdari Puan harcar
             cost = 50 
             effect = {
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
-                add_corruption = 2 
+                add_corruption = 1 # 1 Yolsuzluk ekler
                 add_years_of_income = -0.5 
             }
         }
@@ -30,14 +30,12 @@ pasha_power_mechanic = {
         pasha_favor_sultan = {
             gui = "pasha_interaction_button_template"
             icon = GFX_pasha_button_sultan_custom
-            cost_type = republican_tradition
-            cost = 10 
-            trigger = {
-                republican_tradition = 10
-            }
+            cost_type = mil_power # 50 Askeri Puan harcar (Cumhuriyet geleneği yerine bunu kullanıyoruz)
+            cost = 50 
+            # Hatalı trigger bloğunu tamamen sildik. Oyuncunun 50 askeri puanı varsa buton direkt tıklanabilir olacak.
             effect = {
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
-                add_mil_power = -50 
+                add_republican_tradition = -5 # republik geleneğini 5 azaltır
             }
         }
     }
