@@ -1,0 +1,55 @@
+# common/triggered_modifiers/00_pasha_tiers.txt
+
+pasha_tier_1_absolute = {
+    potential = {
+        has_government_mechanic = pasha_power_mechanic
+    }
+    trigger = {
+        # Yuvarlak top göstergesi 0 - 20 aralığındayken (Mutlak Paşa Gücü)
+        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 20 } }
+    }
+    technology_cost = -0.15
+    development_cost = -0.15
+    max_absolutism = -20
+}
+
+pasha_tier_2_dominant = {
+    potential = {
+        has_government_mechanic = pasha_power_mechanic
+    }
+    trigger = {
+        # Yuvarlak top göstergesi 20 - 40 aralığındayken
+        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 20 }
+        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 40 } }
+    }
+    technology_cost = -0.05
+    development_cost = -0.05
+    max_absolutism = -10
+}
+
+sultan_tier_3_dominant = {
+    potential = {
+        has_government_mechanic = pasha_power_mechanic
+    }
+    trigger = {
+        # Yuvarlak top göstergesi 60 - 80 aralığındayken
+        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 60 }
+        NOT = { has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 80 } }
+    }
+    global_unrest = -1.0
+    yearly_absolutism = 0.25
+    reform_progress_growth = -0.1
+}
+
+sultan_tier_4_absolute = {
+    potential = {
+        has_government_mechanic = pasha_power_mechanic
+    }
+    trigger = {
+        # Yuvarlak top göstergesi 80 - 100 aralığındayken (Mutlak Padişah Gücü)
+        has_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 80 }
+    }
+    global_unrest = -2.0
+    yearly_absolutism = 0.5
+    reform_progress_growth = -0.2
+}

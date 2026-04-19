@@ -23,8 +23,7 @@ guiTypes = {
 
     windowType = {
         name = "pasha_interaction_button_template"
-        # X boyutunu 250 yaparak ikinci butonun 250 piksel sağda çizilmesini sağlıyoruz
-        size = { x = 250 y = 60 } 
+        size = { x = 150 y = 60 } 
         moveable = 0
 
         guiButtonType = {

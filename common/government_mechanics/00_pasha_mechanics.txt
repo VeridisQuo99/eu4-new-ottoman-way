@@ -16,7 +16,7 @@ pasha_power_mechanic = {
         # Sol Buton: Gücü 0'a doğru çeker (Paşaları Destekle)
         pasha_favor_pashas = {
             gui = "pasha_interaction_button_template"
-            icon = GFX_russian_ability_DIP
+            icon = GFX_pasha_button_pashas_custom
             cost_type = adm_power
             cost = 50 
             effect = {
@@ -29,7 +29,7 @@ pasha_power_mechanic = {
         # Sağ Buton: Gücü 100'e doğru çeker (Padişahı Destekle)
         pasha_favor_sultan = {
             gui = "pasha_interaction_button_template"
-            icon = GFX_russian_ability_ADM
+            icon = GFX_pasha_button_sultan_custom
             cost_type = republican_tradition
             cost = 10 
             trigger = {

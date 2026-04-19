@@ -62,4 +62,18 @@ spriteTypes = {
 		size = { x = 232 y = 20 }
 		effectFile = "gfx/FX/progress.lua"
 	}
+
+	spriteType = {
+        name = "GFX_pasha_button_sultan_custom"
+        texturefile = "gfx/interface/pasha_btn_sultan.dds"
+        loadType = "INGAME"
+        transparencecheck = yes
+    }
+
+    spriteType = {
+        name = "GFX_pasha_button_pashas_custom"
+        texturefile = "gfx/interface/pasha_btn_pasha.dds"
+        loadType = "INGAME"
+        transparencecheck = yes
+    }
 }

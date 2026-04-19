@@ -28,7 +28,7 @@
 
  ### GOVERNMENT MECHANICS ###
  pasha_power: "Imperial Authority"
- pasha_power_desc: "The scale of power between the Sublime Porte (Palace) and the Imperial Senate.\n\n0 represents total Senate dominance, while 100 represents the Sultan's absolute rule.\n"
+ pasha_power_desc: "The scale of power between the Sublime Porte (Sultan) and the Imperial Divan (Pashas).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
 
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
@@ -37,6 +37,16 @@
  ### GOVERNMENT REFORMS ###
  pasha_council_republic: "Pasha Republic"
  pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
+
+ ### Triggered Modifiers Localisation
+ pasha_tier_1_absolute: "Absolute Pasha Authority"
+ desc_pasha_tier_1_absolute: "The Pashas have seized total control over the Divan, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"
+ pasha_tier_2_dominant: "Pasha Dominance"
+ desc_pasha_tier_2_dominant: "The Pashas hold significant sway over state affairs and the bureaucracy.\n\n§YActive when the balance of power is between 20 and 40.§!"
+ sultan_tier_3_dominant: "Sultan's Resurgence"
+ desc_sultan_tier_3_dominant: "The Sultan is effectively reasserting traditional authority over the council.\n\n§YActive when the balance of power is between 60 and 80.§!"
+ sultan_tier_4_absolute: "Absolute Sultanate"
+ desc_sultan_tier_4_absolute: "The Sultan rules with an iron fist, completely unchallenged by the Pashas.\n\n§YActive when the balance of power is between 80 and 100.§!"
 
  ### DECISIONS ###
  sultan_dissolves_parliament_title: "Dissolve the Divan"
@@ -90,3 +100,10 @@
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
  crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
  crisis_sided_with_pasha_or_padisah: "(If sided with the Pasha or Padisah) Stability must be at least 1"
+
+ # Government Interaction Buttons
+ pasha_favor_pashas: "Concessions to the Divan"
+ pasha_favor_pashas_desc: "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
+ 
+ pasha_favor_sultan: "Assert Sultanic Authority"
+ pasha_favor_sultan_desc: "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."
