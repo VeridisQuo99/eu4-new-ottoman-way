@@ -1,37 +1,37 @@
 guiTypes = {
-	windowType = { # Copied and adjusted from government_interaction_type
-		name = "pasha_power_window"
-		size = { x = 300 y = 60 } # was 60
-		moveable = 0
-	
-		# Layer 1: bar and frame for the power type associated with this interaction (if it's unique to the interaction - if not, these will be hidden)
-		iconType = { 
-			name = "government_power_bar"
-			spriteType = "GFX_pasha_power_bar"
-			position = { x = 30 y = 20 }
-		}
+    # 1. Ana Pencere (Bar ve Çerçeve)
+    windowType = { 
+        name = "pasha_power_window"
+        size = { x = 300 y = 60 } # Kendi test ettiğin ideal boyut
+        moveable = 0
+    
+        # Layer 1: Progress Bar
+        iconType = { 
+            name = "government_power_bar"
+            spriteType = "GFX_pasha_power_bar"
+            position = { x = 30 y = 20 }
+        }
         
-		# Layer 2: Frame
-		iconType = {
+        # Layer 2: Frame
+        iconType = {
             name = "pasha_power_frame"
             spriteType = "GFX_pasha_power_container_bg"
-			position = { x = 0 y = 0 }
-			alwaystransparent = yes
-		}        
+            position = { x = 0 y = 0 }
+            alwaystransparent = yes
+        }        
+    }
 
-        # Layer 3: Interaction Buttons
-        # Sultan Button positioned below the left side of the bar
-        guiButtonType = {
-            name = "pasha_favor_sultan" 
-            spriteType = "GFX_pasha_button_sultan"
-            position = { x = 50 y = -20 } 
-        }
+    # 2. Buton Şablonu (Daha önce konuştuğumuz gibi)
+    windowType = {
+        name = "pasha_interaction_button_template"
+        size = { x = 50 y = 50 } # Butonlar arası genişlik
+        moveable = 0
 
-        # Pasha Button positioned below the right side of the bar
         guiButtonType = {
-            name = "pasha_favor_pashas" 
-            spriteType = "GFX_pasha_button_pashas"
-            position = { x = 210 y = -20 } 
+            name = "government_interaction_button" # Bu isim hardcoded'dır, değişmez
+            quadTextureSprite = "GFX_russian_ability_ADM" # Geçici görsel
+            position = { x = 0 y = 0 }
+            clicksound = back_click
         }
     }
 }

@@ -63,19 +63,22 @@ spriteTypes = {
 		effectFile = "gfx/FX/progress.lua"
 	}
 
-	# Sultan Interaction Button (Vanilla Iqta Button 1)
+	# Interaction Buttons
     spriteType = {
-        name = "GFX_pasha_button_sultan"
-        texturefile = "gfx/interface/government_mechanics/iqta/iqta_button_1.dds"
-        loadType = "INGAME"
-        transparencecheck = yes
-    }
+		name = "GFX_pasha_button_sultan"
+		# Klasör yoluna 'militarization/' eklendi
+		texturefile = "gfx/interface/government_mechanics/militarization/militarization_increase_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+		legacy_lazy_load = no
+	}
 
-    # Pasha Interaction Button (Vanilla Iqta Button 2)
     spriteType = {
         name = "GFX_pasha_button_pashas"
-        texturefile = "gfx/interface/government_mechanics/iqta/iqta_button_2.dds"
+        texturefile = "gfx/interface/government_mechanics/militarization_increase_button.dds"
         loadType = "INGAME"
         transparencecheck = yes
+        # Fix for the 'lazy load' error in log
+        legacy_lazy_load = no
     }
 }

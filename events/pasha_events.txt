@@ -117,11 +117,7 @@ country_event = {
                 mil = 3
                 age = 50
             }
-            add_government_power = {
-                mechanic_type = pasha_power_mechanic
-                power_type = pasha_power
-                value = 0
-            }
+            add_republican_tradition = 20
         }        
     }
 
