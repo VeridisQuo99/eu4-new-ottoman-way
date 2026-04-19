@@ -11,13 +11,13 @@ crisis_of_the_state = {
 				has_government_power = { 
 					mechanic_type = pasha_power_mechanic 
 					power_type = pasha_power 
-					value = 39
+					value = 90
 				}
 				NOT = { 
 					has_government_power = { 
 						mechanic_type = pasha_power_mechanic 
 						power_type = pasha_power 
-						value = -39 
+						value = 10
 					} 
 				}
 			}
@@ -30,13 +30,13 @@ crisis_of_the_state = {
 			has_government_power = { 
 				mechanic_type = pasha_power_mechanic 
 				power_type = pasha_power 
-				value = -39
+				value = 10
 			}
 			NOT = { 
 				has_government_power = { 
 					mechanic_type = pasha_power_mechanic 
 					power_type = pasha_power 
-					value = 39
+					value = 90
 				} 
 			}
 		}
@@ -68,7 +68,7 @@ crisis_of_the_state = {
             has_government_power = { 
 				mechanic_type = pasha_power_mechanic 
 				power_type = pasha_power 
-				value = 39 
+				value = 90 
 			}
         }
         modifier = {
@@ -77,7 +77,7 @@ crisis_of_the_state = {
 				has_government_power = { 
 					mechanic_type = pasha_power_mechanic 
 					power_type = pasha_power 
-					value = -39 
+					value = 10 
 				} 
 			}
         }
@@ -87,7 +87,7 @@ crisis_of_the_state = {
             has_government_power = { 
 				mechanic_type = pasha_power_mechanic 
 				power_type = pasha_power 
-				value = 49
+				value = 99
 			}
         }
         modifier = {
@@ -96,7 +96,7 @@ crisis_of_the_state = {
 				has_government_power = { 
 					mechanic_type = pasha_power_mechanic 
 					power_type = pasha_power 
-					value = -49 
+					value = 1 
 				} 
 			}
         }
