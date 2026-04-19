@@ -5,25 +5,15 @@ pasha_power_mechanic = {
     powers = {
         pasha_power = {
             gui = pasha_power_window
-            min = -50
-            max = 50
-            default = 0
+            min = 0
+            max = 100
+            default = 50
             reset_on_new_ruler = no
-            
-            # Tek Scaled Modifier: Değerler +50 ve -50 ile çarpılarak çift yönlü etki yaratır.
-            scaled_modifier = {
-                modifier = {
-                    global_unrest = -0.04           # +50'de: -2 Unrest | -50'de: +2 Unrest
-                    max_absolutism = 0.3            # +50'de: +15 Mutlakiyet | -50'de: -15 Mutlakiyet
-                    technology_cost = 0.002         # +50'de: +%10 Ceza | -50'de: -%10 İndirim
-                    reform_progress_growth = -0.004 # +50'de: -%20 Büyüme | -50'de: +%20 Büyüme
-                }
-            }
         }
     }
 
     interactions = {
-        # Sol Buton: Gücü eksiye (-50'ye) çeker (Paşaları Destekle)
+        # Sol Buton: Gücü 0'a doğru çeker (Paşaları Destekle)
         pasha_favor_pashas = {
             gui = "pasha_interaction_button_template"
             icon = GFX_russian_ability_DIP
@@ -36,7 +26,7 @@ pasha_power_mechanic = {
             }
         }
 
-        # Sağ Buton: Gücü artıya (+50'ye) çeker (Padişahı Destekle)
+        # Sağ Buton: Gücü 100'e doğru çeker (Padişahı Destekle)
         pasha_favor_sultan = {
             gui = "pasha_interaction_button_template"
             icon = GFX_russian_ability_ADM

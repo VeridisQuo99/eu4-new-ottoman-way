@@ -21,18 +21,17 @@ guiTypes = {
         }        
     }
 
-    # 2. Buton Şablonu (Daha önce konuştuğumuz gibi)
     windowType = {
         name = "pasha_interaction_button_template"
-        # Half of the total window width (300 / 2 = 150) for perfect halving
-        size = { x = 150 y = 60 } 
+        # X boyutunu 250 yaparak ikinci butonun 250 piksel sağda çizilmesini sağlıyoruz
+        size = { x = 250 y = 60 } 
         moveable = 0
 
         guiButtonType = {
             name = "government_interaction_button" 
             quadTextureSprite = "GFX_russian_ability_ADM"
-            # Positions the icon evenly within its 150px grid box
-            position = { x = 50 y = 5 } 
+            # Butonu kendi alanında tam sola yaslıyoruz
+            position = { x = 0 y = 5 } 
             clicksound = back_click
         }
     }
