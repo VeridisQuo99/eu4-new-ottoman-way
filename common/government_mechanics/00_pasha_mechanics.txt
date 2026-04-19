@@ -10,7 +10,7 @@ pasha_power_mechanic = {
             default = 0
             reset_on_new_ruler = no
             
-            # Paşa Tarafı (Negatif: 0'dan -50'ye)
+            # Paşa Tarafı (Negatif: -1'den -50'ye doğru artar)
             scaled_modifier = {
                 modifier = {
                     technology_cost = -0.1
@@ -19,16 +19,18 @@ pasha_power_mechanic = {
                 }
                 trigger = {
                     NOT = {
+                        # Eğer güç 0 veya 0'dan büyükse bu şart DOĞRU olur, NOT bunu YANLIŞ yapar.
+                        # Eğer güç -1, -10 veya -50 ise bu şart YANLIŞ olur, NOT bunu DOĞRU yapar ve modifier çalışır.
                         has_government_power = { 
                             mechanic_type = pasha_power_mechanic 
                             power_type = pasha_power 
-                            value = -0.1 # -0.1'den küçük (yani daha negatif) her değerde çalışır
+                            value = 0 
                         }
                     }
                 }
             }
 
-            # Sultan Tarafı (Pozitif: 0'dan 50'ye)
+            # Sultan Tarafı (Pozitif: 1'den 50'ye doğru artar)
             scaled_modifier = {
                 modifier = {
                     global_unrest = -2.0
@@ -36,10 +38,11 @@ pasha_power_mechanic = {
                     reform_progress_growth = -0.2 
                 }
                 trigger = {
+                    # Sadece güç 1 veya daha büyükse çalışır. Tam 0 noktasında iki modifier da kapalı kalır.
                     has_government_power = { 
                         mechanic_type = pasha_power_mechanic 
                         power_type = pasha_power 
-                        value = 0.1 # 0'dan büyük her değerde çalışır
+                        value = 1 
                     }
                 }
             }
@@ -47,34 +50,29 @@ pasha_power_mechanic = {
     }
 
     interactions = {
-        # Favor the Sultan: Shifting power to authoritarian rule
         pasha_favor_sultan = {
-            gui = "pasha_interaction_button_template" # Arayüz şablonuna bağlandı
-            icon = GFX_pasha_button_sultan
+            gui = "pasha_interaction_button_template"
+            icon = GFX_russian_ability_ADM # Vanilla oyunda %100 çalışan ikon
             cost_type = republican_tradition
-            cost = 10 # 10 RT is a massive, highly punishing cost in EU4
+            cost = 10 
             trigger = {
                 republican_tradition = 10
             }
             effect = {
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
-                # Additional heavy penalty
                 add_mil_power = -50 
             }
         }
 
-        # Favor the Pashas: Bribing the council and giving concessions
         pasha_favor_pashas = {
-            gui = "pasha_interaction_button_template" # Arayüz şablonuna bağlandı
-            icon = GFX_pasha_button_pashas
+            gui = "pasha_interaction_button_template"
+            icon = GFX_russian_ability_DIP # Vanilla oyunda %100 çalışan ikon
             cost_type = adm_power
             cost = 50 
-            # No trigger needed for adm_power as cost_type inherently checks it
             effect = {
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
-                # Extremely punishing long-term economic and structural costs
                 add_corruption = 2 
-                add_years_of_income = -0.5 # Deducts 6 months of gross income
+                add_years_of_income = -0.5 
             }
         }
     }

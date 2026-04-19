@@ -62,23 +62,4 @@ spriteTypes = {
 		size = { x = 232 y = 20 }
 		effectFile = "gfx/FX/progress.lua"
 	}
-
-	# Interaction Buttons
-    spriteType = {
-		name = "GFX_pasha_button_sultan"
-		# Klasör yoluna 'militarization/' eklendi
-		texturefile = "gfx/interface/government_mechanics/militarization/militarization_increase_button.dds"
-		loadType = "INGAME"
-		transparencecheck = yes
-		legacy_lazy_load = no
-	}
-
-    spriteType = {
-        name = "GFX_pasha_button_pashas"
-        texturefile = "gfx/interface/government_mechanics/militarization_increase_button.dds"
-        loadType = "INGAME"
-        transparencecheck = yes
-        # Fix for the 'lazy load' error in log
-        legacy_lazy_load = no
-    }
 }
