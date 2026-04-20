@@ -17,7 +17,9 @@
  sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
  sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
  faction_dominance_modifier: "Faction Dominance"
-
+ pasha_political_instability: "Political Instability"
+ desc_pasha_political_instability: "The struggle for power between factions has created a temporary vacuum in state authority, making reform and stabilization more difficult."
+ 
  ### FACTIONS ###
  seyfiye_faction: "Men of the Sword (Seyfiye)"
  seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, discipline, and the glory of the army."
@@ -28,11 +30,11 @@
 
  ### GOVERNMENT MECHANICS ###
  pasha_power: "Imperial Authority"
- pasha_power_desc: "The scale of power between the Sublime Porte (Sultan) and the Imperial Divan (Pashas).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
+ pasha_power_desc: "The scale of power between the Imperial Court (Padishah) and the Imperial Divan (Divan is the body of the government which includes the Senate (Parliament) and the ).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
 
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
- pasha_power_mechanic_desc: "The struggle for supremacy between the Sublime Porte (Palace) and the Imperial Senate."
+ pasha_power_mechanic_desc: "The struggle for supremacy between the Imperial Court (Padishah) and the Imperial Divan"
  ability_pasha_power_mechanic: "Balance of Power"
 
  ### GOVERNMENT REFORMS ###
@@ -96,6 +98,19 @@
  pasha_events.9.d: "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
  pasha_events.9.a: "The Sultan exerts his royal prerogative."
  pasha_events.9.b: "The Pashas solidify their grip on the administration."
+
+ # Event 10
+ pasha_event.10.t: "The Ambition of the Factions"
+ pasha_event.10.d: "As the administration grows more complex, the factions within the Divan have begun to push their own agendas more aggressively. Each group seeks to monopolize the state's resources for their own ends, forcing us to take a side or risk total deadlock."
+ pasha_event.10.a: "Side with the Military (Seyfiye)"
+ pasha_event.10.b: "Side with the Bureaucracy (Kalemiye)"
+ pasha_event.10.c: "Side with the Clergy (İlmiye)"
+ 
+ # Event 11
+ pasha_event.11.t: "Inter-Faction Rivalry"
+ pasha_event.11.d: "The open rivalry between our ruling cliques has reached a boiling point. The state apparatus is paralyzed as officials wait to see which way the wind blows. We must intervene to curb this chaos."
+ pasha_event.11.a: "Support the dominant faction to end the deadlock."
+ pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."

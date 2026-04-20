@@ -1,7 +1,6 @@
-on_election = {
+on_republican_election = {
     events = {
-        # Triggers our custom Senate Confirmation event immediately after any election
-        pasha_events.1
+        pasha_events.1 # Seçim yapıldıktan hemen sonra bu event tetiklenir
     }
 }
 

@@ -357,8 +357,13 @@ country_event = {
 
             hidden_effect = {
                 set_variable = {
-                    which = current_sultan_age
+                    which = current_vizier_age
                     value = monarch_age
+                }
+
+                change_variable = {
+                    which = current_vizier_age
+                    value = -30
                 }
             }
 
@@ -368,7 +373,7 @@ country_event = {
                     name = "Mehmed II"
                     dynasty = "Osmanloglu"
                     claim = 100
-                    age = current_sultan_age
+                    age = current_vizier_age
                 }
             }
             
@@ -378,7 +383,7 @@ country_event = {
                     name = "Bayezid II"
                     dynasty = "Osmanloglu"
                     claim = 100
-                    age = current_sultan_age
+                    age = current_vizier_age
                 }
             }
         }
@@ -513,7 +518,14 @@ country_event = {
 	title = "pasha_events.10.t"
 	desc = "pasha_events.10.d"
 	picture = COURT_eventPicture
-	is_triggered_only = yes
+
+	trigger = {
+        has_government_reform = pasha_republic_reform
+    }
+    
+    mean_time_to_happen = {
+        months = 120 # Ortalama 10 yılda bir tetiklenir
+    }
 
 	# Option for war-time dynamics
 	option = {
@@ -568,10 +580,23 @@ country_event = {
 
     option = {
         name = "pasha_events.11.b"
-        add_stability = -1
-        add_faction_influence = { faction = seyfiye_faction influence = -30 }
-        add_faction_influence = { faction = ilmiye_faction influence = -30 }
-        add_faction_influence = { faction = kalemiye_faction influence = -30 }
+        if = {
+            limit = { pasha_seyfiye_faction = 80 }
+            add_faction_influence = { faction = pasha_seyfiye_faction influence = -40 }
+        }
+        if = {
+            limit = { ilmiye_faction = 80 }
+            add_faction_influence = { faction = ilmiye_faction influence = -40 }
+        }
+        if = {
+            limit = { kalemiye_faction = 80 }
+            add_faction_influence = { faction = kalemiye_faction influence = -40 }
+        }
+        # -1 Stability yerine Stability Cost penaltısı [cite: 11]
+        add_country_modifier = {
+            name = "pasha_political_instability"
+            duration = 365
+        }
     }
 }
 

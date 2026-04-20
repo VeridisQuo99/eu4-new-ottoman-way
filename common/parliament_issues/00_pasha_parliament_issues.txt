@@ -12,7 +12,7 @@ issue_military_campaign_funding = {
 			influence = 15
 		}
 		add_army_tradition = 10
-		change_variable = { which = palace_power_balance value = -5 }
+		change_variable = { which = pasha_power value = -5 }
 	}
 
 	modifier = {
@@ -36,7 +36,7 @@ issue_judicial_and_religious_reform = {
 		}
 		add_devotion = 10 
 		add_stability = 1
-		change_variable = { which = palace_power_balance value = -5 }
+		change_variable = { which = pasha_power value = -5 }
 	}
 
 	modifier = {
@@ -59,7 +59,7 @@ issue_expand_trade_privileges = {
 			influence = 15
 		}
 		add_mercantilism = 1
-		change_variable = { which = palace_power_balance value = -5 }
+		change_variable = { which = pasha_power value = -5 }
 	}
 
 	modifier = {

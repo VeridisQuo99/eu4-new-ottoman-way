@@ -65,3 +65,7 @@ sultan_dissolves_parliament_minor_unrest = {
 sultan_dissolves_parliament_cooldown = {
     # No visible effects needed, acts only as a timer
 }
+
+pasha_political_instability = {
+    stability_cost_modifier = 0.25
+}
