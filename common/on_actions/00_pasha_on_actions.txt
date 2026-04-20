@@ -10,3 +10,44 @@ on_startup = {
         pasha_events.2
     }
 }
+
+on_monthly_pulse = {
+	if = {
+		limit = {
+			has_reform = pasha_council_republic # Sadece bu reform varsa çalışır
+		}
+		
+		# Kalemiye: Vezirin ADM skilli 4 veya üzeriyse her ay +0.5 nüfuz
+		if = {
+			limit = {
+				ruler_has_skill = { skill = adm value = 4 }
+			}
+			add_faction_influence = {
+				faction = kalemiye_faction
+				influence = 0.5
+			}
+		}
+
+		# İlmiye: Vezirin DIP skilli 4 veya üzeriyse her ay +0.5 nüfuz
+		if = {
+			limit = {
+				ruler_has_skill = { skill = dip value = 4 }
+			}
+			add_faction_influence = {
+				faction = ilmiye_faction
+				influence = 0.5
+			}
+		}
+
+		# Seyfiye: Vezirin MIL skilli 4 veya üzeriyse her ay +0.5 nüfuz
+		if = {
+			limit = {
+				ruler_has_skill = { skill = mil value = 4 }
+			}
+			add_faction_influence = {
+				faction = seyfiye_faction
+				influence = 0.5
+			}
+		}
+	}
+}

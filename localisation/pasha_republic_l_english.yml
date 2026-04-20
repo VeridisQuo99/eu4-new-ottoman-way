@@ -104,7 +104,7 @@
  pasha_event.10.d: "As the administration grows more complex, the factions within the Divan have begun to push their own agendas more aggressively. Each group seeks to monopolize the state's resources for their own ends, forcing us to take a side or risk total deadlock."
  pasha_event.10.a: "Side with the Military (Seyfiye)"
  pasha_event.10.b: "Side with the Bureaucracy (Kalemiye)"
- pasha_event.10.c: "Side with the Clergy (İlmiye)"
+ pasha_event.10.c: "Side with the Clergy (Ilmiye)"
  
  # Event 11
  pasha_event.11.t: "Inter-Faction Rivalry"

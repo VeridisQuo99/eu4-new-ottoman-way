@@ -7,29 +7,6 @@ seyfiye_faction = {
 		manpower_recovery_speed = 0.15
 		army_tradition = 0.5
 	}
-
-	monthly_influence = 0.1 # Temel artış
-
-	modifier = {
-        factor = 2
-        trigger = {
-            ruler_has_skill = { skill = mil value = 4 }
-        }
-    }
-   
-    modifier = {
-        factor = 3
-        trigger = {
-            ruler_has_skill = { skill = mil value = 5 }
-        }
-    }	
-
-	modifier = {
-        factor = 4
-        trigger = {
-            ruler_has_skill = { skill = mil value = 6 }
-        }
-    }	
 }
 
 # İlmiye (Men of the Pen) - Represents the judicial and religious authority
@@ -40,30 +17,6 @@ ilmiye_faction = {
 		global_tax_modifier = 0.10
 		global_missionary_strength = 0.01
 	}
-
-    monthly_influence = 0.1 # Temel artış
-
-    
-    modifier = {
-        factor = 2
-        trigger = {
-            ruler_has_skill = { skill = adm value = 4 }
-        }
-    }
-   
-    modifier = {
-        factor = 3
-        trigger = {
-            ruler_has_skill = { skill = adm value = 5 }
-        }
-    }	
-
-	modifier = {
-        factor = 4
-        trigger = {
-            ruler_has_skill = { skill = adm value = 6 }
-        }
-    }	
 }
 
 # Kalemiye (Men of the Bureaucracy) - Represents the administrative and mercantile class
@@ -74,27 +27,4 @@ kalemiye_faction = {
 		diplomatic_reputation = 1
 		global_trade_goods_size_modifier = 0.05
 	}
-
-	monthly_influence = 0.1 # Temel artış
-
-	modifier = {
-        factor = 2
-        trigger = {
-            ruler_has_skill = { skill = dip value = 4 }
-        }
-    }
-   
-    modifier = {
-        factor = 3
-        trigger = {
-            ruler_has_skill = { skill = dip value = 5 }
-        }
-    }	
-
-	modifier = {
-        factor = 4
-        trigger = {
-            ruler_has_skill = { skill = dip value = 6 }
-        }
-    }	
 }

@@ -581,15 +581,21 @@ country_event = {
     option = {
         name = "pasha_events.11.b"
         if = {
-            limit = { pasha_seyfiye_faction = 80 }
+            limit = {
+                faction_influence = { faction = seyfiye_faction influence = 80 }
+            }
             add_faction_influence = { faction = pasha_seyfiye_faction influence = -40 }
         }
         if = {
-            limit = { ilmiye_faction = 80 }
+            limit = {
+                faction_influence = { faction = ilmiye_faction influence = 80 }
+            }
             add_faction_influence = { faction = ilmiye_faction influence = -40 }
         }
         if = {
-            limit = { kalemiye_faction = 80 }
+            limit = {
+                faction_influence = { faction = kalemiye_faction influence = 80 }
+            }
             add_faction_influence = { faction = kalemiye_faction influence = -40 }
         }
         # -1 Stability yerine Stability Cost penaltısı [cite: 11]
@@ -597,6 +603,22 @@ country_event = {
             name = "pasha_political_instability"
             duration = 365
         }
+    }
+}
+
+# pasha_events.11 içindeki seçenek düzeltmesi
+option = {
+    name = "pasha_events.11.b"
+    if = {
+        limit = {
+            faction_influence = { faction = seyfiye_faction influence = 80 }
+        }
+        add_faction_influence = { faction = seyfiye_faction influence = -40 }
+    }
+    # İlmiye ve Kalemiye için de aynı 'faction_influence' yapısını kullanın.
+    add_country_modifier = {
+        name = "pasha_political_instability"
+        duration = 365
     }
 }
 
