@@ -53,8 +53,11 @@
 
  ### DECISIONS ###
  sultan_dissolves_parliament_title: "Dissolve the Divan"
- sultan_dissolves_parliament: "Dissolve the Divan"
  sultan_dissolves_parliament_desc: "The current Pasha has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the council and force early elections, though this will anger the established elites."
+ pasha_activate_automated_reports_title: "Delegate Faction Monitoring"
+ pasha_activate_automated_reports_desc: "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive monthly reports, but the influence will continue to shift in the background."
+ pasha_activate_manual_reports_title: "Demand Direct Faction Reports"
+ pasha_activate_manual_reports_desc: "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving monthly visual reports from each faction."
 
  ### EVENTS ###
  pasha_events.1.t: "The Grand Vizier's Confirmation"
@@ -111,6 +114,18 @@
  pasha_event.11.d: "The open rivalry between our ruling cliques has reached a boiling point. The state apparatus is paralyzed as officials wait to see which way the wind blows. We must intervene to curb this chaos."
  pasha_event.11.a: "Support the dominant faction to end the deadlock."
  pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
+
+ # Event 13
+ pasha_event.13.t: "The Divan's Monthly Influence"
+ pasha_event.13.d: "The Pashas and Viziers have provided their monthly update. Depending on the skills of our current leadership, the factions are shifting their weight within the state apparatus."
+ pasha_event.13.a: "Noted."
+
+ pasha_event.15.t: "The Grand Election of the Divan"
+ pasha_event.15.d: "The term of our Grand Vizier has come to an end. The factions of the state have gathered in the capital to present their candidates. While the Kalemiye promises administrative stability, the Seyfiye demands a stronger military hand. Our choice will shape the future of the Empire and must eventually face the scrutiny of the Senate."
+ pasha_event.15.a: "The current Vizier has served us well. Let him continue."
+ pasha_event.15.b: "The Kalemiye candidate is best suited for our bureaucracy."
+ pasha_event.15.c: "The Ilmiye scholar will guide our diplomatic efforts."
+ pasha_event.15.d: "The Seyfiye commander will lead our armies to glory."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."

@@ -52,5 +52,35 @@ country_decisions = {
         ai_will_do = {
             factor = 0 
         }
-    }
+    }    
+
+	# Decision to hide reports (Automate)
+	pasha_activate_automated_reports = {
+		potential = {
+			has_reform = pasha_council_republic
+			NOT = { has_country_flag = pasha_automated_reports }
+		}
+		allow = {
+			# Available to click anytime
+		}
+		effect = {
+			set_country_flag = pasha_automated_reports
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	# Decision to show reports (Manual)
+	pasha_activate_manual_reports = {
+		potential = {
+			has_reform = pasha_council_republic
+			has_country_flag = pasha_automated_reports
+		}
+		allow = {
+			# Available to click anytime
+		}
+		effect = {
+			clr_country_flag = pasha_automated_reports
+		}
+		ai_will_do = { factor = 0 }
+	}
 }
