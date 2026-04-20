@@ -495,38 +495,6 @@ country_event = {
     }
 }
 
-# EVENT 10: Yearly Faction Dynamics
-country_event = {
-	id = pasha_events.10
-	title = "pasha_events.10.t"
-	desc = "pasha_events.10.d"
-	picture = COURT_eventPicture
-
-	trigger = {
-        has_reform = pasha_council_republic
-    }
-    
-    mean_time_to_happen = {
-        months = 120 # Ortalama 10 yılda bir tetiklenir
-    }
-
-	# Option for war-time dynamics
-	option = {
-		name = "pasha_events.10.a" 
-		trigger = { is_at_war = yes }
-		add_faction_influence = { faction = seyfiye_faction influence = 5 }
-		add_faction_influence = { faction = kalemiye_faction influence = -2 }
-	}
-	
-	# Option for peace-time dynamics
-	option = {
-		name = "pasha_events.10.b" 
-		trigger = { is_at_war = no }
-		add_faction_influence = { faction = kalemiye_faction influence = 5 }
-		add_faction_influence = { faction = ilmiye_faction influence = -2 }
-	}
-}
-
 # EVENT 11: Faction Overextension
 country_event = {
     id = pasha_events.11

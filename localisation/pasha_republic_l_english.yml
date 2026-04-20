@@ -60,11 +60,12 @@
  pasha_activate_manual_reports_desc: "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving yearly visual reports from each faction."
 
  ### EVENTS ###
- pasha_events.1.t: "The Grand Vizier's Confirmation"
- pasha_events.1.d: "A new Pasha has been chosen by the Divan to lead the state. However, the Ayanlar (Senate) demand their traditional respects and privileges before confirming the appointment. How shall we handle them?"
- pasha_events.1.a: "Distribute bribes from the treasury."
- pasha_events.1.b: "Grant them greater local autonomy."
- pasha_events.1.c: "Bypass their authority entirely!"
+ # Event 1: Senate Confirmation
+ pasha_events.1.t: "The Senate Confirmation"
+ pasha_events.1.d: "The Senate has convened to deliberate on the appointment of our newly elected Grand Vizier. We must decide how to handle their demands to secure the new administration's legitimacy. Additionally, the inherent administrative, diplomatic, and military skills of our newly chosen leader will immediately shift the balance of power among the factions within the Divan, as detailed below."
+ pasha_events.1.a: "Bribe the Senate."
+ pasha_events.1.b: "Concede to the Senate's demands."
+ pasha_events.1.c: "Bypass the Senate entirely."
 
  pasha_events.2.t: "The Fate of the Sultanate"
  pasha_events.2.d: "The year is 1444. The young Mehmed II sits upon the throne, but the true power brokers of the state murmur in the shadows. Candarli Halil Pasha seeks to consolidate the power of the Divan. Shall the lineage of Osman shape the future from the shadows according to their historical destinies, or shall fate take a new, unpredictable path?"
@@ -101,13 +102,6 @@
  pasha_events.9.d: "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
  pasha_events.9.a: "The Sultan exerts his royal prerogative."
  pasha_events.9.b: "The Pashas solidify their grip on the administration."
-
- # Event 10
- pasha_event.10.t: "The Ambition of the Factions"
- pasha_event.10.d: "As the administration grows more complex, the factions within the Divan have begun to push their own agendas more aggressively. Each group seeks to monopolize the state's resources for their own ends, forcing us to take a side or risk total deadlock."
- pasha_event.10.a: "Side with the Military (Seyfiye)"
- pasha_event.10.b: "Side with the Bureaucracy (Kalemiye)"
- pasha_event.10.c: "Side with the Clergy (Ilmiye)"
  
  # Event 11
  pasha_event.11.t: "Inter-Faction Rivalry"
@@ -115,10 +109,10 @@
  pasha_event.11.a: "Support the dominant faction to end the deadlock."
  pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
 
- # Event 13
- pasha_event.13.t: "The Divan's Yearly Influence"
- pasha_event.13.d: "Depending on the skills of our current Pasha, the factions are shifting their weight within the Divan. This will affect the balance of power and the political landscape of the state."
- pasha_event.13.a: "Noted."
+ # Event 13 Localisation
+ pasha_event.13.t: "Annual Divan Report: Shifting Influences"
+ pasha_event.13.d: "Another year has passed, and the Divan has convened to assess the state of our Republic. The balance of power within the Imperial Council is never static; it bends to the will and capabilities of our Grand Vizier. The administrative acumen, diplomatic finesse, and military expertise of our current leader naturally empower certain factions over others. The changes in faction influence detailed below are not random occurrences, but a direct reflection of how our Vizier's personal skills are currently shaping the Kalemiye, Ilmiye, and Seyfiye."
+ pasha_event.13.a: "A reflection of our leadership."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
