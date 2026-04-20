@@ -94,11 +94,7 @@ country_event = {
     desc = "pasha_events.2.d"
     picture = COURT_eventPicture
 
-    trigger = {
-        tag = TUR
-        is_year = 1444
-        NOT = { has_country_flag = pasha_system_initialized }
-    }
+    is_triggered_only = yes
 
     immediate = {
         hidden_effect = {
@@ -699,121 +695,5 @@ country_event = {
 
     option = {
 		name = none
-	}
-}
-
-country_event = {
-	id = pasha_events.15
-	title = "pasha_event.15.t"
-	desc = "pasha_event.15.d"
-	picture = ELECTION_REPUBLICAN_eventPicture
-	
-	is_triggered_only = yes
-	
-	# --------------------------------------------------------------------------------
-	# OPTION 1: Keep the current Grand Vizier (Re-election)
-	# --------------------------------------------------------------------------------
-	option = {
-		name = "pasha_event.15.a" 
-		
-		# Vanilla Re-election Logic
-		if = {
-			limit = { has_country_flag = strengthened_signoria_flag }
-			add_republican_tradition = -20
-		}
-		else = {
-			add_republican_tradition = -10
-		}
-		
-		# Increase all stats by 1
-		add_ruler_stat = {
-			which = all
-			value = 1
-		}
-
-		# Faction Bonus 
-		if = {
-			limit = { faction_influence = { faction = seyfiye_faction influence = 70 } }
-			add_mil_power = 50
-		}
-
-        # Faction Bonus
-		if = {
-			limit = { faction_influence = { faction = kalemiye_faction influence = 70 } }
-			add_adm_power = 50
-		}
-
-        # Faction Bonus
-		if = {
-			limit = { faction_influence = { faction = ilmiye_faction influence = 70 } }
-			add_dip_power = 50
-		}
-		
-		# Trigger Senate Approval after 1 day
-		hidden_effect = {
-			country_event = { id = pasha_events.1 days = 1 }
-		}
-	}
-
-	# --------------------------------------------------------------------------------
-	# OPTION 2: Kalemiye Candidate (Bureaucrat - ADM Focus)
-	# --------------------------------------------------------------------------------
-	option = {
-		name = "pasha_event.15.b" 
-		
-		# Dynamic Stats based on Faction Power
-		if = {
-			limit = { faction_influence = { faction = kalemiye_faction influence = 60 } }
-			define_ruler = { adm = 5 dip = 2 mil = 2 } # Stronger candidate
-			add_faction_influence = { faction = kalemiye_faction influence = 5 }
-		}
-		else = {
-			define_ruler = { adm = 4 dip = 1 mil = 1 } # Standard candidate
-			add_faction_influence = { faction = seyfiye_faction influence = -5 }
-		}
-
-		hidden_effect = {
-			country_event = { id = pasha_events.1 days = 1 }
-		}
-	}
-
-	# --------------------------------------------------------------------------------
-	# OPTION 3: Ilmiye Candidate (Diplomat - DIP Focus)
-	# --------------------------------------------------------------------------------
-	option = {
-		name = "pasha_event.15.c" 
-		
-		if = {
-			limit = { faction_influence = { faction = ilmiye_faction influence = 60 } }
-			define_ruler = { adm = 2 dip = 5 mil = 2 }
-			add_faction_influence = { faction = ilmiye_faction influence = 5 }
-		}
-		else = {
-			define_ruler = { adm = 1 dip = 4 mil = 1 }
-		}
-
-		hidden_effect = {
-			country_event = { id = pasha_events.1 days = 1 }
-		}
-	}
-
-	# --------------------------------------------------------------------------------
-	# OPTION 4: Seyfiye Candidate (Military - MIL Focus)
-	# --------------------------------------------------------------------------------
-	option = {
-		name = "pasha_event.15.d" 
-		
-		if = {
-			limit = { faction_influence = { faction = seyfiye_faction influence = 60 } }
-			define_ruler = { adm = 2 dip = 2 mil = 5 }
-			add_faction_influence = { faction = seyfiye_faction influence = 5 }
-		}
-		else = {
-			define_ruler = { adm = 1 dip = 1 mil = 4 }
-		}
-
-		hidden_effect = {
-			country_event = { id = pasha_events.1 days = 1 }
-		}
 	}
 }

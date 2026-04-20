@@ -49,6 +49,4 @@ pasha_council_republic = {
         global_unrest = -1
         governing_capacity = 250 
     }
-
-    election_event = pasha_events.15
 }

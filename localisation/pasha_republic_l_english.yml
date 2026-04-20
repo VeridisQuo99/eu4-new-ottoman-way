@@ -120,13 +120,6 @@
  pasha_event.13.d: "The Pashas and Viziers have provided their monthly update. Depending on the skills of our current leadership, the factions are shifting their weight within the state apparatus."
  pasha_event.13.a: "Noted."
 
- pasha_event.15.t: "The Grand Election of the Divan"
- pasha_event.15.d: "The term of our Grand Vizier has come to an end. The factions of the state have gathered in the capital to present their candidates. While the Kalemiye promises administrative stability, the Seyfiye demands a stronger military hand. Our choice will shape the future of the Empire and must eventually face the scrutiny of the Senate."
- pasha_event.15.a: "The current Vizier has served us well. Let him continue."
- pasha_event.15.b: "The Kalemiye candidate is best suited for our bureaucracy."
- pasha_event.15.c: "The Ilmiye scholar will guide our diplomatic efforts."
- pasha_event.15.d: "The Seyfiye commander will lead our armies to glory."
-
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
  crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
@@ -135,6 +128,5 @@
  # Government Interaction Buttons
  pasha_favor_pashas: "Concessions to the Divan"
  pasha_favor_pashas_desc: "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
- 
  pasha_favor_sultan: "Assert Sultanic Authority"
  pasha_favor_sultan_desc: "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."

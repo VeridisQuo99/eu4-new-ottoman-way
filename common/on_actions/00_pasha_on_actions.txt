@@ -1,12 +1,39 @@
-on_republican_election = {
-    events = {
-        pasha_events.1 # Seçim yapıldıktan hemen sonra bu event tetiklenir
+on_startup = {
+    if = {
+        limit = { 
+            tag = TUR
+            is_year = 1444
+            NOT = { has_country_flag = pasha_system_initialized }
+        }
+        country_event = pasha_events.2 # Initialize Pasha System
     }
 }
 
-on_startup = {
-    events = {
-        # Triggers the initial setup event for the Ottoman Empire in 1444
-        pasha_events.2
+# country
+on_new_term_election = {
+    if = {
+        limit = { 
+            has_reform = pasha_council_republic
+        }
+        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
+    }
+}
+
+
+on_death_election = {
+    if = {
+        limit = { 
+            has_reform = pasha_council_republic
+        }
+        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
+    }
+}
+
+on_replace_governor = {
+	if = {
+        limit = { 
+            has_reform = pasha_council_republic
+        }
+        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
     }
 }
