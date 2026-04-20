@@ -9,35 +9,27 @@ country_event = {
 
     is_triggered_only = yes
 
+    # The event will be aborted for any country that does not have this specific reform
+	trigger = {
+		has_reform = pasha_council_republic
+	}
+
     # Seçilen adayın yeteneğine göre arka planda hizip güçlendirme
     immediate = {
-        # Kalemiye (ADM) adayı seçildiyse
-        if = {
-            limit = { 
-                adm = 4 
-                NOT = { dip = 4 } 
-                NOT = { mil = 4 } 
-            }
-            add_faction_influence = { faction = kalemiye_faction influence = 15 }
-        }
-        # İlmiye (DIP) adayı seçildiyse
-        if = {
-            limit = { 
-                dip = 4 
-                NOT = { adm = 4 } 
-                NOT = { mil = 4 } 
-            }
-            add_faction_influence = { faction = ilmiye_faction influence = 15 }
-        }
-        # Seyfiye (MIL) adayı seçildiyse
-        if = {
-            limit = { 
-                mil = 4 
-                NOT = { adm = 4 } 
-                NOT = { dip = 4 } 
-            }
-            add_faction_influence = { faction = seyfiye_faction influence = 15 }
-        }
+		# Kalemiye (ADM Skill)
+		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+
+		# Ilmiye (DIP Skill)
+		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+
+		# Seyfiye (MIL Skill)
+		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
     }
 
     # Option A: Bribe the Senate
@@ -95,6 +87,12 @@ country_event = {
     picture = COURT_eventPicture
 
     is_triggered_only = yes
+
+    trigger = {
+        tag = TUR
+        is_year = 1444
+        NOT = { has_country_flag = pasha_system_initialized }
+    }
 
     immediate = {
         hidden_effect = {
@@ -618,7 +616,7 @@ country_event = {
     }
 }
 
-# pasha_events.13: Visible Monthly Report
+# pasha_events.13: Visible Yearly Report
 country_event = {
 	id = pasha_events.13
 	title = "pasha_event.13.t"
@@ -630,26 +628,25 @@ country_event = {
 		NOT = { has_country_flag = pasha_automated_reports }
 	}
 
-	# Triggers roughly every 3 months on average to avoid spamming too much
 	mean_time_to_happen = {
 		months = 12
 	}
 
 	immediate = {
 		# Kalemiye (ADM Skill)
-		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
 
 		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
 
 		# Seyfiye (MIL Skill)
-		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
-		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
-		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
+		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
 	}
 
 	option = {
@@ -679,18 +676,43 @@ country_event = {
 	immediate = {
 		# Kalemiye (ADM Skill)
 		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
 
 		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
 
 		# Seyfiye (MIL Skill)
-		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
-		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
-		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
+		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+	}
+
+    option = {
+		name = none
+	}
+}
+
+country_event = {
+	id = pasha_events.15
+	title = none
+    desc = none
+    picture = none 
+	hidden = yes
+
+	# Kısıtlama burada yapılıyor, diğer cumhuriyetler eleniyor
+	trigger = {
+		has_reform = pasha_council_republic
+	}
+
+	immediate = {
+		# Asıl Senato Onayı eventini tam 60 gün (2 ay) sonra tetikler
+		country_event = {
+			id = pasha_events.1
+			days = 60 
+		}
 	}
 
     option = {

@@ -1,39 +1,23 @@
 on_startup = {
-    if = {
-        limit = { 
-            tag = TUR
-            is_year = 1444
-            NOT = { has_country_flag = pasha_system_initialized }
-        }
-        country_event = pasha_events.2 # Initialize Pasha System
-    }
+    events = {
+        pasha_events.2 # Senato onayı eventinin ID'sini buraya yaz (1 veya 2 ise değiştir)
+    }    
 }
 
-# country
 on_new_term_election = {
-    if = {
-        limit = { 
-            has_reform = pasha_council_republic
-        }
-        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
+    events = {
+        pasha_events.15 # Gecikmeyi sağlayacak aracı gizli event
     }
 }
-
 
 on_death_election = {
-    if = {
-        limit = { 
-            has_reform = pasha_council_republic
-        }
-        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
+    events = {
+        pasha_events.15 # Gecikmeyi sağlayacak aracı gizli event
     }
 }
 
 on_replace_governor = {
-	if = {
-        limit = { 
-            has_reform = pasha_council_republic
-        }
-        country_event = { id = pasha_events.1 days = 7 } # Senate Approval
+    events = {
+        pasha_events.15 # Gecikmeyi sağlayacak aracı gizli event
     }
 }

@@ -38,11 +38,11 @@ pasha_power_mechanic = {
             
             # Requires 10 Republican Tradition to be clicked
             trigger = {
-                republican_tradition = 10
+                republican_tradition = 5
             }
             
             effect = {
-                add_republican_tradition = -10 
+                add_republican_tradition = -5
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
             }
         }

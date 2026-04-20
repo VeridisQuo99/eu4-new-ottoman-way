@@ -55,9 +55,9 @@
  sultan_dissolves_parliament_title: "Dissolve the Divan"
  sultan_dissolves_parliament_desc: "The current Pasha has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the council and force early elections, though this will anger the established elites."
  pasha_activate_automated_reports_title: "Delegate Faction Monitoring"
- pasha_activate_automated_reports_desc: "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive monthly reports, but the influence will continue to shift in the background."
+ pasha_activate_automated_reports_desc: "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive yearly reports, but the influence will continue to shift in the background."
  pasha_activate_manual_reports_title: "Demand Direct Faction Reports"
- pasha_activate_manual_reports_desc: "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving monthly visual reports from each faction."
+ pasha_activate_manual_reports_desc: "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving yearly visual reports from each faction."
 
  ### EVENTS ###
  pasha_events.1.t: "The Grand Vizier's Confirmation"
@@ -116,8 +116,8 @@
  pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
 
  # Event 13
- pasha_event.13.t: "The Divan's Monthly Influence"
- pasha_event.13.d: "The Pashas and Viziers have provided their monthly update. Depending on the skills of our current leadership, the factions are shifting their weight within the state apparatus."
+ pasha_event.13.t: "The Divan's Yearly Influence"
+ pasha_event.13.d: "Depending on the skills of our current Pasha, the factions are shifting their weight within the Divan. This will affect the balance of power and the political landscape of the state."
  pasha_event.13.a: "Noted."
 
  ### CUSTOM TOOLTIPS ###
