@@ -1,6 +1,6 @@
 on_startup = {
     events = {
-        pasha_events.2 # Senato onayı eventinin ID'sini buraya yaz (1 veya 2 ise değiştir)
+        pasha_events.16 # Senato onayı eventinin ID'sini buraya yaz (1 veya 2 ise değiştir)
     }    
 }
 

@@ -9,27 +9,22 @@ country_event = {
 
     is_triggered_only = yes
 
-    # The event will be aborted for any country that does not have this specific reform
-	trigger = {
-		has_reform = pasha_council_republic
-	}
-
     # Seçilen adayın yeteneğine göre arka planda hizip güçlendirme
     immediate = {
 		# Kalemiye (ADM Skill)
-		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
 
 		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
 
 		# Seyfiye (MIL Skill)
-		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
-		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
-		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
+		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
+		if = { limit = { mil = 5 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
+		if = { limit = { mil = 6 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
     }
 
     # Option A: Bribe the Senate
@@ -87,12 +82,6 @@ country_event = {
     picture = COURT_eventPicture
 
     is_triggered_only = yes
-
-    trigger = {
-        tag = TUR
-        is_year = 1444
-        NOT = { has_country_flag = pasha_system_initialized }
-    }
 
     immediate = {
         hidden_effect = {
@@ -695,6 +684,7 @@ country_event = {
 	}
 }
 
+# Senato Onayı eventinin tetiklenmesi
 country_event = {
 	id = pasha_events.15
 	title = none
@@ -702,17 +692,50 @@ country_event = {
     picture = none 
 	hidden = yes
 
-	# Kısıtlama burada yapılıyor, diğer cumhuriyetler eleniyor
-	trigger = {
-		has_reform = pasha_council_republic
-	}
+    is_triggered_only = yes
 
 	immediate = {
-		# Asıl Senato Onayı eventini tam 60 gün (2 ay) sonra tetikler
-		country_event = {
-			id = pasha_events.1
-			days = 60 
-		}
+        if = {
+            limit = {
+                # Kısıtlama burada yapılıyor, diğer cumhuriyetler eleniyor
+                has_reform = pasha_council_republic
+            }
+            # Asıl Senato Onayı eventini tam 60 gün (2 ay) sonra tetikler
+            country_event = {
+                id = pasha_events.1
+                days = 60 
+            }
+        }
+	}
+
+    option = {
+		name = none
+	}
+}
+
+# Oyunun başında cumhuriyetin kurulma eventi
+country_event = {
+	id = pasha_events.16
+	title = none
+    desc = none
+    picture = none 
+	hidden = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                # Kısıtlama burada yapılıyor, diğer cumhuriyetler eleniyor
+                tag = TUR
+                is_year = 1444
+                NOT = { has_country_flag = pasha_system_initialized }
+            }
+            # Asıl Senato Onayı eventini tam 60 gün (2 ay) sonra tetikler
+            country_event = {
+                id = pasha_events.2
+            }
+        }
 	}
 
     option = {
