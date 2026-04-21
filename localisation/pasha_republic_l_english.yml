@@ -41,6 +41,19 @@
  pasha_council_republic: "Pasha Republic"
  pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the Empire, but the administration is led by a powerful Grand Vizier elected by the state's dominant factions."
 
+ # Parliament Bribes
+ bribe_pasha_seyfiye: "Distribute Ulufe to the Seyfiye"
+ bribe_pasha_ilmiye: "Endow a Waqf for the Ilmiye"
+ bribe_pasha_kalemiye: "Grant Iltizam to the Kalemiye"
+
+ # Parliament Issues
+ issue_military_campaign_funding: "§PMilitary Campaign Funding§!"
+ issue_military_campaign_funding_desc: "The Seyfiye demands additional funding and autonomy for the upcoming campaigns. Passing this issue will empower the military elite but drain our imperial coffers."
+ issue_judicial_and_religious_reform: "§PJudicial and Religious Reform§!"
+ issue_judicial_and_religious_reform_desc: "The Ilmiye seeks to expand the influence of the Ulema and standardize the empire's laws. This will increase national stability, but limit the absolute authority of the Sultan's court."
+ issue_expand_trade_privileges: "§PExpand Bureaucratic Trade Privileges§!"
+ issue_expand_trade_privileges_desc: "The Kalemiye proposes expanding trade privileges and restructuring tax collection. This reform will significantly boost our economy, though it may breed corruption within the civil service."
+
  ### Triggered Modifiers Localisation
  pasha_tier_1_absolute: "Absolute Pasha Authority"
  desc_pasha_tier_1_absolute: "The Pashas have seized total control over the Sublime Porte, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"

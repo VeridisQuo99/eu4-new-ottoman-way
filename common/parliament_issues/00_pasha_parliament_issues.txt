@@ -12,12 +12,20 @@ issue_military_campaign_funding = {
 			influence = 15
 		}
 		add_army_tradition = 10
-		change_variable = { which = pasha_power value = -5 }
+		add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
 	}
 
 	modifier = {
 		global_manpower_modifier = 0.10
 		land_maintenance_modifier = -0.05
+	}
+
+	chance = {
+		factor = 100 
 	}
 }
 
@@ -36,12 +44,20 @@ issue_judicial_and_religious_reform = {
 		}
 		add_devotion = 10 
 		add_stability = 1
-		change_variable = { which = pasha_power value = -5 }
+		add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
 	}
 
 	modifier = {
 		build_cost = -0.10
 		global_unrest = -2
+	}
+
+	chance = {
+		factor = 100 
 	}
 }
 
@@ -59,11 +75,19 @@ issue_expand_trade_privileges = {
 			influence = 15
 		}
 		add_mercantilism = 1
-		change_variable = { which = pasha_power value = -5 }
+		add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
 	}
 
 	modifier = {
 		trade_efficiency = 0.15
 		diplomatic_upkeep = 1
+	}
+
+	chance = {
+		factor = 100 
 	}
 }

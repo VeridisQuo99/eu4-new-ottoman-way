@@ -131,10 +131,12 @@ crisis_of_the_state = {
 		}			
 	}
 
+	# Active disaster modifiers
 	modifier = {
-		global_unrest = 3
-		stability_cost_modifier = 0.25
-		global_tax_modifier = -0.10
+		global_unrest = 5 # Civil war in the streets
+		land_morale = -0.15 # Military structure is divided
+		all_power_cost = 0.10 # Bureaucracy is paralyzed
+		stability_cost_modifier = 0.25 # Extremely hard to stabilize the country manually
 	}
 
 	on_start = pasha_events.3

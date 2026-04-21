@@ -395,9 +395,10 @@ country_event = {
             }
 
             hidden_effect = {
-                set_variable = {
+                # Padişahın (Mevcut Vezirin) yaşını değişkene aktarır
+                export_to_variable = {
                     which = current_vizier_age
-                    value = monarch_age
+                    value = ruler_age
                 }
 
                 change_variable = {
