@@ -29,6 +29,31 @@ pasha_power_mechanic = {
                 add_corruption = 1
                 add_years_of_income = -0.5 
             }
+
+            # pasha_favor_pashas butonu (Divanı güçlendirir)
+            ai_chance = {
+                factor = 0 # Normal şartlarda sıfırdır, statükoyu bozmaz.
+                
+                # Eğer güç barı 70'in üstüne çıkarsa AI dengelemek için basmaya başlar.
+                modifier = {
+                    factor = 50
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 70
+                    }
+                }
+                
+                # Eğer güç barı 80'in (Disaster sınırı) üstüne çıkarsa AI panikler ve kesinlikle basar.
+                modifier = {
+                    factor = 200
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 80
+                    }
+                }
+            }
         }
 
         # Right Button: Pulls power to 100 (Favor Sultan)
@@ -44,6 +69,41 @@ pasha_power_mechanic = {
             effect = {
                 add_republican_tradition = -5
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
+            }
+
+
+            # pasha_favor_sultan butonu (Sultanı güçlendirir)
+            ai_chance = {
+                factor = 0 # Normalde AI bu butona gereksiz yere basıp puan harcamaz.
+                
+                # Eğer güç barı 30'un altına inerse AI tehlikeyi sezer ve basmaya başlar.
+                modifier = {
+                    factor = 50
+                    NOT = {
+                        has_government_power = {
+                            mechanic_type = pasha_power_mechanic
+                            power_type = pasha_power
+                            value = 30
+                        }
+                    }
+                }
+                
+                # Eğer güç barı 20'nin (Disaster sınırı) altına inerse AI panikler ve kesinlikle basar.
+                modifier = {
+                    factor = 200
+                    NOT = {
+                        has_government_power = {
+                            mechanic_type = pasha_power_mechanic
+                            power_type = pasha_power
+                            value = 20
+                        }
+                    }
+                }
+
+                modifier = {
+                    factor = 0
+                    NOT = { republican_tradition = 50 } # Prevents AI from clicking if it will compromise Republic stability
+                }
             }
         }
     }

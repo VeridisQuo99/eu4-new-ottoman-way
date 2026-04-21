@@ -38,6 +38,18 @@ country_event = {
             value = -10
         }
         custom_tooltip = "The Senate has been bribed to accept the new Pasha."
+
+        ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				is_in_deficit = yes # If AI is losing money, it won't bribe
+			}
+			modifier = {
+				factor = 0
+				corruption = 5 # If corruption is already high, avoid adding more
+			}
+		}
     }
 
     # Option B: Concede to the Senate
@@ -55,6 +67,14 @@ country_event = {
             }
             add_local_autonomy = 10
         }
+
+        ai_chance = {
+			factor = 50 # Default safe option for AI
+			modifier = {
+				factor = 2
+				is_in_deficit = yes # If poor, it prefers this over bribing
+			}
+		}
     }
 
     # Option C: Bypass the Senate
@@ -71,6 +91,22 @@ country_event = {
             name = "angry_senate_modifier"
             duration = 1460
         }
+
+        ai_chance = {
+			factor = 10 # AI generally avoids losing stability
+			modifier = {
+				factor = 0
+				NOT = { stability = 1 } # AI will NEVER pick this if stability is 0 or negative
+			}
+			modifier = {
+				factor = 3
+				stability = 3 # If stability is maxed, AI is more willing to burn it
+			}
+            modifier = {
+				factor = 0
+				NOT = { republican_tradition = 50 } # Will not bypass senate if RT is below 50
+			}
+		}
     }
 }
 
@@ -118,6 +154,10 @@ country_event = {
                 value = 1
             }
         }
+
+        ai_chance = {
+			factor = 90 # AI strongly prefers the historical Sultan path
+		}
     }
 
     # Option B: Random Path
@@ -129,6 +169,10 @@ country_event = {
             33 = { add_country_modifier = { name = "random_sultan_diplomat" duration = -1 } }
             34 = { add_country_modifier = { name = "random_sultan_administrator" duration = -1 } }
         }
+
+        ai_chance = {
+			factor = 10 # Rare alternate history path for AI
+		}
     }
 }
 
@@ -174,6 +218,10 @@ country_event = {
 		}
 		
 		set_country_flag = disaster_sided_with_sultan
+
+        ai_chance = {
+			factor = 25 # AI defaults to Sultan if status quo is not favorable
+		}
 	}
 
 	# Option B: Maintain the Status Quo
@@ -187,6 +235,10 @@ country_event = {
 		}
 		
 		set_country_flag = disaster_sided_with_status_quo
+
+        ai_chance = {
+			factor = 70 # AI heavily prefers maintaining the status quo and stability
+		}
 	}
 
 	# Option C: Side with the Pasha
@@ -222,6 +274,10 @@ country_event = {
 		}
 		
 		set_country_flag = disaster_sided_with_pasha
+
+        ai_chance = {
+			factor = 5 # AI almost never supports a full bureaucratic takeover
+		}
 	}
 }
 
@@ -480,6 +536,15 @@ country_event = {
         } 
         add_prestige = 5
         add_republican_tradition = -10
+
+        ai_chance = {
+			factor = 85 # No middle ground, AI chooses the Sultan
+
+            modifier = {
+				factor = 0
+				NOT = { republican_tradition = 50 } # Will not bypass senate if RT is below 50
+			}
+		}
     }
 
     # Option B: The Pashas solidify their grip
@@ -492,6 +557,10 @@ country_event = {
         } 
         add_republican_tradition = 10
         add_prestige = -25
+
+        ai_chance = {
+			factor = 15
+		}
     }
 }
 
@@ -527,6 +596,14 @@ country_event = {
         add_years_of_income = -0.5
         add_corruption = 2
         add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
+
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                corruption = 5 # Prevent AI from spiraling into corruption
+            }
+        }
     }
 
     option = {
@@ -552,6 +629,10 @@ country_event = {
         add_country_modifier = {
             name = "pasha_political_instability"
             duration = 365
+        }
+
+        ai_chance = {
+            factor = 80 # AI heavily prefers resetting the influence to restore balance
         }
     }
 }
