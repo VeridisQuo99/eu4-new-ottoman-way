@@ -11,7 +11,7 @@ issue_military_campaign_funding = {
 			faction = seyfiye_faction
 			influence = 15
 		}
-		add_army_tradition = 10
+		add_army_tradition = 5
 		add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
@@ -74,7 +74,7 @@ issue_expand_trade_privileges = {
 			faction = kalemiye_faction
 			influence = 15
 		}
-		add_mercantilism = 1
+		add_mercantilism = 2
 		add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power

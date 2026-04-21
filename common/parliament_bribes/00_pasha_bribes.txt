@@ -1,11 +1,11 @@
 # 1. Seyfiye Rüşveti: Ulufe Dağıtımı
 bribe_pasha_seyfiye = {
 	trigger = {
-		FROM = { has_reform = pasha_council_republic }
+		owner = { has_reform = pasha_council_republic }
 	}
 	effect = {
-		FROM = {
-			add_years_of_income = -0.1 # Hazineden yıllık gelirin %10'u kadar para çıkar
+		owner = {
+			add_years_of_income = -0.1 
 			add_faction_influence = {
 				faction = seyfiye_faction
 				influence = 5
@@ -13,18 +13,19 @@ bribe_pasha_seyfiye = {
 		}
 	}
 	ai_will_do = {
-		factor = 10
+		factor = 1000 
 		modifier = {
 			factor = 0
-			FROM.faction_influence = {
-				faction = seyfiye_faction
-				value = 70
+			owner = {
+				faction_influence = {
+					faction = seyfiye_faction
+					influence = 70
+				}
 			}
 		}
-		# Yapay zeka bütçe açığı veriyorsa ulufe dağıtmaz
 		modifier = {
 			factor = 0
-			FROM = { is_in_deficit = yes }
+			owner = { is_in_deficit = yes }
 		}
 	}
 }
@@ -32,13 +33,11 @@ bribe_pasha_seyfiye = {
 # 2. İlmiye Rüşveti: Vakıf Bağışla
 bribe_pasha_ilmiye = {
 	trigger = {
-		FROM = { has_reform = pasha_council_republic }
+		owner = { has_reform = pasha_council_republic }
 	}
 	effect = {
-		# Vakıflar vergiden muaf olduğu için o toprağın (ROOT) otonomisi artar
 		add_local_autonomy = 5 
-		
-		FROM = {
+		owner = {
 			add_faction_influence = {
 				faction = ilmiye_faction
 				influence = 5
@@ -46,12 +45,14 @@ bribe_pasha_ilmiye = {
 		}
 	}
 	ai_will_do = {
-		factor = 10
+		factor = 1000
 		modifier = {
 			factor = 0
-			FROM.faction_influence = {
-				faction = ilmiye_faction
-				value = 70
+			owner = {
+				faction_influence = {
+					faction = ilmiye_faction
+					influence = 70
+				}
 			}
 		}
 	}
@@ -60,12 +61,11 @@ bribe_pasha_ilmiye = {
 # 3. Kalemiye Rüşveti: İltizam Hakkı Ver
 bribe_pasha_kalemiye = {
 	trigger = {
-		FROM = { has_reform = pasha_council_republic }
+		owner = { has_reform = pasha_council_republic }
 	}
 	effect = {
-		
-		FROM = {
-			add_corruption = 0.5 # Devlet içi yozlaşmayı tetikler
+		owner = {
+			add_corruption = 0.5 
 			add_faction_influence = {
 				faction = kalemiye_faction
 				influence = 5
@@ -73,18 +73,19 @@ bribe_pasha_kalemiye = {
 		}
 	}
 	ai_will_do = {
-		factor = 10
+		factor = 1000
 		modifier = {
 			factor = 0
-			FROM.faction_influence = {
-				faction = kalemiye_faction
-				value = 70
+			owner = {
+				faction_influence = {
+					faction = kalemiye_faction
+					influence = 70
+				}
 			}
 		}
-		# Yapay zeka corruption seviyesi zaten çok yüksekse bu rüşvetten kaçınır
 		modifier = {
 			factor = 0
-			FROM = { corruption = 3 }
+			owner = { corruption = 3 }
 		}
 	}
 }
