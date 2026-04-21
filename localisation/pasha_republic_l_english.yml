@@ -1,7 +1,7 @@
 ﻿l_english:
  ### DISASTERS ###
  crisis_of_the_state: "Internal Power Struggle"
- crisis_of_the_state_desc: "The delicate balance of power between the Palace and the Pashas has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
+ crisis_of_the_state_desc: "The delicate balance of power between the Imperial Court and the Sublime Porte has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
 
  ### EVENT MODIFIERS ###
  angry_senate_modifier: "Senate Outrage"
@@ -22,38 +22,38 @@
  
  ### FACTIONS ###
  seyfiye_faction: "Men of the Sword (Seyfiye)"
- seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, discipline, and the glory of the army."
- ilmiye_faction: "Men of the Pen (Ilmiye)"
- ilmiye_faction_FACTION_DESC: "The judicial and religious authorities, including the Kazaskers and Ulema. They focus on internal stability, justice, and religious devotion."
- kalemiye_faction: "Men of the Bureaucracy (Kalemiye)"
- kalemiye_faction_FACTION_DESC: "The civil and administrative class, consisting of Defterdars and prominent merchants. They strive for economic prosperity and diplomatic finesse."
+ seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, absolute discipline, and the martial glory of the Empire."
+ ilmiye_faction: "Men of Learning (Ilmiye)"
+ ilmiye_faction_FACTION_DESC: "The judicial and religious authorities, including the Kazaskers, Sheikh ul-Islam, and the Ulema. They focus on internal stability, legal justice, and religious devotion."
+ kalemiye_faction: "Men of the Pen (Kalemiye)"
+ kalemiye_faction_FACTION_DESC: "The civil and administrative bureaucracy, consisting of Defterdars, Nişancıs, and clerks. They strive for economic prosperity, efficient taxation, and diplomatic finesse."
 
  ### GOVERNMENT MECHANICS ###
  pasha_power: "Imperial Authority"
- pasha_power_desc: "The scale of power between the Imperial Court (Padishah) and the Imperial Divan (Divan is the body of the government which includes the Senate (Parliament) and the ).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
+ pasha_power_desc: "The scale of power between the Imperial Court (Padishah) and the Sublime Porte (The Grand Vizier and the Divan).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
 
  ### GOVERNMENT POWERS ###
  pasha_power_mechanic: "Balance of Power"
- pasha_power_mechanic_desc: "The struggle for supremacy between the Imperial Court (Padishah) and the Imperial Divan"
+ pasha_power_mechanic_desc: "The eternal struggle for supremacy between the sovereign Imperial Court and the administrative Sublime Porte."
  ability_pasha_power_mechanic: "Balance of Power"
 
  ### GOVERNMENT REFORMS ###
  pasha_council_republic: "Pasha Republic"
- pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the state, but the administration is led by a powerful Grand Vizier elected by the factions of the state."
+ pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the Empire, but the administration is led by a powerful Grand Vizier elected by the state's dominant factions."
 
  ### Triggered Modifiers Localisation
  pasha_tier_1_absolute: "Absolute Pasha Authority"
- desc_pasha_tier_1_absolute: "The Pashas have seized total control over the Divan, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"
+ desc_pasha_tier_1_absolute: "The Pashas have seized total control over the Sublime Porte, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"
  pasha_tier_2_dominant: "Pasha Dominance"
  desc_pasha_tier_2_dominant: "The Pashas hold significant sway over state affairs and the bureaucracy.\n\n§YActive when the balance of power is between 20 and 40.§!"
  sultan_tier_3_dominant: "Sultan's Resurgence"
- desc_sultan_tier_3_dominant: "The Sultan is effectively reasserting traditional authority over the council.\n\n§YActive when the balance of power is between 60 and 80.§!"
+ desc_sultan_tier_3_dominant: "The Sultan is effectively reasserting traditional authority over the Imperial Council.\n\n§YActive when the balance of power is between 60 and 80.§!"
  sultan_tier_4_absolute: "Absolute Sultanate"
- desc_sultan_tier_4_absolute: "The Sultan rules with an iron fist, completely unchallenged by the Pashas.\n\n§YActive when the balance of power is between 80 and 100.§!"
+ desc_sultan_tier_4_absolute: "The Sultan rules with an iron fist, completely unchallenged by the ambitions of the Pashas.\n\n§YActive when the balance of power is between 80 and 100.§!"
 
  ### DECISIONS ###
- sultan_dissolves_parliament_title: "Dissolve the Divan"
- sultan_dissolves_parliament_desc: "The current Pasha has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the council and force early elections, though this will anger the established elites."
+ sultan_dissolves_parliament_title: "Dissolve the Imperial Senate"
+ sultan_dissolves_parliament_desc: "The current Divan has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the assembly and force early elections, though this will anger the established elites."
  pasha_activate_automated_reports_title: "Delegate Faction Monitoring"
  pasha_activate_automated_reports_desc: "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive yearly reports, but the influence will continue to shift in the background."
  pasha_activate_manual_reports_title: "Demand Direct Faction Reports"
@@ -62,19 +62,19 @@
  ### EVENTS ###
  # Event 1: Senate Confirmation
  pasha_events.1.t: "The Senate Confirmation"
- pasha_events.1.d: "The Senate has convened to deliberate on the appointment of our newly elected Grand Vizier. We must decide how to handle their demands to secure the new administration's legitimacy. Additionally, the inherent administrative, diplomatic, and military skills of our newly chosen leader will immediately shift the balance of power among the factions within the Divan, as detailed below."
+ pasha_events.1.d: "The Imperial Senate has convened to deliberate on the appointment of our newly elected Grand Vizier. We must decide how to handle their demands to secure the new administration's legitimacy. Additionally, the inherent administrative, diplomatic, and military skills of our newly chosen leader will immediately shift the balance of power among the factions within the Divan, as detailed below."
  pasha_events.1.a: "Bribe the Senate."
  pasha_events.1.b: "Concede to the Senate's demands."
  pasha_events.1.c: "Bypass the Senate entirely."
 
  pasha_events.2.t: "The Fate of the Sultanate"
- pasha_events.2.d: "The year is 1444. The young Mehmed II sits upon the throne, but the true power brokers of the state murmur in the shadows. Candarli Halil Pasha seeks to consolidate the power of the Divan. Shall the lineage of Osman shape the future from the shadows according to their historical destinies, or shall fate take a new, unpredictable path?"
+ pasha_events.2.d: "The year is 1444. The young Mehmed II sits upon the throne, but the true power brokers of the state murmur in the shadows. Çandarlı Halil Pasha seeks to consolidate the power of the Divan. Shall the lineage of Osman shape the future from the shadows according to their historical destinies, or shall fate take a new, unpredictable path?"
  pasha_events.2.a: "Follow the historical path of the Sultans."
  pasha_events.2.b: "Let fate decide the rulers of the shadows."
 
  pasha_events.3.t: "The Crisis of the State"
- pasha_events.3.d: "The political maneuvering has finally broken the fragile peace. Partisans of the Palace and ambitious supporters of the Divan are clashing in the streets. The balance of power is entirely shattered. We must decide who to back in this civil strife, or risk watching the state tear itself apart."
- pasha_events.3.a: "Rally the Janissaries! The Sultan is the true ruler."
+ pasha_events.3.d: "The political maneuvering has finally broken the fragile peace. Partisans of the Imperial Court and ambitious supporters of the Divan are clashing in the streets. The balance of power is entirely shattered. We must decide who to back in this civil strife, or risk watching the Empire tear itself apart."
+ pasha_events.3.a: "Rally the Loyalists! The Sultan is the true ruler."
  pasha_events.3.b: "Try to maintain order. The state must endure."
  pasha_events.3.c: "The Divan is the state! Support the Pasha."
 
@@ -87,14 +87,14 @@
  pasha_events.5.a: "May their reign be prosperous."
 
  pasha_events.6.t: "The Restoration of the Monarchy"
- pasha_events.6.d: "The partisans of the Palace have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
+ pasha_events.6.d: "The partisans of the Imperial Court have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
  pasha_events.6.a: "Absolute power to the House of Osman!"
 
  pasha_events.7.t: "A New Dynasty"
  pasha_events.7.d: "The House of Osman has been effectively cast aside. The victorious Grand Vizier has consolidated all power, eliminating royalist opposition. The Republic's facade has crumbled, giving way to a new autocracy ruled by the Pasha's own bloodline."
  pasha_events.7.a: "A new era of strongman rule begins."
 
- pasha_events.8.t: "The Divan Prevails"
+ pasha_events.8.t: "The Sublime Porte Prevails"
  pasha_events.8.d: "Despite the chaos and bloodshed, the institutions of the Pasha Republic have survived. The radical elements of both the Palace and the dictatorial Pashas have been sidelined, restoring the delicate balance of the council. The Republic lives to see another day."
  pasha_events.8.a: "The Republic stands strong."
 
@@ -109,18 +109,18 @@
  pasha_event.11.a: "Support the dominant faction to end the deadlock."
  pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
 
- # Event 13 Localisation
+ # Event 13
  pasha_event.13.t: "Annual Divan Report: Shifting Influences"
  pasha_event.13.d: "Another year has passed, and the Divan has convened to assess the state of our Republic. The balance of power within the Imperial Council is never static; it bends to the will and capabilities of our Grand Vizier. The administrative acumen, diplomatic finesse, and military expertise of our current leader naturally empower certain factions over others. The changes in faction influence detailed below are not random occurrences, but a direct reflection of how our Vizier's personal skills are currently shaping the Kalemiye, Ilmiye, and Seyfiye."
  pasha_event.13.a: "A reflection of our leadership."
-
+ 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
  crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
  crisis_sided_with_pasha_or_padisah: "(If sided with the Pasha or Padisah) Stability must be at least 1"
 
  # Government Interaction Buttons
- pasha_favor_pashas: "Concessions to the Divan"
+ pasha_favor_pashas: "Concessions to the Sublime Porte"
  pasha_favor_pashas_desc: "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
  pasha_favor_sultan: "Assert Sultanic Authority"
  pasha_favor_sultan_desc: "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."
