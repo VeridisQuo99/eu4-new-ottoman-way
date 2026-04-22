@@ -20,6 +20,29 @@ sultan_bayezid_ii_modifier = {
     technology_cost = -0.05
 }
 
+# I. Selim (Yavuz)
+sultan_selim_i_modifier = {
+	discipline = 0.05
+	land_morale = 0.10
+	global_prestige = 1
+	manpower_recovery_speed = 0.15
+}
+
+# I. Süleyman (Kanuni)
+sultan_suleiman_i_modifier = {
+	administrative_efficiency = 0.05
+	core_creation_cost = -0.10
+	imperial_authority = 0.10
+	global_unrest = -2
+}
+
+# II. Selim (Sarı) - Divan'ın otoritesinin artmaya başladığı dönem
+sultan_selim_ii_modifier = {
+	global_tax_modifier = 0.05
+	diplomatic_reputation = 1
+	stability_cost_modifier = -0.10
+}
+
 # Random: Militarist
 random_sultan_militarist = {
     land_morale = 0.10

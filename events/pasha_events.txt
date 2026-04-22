@@ -142,18 +142,28 @@ country_event = {
 
     # Option A: Historical Path
     option = {
-        name = "pasha_events.2.a" 
-        set_country_flag = historical_sultans_path
-        add_country_modifier = {
-            name = "sultan_mehmed_ii_modifier"
-            duration = -1 
-        }
-        hidden_effect = {
+        name = "pasha_events.2.a" # Restore the Sultan's Power
+
+		hidden_effect = {
+			set_global_flag = pasha_sultan_mehmed_ii
+            set_country_flag = historical_sultans_path
+			
             change_variable = {
                 which = sultan_count_var
                 value = 1
             }
+		}
+
+        add_country_modifier = {
+            name = sultan_mehmed_ii_modifier
+            duration = -1
         }
+
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 20 # Güç Sultanda toplanır (Artı değer)
+		}
 
         ai_chance = {
 			factor = 90 # AI strongly prefers the historical Sultan path
@@ -169,6 +179,12 @@ country_event = {
             33 = { add_country_modifier = { name = "random_sultan_diplomat" duration = -1 } }
             34 = { add_country_modifier = { name = "random_sultan_administrator" duration = -1 } }
         }
+
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -20 # Güç Paşalara/Divana kayar (Eksi değer)
+		}
 
         ai_chance = {
 			factor = 10 # Rare alternate history path for AI
@@ -290,9 +306,12 @@ country_event = {
     picture = DEATH_OF_A_HEIR_eventPicture
 
     trigger = {
+        tag = TUR
         has_country_flag = historical_sultans_path
-        has_country_modifier = sultan_mehmed_ii_modifier
+		has_reform = pasha_council_republic
         is_year = 1481 # The historical death year of Mehmed II
+        has_global_flag = pasha_sultan_mehmed_ii
+		NOT = { has_global_flag = pasha_sultan_bayezid_ii }    
     }
 
     mean_time_to_happen = {
@@ -301,17 +320,28 @@ country_event = {
 
     option = {
         name = "pasha_events.4.a" # Bayezid II ascends to the throne
-        remove_country_modifier = sultan_mehmed_ii_modifier
-        add_country_modifier = {
-            name = "sultan_bayezid_ii_modifier"
-            duration = -1
-        }
 
         hidden_effect = {
+			clr_global_flag = pasha_sultan_mehmed_ii
+			set_global_flag = pasha_sultan_bayezid_ii
+
             change_variable = {
                 which = sultan_count_var
                 value = 1
             }
+		}
+		add_stability = 1
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -10 # II. Bayezid dönemi güç merkeze göre biraz Paşalara kayar
+		}
+
+        remove_country_modifier = sultan_mehmed_ii_modifier
+
+        add_country_modifier = {
+            name = "sultan_bayezid_ii_modifier"
+            duration = -1
         }
     }
 }
@@ -428,16 +458,27 @@ country_event = {
             }
         }
 
-        clr_country_flag = disaster_sided_with_sultan
-        clr_country_flag = disaster_sided_with_status_quo
-        clr_country_flag = disaster_sided_with_pasha
-        # clr_country_flag = pasha_system_initialized
-        
-        remove_country_modifier = sultan_mehmed_ii_modifier
-        remove_country_modifier = sultan_bayezid_ii_modifier
-        remove_country_modifier = random_sultan_militarist
-        remove_country_modifier = random_sultan_diplomat
-        remove_country_modifier = random_sultan_administrator
+        hidden_effect = {
+            clr_global_flag = pasha_sultan_mehmed_ii
+            clr_global_flag = pasha_sultan_bayezid_ii
+            clr_global_flag = pasha_sultan_selim_i
+            clr_global_flag = pasha_sultan_suleiman_i
+            clr_global_flag = pasha_sultan_selim_ii
+
+            clr_country_flag = disaster_sided_with_sultan
+            clr_country_flag = disaster_sided_with_status_quo
+            clr_country_flag = disaster_sided_with_pasha
+            
+            remove_country_modifier = random_sultan_militarist
+            remove_country_modifier = random_sultan_diplomat
+            remove_country_modifier = random_sultan_administrator				
+			remove_country_modifier = sultan_mehmed_ii_modifier
+			remove_country_modifier = sultan_bayezid_ii_modifier
+			remove_country_modifier = sultan_selim_i_modifier
+			remove_country_modifier = sultan_suleiman_i_modifier
+			remove_country_modifier = sultan_selim_ii_modifier
+			# İleride eklenecek diğer padişahlar da buraya eklenecek.
+		}
     }
 }
 
@@ -790,5 +831,148 @@ country_event = {
 
     option = {
 		name = none
+	}
+}
+# 17: Yavuz Sultan Selim'in Tahta Çıkışı (1512)
+country_event = {
+	id = pasha_events.17
+	title = "pasha_events.17.t"
+	desc = "pasha_events.17.d"
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1512
+		has_global_flag = pasha_sultan_bayezid_ii
+		NOT = { has_global_flag = pasha_sultan_selim_i }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.17.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_bayezid_ii
+			remove_country_modifier = sultan_bayezid_ii_modifier
+			
+			set_global_flag = pasha_sultan_selim_i
+			add_country_modifier = {
+				name = sultan_selim_i_modifier
+				duration = -1
+			}
+		}
+
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 20
+		}
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = -10
+		}
+		
+		# DÜZELTME: Güç padişaha geçtiği için artı değer alır.
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 15 
+		}
+	}
+}
+
+# 18: Kanuni Sultan Süleyman (1520)
+country_event = {
+	id = pasha_events.18
+	title = "pasha_events.18.t"
+	desc = "pasha_events.18.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1520
+		has_global_flag = pasha_sultan_selim_i
+		NOT = { has_global_flag = pasha_sultan_suleiman_i }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.18.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_selim_i
+			remove_country_modifier = sultan_selim_i_modifier
+			
+			set_global_flag = pasha_sultan_suleiman_i
+			add_country_modifier = {
+				name = sultan_suleiman_i_modifier
+				duration = -1
+			}
+		}
+
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 10
+		}
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 10
+		}
+		
+		add_stability = 1
+	}
+}
+
+# 19: II. Selim ve Sokollu Mehmed Paşa Dönemi (1566)
+country_event = {
+	id = pasha_events.19
+	title = "pasha_events.19.t"
+	desc = "pasha_events.19.d"
+	picture = COURT_eventPicture # İsteğe göre GFX_evt_council eklenebilir
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1566
+		has_global_flag = pasha_sultan_suleiman_i
+		NOT = { has_global_flag = pasha_sultan_selim_ii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.19.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_suleiman_i
+			remove_country_modifier = sultan_suleiman_i_modifier
+			
+			set_global_flag = pasha_sultan_selim_ii
+			add_country_modifier = {
+				name = sultan_selim_ii_modifier
+				duration = -1
+			}
+		}
+
+		# DÜZELTME: Güç paşalara kaydığı için eksi değer alır.
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -20 
+		}
+		
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 15
+		}
 	}
 }
