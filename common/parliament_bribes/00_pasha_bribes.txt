@@ -1,31 +1,29 @@
 # 1. Seyfiye Rüşveti: Ulufe Dağıtımı
 bribe_pasha_seyfiye = {
 	trigger = {
-		owner = { has_reform = pasha_council_republic }
+		# Base scope is Country. Checked directly.
+		has_reform = pasha_council_republic
 	}
 	effect = {
-		owner = {
-			add_years_of_income = -0.1 
-			add_faction_influence = {
-				faction = seyfiye_faction
-				influence = 5
-			}
+		# Country effects are applied directly
+		add_years_of_income = -0.1 
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 5
 		}
 	}
 	ai_will_do = {
 		factor = 1000 
 		modifier = {
 			factor = 0
-			owner = {
-				faction_influence = {
-					faction = seyfiye_faction
-					influence = 70
-				}
+			faction_influence = {
+				faction = seyfiye_faction
+				influence = 70
 			}
 		}
 		modifier = {
 			factor = 0
-			owner = { is_in_deficit = yes }
+			is_in_deficit = yes
 		}
 	}
 }
@@ -33,26 +31,25 @@ bribe_pasha_seyfiye = {
 # 2. İlmiye Rüşveti: Vakıf Bağışla
 bribe_pasha_ilmiye = {
 	trigger = {
-		owner = { has_reform = pasha_council_republic }
+		has_reform = pasha_council_republic
 	}
 	effect = {
-		add_local_autonomy = 5 
-		owner = {
-			add_faction_influence = {
-				faction = ilmiye_faction
-				influence = 5
-			}
+		# FROM targets the specific province (seat) receiving the bribe
+		FROM = {
+			add_local_autonomy = 5 
+		}
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 5
 		}
 	}
 	ai_will_do = {
 		factor = 1000
 		modifier = {
 			factor = 0
-			owner = {
-				faction_influence = {
-					faction = ilmiye_faction
-					influence = 70
-				}
+			faction_influence = {
+				faction = ilmiye_faction
+				influence = 70
 			}
 		}
 	}
@@ -61,31 +58,27 @@ bribe_pasha_ilmiye = {
 # 3. Kalemiye Rüşveti: İltizam Hakkı Ver
 bribe_pasha_kalemiye = {
 	trigger = {
-		owner = { has_reform = pasha_council_republic }
+		has_reform = pasha_council_republic
 	}
 	effect = {
-		owner = {
-			add_corruption = 0.5 
-			add_faction_influence = {
-				faction = kalemiye_faction
-				influence = 5
-			}
+		add_corruption = 0.5 
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 5
 		}
 	}
 	ai_will_do = {
 		factor = 1000
 		modifier = {
 			factor = 0
-			owner = {
-				faction_influence = {
-					faction = kalemiye_faction
-					influence = 70
-				}
+			faction_influence = {
+				faction = kalemiye_faction
+				influence = 70
 			}
 		}
 		modifier = {
 			factor = 0
-			owner = { corruption = 3 }
+			corruption = 3
 		}
 	}
 }
