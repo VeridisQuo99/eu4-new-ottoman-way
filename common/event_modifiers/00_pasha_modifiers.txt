@@ -163,6 +163,21 @@ sultan_selim_iii_modifier = {
 	global_unrest = 2.0
 }
 
+# IV. Mustafa (1807-1808) - Kısa süren gerici darbe dönemi
+sultan_mustafa_iv_modifier = {
+	discipline = -0.05
+	yearly_corruption = 0.05
+	technology_cost = 0.10
+}
+
+# II. Mahmud (1808-1839) - Adli Padişah: Vaka-i Hayriye ve Modern Reformlar
+sultan_mahmud_ii_modifier = {
+	discipline = 0.05
+	administrative_efficiency = 0.05
+	yearly_corruption = -0.10
+	global_unrest = -2.0
+}
+
 # Random: Militarist
 random_sultan_militarist = {
     land_morale = 0.10

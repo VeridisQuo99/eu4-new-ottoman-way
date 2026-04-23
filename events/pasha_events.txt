@@ -483,6 +483,8 @@ country_event = {
 			clr_global_flag = pasha_sultan_mustafa_iii
 			clr_global_flag = pasha_sultan_abdulhamid_i
 			clr_global_flag = pasha_sultan_selim_iii
+			clr_global_flag = pasha_sultan_mustafa_iv
+			clr_global_flag = pasha_sultan_mahmud_ii
 
             # Disaster Flag'lerinin Temizliği
 			clr_country_flag = disaster_sided_with_sultan
@@ -515,6 +517,8 @@ country_event = {
 			remove_country_modifier = sultan_mustafa_iii_modifier
 			remove_country_modifier = sultan_abdulhamid_i_modifier
 			remove_country_modifier = sultan_selim_iii_modifier
+			remove_country_modifier = sultan_mustafa_iv_modifier
+			remove_country_modifier = sultan_mahmud_ii_modifier
 		}
     }
 }
@@ -569,6 +573,8 @@ country_event = {
 			clr_global_flag = pasha_sultan_mustafa_iii
 			clr_global_flag = pasha_sultan_abdulhamid_i
 			clr_global_flag = pasha_sultan_selim_iii
+			clr_global_flag = pasha_sultan_mustafa_iv
+			clr_global_flag = pasha_sultan_mahmud_ii
 
             # Disaster Flag'lerinin Temizliği
 			clr_country_flag = disaster_sided_with_sultan
@@ -601,6 +607,8 @@ country_event = {
 			remove_country_modifier = sultan_mustafa_iii_modifier
 			remove_country_modifier = sultan_abdulhamid_i_modifier
 			remove_country_modifier = sultan_selim_iii_modifier
+			remove_country_modifier = sultan_mustafa_iv_modifier
+			remove_country_modifier = sultan_mahmud_ii_modifier
 		}
     }
 }
@@ -1772,5 +1780,119 @@ country_event = {
 		}
 		remove_country_modifier = sultan_mustafa_iii_modifier
 		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
+	}
+}
+
+# 38: IV. Mustafa ve Kabakçı Mustafa İsyanı (1807)
+country_event = {
+	id = pasha_events.38
+	title = "pasha_events.38.t"
+	desc = "pasha_events.38.d"
+	picture = REBELS_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1807
+		has_global_flag = pasha_sultan_selim_iii
+		NOT = { has_global_flag = pasha_sultan_mustafa_iv }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "pasha_events.38.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_selim_iii
+			set_global_flag = pasha_sultan_mustafa_iv
+			add_country_modifier = {
+				name = sultan_mustafa_iv_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_selim_iii_modifier
+
+		# Gerici darbe gücü tamamen Paşalara ve Yeniçerilere geri verir
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -30 
+		}
+
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 20
+		}
+		
+		add_stability = -1
+	}
+}
+
+# 39: II. Mahmud ve Vaka-i Hayriye (1808)
+country_event = {
+	id = pasha_events.39
+	title = "pasha_events.39.t"
+	desc = "pasha_events.39.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1808
+		has_global_flag = pasha_sultan_mustafa_iv
+		NOT = { has_global_flag = pasha_sultan_mahmud_ii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.39.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mustafa_iv
+			set_global_flag = pasha_sultan_mahmud_ii
+			add_country_modifier = {
+				name = sultan_mahmud_ii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_mustafa_iv_modifier
+
+		# II. Mahmud Yeniçeri Ocağını kaldırarak tüm gücü sarayda toplar
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 40 
+		}
+
+		# Seyfiye (Yeniçeriler) tamamen ezilir
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = -40
+		}
+		
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 15
+		}
+		
+		add_stability = 1
 	}
 }

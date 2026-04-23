@@ -27,6 +27,8 @@
  sultan_mahmud_i_modifier: "Era of Mahmud I"
  sultan_mustafa_iii_modifier: "Era of Mustafa III"
  sultan_selim_iii_modifier: "Era of Selim III"
+ sultan_mustafa_iv_modifier: "Era of Mustafa IV"
+ sultan_mahmud_ii_modifier: "Era of Mahmud II (The Adli)"
 
  random_sultan_militarist: "Militarist Sultan"
  random_sultan_diplomat: "Diplomatic Sultan"
@@ -240,6 +242,14 @@
  pasha_events.32.t: "Selim III: The Nizam-i Cedid"
  pasha_events.32.d: "The devastating wars with Russia have laid bare the fatal weaknesses of the traditional Ottoman system. Sultan Selim III has initiated the 'Nizam-i Cedid' (The New Order), a sweeping set of reforms aimed at completely overhauling the military and the state bureaucracy along European lines. He has created a new, modern army and centralized the treasury. However, this radical shift in power has infuriated the Janissaries and the conservative elements of the Ilmiye. The Empire balances on the edge of a violent reaction."
  pasha_events.32.a: "A new order for a new age."
+
+ pasha_events.38.t: "Mustafa IV and the Kabakci Mustafa Revolt"
+ pasha_events.38.d: "The bold reforms of Selim III have ended in tragedy. The Janissaries, led by Kabakci Mustafa, have revolted and deposed the Sultan, placing his cousin Mustafa IV on the throne. The Nizam-i Cedid has been abolished, and the Empire is once again under the grip of the old, corrupt military order. The Divan is paralyzed by the demands of the rebellious troops."
+ pasha_events.38.a: "A dark day for progress."
+
+ pasha_events.39.t: "Mahmud II and the Auspicious Incident"
+ pasha_events.39.d: "Following the short and turbulent reign of Mustafa IV, his brother Mahmud II has taken the throne with a singular purpose: to finish what Selim III started. In a decisive and bloody stroke known as the Auspicious Incident (Vaka-i Hayriye), he has completely annihilated the Janissary Corps. With the sword of the old order broken, the Sultan is now free to rebuild the state, the army, and the law under his absolute authority. The Pashas must now bow to a truly sovereign ruler."
+ pasha_events.39.a: "The Adli Padishah reclaims the Empire."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
