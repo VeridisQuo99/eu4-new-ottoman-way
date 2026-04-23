@@ -507,16 +507,27 @@ country_event = {
         change_government = monarchy
         add_government_reform = autocracy_reform
 
-        clr_country_flag = disaster_sided_with_sultan
-        clr_country_flag = disaster_sided_with_status_quo
-        clr_country_flag = disaster_sided_with_pasha
-        # clr_country_flag = pasha_system_initialized
-        
-        remove_country_modifier = sultan_mehmed_ii_modifier
-        remove_country_modifier = sultan_bayezid_ii_modifier
-        remove_country_modifier = random_sultan_militarist
-        remove_country_modifier = random_sultan_diplomat
-        remove_country_modifier = random_sultan_administrator
+        hidden_effect = {
+            clr_global_flag = pasha_sultan_mehmed_ii
+            clr_global_flag = pasha_sultan_bayezid_ii
+            clr_global_flag = pasha_sultan_selim_i
+            clr_global_flag = pasha_sultan_suleiman_i
+            clr_global_flag = pasha_sultan_selim_ii
+
+            clr_country_flag = disaster_sided_with_sultan
+            clr_country_flag = disaster_sided_with_status_quo
+            clr_country_flag = disaster_sided_with_pasha
+            
+            remove_country_modifier = random_sultan_militarist
+            remove_country_modifier = random_sultan_diplomat
+            remove_country_modifier = random_sultan_administrator				
+			remove_country_modifier = sultan_mehmed_ii_modifier
+			remove_country_modifier = sultan_bayezid_ii_modifier
+			remove_country_modifier = sultan_selim_i_modifier
+			remove_country_modifier = sultan_suleiman_i_modifier
+			remove_country_modifier = sultan_selim_ii_modifier
+			# İleride eklenecek diğer padişahlar da buraya eklenecek.
+		}
     }
 }
 
@@ -857,14 +868,19 @@ country_event = {
 		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_bayezid_ii
-			remove_country_modifier = sultan_bayezid_ii_modifier
-			
 			set_global_flag = pasha_sultan_selim_i
 			add_country_modifier = {
 				name = sultan_selim_i_modifier
 				duration = -1
 			}
+
+            change_variable = {
+                which = sultan_count_var
+                value = 1
+            }
 		}
+
+        remove_country_modifier = sultan_bayezid_ii_modifier
 
 		add_faction_influence = {
 			faction = seyfiye_faction
@@ -908,14 +924,19 @@ country_event = {
 		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_selim_i
-			remove_country_modifier = sultan_selim_i_modifier
-			
 			set_global_flag = pasha_sultan_suleiman_i
 			add_country_modifier = {
 				name = sultan_suleiman_i_modifier
 				duration = -1
 			}
+
+            change_variable = {
+                which = sultan_count_var
+                value = 1
+            }
 		}
+
+        remove_country_modifier = sultan_selim_i_modifier
 
 		add_faction_influence = {
 			faction = kalemiye_faction
@@ -954,14 +975,20 @@ country_event = {
 		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_suleiman_i
-			remove_country_modifier = sultan_suleiman_i_modifier
-			
+	
 			set_global_flag = pasha_sultan_selim_ii
 			add_country_modifier = {
 				name = sultan_selim_ii_modifier
 				duration = -1
 			}
+
+            change_variable = {
+                which = sultan_count_var
+                value = 1
+            }
 		}
+
+        remove_country_modifier = sultan_suleiman_i_modifier
 
 		# DÜZELTME: Güç paşalara kaydığı için eksi değer alır.
 		add_government_power = {
