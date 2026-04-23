@@ -456,6 +456,206 @@ country_event = {
                     age = current_vizier_age
                 }
             }
+
+			# Selim I - Mahmud II Arasındaki Tüm Tarihi Padişahlar
+			if = {
+				limit = { has_country_modifier = sultan_selim_i_modifier }
+				define_ruler = {
+					name = "Selim I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_suleiman_i_modifier }
+				define_ruler = {
+					name = "Suleiman I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_selim_ii_modifier }
+				define_ruler = {
+					name = "Selim II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_murad_iii_modifier }
+				define_ruler = {
+					name = "Murad III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mehmed_iii_modifier }
+				define_ruler = {
+					name = "Mehmed III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_ahmed_i_modifier }
+				define_ruler = {
+					name = "Ahmed I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mustafa_i_modifier }
+				define_ruler = {
+					name = "Mustafa I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_osman_ii_modifier }
+				define_ruler = {
+					name = "Osman II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_murad_iv_modifier }
+				define_ruler = {
+					name = "Murad IV"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_ibrahim_i_modifier }
+				define_ruler = {
+					name = "Ibrahim I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mehmed_iv_modifier }
+				define_ruler = {
+					name = "Mehmed IV"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_suleiman_ii_modifier }
+				define_ruler = {
+					name = "Suleiman II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_ahmed_ii_modifier }
+				define_ruler = {
+					name = "Ahmed II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mustafa_ii_modifier }
+				define_ruler = {
+					name = "Mustafa II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_ahmed_iii_modifier }
+				define_ruler = {
+					name = "Ahmed III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mahmud_i_modifier }
+				define_ruler = {
+					name = "Mahmud I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_osman_iii_modifier }
+				define_ruler = {
+					name = "Osman III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mustafa_iii_modifier }
+				define_ruler = {
+					name = "Mustafa III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_abdulhamid_i_modifier }
+				define_ruler = {
+					name = "Abdulhamid I"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_selim_iii_modifier }
+				define_ruler = {
+					name = "Selim III"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mustafa_iv_modifier }
+				define_ruler = {
+					name = "Mustafa IV"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
+			if = {
+				limit = { has_country_modifier = sultan_mahmud_ii_modifier }
+				define_ruler = {
+					name = "Mahmud II"
+					dynasty = "Osmanloglu"
+					claim = 100
+					age = current_vizier_age
+				}
+			}
         }
 
         hidden_effect = {
