@@ -11,8 +11,6 @@
  sultan_suleiman_i_modifier: "Reign of Suleiman the Magnificent"
  sultan_murad_iii_modifier: "Era of Murad III"
  sultan_mehmed_iii_modifier: "Era of Mehmed III"
- sultan_selim_i_modifier: "Era of Yavuz Sultan Selim"
- sultan_suleiman_i_modifier: "Era of Suleiman the Magnificent"
  sultan_selim_ii_modifier: "Era of Selim II"
  sultan_ahmed_i_modifier: "Era of Ahmed I"
  sultan_osman_ii_modifier: "Era of Osman II"
@@ -26,6 +24,9 @@
  sultan_ahmed_ii_modifier: "Era of Ahmed II"
  sultan_osman_iii_modifier: "Era of Osman III"
  sultan_abdulhamid_i_modifier: "Era of Abdulhamid I"
+ sultan_mahmud_i_modifier: "Era of Mahmud I"
+ sultan_mustafa_iii_modifier: "Era of Mustafa III"
+ sultan_selim_iii_modifier: "Era of Selim III"
 
  random_sultan_militarist: "Militarist Sultan"
  random_sultan_diplomat: "Diplomatic Sultan"
@@ -227,6 +228,18 @@
  pasha_events.37.t: "Abdulhamid I: Seeking Stability"
  pasha_events.37.d: "After the disastrous wars, Abdulhamid I tries to stabilize the Empire and restore its broken prestige."
  pasha_events.37.a: "We must endure."
+
+ pasha_events.30.t: "Mahmud I: The Military Revival"
+ pasha_events.30.d: "The extravagance of the Tulip Period was drowned in the blood of the Patrona Halil Rebellion. Out of the ashes, Mahmud I has emerged as Sultan. Realizing that the Empire can no longer rely on outdated tactics, he has begun to employ foreign experts, most notably Comte de Bonneval (Humbaraci Ahmed Pasha), to modernize the artillery and the army. The Divan must adapt to these new military realities as the Sultan reclaims some of the authority lost by his predecessor."
+ pasha_events.30.a: "The cannons must roar once more."
+
+ pasha_events.31.t: "Mustafa III and the Imperial Naval Engineering School"
+ pasha_events.31.d: "Ascending the throne during a period of relative peace, Mustafa III aims to rebuild the Empire's finances and military infrastructure. With the help of Baron de Tott, he has established the Imperial School of Naval Engineering and cast new artillery. The Kalemiye works tirelessly to keep the treasury full, anticipating the inevitable wars to come. The Sultan actively participates in the administration, pushing the Divan towards modernization."
+ pasha_events.31.a: "We must build a modern fleet."
+
+ pasha_events.32.t: "Selim III: The Nizam-i Cedid"
+ pasha_events.32.d: "The devastating wars with Russia have laid bare the fatal weaknesses of the traditional Ottoman system. Sultan Selim III has initiated the 'Nizam-i Cedid' (The New Order), a sweeping set of reforms aimed at completely overhauling the military and the state bureaucracy along European lines. He has created a new, modern army and centralized the treasury. However, this radical shift in power has infuriated the Janissaries and the conservative elements of the Ilmiye. The Empire balances on the edge of a violent reaction."
+ pasha_events.32.a: "A new order for a new age."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."

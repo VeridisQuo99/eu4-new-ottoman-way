@@ -142,30 +142,25 @@ sultan_abdulhamid_i_modifier = {
 	stability_cost_modifier = -0.05
 }
 
-# Mustafa I
-sultan_mustafa_i_modifier = {
-	stability_cost_modifier = 0.20
-	legitimacy = -1
-	global_unrest = 1
+# I. Mahmud (1730-1754)
+sultan_mahmud_i_modifier = {
+	artillery_combat_ability = 0.05
+	defensiveness = 0.10
+	army_tradition = 0.5
 }
 
-# Ahmed II
-sultan_ahmed_ii_modifier = {
-	land_maintenance_modifier = 0.05
-	global_tax_modifier = -0.05
+# III. Mustafa (1757-1774)
+sultan_mustafa_iii_modifier = {
+	build_cost = -0.05
+	navy_tradition = 0.5
+	manpower_recovery_speed = 0.05
 }
 
-# Osman III
-sultan_osman_iii_modifier = {
-	global_unrest = 1.0
-	production_efficiency = -0.05
-}
-
-# Abdulhamid I
-sultan_abdulhamid_i_modifier = {
-	diplomatic_reputation = -1
-	manpower_recovery_speed = 0.10
-	stability_cost_modifier = -0.05
+# III. Selim (1789-1807)
+sultan_selim_iii_modifier = {
+	discipline = 0.05
+	drill_gain_modifier = 0.20
+	global_unrest = 2.0
 }
 
 # Random: Militarist
