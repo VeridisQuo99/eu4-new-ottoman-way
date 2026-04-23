@@ -9,6 +9,20 @@
  sultan_bayezid_ii_modifier: "Reign of Bayezid the Just"
  sultan_selim_i_modifier: "Reign of Selim the Grim"
  sultan_suleiman_i_modifier: "Reign of Suleiman the Magnificent"
+ sultan_murad_iii_modifier: "Era of Murad III"
+ sultan_mehmed_iii_modifier: "Era of Mehmed III"
+ sultan_selim_i_modifier: "Era of Yavuz Sultan Selim"
+ sultan_suleiman_i_modifier: "Era of Suleiman the Magnificent"
+ sultan_selim_ii_modifier: "Era of Selim II"
+ sultan_ahmed_i_modifier: "Era of Ahmed I"
+ sultan_osman_ii_modifier: "Era of Osman II"
+ sultan_murad_iv_modifier: "Era of Murad IV"
+ sultan_ibrahim_i_modifier: "Era of Ibrahim I"
+ sultan_mehmed_iv_modifier: "Era of the Köprülü Restoration"
+ sultan_suleiman_ii_modifier: "Era of Suleiman II"
+ sultan_mustafa_ii_modifier: "Era of Mustafa II"
+ sultan_ahmed_iii_modifier: "Era of Ahmed III"
+
  random_sultan_militarist: "Militarist Sultan"
  random_sultan_diplomat: "Diplomatic Sultan"
  random_sultan_administrator: "Administrative Sultan"
@@ -19,7 +33,7 @@
  faction_dominance_modifier: "Faction Dominance"
  pasha_political_instability: "Political Instability"
  desc_pasha_political_instability: "The struggle for power between factions has created a temporary vacuum in state authority, making reform and stabilization more difficult."
- 
+
  ### FACTIONS ###
  seyfiye_faction: "Men of the Sword (Seyfiye)"
  seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, absolute discipline, and the martial glory of the Empire."
@@ -126,7 +140,81 @@
  pasha_event.13.t: "Annual Divan Report: Shifting Influences"
  pasha_event.13.d: "Another year has passed, and the Divan has convened to assess the state of our Republic. The balance of power within the Imperial Council is never static; it bends to the will and capabilities of our Grand Vizier. The administrative acumen, diplomatic finesse, and military expertise of our current leader naturally empower certain factions over others. The changes in faction influence detailed below are not random occurrences, but a direct reflection of how our Vizier's personal skills are currently shaping the Kalemiye, Ilmiye, and Seyfiye."
  pasha_event.13.a: "A reflection of our leadership."
+
+ # Event 17: Selim I
+ pasha_events.17.t: "The Ascension of Selim I"
+ pasha_events.17.d: "The calm reign of Bayezid has ended as his son Selim I, called 'Yavuz', takes the throne. A man of iron will and unmatched military brilliance, Selim looks toward the East and the South for conquest. The Divan must now brace for a Sultan who demands absolute obedience and total mobilization for war."
+ pasha_events.17.a: "The world shall tremble before the Grim Sultan."
+
+ # Event 18: Suleiman I
+ pasha_events.18.t: "The Magnificent Era of Suleiman"
+ pasha_events.18.d: "Following the swift and stormy reign of Selim, his son Suleiman has ascended. He is a ruler of law and order, seeking to balance the might of the sword with the wisdom of the pen. Under his rule, the Ottoman state shall reach its zenith in both administration and reach. The Divan finds a Sultan who respects the established order, yet commands with unparalleled prestige."
+ pasha_events.18.a: "The Lawgiver has arrived."
+
+ # Event 19: Selim II
+ pasha_events.19.t: "The Era of Transformation: Selim II"
+ pasha_events.19.d: "With the passing of Suleiman the Magnificent, his son Selim II ascends. Unlike his predecessors, the new Padishah prefers the tranquility of the palace over the hardships of the campaign trail. This shift in royal temperament has allowed the Grand Vizier, Sokollu Mehmed Pasha, and the Divan to consolidate their grip on the state's daily administration. The age of the 'Shadow Sultans' begins, where the pen of the Pasha often carries more weight than the sword of the Sovereign."
+ pasha_events.19.a: "The Divan shall guide the state."
+
+ pasha_events.20.t: "The Ascension of Murad III"
+ pasha_events.20.d: "Sultan Selim II has passed away, and his son Murad III now claims the throne. This era is marked by a dangerous shift in the balance of power. The influence of the Harem and the sheer weight of corruption begin to crack the foundations of the state. The Divan is rife with bribery and factionalism, as the new Padishah prefers to isolate himself within the palace walls. The golden days of absolute law and expansion are fading."
+ pasha_events.20.a: "The shadows lengthen."
  
+ pasha_events.21.t: "Mehmed III and the Age of Rebellions"
+ pasha_events.21.d: "With the ascension of Mehmed III, the Empire faces threats from both without and within. The long, grueling wars in Hungary have drained the treasury, while in Anatolia, the fires of the Celali Rebellions have ignited. In a rare display of traditional authority, the Sultan has announced his intent to lead the army in person. The Seyfiye prepares for war, but the heartland remains in turmoil."
+ pasha_events.21.a: "We must restore order by the sword."
+ 
+ # Event 22: Ahmed I
+ pasha_events.22.t: "Ahmed I and the Kafes System"
+ pasha_events.22.d: "The ascension of the young Ahmed I brings a fundamental change to the Ottoman succession. Disgusted by the practice of royal fratricide, the new Sultan has decreed that the eldest and most senior member of the dynasty shall inherit the throne. Princes are no longer to be sent as governors to the provinces, but kept secluded in the Kafes (Cage) within the Topkapi Palace. While this ends the bloody civil wars between brothers, it guarantees that future Padishahs will lack administrative and military experience, effectively handing over the reins of the Empire to the Divan, the Harem, and the Janissaries."
+ pasha_events.22.a: "A new era of secluded sovereigns begins."
+
+# Event 23: Osman II
+ pasha_events.23.t: "Osman II and the Rebellious Factions"
+ pasha_events.23.d: "The young and ambitious Osman II has taken the throne. Unlike his recent predecessors, he refuses to be a puppet of the Divan or the Janissaries. Recognizing the deep corruption within the Seyfiye and the Kalemiye, he plans to form a new, loyal army and move the capital to break their power. However, the Pashas and the troops have sensed his intentions. The capital is a powder keg of tension, and the young Sultan's aggressive attempts to reclaim absolute power might trigger a revolt that the Empire has never seen before."
+ pasha_events.23.a: "We must break the power of the Pashas!"
+ 
+ # Event 24: Murad IV
+ pasha_events.24.t: "Murad IV: The Iron Fist"
+ pasha_events.24.d: "Following years of chaos, military insubordination, and the tragic fate of Osman II, Murad IV has come of age and seized direct control of the state. The time of the 'Shadow Sultans' is brutally suspended. With an iron fist, Murad has begun executing corrupt officials, rebellious Janissaries, and overly ambitious Pashas. He has banned coffeehouses, restored the treasury, and intends to lead the armies himself. The Divan trembles in fear, for the Padishah's word is once again absolute law."
+ pasha_events.24.a: "Order restored through fear."
+
+ # Event 25: Ibrahim I
+ pasha_events.25.t: "The Tragedy of Ibrahim I"
+ pasha_events.25.d: "With the death of Murad IV, the throne passes to his brother Ibrahim. The absolute and terrifying order of the previous era has vanished overnight. Ibrahim, struggling with the weight of his new duties and the shadows of the past, has allowed the Harem and the high-ranking officials to dominate the state once more. Extravagance has returned to the palace, while the treasury suffers from mismanagement. The Divan is no longer ruled by the Sultan's sword, but by the whispers of the ambitious."
+ pasha_events.25.a: "Chaos returns to the Sublime Porte."
+ 
+ # Event 26: Mehmed IV and the Köprülü Restoration
+ pasha_events.26.t: "Mehmed IV and the Köprülü Restoration"
+ pasha_events.26.d: "The young Mehmed IV has ascended the throne during a period of immense internal strife. However, the true transformation began when the Sultan granted absolute authority to Köprülü Mehmed Pasha as Grand Vizier. While the Sultan pursues his passion for hunting in Edirne, a succession of brilliant and iron-willed Pashas from the Köprülü family has begun to purge corruption and restore the Empire's might. This is the era where the Sultan reigns, but the Pasha rules."
+ pasha_events.26.a: "The era of the Grand Viziers has arrived."
+
+ # Event 27: Suleiman II
+ pasha_events.27.t: "Suleiman II: The Burden of Defeat"
+ pasha_events.27.d: "Ascending the throne after the deposition of Mehmed IV, Suleiman II finds an Empire on the brink of collapse. The Holy League continues its relentless push into Ottoman territories. While the Sultan spends his days in prayer, the Divan and the Grand Viziers struggle to reform the army and stabilize the front. The weight of the world lies on the shoulders of the Pashas."
+ pasha_events.27.a: "We must hold the line."
+
+ # Event 28: Mustafa II and the Treaty of Karlowitz
+ pasha_events.28.t: "Mustafa II: The Final Crusade"
+ pasha_events.28.d: "Mustafa II is a Sultan who refuses to stay in the palace. Determined to reverse the fortunes of the war, he leads the army in person. However, the catastrophic defeat at the Battle of Zenta has led to the humiliating Treaty of Karlowitz. For the first time, the Empire has lost significant territories. The era of Ottoman expansion is over, and the Sultan's prestige is shattered, giving more ground to the ambitious Divan."
+ pasha_events.28.a: "A bitter peace is accepted."
+
+ # Event 29: Ahmed III and the Tulip Period
+ pasha_events.29.t: "Ahmed III: The Tulip Period"
+ pasha_events.29.d: "Following the Edirne Event, Ahmed III has ascended. Under the guidance of Grand Vizier Nevsehirli Damat Ibrahim Pasha, the Empire enters a period of unprecedented peace, cultural flourish, and westernization known as the Tulip Period. While the first printing press is established and European styles influence the capital, the elite enjoy lives of immense luxury. The Pashas of the Kalemiye now dominate every aspect of state life, while the Sultan enjoys the beauty of the gardens."
+ pasha_events.29.a: "Enjoy the blossoms of peace."
+
+ pasha_events.33.t: "Mustafa I and the Crisis of Authority"
+ pasha_events.33.d: "Following the death of Ahmed I, the rule of seniority has brought Mustafa I to the throne. However, it quickly becomes clear that the Sultan is not fit to rule. The Divan and the Harem now hold the strings of the state."
+ pasha_events.34.t: "The Restoration of Mustafa I"
+ pasha_events.34.d: "After the tragic end of Osman II, the Janissaries have dragged Mustafa I back to the throne. Chaos reigns in the capital."
+ pasha_events.35.t: "Ahmed II: The War Continues"
+ pasha_events.35.d: "Ahmed II ascends during a desperate war against the Holy League. His short reign is a struggle for survival."
+ pasha_events.36.t: "Osman III and the Palace Seclusion"
+ pasha_events.36.d: "Osman III brings a grim atmosphere to the palace, having spent decades in the Kafes. His lack of social experience further empowers the Grand Viziers."
+ pasha_events.37.t: "Abdulhamid I: Seeking Stability"
+ pasha_events.37.d: "After the disastrous wars, Abdulhamid I tries to stabilize the Empire and restore its broken prestige."
+
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
  crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"

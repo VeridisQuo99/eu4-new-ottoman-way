@@ -464,6 +464,16 @@ country_event = {
             clr_global_flag = pasha_sultan_selim_i
             clr_global_flag = pasha_sultan_suleiman_i
             clr_global_flag = pasha_sultan_selim_ii
+            clr_global_flag = pasha_sultan_murad_iii
+            clr_global_flag = pasha_sultan_mehmed_iii
+            clr_global_flag = pasha_sultan_ahmed_i
+            clr_global_flag = pasha_sultan_osman_ii
+            clr_global_flag = pasha_sultan_murad_iv
+            clr_global_flag = pasha_sultan_ibrahim_i
+            clr_global_flag = pasha_sultan_mehmed_iv
+            clr_global_flag = pasha_sultan_suleiman_ii
+            clr_global_flag = pasha_sultan_mustafa_ii
+            clr_global_flag = pasha_sultan_ahmed_iii
 
             clr_country_flag = disaster_sided_with_sultan
             clr_country_flag = disaster_sided_with_status_quo
@@ -477,7 +487,16 @@ country_event = {
 			remove_country_modifier = sultan_selim_i_modifier
 			remove_country_modifier = sultan_suleiman_i_modifier
 			remove_country_modifier = sultan_selim_ii_modifier
-			# İleride eklenecek diğer padişahlar da buraya eklenecek.
+            remove_country_modifier = sultan_murad_iii_modifier
+            remove_country_modifier = sultan_mehmed_iii_modifier
+            remove_country_modifier = sultan_ahmed_i_modifier
+            remove_country_modifier = sultan_osman_ii_modifier
+            remove_country_modifier = sultan_murad_iv_modifier          
+            remove_country_modifier = sultan_ibrahim_i_modifier
+            remove_country_modifier = sultan_mehmed_iv_modifier    
+            remove_country_modifier = sultan_suleiman_ii_modifier
+            remove_country_modifier = sultan_mustafa_ii_modifier
+            remove_country_modifier = sultan_ahmed_iii_modifier                
 		}
     }
 }
@@ -507,13 +526,20 @@ country_event = {
         change_government = monarchy
         add_government_reform = autocracy_reform
 
-        hidden_effect = {
+         hidden_effect = {
             clr_global_flag = pasha_sultan_mehmed_ii
             clr_global_flag = pasha_sultan_bayezid_ii
             clr_global_flag = pasha_sultan_selim_i
             clr_global_flag = pasha_sultan_suleiman_i
             clr_global_flag = pasha_sultan_selim_ii
-
+            clr_global_flag = pasha_sultan_murad_iii
+            clr_global_flag = pasha_sultan_mehmed_iii
+            clr_global_flag = pasha_sultan_ahmed_i
+            clr_global_flag = pasha_sultan_osman_ii
+            clr_global_flag = pasha_sultan_murad_iv
+            clr_global_flag = pasha_sultan_ibrahim_i
+            clr_global_flag = pasha_sultan_mehmed_iv
+            
             clr_country_flag = disaster_sided_with_sultan
             clr_country_flag = disaster_sided_with_status_quo
             clr_country_flag = disaster_sided_with_pasha
@@ -526,7 +552,13 @@ country_event = {
 			remove_country_modifier = sultan_selim_i_modifier
 			remove_country_modifier = sultan_suleiman_i_modifier
 			remove_country_modifier = sultan_selim_ii_modifier
-			# İleride eklenecek diğer padişahlar da buraya eklenecek.
+            remove_country_modifier = sultan_murad_iii_modifier
+            remove_country_modifier = sultan_mehmed_iii_modifier
+            remove_country_modifier = sultan_ahmed_i_modifier
+            remove_country_modifier = sultan_osman_ii_modifier
+            remove_country_modifier = sultan_murad_iv_modifier          
+            remove_country_modifier = sultan_ibrahim_i_modifier
+            remove_country_modifier = sultan_mehmed_iv_modifier                    
 		}
     }
 }
@@ -1001,5 +1033,697 @@ country_event = {
 			faction = kalemiye_faction
 			influence = 15
 		}
+	}
+}
+
+# 20: III. Murad'ın Tahta Çıkışı (1574)
+country_event = {
+	id = pasha_events.20
+	title = "pasha_events.20.t"
+	desc = "pasha_events.20.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1574
+		has_global_flag = pasha_sultan_selim_ii
+		NOT = { has_global_flag = pasha_sultan_murad_iii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.20.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_selim_ii
+			set_global_flag = pasha_sultan_murad_iii
+			add_country_modifier = {
+				name = sultan_murad_iii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_selim_ii_modifier
+
+		# Otorite iyice parçalanır, rüşvet artar
+		add_corruption = 1.0
+
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = -10
+		}
+		
+		# Güç iyice Divan'ın, rüşvetçi paşaların ve haremin eline kalır
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -15 
+		}
+	}
+}
+
+# 21: III. Mehmed ve Celali İsyanları Dönemi (1595)
+country_event = {
+	id = pasha_events.21
+	title = "pasha_events.21.t"
+	desc = "pasha_events.21.d"
+	picture = REBELS_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1595
+		has_global_flag = pasha_sultan_murad_iii
+		NOT = { has_global_flag = pasha_sultan_mehmed_iii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.21.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_murad_iii
+			set_global_flag = pasha_sultan_mehmed_iii
+			add_country_modifier = {
+				name = sultan_mehmed_iii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_murad_iii_modifier
+
+		# Uzun Macaristan savaşları (Eğri Seferi vb.) Seyfiye'yi zorunlu olarak öne çıkarır
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 20
+		}
+		
+		add_stability = -1 # Celali İsyanları etkisi
+		
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 10 # Padişahın sefere çıkmasıyla gücün merkeze kısmi dönüşü
+		}
+	}
+}
+
+# 22: I. Ahmed and the Kafes System (1603)
+country_event = {
+	id = pasha_events.22
+	title = "pasha_events.22.t"
+	desc = "pasha_events.22.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1603
+		has_global_flag = pasha_sultan_mehmed_iii
+		NOT = { has_global_flag = pasha_sultan_ahmed_i }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.22.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mehmed_iii
+			set_global_flag = pasha_sultan_ahmed_i
+			add_country_modifier = {
+				name = sultan_ahmed_i_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_mehmed_iii_modifier
+
+		# Kafes sistemi sebebiyle şehzadeler tecrübesiz kalır, güç tamamen Divan'a geçer
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -20 
+		}
+		
+		# İlmiye (hukuk ve din) kardeşi öldürmeme kararını destekler ve nüfuz kazanır
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 15
+		}
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = -10
+		}
+	}
+}
+
+# 23: II. Osman'ın Tahta Çıkışı ve Reform Çabaları (1618)
+# (Kısa süren I. Mustafa dönemini oyun akışını bozmamak adına atlayıp doğrudan Osman'ın reformist çatışmasına geçiyoruz)
+country_event = {
+	id = pasha_events.23
+	title = "pasha_events.23.t"
+	desc = "pasha_events.23.d"
+	picture = REBELS_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1618
+		has_global_flag = pasha_sultan_mustafa_i
+		NOT = { has_global_flag = pasha_sultan_osman_ii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.23.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mustafa_i
+			set_global_flag = pasha_sultan_osman_ii
+			add_country_modifier = {
+				name = sultan_osman_ii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_ahmed_i_modifier
+
+		# Osman gücü Divan'ın elinden zorla almaya çalışır
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 15 # Otorite ibresi Padişaha kayar
+		}
+		
+		# Ancak bu durum Seyfiye'yi (Yeniçeriler ve Paşalar) aşırı kışkırtır
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 20
+		}
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = -10
+		}
+	}
+}
+
+# 24: IV. Murad ve Mutlak Otoritenin Restorasyonu (1623)
+country_event = {
+	id = pasha_events.24
+	title = "pasha_events.24.t"
+	desc = "pasha_events.24.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1623
+		has_global_flag = pasha_sultan_mustafa_i_restored
+		NOT = { has_global_flag = pasha_sultan_murad_iv }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.24.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mustafa_i_restored
+			set_global_flag = pasha_sultan_murad_iv
+			add_country_modifier = {
+				name = sultan_murad_iv_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_osman_ii_modifier
+
+		# Murad IV devletin tüm gücünü şiddetle merkezde toplar
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 30 # Çok sert bir Padişah otoritesi artışı
+		}
+		
+		# Hiziplerin (Faction) sesi tamamen kesilir
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = -20
+		}
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = -15
+		}
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = -15
+		}
+		
+		add_stability = 1
+	}
+}
+
+# 25: Sultan İbrahim ve Saray Entrikaları (1640)
+country_event = {
+	id = pasha_events.25
+	title = "pasha_events.25.t"
+	desc = "pasha_events.25.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1640
+		has_global_flag = pasha_sultan_murad_iv
+		NOT = { has_global_flag = pasha_sultan_ibrahim_i }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.25.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_murad_iv
+			set_global_flag = pasha_sultan_ibrahim_i
+			add_country_modifier = {
+				name = sultan_ibrahim_i_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_murad_iv_modifier
+
+		# Murad'ın demir yumruğu gevşer, güç saray hiziplerine ve Paşalara geri döner
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -25 
+		}
+
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 10
+		}
+		
+		add_corruption = 1.0
+	}
+}
+
+# 26: IV. Mehmed ve Köprülü Paşaların Yükselişi (1648)
+country_event = {
+	id = pasha_events.26
+	title = "pasha_events.26.t"
+	desc = "pasha_events.26.d"
+	picture = GFX_evt_council
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1648
+		has_global_flag = pasha_sultan_ibrahim_i
+		NOT = { has_global_flag = pasha_sultan_mehmed_iv }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.26.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_ibrahim_i
+			set_global_flag = pasha_sultan_mehmed_iv
+			add_country_modifier = {
+				name = sultan_mehmed_iv_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_ibrahim_i_modifier
+
+		# Padişah av partileriyle ilgilenirken, Köprülü Mehmed Paşa mutlak yetkiyle devleti yönetir
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -30 # Paşaların altın çağı
+		}
+
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 20
+		}
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 10
+		}
+		
+		add_stability = 1
+	}
+}
+
+# 27: II. Süleyman ve Savaşın Yükü (1687)
+country_event = {
+	id = pasha_events.27
+	title = "pasha_events.27.t"
+	desc = "pasha_events.27.d"
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1687
+		has_global_flag = pasha_sultan_mehmed_iv
+		NOT = { has_global_flag = pasha_sultan_suleiman_ii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.27.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mehmed_iv
+			set_global_flag = pasha_sultan_suleiman_ii
+			add_country_modifier = {
+				name = sultan_suleiman_ii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_mehmed_iv_modifier
+
+		# Savaşın yönetimi tamamen Divan ve Serdar-ı Ekrem Paşalardadır
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -10
+		}
+
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 10
+		}
+	}
+}
+
+# 28: II. Mustafa ve Karlofça'nın Gölgesi (1695)
+country_event = {
+	id = pasha_events.28
+	title = "pasha_events.28.t"
+	desc = "pasha_events.28.d"
+	picture = DEATH_OF_HEIR_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1695
+		has_global_flag = pasha_sultan_ahmed_ii
+		NOT = { has_global_flag = pasha_sultan_mustafa_ii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.28.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_ahmed_ii
+			set_global_flag = pasha_sultan_mustafa_ii
+			add_country_modifier = {
+				name = sultan_mustafa_ii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_suleiman_ii_modifier
+
+		# Sultan sefere çıkar (güç denemesi) ama yenilgi otoriteyi sarsar
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -5
+		}
+		
+		add_stability = -1
+	}
+}
+
+# 29: III. Ahmed ve Lale Devri (1703)
+country_event = {
+	id = pasha_events.29
+	title = "pasha_events.29.t"
+	desc = "pasha_events.29.d"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1703
+		has_global_flag = pasha_sultan_mustafa_ii
+		NOT = { has_global_flag = pasha_sultan_ahmed_iii }
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "pasha_events.29.a"
+		
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mustafa_ii
+			set_global_flag = pasha_sultan_ahmed_iii
+			add_country_modifier = {
+				name = sultan_ahmed_iii_modifier
+				duration = -1
+			}
+
+			change_variable = {
+				which = sultan_count_var
+				value = 1
+			}
+		}
+
+		remove_country_modifier = sultan_mustafa_ii_modifier
+
+		# Lale Devri: Bürokrasi (Kalemiye) ve Sadrazam Nevşehirli Damat İbrahim Paşa devridir.
+		# Güç tamamen Paşaların elindedir.
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -25 
+		}
+
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 20
+		}
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 10
+		}
+	}
+}
+
+# 33: I. Mustafa'nın İlk Tahta Çıkışı (1617)
+country_event = {
+	id = pasha_events.33
+	title = "pasha_events.33.t"
+	desc = "pasha_events.33.d"
+	picture = COURT_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1617
+		has_global_flag = pasha_sultan_ahmed_i
+		NOT = { has_global_flag = pasha_sultan_mustafa_i }
+	}
+	mean_time_to_happen = { months = 2 }
+	option = {
+		name = "pasha_events.33.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_ahmed_i
+			set_global_flag = pasha_sultan_mustafa_i
+			add_country_modifier = { name = sultan_mustafa_i_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_ahmed_i_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -20 }
+	}
+}
+
+# 34: I. Mustafa'nın İkinci Kez Tahta Çıkarılması (1622)
+country_event = {
+	id = pasha_events.34
+	title = "pasha_events.34.t"
+	desc = "pasha_events.34.d"
+	picture = REBELS_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1622
+		has_global_flag = pasha_sultan_osman_ii
+		NOT = { has_global_flag = pasha_sultan_mustafa_i_restored }
+	}
+	mean_time_to_happen = { months = 2 }
+	option = {
+		name = "pasha_events.34.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_osman_ii
+			set_global_flag = pasha_sultan_mustafa_i_restored
+			add_country_modifier = { name = sultan_mustafa_i_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_osman_ii_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -15 }
+	}
+}
+
+# 35: II. Ahmed Dönemi (1691)
+country_event = {
+	id = pasha_events.35
+	title = "pasha_events.35.t"
+	desc = "pasha_events.35.d"
+	picture = COURT_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1691
+		has_global_flag = pasha_sultan_suleiman_ii
+		NOT = { has_global_flag = pasha_sultan_ahmed_ii }
+	}
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "pasha_events.35.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_suleiman_ii
+			set_global_flag = pasha_sultan_ahmed_ii
+			add_country_modifier = { name = sultan_ahmed_ii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_suleiman_ii_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
+	}
+}
+
+# 36: III. Osman Dönemi (1754)
+country_event = {
+	id = pasha_events.36
+	title = "pasha_events.36.t"
+	desc = "pasha_events.36.d"
+	picture = COURT_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1754
+		has_global_flag = pasha_sultan_mahmud_i
+		NOT = { has_global_flag = pasha_sultan_osman_iii }
+	}
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "pasha_events.36.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mahmud_i
+			set_global_flag = pasha_sultan_osman_iii
+			add_country_modifier = { name = sultan_osman_iii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_mahmud_i_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
+	}
+}
+
+# 37: I. Abdülhamid Dönemi (1774)
+country_event = {
+	id = pasha_events.37
+	title = "pasha_events.37.t"
+	desc = "pasha_events.37.d"
+	picture = COURT_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1774
+		has_global_flag = pasha_sultan_mustafa_iii
+		NOT = { has_global_flag = pasha_sultan_abdulhamid_i }
+	}
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "pasha_events.37.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_mustafa_iii
+			set_global_flag = pasha_sultan_abdulhamid_i
+			add_country_modifier = { name = sultan_abdulhamid_i_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_mustafa_iii_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
 	}
 }
