@@ -142,6 +142,32 @@ sultan_abdulhamid_i_modifier = {
 	stability_cost_modifier = -0.05
 }
 
+# Mustafa I
+sultan_mustafa_i_modifier = {
+	stability_cost_modifier = 0.20
+	legitimacy = -1
+	global_unrest = 1
+}
+
+# Ahmed II
+sultan_ahmed_ii_modifier = {
+	land_maintenance_modifier = 0.05
+	global_tax_modifier = -0.05
+}
+
+# Osman III
+sultan_osman_iii_modifier = {
+	global_unrest = 1.0
+	production_efficiency = -0.05
+}
+
+# Abdulhamid I
+sultan_abdulhamid_i_modifier = {
+	diplomatic_reputation = -1
+	manpower_recovery_speed = 0.10
+	stability_cost_modifier = -0.05
+}
+
 # Random: Militarist
 random_sultan_militarist = {
     land_morale = 0.10

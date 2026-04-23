@@ -22,6 +22,10 @@
  sultan_suleiman_ii_modifier: "Era of Suleiman II"
  sultan_mustafa_ii_modifier: "Era of Mustafa II"
  sultan_ahmed_iii_modifier: "Era of Ahmed III"
+ sultan_mustafa_i_modifier: "Era of Mustafa I"
+ sultan_ahmed_ii_modifier: "Era of Ahmed II"
+ sultan_osman_iii_modifier: "Era of Osman III"
+ sultan_abdulhamid_i_modifier: "Era of Abdulhamid I"
 
  random_sultan_militarist: "Militarist Sultan"
  random_sultan_diplomat: "Diplomatic Sultan"
@@ -206,14 +210,23 @@
 
  pasha_events.33.t: "Mustafa I and the Crisis of Authority"
  pasha_events.33.d: "Following the death of Ahmed I, the rule of seniority has brought Mustafa I to the throne. However, it quickly becomes clear that the Sultan is not fit to rule. The Divan and the Harem now hold the strings of the state."
+ pasha_events.33.a: "A puppet on the throne."
+
  pasha_events.34.t: "The Restoration of Mustafa I"
  pasha_events.34.d: "After the tragic end of Osman II, the Janissaries have dragged Mustafa I back to the throne. Chaos reigns in the capital."
+ pasha_events.34.a: "Chaos continues."
+
  pasha_events.35.t: "Ahmed II: The War Continues"
  pasha_events.35.d: "Ahmed II ascends during a desperate war against the Holy League. His short reign is a struggle for survival."
+ pasha_events.35.a: "The struggle continues."
+
  pasha_events.36.t: "Osman III and the Palace Seclusion"
  pasha_events.36.d: "Osman III brings a grim atmosphere to the palace, having spent decades in the Kafes. His lack of social experience further empowers the Grand Viziers."
+ pasha_events.36.a: "The shadow of the Kafes."
+
  pasha_events.37.t: "Abdulhamid I: Seeking Stability"
  pasha_events.37.d: "After the disastrous wars, Abdulhamid I tries to stabilize the Empire and restore its broken prestige."
+ pasha_events.37.a: "We must endure."
 
  ### CUSTOM TOOLTIPS ###
  crisis_resolved_tooltip: "The crisis has been definitively resolved."

@@ -474,6 +474,11 @@ country_event = {
             clr_global_flag = pasha_sultan_suleiman_ii
             clr_global_flag = pasha_sultan_mustafa_ii
             clr_global_flag = pasha_sultan_ahmed_iii
+			clr_global_flag = pasha_sultan_mustafa_i
+			clr_global_flag = pasha_sultan_mustafa_i_restored
+			clr_global_flag = pasha_sultan_ahmed_ii
+			clr_global_flag = pasha_sultan_osman_iii
+			clr_global_flag = pasha_sultan_abdulhamid_i
 
             clr_country_flag = disaster_sided_with_sultan
             clr_country_flag = disaster_sided_with_status_quo
@@ -496,7 +501,11 @@ country_event = {
             remove_country_modifier = sultan_mehmed_iv_modifier    
             remove_country_modifier = sultan_suleiman_ii_modifier
             remove_country_modifier = sultan_mustafa_ii_modifier
-            remove_country_modifier = sultan_ahmed_iii_modifier                
+            remove_country_modifier = sultan_ahmed_iii_modifier        
+			remove_country_modifier = sultan_mustafa_i_modifier
+			remove_country_modifier = sultan_ahmed_ii_modifier
+			remove_country_modifier = sultan_osman_iii_modifier
+			remove_country_modifier = sultan_abdulhamid_i_modifier	
 		}
     }
 }
@@ -1202,14 +1211,12 @@ country_event = {
 	}
 }
 
-# 23: II. Osman'ın Tahta Çıkışı ve Reform Çabaları (1618)
-# (Kısa süren I. Mustafa dönemini oyun akışını bozmamak adına atlayıp doğrudan Osman'ın reformist çatışmasına geçiyoruz)
+# 23: Osman II and the Rebellious Factions (1618)
 country_event = {
 	id = pasha_events.23
 	title = "pasha_events.23.t"
 	desc = "pasha_events.23.d"
 	picture = REBELS_eventPicture
-
 	trigger = {
 		tag = TUR
 		has_reform = pasha_council_republic
@@ -1217,56 +1224,28 @@ country_event = {
 		has_global_flag = pasha_sultan_mustafa_i
 		NOT = { has_global_flag = pasha_sultan_osman_ii }
 	}
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
+	mean_time_to_happen = { months = 6 }
 	option = {
 		name = "pasha_events.23.a"
-		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_mustafa_i
 			set_global_flag = pasha_sultan_osman_ii
-			add_country_modifier = {
-				name = sultan_osman_ii_modifier
-				duration = -1
-			}
-
-			change_variable = {
-				which = sultan_count_var
-				value = 1
-			}
+			add_country_modifier = { name = sultan_osman_ii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
 		}
-
-		remove_country_modifier = sultan_ahmed_i_modifier
-
-		# Osman gücü Divan'ın elinden zorla almaya çalışır
-		add_government_power = {
-			mechanic_type = pasha_power_mechanic
-			power_type = pasha_power
-			value = 15 # Otorite ibresi Padişaha kayar
-		}
-		
-		# Ancak bu durum Seyfiye'yi (Yeniçeriler ve Paşalar) aşırı kışkırtır
-		add_faction_influence = {
-			faction = seyfiye_faction
-			influence = 20
-		}
-		add_faction_influence = {
-			faction = ilmiye_faction
-			influence = -10
-		}
+		remove_country_modifier = sultan_mustafa_i_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 15 }
+		add_faction_influence = { faction = seyfiye_faction influence = 20 }
+		add_faction_influence = { faction = ilmiye_faction influence = -10 }
 	}
 }
 
-# 24: IV. Murad ve Mutlak Otoritenin Restorasyonu (1623)
+# 24: Murad IV: The Iron Fist (1623)
 country_event = {
 	id = pasha_events.24
 	title = "pasha_events.24.t"
 	desc = "pasha_events.24.d"
 	picture = COURT_eventPicture
-
 	trigger = {
 		tag = TUR
 		has_reform = pasha_council_republic
@@ -1274,51 +1253,20 @@ country_event = {
 		has_global_flag = pasha_sultan_mustafa_i_restored
 		NOT = { has_global_flag = pasha_sultan_murad_iv }
 	}
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
+	mean_time_to_happen = { months = 6 }
 	option = {
 		name = "pasha_events.24.a"
-		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_mustafa_i_restored
 			set_global_flag = pasha_sultan_murad_iv
-			add_country_modifier = {
-				name = sultan_murad_iv_modifier
-				duration = -1
-			}
-
-			change_variable = {
-				which = sultan_count_var
-				value = 1
-			}
+			add_country_modifier = { name = sultan_murad_iv_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
 		}
-
-		remove_country_modifier = sultan_osman_ii_modifier
-
-		# Murad IV devletin tüm gücünü şiddetle merkezde toplar
-		add_government_power = {
-			mechanic_type = pasha_power_mechanic
-			power_type = pasha_power
-			value = 30 # Çok sert bir Padişah otoritesi artışı
-		}
-		
-		# Hiziplerin (Faction) sesi tamamen kesilir
-		add_faction_influence = {
-			faction = seyfiye_faction
-			influence = -20
-		}
-		add_faction_influence = {
-			faction = kalemiye_faction
-			influence = -15
-		}
-		add_faction_influence = {
-			faction = ilmiye_faction
-			influence = -15
-		}
-		
+		remove_country_modifier = sultan_mustafa_i_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 30 }
+		add_faction_influence = { faction = seyfiye_faction influence = -20 }
+		add_faction_influence = { faction = kalemiye_faction influence = -15 }
+		add_faction_influence = { faction = ilmiye_faction influence = -15 }
 		add_stability = 1
 	}
 }
@@ -1487,13 +1435,12 @@ country_event = {
 	}
 }
 
-# 28: II. Mustafa ve Karlofça'nın Gölgesi (1695)
+# 28: Mustafa II and the Treaty of Karlowitz (1695)
 country_event = {
 	id = pasha_events.28
 	title = "pasha_events.28.t"
 	desc = "pasha_events.28.d"
 	picture = DEATH_OF_HEIR_eventPicture
-
 	trigger = {
 		tag = TUR
 		has_reform = pasha_council_republic
@@ -1501,37 +1448,17 @@ country_event = {
 		has_global_flag = pasha_sultan_ahmed_ii
 		NOT = { has_global_flag = pasha_sultan_mustafa_ii }
 	}
-
-	mean_time_to_happen = {
-		months = 6
-	}
-
+	mean_time_to_happen = { months = 6 }
 	option = {
 		name = "pasha_events.28.a"
-		
 		hidden_effect = {
 			clr_global_flag = pasha_sultan_ahmed_ii
 			set_global_flag = pasha_sultan_mustafa_ii
-			add_country_modifier = {
-				name = sultan_mustafa_ii_modifier
-				duration = -1
-			}
-
-			change_variable = {
-				which = sultan_count_var
-				value = 1
-			}
+			add_country_modifier = { name = sultan_mustafa_ii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
 		}
-
-		remove_country_modifier = sultan_suleiman_ii_modifier
-
-		# Sultan sefere çıkar (güç denemesi) ama yenilgi otoriteyi sarsar
-		add_government_power = {
-			mechanic_type = pasha_power_mechanic
-			power_type = pasha_power
-			value = -5
-		}
-		
+		remove_country_modifier = sultan_ahmed_ii_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
 		add_stability = -1
 	}
 }
@@ -1593,7 +1520,65 @@ country_event = {
 	}
 }
 
-# 33: I. Mustafa'nın İlk Tahta Çıkışı (1617)
+# 31: Mustafa III and the Imperial Naval Engineering School (1757)
+country_event = {
+	id = pasha_events.31
+	title = "pasha_events.31.t"
+	desc = "pasha_events.31.d"
+	picture = COURT_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1757
+		has_global_flag = pasha_sultan_osman_iii
+		NOT = { has_global_flag = pasha_sultan_mustafa_iii }
+	}
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "pasha_events.31.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_osman_iii
+			set_global_flag = pasha_sultan_mustafa_iii
+			add_country_modifier = { name = sultan_mustafa_iii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_osman_iii_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
+		add_faction_influence = { faction = kalemiye_faction influence = 10 }
+	}
+}
+
+# 32: Selim III: The Nizam-i Cedid (1789)
+country_event = {
+	id = pasha_events.32
+	title = "pasha_events.32.t"
+	desc = "pasha_events.32.d"
+	picture = MILITARY_CAMP_eventPicture
+	trigger = {
+		tag = TUR
+		has_reform = pasha_council_republic
+		is_year = 1789
+		has_global_flag = pasha_sultan_abdulhamid_i
+		NOT = { has_global_flag = pasha_sultan_selim_iii }
+	}
+	mean_time_to_happen = { months = 6 }
+	option = {
+		name = "pasha_events.32.a"
+		hidden_effect = {
+			clr_global_flag = pasha_sultan_abdulhamid_i
+			set_global_flag = pasha_sultan_selim_iii
+			add_country_modifier = { name = sultan_selim_iii_modifier duration = -1 }
+			change_variable = { which = sultan_count_var value = 1 }
+		}
+		remove_country_modifier = sultan_abdulhamid_i_modifier
+		add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 30 }
+		add_faction_influence = { faction = seyfiye_faction influence = -20 }
+		add_faction_influence = { faction = ilmiye_faction influence = -10 }
+		add_corruption = -1.0 
+	}
+}
+
+# 33: Mustafa I (1617)
 country_event = {
 	id = pasha_events.33
 	title = "pasha_events.33.t"
@@ -1620,7 +1605,7 @@ country_event = {
 	}
 }
 
-# 34: I. Mustafa'nın İkinci Kez Tahta Çıkarılması (1622)
+# 34: Restoration of Mustafa I (1622)
 country_event = {
 	id = pasha_events.34
 	title = "pasha_events.34.t"
@@ -1647,7 +1632,7 @@ country_event = {
 	}
 }
 
-# 35: II. Ahmed Dönemi (1691)
+# 35: Ahmed II (1691)
 country_event = {
 	id = pasha_events.35
 	title = "pasha_events.35.t"
@@ -1674,7 +1659,7 @@ country_event = {
 	}
 }
 
-# 36: III. Osman Dönemi (1754)
+# 36: Osman III (1754)
 country_event = {
 	id = pasha_events.36
 	title = "pasha_events.36.t"
@@ -1701,7 +1686,7 @@ country_event = {
 	}
 }
 
-# 37: I. Abdülhamid Dönemi (1774)
+# 37: Abdulhamid I (1774)
 country_event = {
 	id = pasha_events.37
 	title = "pasha_events.37.t"
