@@ -5,6 +5,7 @@
 
  ### EVENT MODIFIERS ###
  angry_senate_modifier: "Senate Outrage"
+ desc_angry_senate_modifier: "The Imperial Senate is furious after being bypassed. Unrest spreads through the capital and tax revenue suffers as officials drag their feet."
  sultan_mehmed_ii_modifier: "Reign of Mehmed the Conqueror"
  sultan_bayezid_ii_modifier: "Reign of Bayezid the Just"
  sultan_selim_i_modifier: "Reign of Selim the Grim"
@@ -31,15 +32,24 @@
  sultan_mahmud_ii_modifier: "Era of Mahmud II (The Adli)"
 
  random_sultan_militarist: "Militarist Sultan"
+ desc_random_sultan_militarist: "The shadow Sultan is a man of war. His martial inclinations bolster the Empire's armies and inspire the troops."
  random_sultan_diplomat: "Diplomatic Sultan"
+ desc_random_sultan_diplomat: "The shadow Sultan is a skilled negotiator. His influence subtly improves the Empire's standing among foreign powers."
  random_sultan_administrator: "Administrative Sultan"
+ desc_random_sultan_administrator: "The shadow Sultan is a capable administrator. His careful hand strengthens the treasury and eases the burden of governance."
  political_gridlock: "Political Gridlock"
  sultan_dissolves_parliament_unrest: "Divan Dissolved (Major Outrage)"
+ desc_sultan_dissolves_parliament_unrest: "The Sultan's forceful dissolution of the Divan has sparked widespread fury among the powerful factions. Unrest grips the Empire."
  sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
+ desc_sultan_dissolves_parliament_minor_unrest: "The Sultan has dissolved the Divan and called for new elections. The factions are displeased but the situation remains manageable."
  sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
+ desc_sultan_dissolves_parliament_cooldown: "The Divan was dissolved not long ago. Forcing another early dissolution so soon would be seen as a grave overreach of authority."
  faction_dominance_modifier: "Faction Dominance"
+ desc_faction_dominance_modifier: "A single faction has seized overwhelming control of the Divan. Their unchecked power stifles the administration and breeds resentment among rivals."
  pasha_political_instability: "Political Instability"
  desc_pasha_political_instability: "The struggle for power between factions has created a temporary vacuum in state authority, making reform and stabilization more difficult."
+ ilmiye_dominance_pressure: "Religious Court Supremacy"
+ desc_ilmiye_dominance_pressure: "The Ilmiye has imposed strict religious orthodoxy across the realm. While Sunni subjects remain loyal, minorities face mounting pressure and unrest."
 
  ### FACTIONS ###
  seyfiye_faction: "Men of the Sword (Seyfiye)"
@@ -57,6 +67,7 @@
  pasha_power_mechanic: "Balance of Power"
  pasha_power_mechanic_desc: "The eternal struggle for supremacy between the sovereign Imperial Court and the administrative Sublime Porte."
  ability_pasha_power_mechanic: "Balance of Power"
+ pasha_power_gain_modifier: "Balance of Power Shift"
 
  ### GOVERNMENT REFORMS ###
  pasha_council_republic: "Pasha Republic"
@@ -116,9 +127,11 @@
  pasha_events.4.d: "The great Sultan Mehmed II has passed away. While the true administrative power remains heavily in the hands of the Pasha Republic, the ascension of his son, Bayezid II, as the figurehead Padishah brings new religious and administrative focus to the realm."
  pasha_events.4.a: "Long live Sultan Bayezid II!"
 
- pasha_events.5.t: "A New Padishah Ascends"
- pasha_events.5.d: "The old Sultan has passed into the afterlife. A new heir of the House of Osman has been recognized by the Divan. Though they dwell in the shadows of the council, their personal disposition will undoubtedly influence the nation's political currents."
- pasha_events.5.a: "May their reign be prosperous."
+ pasha_events.5.t: "The Shadow Sultan Has Passed"
+ pasha_events.5.d: "The Sultan who has dwelt in the shadows behind our council has departed this world. The Divan must navigate a delicate transition — who we choose to elevate next, and how we do so, will shift the balance of power between the Porte and the Palace. Factions are watching."
+ pasha_events.5.a: "The Divan shall appoint a loyal and compliant candidate. Stability above all."
+ pasha_events.5.b: "Let Providence decide the new Sultan's character. We shall adapt to whoever rises."
+ pasha_events.5.c: "Back the strongest claimant. A capable Sultan serves the realm — whatever the cost."
 
  pasha_events.6.t: "The Restoration of the Monarchy"
  pasha_events.6.d: "The partisans of the Imperial Court have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
@@ -138,10 +151,20 @@
  pasha_events.9.b: "The Pashas solidify their grip on the administration."
  
  # Event 11
- pasha_event.11.t: "Inter-Faction Rivalry"
- pasha_event.11.d: "The open rivalry between our ruling cliques has reached a boiling point. The state apparatus is paralyzed as officials wait to see which way the wind blows. We must intervene to curb this chaos."
- pasha_event.11.a: "Support the dominant faction to end the deadlock."
- pasha_event.11.b: "Suppress all factions to restore order (Increases Stability Cost)."
+ pasha_events.11.t: "Faction Overextension"
+ pasha_events.11.d: "The equilibrium of our Council has been shattered. One faction has amassed overwhelming influence, pushing all rivals aside. Their unchecked ambition threatens the very foundation of the Pasha Republic. We must act before the delicate balance collapses entirely."
+
+ # Seyfiye options
+ pasha_events.11.seyfiye_a: "Fund the Seyfiye's campaigns. Their loyalty has its price."
+ pasha_events.11.seyfiye_b: "Rein in the Janissaries. Their ambition cannot go unchecked."
+
+ # Ilmiye options
+ pasha_events.11.ilmiye_a: "Submit to the Ulema. Grant the religious courts expanded authority."
+ pasha_events.11.ilmiye_b: "Limit the Ulema's reach. The state, not the mosque, must govern."
+
+ # Kalemiye options
+ pasha_events.11.kalemiye_a: "Accept the bureaucrats' terms. Grant them trade monopolies and privileges."
+ pasha_events.11.kalemiye_b: "Audit the state ledgers. Expose and break bureaucratic overreach."
 
  # Event 13
  pasha_event.13.t: "Annual Divan Report: Shifting Influences"

@@ -16,8 +16,3 @@ on_death_election = {
     }
 }
 
-on_replace_governor = {
-    events = {
-        pasha_events.15 # Gecikmeyi sağlayacak aracı gizli event
-    }
-}

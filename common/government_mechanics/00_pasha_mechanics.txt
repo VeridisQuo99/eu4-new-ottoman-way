@@ -20,20 +20,32 @@ pasha_power_mechanic = {
             
             # Requires 50 Admin Power to be clicked
             trigger = {
-                adm_power = 50
+                adm_power = 25
             }
             
             effect = {
-                add_adm_power = -50 
+                add_adm_power = -25
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
-                add_corruption = 1
+                add_corruption = 0.5
                 add_years_of_income = -0.5 
             }
 
             # pasha_favor_pashas butonu (Divanı güçlendirir)
             ai_chance = {
-                factor = 0 # Normal şartlarda sıfırdır, statükoyu bozmaz.
-                
+                factor = 1
+
+                # Bar 70'in altındaysa AI hiç basmaz (sakin bölge)
+                modifier = {
+                    factor = 0
+                    NOT = {
+                        has_government_power = {
+                            mechanic_type = pasha_power_mechanic
+                            power_type = pasha_power
+                            value = 70
+                        }
+                    }
+                }
+
                 # Eğer güç barı 70'in üstüne çıkarsa AI dengelemek için basmaya başlar.
                 modifier = {
                     factor = 50
@@ -43,8 +55,8 @@ pasha_power_mechanic = {
                         value = 70
                     }
                 }
-                
-                # Eğer güç barı 80'in (Disaster sınırı) üstüne çıkarsa AI panikler ve kesinlikle basar.
+
+                # Eğer güç barı 80'in üstüne çıkarsa AI panikler ve kesinlikle basar.
                 modifier = {
                     factor = 200
                     has_government_power = {
@@ -64,18 +76,30 @@ pasha_power_mechanic = {
             # Requires 10 Republican Tradition to be clicked
             trigger = {
                 republican_tradition = 5
+                mil_power = 25
             }
             
             effect = {
                 add_republican_tradition = -5
+                add_mil_power = -25
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = 10 }
             }
 
 
             # pasha_favor_sultan butonu (Sultanı güçlendirir)
             ai_chance = {
-                factor = 0 # Normalde AI bu butona gereksiz yere basıp puan harcamaz.
-                
+                factor = 1
+
+                # Bar 30'un üzerindeyse AI hiç basmaz (sakin bölge)
+                modifier = {
+                    factor = 0
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 30
+                    }
+                }
+
                 # Eğer güç barı 30'un altına inerse AI tehlikeyi sezer ve basmaya başlar.
                 modifier = {
                     factor = 50
@@ -87,8 +111,8 @@ pasha_power_mechanic = {
                         }
                     }
                 }
-                
-                # Eğer güç barı 20'nin (Disaster sınırı) altına inerse AI panikler ve kesinlikle basar.
+
+                # Eğer güç barı 20'nin altına inerse AI panikler ve kesinlikle basar.
                 modifier = {
                     factor = 200
                     NOT = {
@@ -100,9 +124,10 @@ pasha_power_mechanic = {
                     }
                 }
 
+                # RT 50'nin altındaysa basma, cumhuriyeti tehlikeye atar
                 modifier = {
                     factor = 0
-                    NOT = { republican_tradition = 50 } # Prevents AI from clicking if it will compromise Republic stability
+                    NOT = { republican_tradition = 50 }
                 }
             }
         }

@@ -42,7 +42,7 @@ issue_judicial_and_religious_reform = {
 			faction = ilmiye_faction
 			influence = 15
 		}
-		add_devotion = 10 
+		add_piety = 0.1
 		add_stability = 1
 		add_government_power = {
             mechanic_type = pasha_power_mechanic

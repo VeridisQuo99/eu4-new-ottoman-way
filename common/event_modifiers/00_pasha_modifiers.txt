@@ -24,15 +24,15 @@ sultan_bayezid_ii_modifier = {
 sultan_selim_i_modifier = {
 	discipline = 0.05
 	land_morale = 0.10
-	global_prestige = 1
+	prestige = 1
 	manpower_recovery_speed = 0.15
 }
 
 # I. Süleyman (Kanuni)
 sultan_suleiman_i_modifier = {
 	administrative_efficiency = 0.05
-	core_creation_cost = -0.10
-	imperial_authority = 0.10
+	ae_impact = -0.10
+	prestige = 1
 	global_unrest = -2
 }
 
@@ -144,7 +144,7 @@ sultan_abdulhamid_i_modifier = {
 
 # I. Mahmud (1730-1754)
 sultan_mahmud_i_modifier = {
-	artillery_combat_ability = 0.05
+	land_morale = 0.05
 	defensiveness = 0.10
 	army_tradition = 0.5
 }
@@ -226,4 +226,11 @@ sultan_dissolves_parliament_cooldown = {
 
 pasha_political_instability = {
     stability_cost_modifier = 0.25
+}
+
+# Applied when the Ilmiye's religious authority becomes absolute
+ilmiye_dominance_pressure = {
+    global_unrest = 2
+    tolerance_heretic = -1
+    tolerance_heathen = -1
 }

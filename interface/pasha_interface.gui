@@ -28,7 +28,7 @@ guiTypes = {
 
         guiButtonType = {
             name = "government_interaction_button" 
-            quadTextureSprite = "GFX_russian_ability_ADM"
+            quadTextureSprite = "GFX_monarch_power_ADM"
             # Butonu kendi alanında tam sola yaslıyoruz
             position = { x = 0 y = 5 } 
             clicksound = back_click

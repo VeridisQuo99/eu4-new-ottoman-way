@@ -11,15 +11,15 @@ country_event = {
 
     # Seçilen adayın yeteneğine göre arka planda hizip güçlendirme
     immediate = {
-		# Kalemiye (ADM Skill)
-		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		# Ilmiye (ADM Skill)
+		if = { limit = { adm = 4 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
 
-		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 10 } }
+		# Kalemiye (DIP Skill)
+		if = { limit = { dip = 4 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = kalemiye_faction influence = 10 } }
 
 		# Seyfiye (MIL Skill)
 		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 10 } }
@@ -356,7 +356,6 @@ country_event = {
 
     trigger = {
         has_country_flag = random_sultans_path
-        # Ensures there's a Sultan to die
         OR = {
             has_country_modifier = random_sultan_militarist
             has_country_modifier = random_sultan_diplomat
@@ -368,18 +367,69 @@ country_event = {
         months = 360 # Average 30-year reign
     }
 
+    immediate = {
+        if = { limit = { has_country_modifier = random_sultan_militarist } remove_country_modifier = random_sultan_militarist }
+        if = { limit = { has_country_modifier = random_sultan_diplomat } remove_country_modifier = random_sultan_diplomat }
+        if = { limit = { has_country_modifier = random_sultan_administrator } remove_country_modifier = random_sultan_administrator }
+    }
+
+    # Option A: The Divan appoints a compliant candidate of their choosing
     option = {
-        name = "pasha_events.5.a" # Long live the new Sultan!
-        # Clear old modifiers
-        remove_country_modifier = random_sultan_militarist
-        remove_country_modifier = random_sultan_diplomat
-        remove_country_modifier = random_sultan_administrator
-        
-        # Assign a new random personality
+        name = "pasha_events.5.a"
+        add_country_modifier = { name = "random_sultan_administrator" duration = -1 }
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
+        add_corruption = 1
+
+        ai_chance = {
+            factor = 40
+            modifier = {
+                factor = 0
+                corruption = 7
+            }
+        }
+    }
+
+    # Option B: Let fate determine the successor's character
+    option = {
+        name = "pasha_events.5.b"
         random_list = {
             33 = { add_country_modifier = { name = "random_sultan_militarist" duration = -1 } }
             33 = { add_country_modifier = { name = "random_sultan_diplomat" duration = -1 } }
             34 = { add_country_modifier = { name = "random_sultan_administrator" duration = -1 } }
+        }
+        add_prestige = -5
+
+        ai_chance = {
+            factor = 40
+        }
+    }
+
+    # Option C: Back the strongest claimant — a capable Sultan, whatever the cost
+    option = {
+        name = "pasha_events.5.c"
+        add_country_modifier = { name = "random_sultan_militarist" duration = -1 }
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 10
+        }
+        add_army_tradition = 5
+        add_stability = -1
+
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                NOT = { stability = 1 }
+            }
+            modifier = {
+                factor = 3
+                stability = 3
+            }
         }
     }
 }
@@ -424,237 +474,101 @@ country_event = {
                 has_country_flag = historical_sultans_path
             }
 
-            hidden_effect = {
-                # Padişahın (Mevcut Vezirin) yaşını değişkene aktarır
-                export_to_variable = {
-                    which = current_vizier_age
-                    value = ruler_age
-                }
-
-                change_variable = {
-                    which = current_vizier_age
-                    value = -30
-                }
-            }
-
             if = {
                 limit = { has_country_modifier = sultan_mehmed_ii_modifier }
-                define_ruler = {
-                    name = "Mehmed II"
-                    dynasty = "Osmanloglu"
-                    claim = 100
-                    age = current_vizier_age
-                }
+                define_ruler = { name = "Mehmed II" dynasty = "Osmanloglu" claim = 100 }
             }
-            
             if = {
                 limit = { has_country_modifier = sultan_bayezid_ii_modifier }
-                define_ruler = {
-                    name = "Bayezid II"
-                    dynasty = "Osmanloglu"
-                    claim = 100
-                    age = current_vizier_age
-                }
+                define_ruler = { name = "Bayezid II" dynasty = "Osmanloglu" claim = 100 }
             }
-
-			# Selim I - Mahmud II Arasındaki Tüm Tarihi Padişahlar
 			if = {
 				limit = { has_country_modifier = sultan_selim_i_modifier }
-				define_ruler = {
-					name = "Selim I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Selim I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_suleiman_i_modifier }
-				define_ruler = {
-					name = "Suleiman I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Suleiman I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_selim_ii_modifier }
-				define_ruler = {
-					name = "Selim II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Selim II" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_murad_iii_modifier }
-				define_ruler = {
-					name = "Murad III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Murad III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mehmed_iii_modifier }
-				define_ruler = {
-					name = "Mehmed III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mehmed III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_ahmed_i_modifier }
-				define_ruler = {
-					name = "Ahmed I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Ahmed I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mustafa_i_modifier }
-				define_ruler = {
-					name = "Mustafa I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mustafa I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_osman_ii_modifier }
-				define_ruler = {
-					name = "Osman II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Osman II" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_murad_iv_modifier }
-				define_ruler = {
-					name = "Murad IV"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Murad IV" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_ibrahim_i_modifier }
-				define_ruler = {
-					name = "Ibrahim I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Ibrahim I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mehmed_iv_modifier }
-				define_ruler = {
-					name = "Mehmed IV"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mehmed IV" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_suleiman_ii_modifier }
-				define_ruler = {
-					name = "Suleiman II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Suleiman II" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_ahmed_ii_modifier }
-				define_ruler = {
-					name = "Ahmed II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Ahmed II" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mustafa_ii_modifier }
-				define_ruler = {
-					name = "Mustafa II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mustafa II" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_ahmed_iii_modifier }
-				define_ruler = {
-					name = "Ahmed III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Ahmed III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mahmud_i_modifier }
-				define_ruler = {
-					name = "Mahmud I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mahmud I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_osman_iii_modifier }
-				define_ruler = {
-					name = "Osman III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Osman III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mustafa_iii_modifier }
-				define_ruler = {
-					name = "Mustafa III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mustafa III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_abdulhamid_i_modifier }
-				define_ruler = {
-					name = "Abdulhamid I"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Abdulhamid I" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_selim_iii_modifier }
-				define_ruler = {
-					name = "Selim III"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Selim III" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mustafa_iv_modifier }
-				define_ruler = {
-					name = "Mustafa IV"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mustafa IV" dynasty = "Osmanloglu" claim = 100 }
 			}
 			if = {
 				limit = { has_country_modifier = sultan_mahmud_ii_modifier }
-				define_ruler = {
-					name = "Mahmud II"
-					dynasty = "Osmanloglu"
-					claim = 100
-					age = current_vizier_age
-				}
+				define_ruler = { name = "Mahmud II" dynasty = "Osmanloglu" claim = 100 }
 			}
         }
 
@@ -907,68 +821,87 @@ country_event = {
     picture = PARLIAMENT_eventPicture
 
     trigger = {
-		has_reform = pasha_council_republic
-		OR = {
-			faction_influence = {
-				faction = seyfiye_faction
-				influence = 80
-			}
-			faction_influence = {
-				faction = ilmiye_faction
-				influence = 80
-			}
-			faction_influence = {
-				faction = kalemiye_faction
-				influence = 80
-			}
-		}
-	}
-
-    mean_time_to_happen = { months = 24 }
-
-    option = {
-        name = "pasha_events.11.a"
-        add_years_of_income = -0.5
-        add_corruption = 2
-        add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
-
-        ai_chance = {
-            factor = 20
-            modifier = {
-                factor = 0
-                corruption = 5 # Prevent AI from spiraling into corruption
-            }
+        has_reform = pasha_council_republic
+        OR = {
+            faction_influence = { faction = seyfiye_faction influence = 80 }
+            faction_influence = { faction = ilmiye_faction influence = 80 }
+            faction_influence = { faction = kalemiye_faction influence = 80 }
         }
     }
 
-    option = {
-        name = "pasha_events.11.b"
-        if = {
-            limit = {
-                faction_influence = { faction = seyfiye_faction influence = 80 }
-            }
-            add_faction_influence = { faction = seyfiye_faction influence = -40 }
-        }
-        if = {
-            limit = {
-                faction_influence = { faction = ilmiye_faction influence = 80 }
-            }
-            add_faction_influence = { faction = ilmiye_faction influence = -40 }
-        }
-        if = {
-            limit = {
-                faction_influence = { faction = kalemiye_faction influence = 80 }
-            }
-            add_faction_influence = { faction = kalemiye_faction influence = -40 }
-        }
-        add_country_modifier = {
-            name = "pasha_political_instability"
-            duration = 365
-        }
+    mean_time_to_happen = { months = 24 }
 
+    # --- SEYFIYE: Fund their campaigns ---
+    option = {
+        name = "pasha_events.11.seyfiye_a"
+        trigger = { faction_influence = { faction = seyfiye_faction influence = 80 } }
+        add_years_of_income = -0.5
+        add_army_tradition = 5
+        add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
+        add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
         ai_chance = {
-            factor = 80 # AI heavily prefers resetting the influence to restore balance
+            factor = 20
+            modifier = { factor = 0 corruption = 5 }
         }
+    }
+
+    # --- SEYFIYE: Rein in the Janissaries ---
+    option = {
+        name = "pasha_events.11.seyfiye_b"
+        trigger = { faction_influence = { faction = seyfiye_faction influence = 80 } }
+        add_faction_influence = { faction = seyfiye_faction influence = -40 }
+        add_manpower = -5
+        add_country_modifier = { name = "pasha_political_instability" duration = 365 }
+        ai_chance = { factor = 80 }
+    }
+
+    # --- ILMIYE: Submit to the Ulema ---
+    option = {
+        name = "pasha_events.11.ilmiye_a"
+        trigger = { faction_influence = { faction = ilmiye_faction influence = 80 } }
+        add_stability = 1
+        add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
+        add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
+        add_country_modifier = { name = "ilmiye_dominance_pressure" duration = 1825 }
+        ai_chance = {
+            factor = 30
+            modifier = { factor = 0 stability = 3 }
+            modifier = { factor = 0 corruption = 5 }
+        }
+    }
+
+    # --- ILMIYE: Limit the religious courts ---
+    option = {
+        name = "pasha_events.11.ilmiye_b"
+        trigger = { faction_influence = { faction = ilmiye_faction influence = 80 } }
+        add_faction_influence = { faction = ilmiye_faction influence = -40 }
+        add_prestige = -10
+        add_country_modifier = { name = "pasha_political_instability" duration = 365 }
+        ai_chance = { factor = 70 }
+    }
+
+    # --- KALEMIYE: Grant trade monopolies ---
+    option = {
+        name = "pasha_events.11.kalemiye_a"
+        trigger = { faction_influence = { faction = kalemiye_faction influence = 80 } }
+        add_years_of_income = 1
+        add_corruption = 2
+        add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
+        add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
+        ai_chance = {
+            factor = 20
+            modifier = { factor = 0 corruption = 5 }
+        }
+    }
+
+    # --- KALEMIYE: Audit the state ledgers ---
+    option = {
+        name = "pasha_events.11.kalemiye_b"
+        trigger = { faction_influence = { faction = kalemiye_faction influence = 80 } }
+        add_faction_influence = { faction = kalemiye_faction influence = -40 }
+        add_corruption = -1
+        add_country_modifier = { name = "pasha_political_instability" duration = 365 }
+        ai_chance = { factor = 80 }
     }
 }
 
@@ -1006,15 +939,15 @@ country_event = {
 	}
 
 	immediate = {
-		# Kalemiye (ADM Skill)
-		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		# Ilmiye (ADM Skill)
+		if = { limit = { adm = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
 
-		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		# Kalemiye (DIP Skill)
+		if = { limit = { dip = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
 
 		# Seyfiye (MIL Skill)
 		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
@@ -1047,15 +980,15 @@ country_event = {
 	}
 
 	immediate = {
-		# Kalemiye (ADM Skill)
-		if = { limit = { adm = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
-		if = { limit = { adm = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		# Ilmiye (ADM Skill)
+		if = { limit = { adm = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { adm = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		if = { limit = { adm = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
 
-		# Ilmiye (DIP Skill)
-		if = { limit = { dip = 4 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 5 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
-		if = { limit = { dip = 6 } add_faction_influence = { faction = ilmiye_faction influence = 5 } }
+		# Kalemiye (DIP Skill)
+		if = { limit = { dip = 4 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { dip = 5 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
+		if = { limit = { dip = 6 } add_faction_influence = { faction = kalemiye_faction influence = 5 } }
 
 		# Seyfiye (MIL Skill)
 		if = { limit = { mil = 4 } add_faction_influence = { faction = seyfiye_faction influence = 5 } }
@@ -1238,7 +1171,7 @@ country_event = {
 	id = pasha_events.19
 	title = "pasha_events.19.t"
 	desc = "pasha_events.19.d"
-	picture = COURT_eventPicture # İsteğe göre GFX_evt_council eklenebilir
+	picture = COURT_eventPicture
 
 	trigger = {
 		tag = TUR
@@ -1681,7 +1614,7 @@ country_event = {
 	id = pasha_events.28
 	title = "pasha_events.28.t"
 	desc = "pasha_events.28.d"
-	picture = DEATH_OF_HEIR_eventPicture
+	picture = DEATH_OF_A_HEIR_eventPicture
 	trigger = {
 		tag = TUR
 		has_reform = pasha_council_republic
