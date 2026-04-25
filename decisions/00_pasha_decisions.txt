@@ -54,6 +54,146 @@ country_decisions = {
         }
     }    
 
+	# --- SULTAN-SIDE HISTORICAL DECISIONS (high pasha_power bar) ---
+
+	# Repeatable: Reform the Kapıkulu standing army corps
+	pasha_kapikulu_reformu = {
+		potential = {
+			tag = TUR
+			has_reform = pasha_council_republic
+		}
+
+		allow = {
+			mil_power = 50
+			has_government_power = {
+				mechanic_type = pasha_power_mechanic
+				power_type = pasha_power
+				value = 70
+			}
+			NOT = { has_country_modifier = kapikulu_reform_cooldown }
+		}
+
+		effect = {
+			add_mil_power = -50
+			add_army_tradition = 10
+			add_country_modifier = {
+				name = "kapikulu_reform_buff"
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = "kapikulu_reform_cooldown"
+				duration = 3650
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
+	# One-time: Issue an Imperial Rescript at peak Sultan dominance
+	pasha_hatt_i_humayun = {
+		major = yes
+
+		potential = {
+			tag = TUR
+			has_reform = pasha_council_republic
+			NOT = { has_country_flag = hatt_i_humayun_issued }
+		}
+
+		allow = {
+			adm_power = 50
+			republican_tradition = 20
+			has_government_power = {
+				mechanic_type = pasha_power_mechanic
+				power_type = pasha_power
+				value = 85
+			}
+		}
+
+		effect = {
+			add_adm_power = -50
+			add_republican_tradition = -10
+			add_prestige = 20
+			add_country_modifier = {
+				name = "hatt_humayun_buff"
+				duration = 3650
+			}
+			set_country_flag = hatt_i_humayun_issued
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
+	# --- PASHA-SIDE HISTORICAL DECISIONS (low pasha_power bar) ---
+
+	# Repeatable: Formalize the Imperial Council's authority
+	pasha_divan_guclendir = {
+		potential = {
+			tag = TUR
+			has_reform = pasha_council_republic
+		}
+
+		allow = {
+			adm_power = 50
+			NOT = {
+				has_government_power = {
+					mechanic_type = pasha_power_mechanic
+					power_type = pasha_power
+					value = 31
+				}
+			}
+			NOT = { has_country_modifier = divan_strengthened_cooldown }
+		}
+
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "divan_strengthened_buff"
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = "divan_strengthened_cooldown"
+				duration = 3650
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
+	# Repeatable: Reform the tax farm system to root out corruption
+	pasha_iltizam_reformu = {
+		potential = {
+			tag = TUR
+			has_reform = pasha_council_republic
+		}
+
+		allow = {
+			treasury = 100
+			NOT = {
+				has_government_power = {
+					mechanic_type = pasha_power_mechanic
+					power_type = pasha_power
+					value = 21
+				}
+			}
+			NOT = { has_country_modifier = iltizam_reform_cooldown }
+		}
+
+		effect = {
+			add_treasury = -100
+			add_corruption = -1
+			add_country_modifier = {
+				name = "iltizam_reform_buff"
+				duration = 1825
+			}
+			add_country_modifier = {
+				name = "iltizam_reform_cooldown"
+				duration = 3650
+			}
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
 	# Decision to hide reports (Automate)
 	pasha_activate_automated_reports = {
 		potential = {

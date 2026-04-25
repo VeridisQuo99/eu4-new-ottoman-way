@@ -234,3 +234,82 @@ ilmiye_dominance_pressure = {
     tolerance_heretic = -1
     tolerance_heathen = -1
 }
+
+# --- DECISION BUFFS & COOLDOWNS ---
+
+# Kapıkulu Reformu (Sultan-side, bar >= 70)
+kapikulu_reform_buff = {
+    discipline = 0.05
+    land_morale = 0.05
+}
+
+kapikulu_reform_cooldown = {
+    # No visible effects, acts only as a timer
+}
+
+# Hatt-ı Hümayun (Sultan-side, bar >= 85, one-time)
+hatt_humayun_buff = {
+    global_tax_modifier = 0.10
+    stability_cost_modifier = -0.10
+}
+
+# Divan'ı Güçlendir (Pasha-side, bar <= 30)
+divan_strengthened_buff = {
+    administrative_efficiency = 0.05
+    global_unrest = -1
+}
+
+divan_strengthened_cooldown = {
+    # No visible effects, acts only as a timer
+}
+
+# İltizam Reformu (Pasha-side, bar <= 20)
+iltizam_reform_buff = {
+    global_tax_modifier = 0.10
+    yearly_corruption = -0.05
+}
+
+iltizam_reform_cooldown = {
+    # No visible effects, acts only as a timer
+}
+
+# --- MISSION REWARDS ---
+
+# Slot 6 final: Age of Pashas
+pasha_age_of_pashas_reward = {
+    global_tax_modifier = 0.10
+    stability_cost_modifier = -0.10
+    global_unrest = -2
+}
+
+# Slot 7 mid: Bosphorus Mastery (10yr)
+pasha_bosphorus_mastery = {
+    trade_efficiency = 0.10
+    naval_forcelimit_modifier = 0.10
+}
+
+# Slot 7 late: Guardian of the Holy Cities
+pasha_holy_guardian = {
+    prestige_decay = -0.01
+    tolerance_own = 1
+    global_missionary_strength = 0.01
+}
+
+# Slot 7 final: Commercial Dominance
+pasha_commerce_mastery = {
+    global_tax_modifier = 0.05
+    trade_efficiency = 0.05
+}
+
+# Slot 8 mid: Kapıkulu Excellence (10yr)
+pasha_kapikulu_excellence_buff = {
+    discipline = 0.05
+    land_morale = 0.05
+}
+
+# Slot 8 final: Sole Sovereign
+pasha_sole_sovereign_reward = {
+    discipline = 0.05
+    yearly_absolutism = 0.5
+    prestige_decay = -0.01
+}

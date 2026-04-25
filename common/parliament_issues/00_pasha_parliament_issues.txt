@@ -15,7 +15,7 @@ issue_military_campaign_funding = {
 		add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
-            value = -10
+            value = 10
         }
 	}
 
@@ -64,7 +64,7 @@ issue_judicial_and_religious_reform = {
 # Issue 3: Favouring the Men of the Bureaucracy (Kalemiye)
 issue_expand_trade_privileges = {
 	category = 3
-	
+
 	allow = {
 		has_reform = pasha_council_republic
 	}
@@ -88,6 +88,188 @@ issue_expand_trade_privileges = {
 	}
 
 	chance = {
-		factor = 100 
+		factor = 100
+	}
+}
+
+# Issue 4: Frontier Garrison Reinforcement (Seyfiye secondary)
+issue_frontier_garrison_reinforcement = {
+	category = 1
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 10
+		}
+		add_army_tradition = 3
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 5
+		}
+	}
+
+	modifier = {
+		defensiveness = 0.10
+		discipline = 0.025
+	}
+
+	chance = {
+		factor = 100
+	}
+}
+
+# Issue 5: Naval Expansion Decree (Seyfiye secondary)
+issue_naval_expansion_decree = {
+	category = 1
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = seyfiye_faction
+			influence = 10
+		}
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = 5
+		}
+	}
+
+	modifier = {
+		naval_forcelimit_modifier = 0.10
+		navy_tradition_decay = -0.01
+	}
+
+	chance = {
+		factor = 100
+	}
+}
+
+# Issue 6: Madrasah Endowment (Ilmiye secondary)
+issue_madrasah_endowment = {
+	category = 2
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 10
+		}
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -5
+		}
+	}
+
+	modifier = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+	}
+
+	chance = {
+		factor = 100
+	}
+}
+
+# Issue 7: Charitable Foundation — Waqf (Ilmiye secondary)
+issue_charitable_foundation_waqf = {
+	category = 2
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = ilmiye_faction
+			influence = 10
+		}
+		add_piety = 0.05
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -5
+		}
+	}
+
+	modifier = {
+		stability_cost_modifier = -0.10
+		tolerance_own = 1
+	}
+
+	chance = {
+		factor = 100
+	}
+}
+
+# Issue 8: Revenue Assessment Reform (Kalemiye secondary)
+issue_revenue_assessment_reform = {
+	category = 3
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 10
+		}
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -5
+		}
+	}
+
+	modifier = {
+		global_tax_modifier = 0.05
+		yearly_corruption = -0.05
+	}
+
+	chance = {
+		factor = 100
+	}
+}
+
+# Issue 9: Diplomatic Mission Fund (Kalemiye secondary)
+issue_diplomatic_mission_fund = {
+	category = 3
+
+	allow = {
+		has_reform = pasha_council_republic
+	}
+
+	effect = {
+		add_faction_influence = {
+			faction = kalemiye_faction
+			influence = 10
+		}
+		add_government_power = {
+			mechanic_type = pasha_power_mechanic
+			power_type = pasha_power
+			value = -5
+		}
+	}
+
+	modifier = {
+		envoy_travel_time = -0.10
+		ae_impact = -0.05
+	}
+
+	chance = {
+		factor = 100
 	}
 }

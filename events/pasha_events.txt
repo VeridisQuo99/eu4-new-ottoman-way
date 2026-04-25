@@ -805,7 +805,7 @@ country_event = {
             value = -10
         } 
         add_republican_tradition = 10
-        add_prestige = -25
+        add_prestige = -10
 
         ai_chance = {
 			factor = 15
@@ -2008,24 +2008,340 @@ country_event = {
 
 		remove_country_modifier = sultan_mustafa_iv_modifier
 
-		# II. Mahmud Yeniçeri Ocağını kaldırarak tüm gücü sarayda toplar
 		add_government_power = {
 			mechanic_type = pasha_power_mechanic
 			power_type = pasha_power
-			value = 40 
+			value = 40
 		}
 
-		# Seyfiye (Yeniçeriler) tamamen ezilir
 		add_faction_influence = {
 			faction = seyfiye_faction
 			influence = -40
 		}
-		
+
 		add_faction_influence = {
 			faction = kalemiye_faction
 			influence = 15
 		}
-		
+
 		add_stability = 1
 	}
+}
+
+# EVENT 40: Milestone — The Divan Ascendant (bar ≤ 15, one-time)
+country_event = {
+    id = pasha_events.40
+    title = "pasha_events.40.t"
+    desc = "pasha_events.40.d"
+    picture = PARLIAMENT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_country_flag = pasha_milestone_divan_ascendant }
+        NOT = {
+            has_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 16
+            }
+        }
+    }
+
+    mean_time_to_happen = { months = 1 }
+
+    option = {
+        name = "pasha_events.40.a"
+        set_country_flag = pasha_milestone_divan_ascendant
+        add_republican_tradition = 5
+        add_prestige = -5
+        ai_chance = { factor = 100 }
+    }
+}
+
+# EVENT 41: Milestone — The Sultan Unchained (bar ≥ 85, one-time)
+country_event = {
+    id = pasha_events.41
+    title = "pasha_events.41.t"
+    desc = "pasha_events.41.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_country_flag = pasha_milestone_sultan_unchained }
+        has_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 85
+        }
+    }
+
+    mean_time_to_happen = { months = 1 }
+
+    option = {
+        name = "pasha_events.41.a"
+        set_country_flag = pasha_milestone_sultan_unchained
+        add_prestige = 10
+        add_republican_tradition = -5
+        ai_chance = { factor = 100 }
+    }
+}
+
+# =========================================================
+# PERIODIC FLAVOR EVENTS (42-47)
+# Fire roughly every 2-3 years collectively.
+# Each reacts to faction influence or power bar state.
+# =========================================================
+
+# EVENT 42: Tensions in the Divan
+country_event = {
+    id = pasha_events.42
+    title = "pasha_events.42.t"
+    desc = "pasha_events.42.d"
+    picture = PARLIAMENT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.75
+            NOT = {
+                has_government_power = {
+                    mechanic_type = pasha_power_mechanic
+                    power_type = pasha_power
+                    value = 51
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "pasha_events.42.a"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -5
+        }
+        add_adm_power = 25
+        ai_chance = { factor = 60 }
+    }
+
+    option = {
+        name = "pasha_events.42.b"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 5
+        }
+        add_prestige = 5
+        ai_chance = { factor = 40 }
+    }
+}
+
+# EVENT 43: The Janissary Corps Grows Restless
+country_event = {
+    id = pasha_events.43
+    title = "pasha_events.43.t"
+    desc = "pasha_events.43.d"
+    picture = SOLDIERS_PORTRAIT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = seyfiye_faction influence = 40 }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.6
+            faction_influence = { faction = seyfiye_faction influence = 65 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.43.a"
+        add_years_of_income = -0.25
+        add_army_tradition = 3
+        ai_chance = { factor = 70 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.43.b"
+        add_faction_influence = { faction = seyfiye_faction influence = -20 }
+        add_country_modifier = {
+            name = pasha_political_instability
+            duration = 180
+        }
+        ai_chance = { factor = 30 }
+    }
+}
+
+# EVENT 44: The Mufti's Proclamation
+country_event = {
+    id = pasha_events.44
+    title = "pasha_events.44.t"
+    desc = "pasha_events.44.d"
+    picture = RELIGIOUS_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = ilmiye_faction influence = 40 }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.6
+            faction_influence = { faction = ilmiye_faction influence = 65 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.44.a"
+        add_faction_influence = { faction = ilmiye_faction influence = 10 }
+        add_country_modifier = {
+            name = divan_strengthened_buff
+            duration = 1825
+        }
+        ai_chance = { factor = 50 }
+    }
+
+    option = {
+        name = "pasha_events.44.b"
+        add_prestige = 5
+        add_faction_influence = { faction = ilmiye_faction influence = -15 }
+        ai_chance = { factor = 50 }
+    }
+}
+
+# EVENT 45: A Merchant's Windfall
+country_event = {
+    id = pasha_events.45
+    title = "pasha_events.45.t"
+    desc = "pasha_events.45.d"
+    picture = ECONOMY_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = kalemiye_faction influence = 30 }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.7
+            faction_influence = { faction = kalemiye_faction influence = 55 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.45.a"
+        add_years_of_income = 0.5
+        add_faction_influence = { faction = kalemiye_faction influence = 10 }
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.45.b"
+        add_years_of_income = 1
+        add_faction_influence = { faction = kalemiye_faction influence = -15 }
+        add_corruption = 0.5
+        ai_chance = { factor = 60 modifier = { factor = 0 corruption = 5 } }
+    }
+}
+
+# EVENT 46: Whispers in the Palace
+country_event = {
+    id = pasha_events.46
+    title = "pasha_events.46.t"
+    desc = "pasha_events.46.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        has_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 40
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 144
+        modifier = {
+            factor = 0.7
+            has_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 65
+            }
+        }
+    }
+
+    option = {
+        name = "pasha_events.46.a"
+        add_adm_power = -25
+        add_prestige = 5
+        ai_chance = { factor = 60 }
+    }
+
+    option = {
+        name = "pasha_events.46.b"
+        add_corruption = 0.25
+        ai_chance = { factor = 40 }
+    }
+}
+
+# EVENT 47: A Governor's Urgent Report
+country_event = {
+    id = pasha_events.47
+    title = "pasha_events.47.t"
+    desc = "pasha_events.47.d"
+    picture = BORDER_TENSION_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+    }
+
+    mean_time_to_happen = { months = 108 }
+
+    option = {
+        name = "pasha_events.47.a"
+        add_manpower = -3
+        add_country_modifier = {
+            name = divan_strengthened_buff
+            duration = 730
+        }
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.47.b"
+        add_treasury = -75
+        add_stability = 1
+        ai_chance = { factor = 40 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.47.c"
+        add_stability = -1
+        add_prestige = -5
+        ai_chance = { factor = 20 }
+    }
 }
