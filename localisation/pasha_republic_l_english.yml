@@ -402,7 +402,7 @@
  pasha_mission_bosphorus_mastery: "Masters of the Bosphorus"
  pasha_mission_bosphorus_mastery_desc: "A prosperous and stable empire is the foundation of Ottoman greatness. As our realm expands and development flourishes, the Porte's mastery over the straits between East and West becomes unassailable.\n\n§YRequires:§! Total development >= 400. No rebel armies in the field."
  pasha_mission_guardian_holy_cities: "Guardian of the Holy Cities"
- pasha_mission_guardian_holy_cities_desc: "To control Mecca is to hold the spiritual heart of the Islamic world. As protector of the Two Holy Sanctuaries, the Ottoman Padishah becomes the undisputed leader of Sunni Islam — a title that brings with it immense prestige and divine mandate.\n\n§YRequires:§! Own and core Mecca (385)."
+ pasha_mission_guardian_holy_cities_desc: "To hold both Mecca and Medina is to stand as Khadim al-Haramayn — Servant of the Two Holy Sanctuaries — and with it comes the undisputed moral leadership of the Sunni world. No caliph, no rival sultan, and no ambitious emir can dispute our religious legitimacy while the holiest cities of Islam are under Ottoman protection.\n\n§YRequires:§! Own and core Mecca (385) and Medina (384)."
  pasha_mission_commercial_dominance: "Commercial Supremacy"
  pasha_mission_commercial_dominance_desc: "The wealth of three continents flows through Ottoman hands. With a treasury brimming and corruption held in check, the empire demonstrates that Pasha Republic governance can produce not only stability, but extraordinary prosperity.\n\n§YRequires:§! Treasury >= 1000 ducats. Corruption below 3."
 
@@ -428,3 +428,188 @@
  pasha_favor_pashas_desc: "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
  pasha_favor_sultan: "Assert Sultanic Authority"
  pasha_favor_sultan_desc: "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."
+
+ # =========================================================
+ # MISSION TREE v2.0 — NEW & UPDATED MODIFIERS
+ # =========================================================
+ pasha_grand_divan_established: "Grand Divan Established"
+ desc_pasha_grand_divan_established: "The Imperial Council has been formally constituted in the halls of the Topkapi. The presence of all three factions — sword, pen, and ulema — lends the new republic its institutional legitimacy, and the state breathes easier for it."
+ pasha_kanun_buff: "Kanun-i Pasha Codified"
+ desc_pasha_kanun_buff: "The grand bureaucracy of the Sublime Porte has been given a formal legal foundation. The Kanun-i Pasha, drawn up under the supervision of the Kalemiye, standardizes the laws of governance, reduces the friction of administration, and brings the empire's jurisprudence into the new age."
+ pasha_anatolian_master: "Master of Anatolia"
+ desc_pasha_anatolian_master: "The peninsula of Anatolia — the heartland of Ottoman power — is now unified under the banner of the Porte. From the slopes of the Taurus to the Black Sea coast, the Pasha Republic's writ is unchallenged. The depth of Anatolia now fuels the empire's armies and commerce."
+ pasha_egypt_conquered: "The Mamluk Inheritance"
+ desc_pasha_egypt_conquered: "The Mamluk Sultanate has fallen and its ancient lands now flow with Ottoman gold. Egypt, the granary of the world and crown jewel of the eastern trade routes, answers to the Sublime Porte. The Kalemiye's merchants rejoice as the wealth of the Nile joins the empire's commercial web."
+ pasha_crescent_fleet_buff: "The Crescent Fleet Ready"
+ desc_pasha_crescent_fleet_buff: "A new fleet of swift galleys has been assembled under the crescent banner. The Aegean trembles at the sight of Ottoman sails, and the empire's admirals are invigorated by the fresh smell of naval ambition."
+ pasha_aegean_supremacy: "Aegean Supremacy"
+ desc_pasha_aegean_supremacy: "The Aegean Sea is, in all but name, an Ottoman lake. Our merchant caravels pay no toll and our warships patrol unchallenged. The old Greek and Venetian dominance of these waters has been swept aside by the crescent fleet."
+ pasha_mediterranean_supremacy: "Mare Nostrum — Our Sea"
+ desc_pasha_mediterranean_supremacy: "From the Bosphorus to the Pillars of Hercules, the Mediterranean bends to the will of the Sublime Porte. Every trade route, every strategic strait, and every vital port is under the watchful eye of the Ottoman fleet. The age of Ottoman naval supremacy has arrived."
+ pasha_rumelia_domination: "Rumelia Pacified"
+ desc_pasha_rumelia_domination: "Thrace and Bulgaria are firmly under the empire's control. The roads through the Balkans are clear, the garrisons supplied, and the provincial governors have been reminded — with appropriate firmness — of where their loyalties lie."
+ pasha_european_gateway: "Gateway to Europe"
+ desc_pasha_european_gateway: "The Ottoman banners now fly over the lands that were once the frontier of Christendom. Our armies have crossed the threshold into Europe, and the western powers scramble to understand what has descended upon them. The gates are open — what lies beyond is ours to claim."
+ pasha_walls_of_christendom_reward: "The Conqueror of the West"
+ desc_pasha_walls_of_christendom_reward: "Vienna has fallen to Ottoman arms. The greatest fortress of Christendom could not stand against the discipline and will of the Pasha Republic's armies. News of the conquest echoes across the world, and the empire's military prestige is without equal."
+ pasha_timar_reform_buff: "Reformed Timar System"
+ desc_pasha_timar_reform_buff: "The timar — the feudal land grant at the foundation of Ottoman military organization — has been thoroughly reformed under the Sultan's personal direction. Corrupt timariots have been replaced with loyal warriors, supply chains tightened, and the provincial cavalry restored to its former fearsome reputation."
+ pasha_border_fortifications: "Fortified Frontiers"
+ desc_pasha_border_fortifications: "By the Sultan's personal decree, a network of strongholds, watchtowers, and garrison posts now guards every vulnerable stretch of the empire's borders. The frontier is no longer a line on a map — it is a wall of iron. Enemies who once probed our borders with impunity now face a prepared and vigilant defense."
+ pasha_mesopotamia_dominance: "Lord of Mesopotamia"
+ desc_pasha_mesopotamia_dominance: "The ancient lands between the Tigris and the Euphrates — the cradle of civilization — now answer to the Sublime Porte. Baghdad, seat of the old Caliphate, flies the Ottoman banner. The trade routes of Mesopotamia pour their wealth into our treasury, and the merchants of the east bow before the Pasha Republic's authority."
+ pasha_eastern_hegemony: "Domination of the East"
+ desc_pasha_eastern_hegemony: "The great plateau of Persia, long contested by rival dynasties, has been broken to Ottoman will. From the Caucasus to the Persian Gulf, the empire's banners stretch further east than any sultan has dared reach. The old rivalry with the Red Heads is settled — in our favor. The east belongs to the Sublime Porte."
+
+ # =========================================================
+ # MISSION TREE v2.0 — SLOT 1: THE PORTE ASCENDANT
+ # =========================================================
+ pasha_convene_grand_divan: "Convene the Grand Divan"
+ pasha_convene_grand_divan_desc: "The Pasha Republic rests on a single foundation: the authority of the Imperial Council, where the men of the sword, the pen, and the faith deliberate as equals. Before the state can pursue any great ambition, the Grand Divan must be formally convened, its procedures regularized, and its prestige secured. Let the Council assemble — and let the world take notice.\n\n§YRequires:§! Stability at least 2. No active crisis. Treasury of at least 100 ducats."
+
+ pasha_kanun_codification: "Codify the Kanun-i Pasha"
+ pasha_kanun_codification_desc: "The Ottoman state has long been governed by a mixture of Islamic law, imperial edict, and the unwritten customs of the palace. To secure the Pasha Republic's institutional future, the Kalemiye must undertake the monumental task of codifying all administrative law into the Kanun-i Pasha — a comprehensive legal framework binding all officials of the Porte.\n\n§YRequires:§! Administrative technology at least 7. Corruption below 2. Kalemiye influence at least 30."
+
+ # =========================================================
+ # MISSION TREE v2.0 — SLOT 2: CRADLE OF EMPIRE
+ # =========================================================
+ pasha_subdue_karamanids: "The Karamanid Reckoning"
+ pasha_subdue_karamanids_desc: "The Karamanid beylik, successor to a proud Anatolian tradition, remains a thorn in the empire's southern flank. Their resistance to Ottoman authority is not merely political — it is a challenge to the very legitimacy of the Porte's rule over Anatolia. The Grand Vizier must bring the Karamanid lands fully under the council's authority.\n\n§YRequires:§! All provinces of the Karaman area owned or held by a subject state."
+
+ pasha_unite_anatolia: "Master of Anatolia"
+ pasha_unite_anatolia_desc: "Anatolia is the heartland of Ottoman power — the source of soldiers, grain, and revenue that sustains the empire. But it remains fragmented: local princes, resistant beyliks, and independent lords dilute the Porte's authority. A sustained campaign of consolidation, taxation, and administration must bring the entire peninsula under the council's direct control.\n\n§YRequires:§! At least 20 Anatolian provinces owned or held by non-sovereign subjects."
+
+ pasha_conquer_egypt: "The Mamluk Inheritance"
+ pasha_conquer_egypt_desc: "Egypt is the wealthiest prize in the eastern Mediterranean — a river civilization that has sustained empires since the time of the Pharaohs. The Mamluk Sultanate, proud rulers of these ancient lands, has long been an obstacle to Ottoman southern expansion. The time has come to claim their inheritance. The Nile shall run under Ottoman colours.\n\n§YRequires:§! All provinces of the Egypt region owned or held by a subject state."
+
+ # =========================================================
+ # MISSION TREE v2.0 — SLOT 3: THE CRESCENT FLEET
+ # =========================================================
+ pasha_aegean_fleet: "The Aegean Fleet"
+ pasha_aegean_fleet_desc: "The Sublime Porte commands vast armies, but the sea has long belonged to the Venetians and the Genoese. To project power across the Mediterranean and secure the empire's island flanks, the Ottoman navy must be rebuilt into a force that commands respect. The crescent must rise above the waves.\n\n§YRequires:§! At least 15 galleys at sea. Fleet strength at least 85% of the force limit."
+
+ pasha_bosphorus_command: "Command of the Bosphorus"
+ pasha_bosphorus_command_desc: "The Bosphorus is the throat of the world — the narrow waterway connecting the Black Sea to the Mediterranean, through which the trade of two continents must pass. Whoever commands it commands the commerce of the east. With a powerful fleet and the city of Istanbul secure, the Ottoman navy must assert undisputed mastery over these vital straits.\n\n§YRequires:§! At least 20 galleys, 90% naval force limit, Constantinople owned and cored, total development 300."
+
+ pasha_aegean_mastery: "Mastery of the Aegean"
+ pasha_aegean_mastery_desc: "The Aegean is a sea of a thousand islands and a thousand old grudges. Venetian merchants, Genoese traders, and Greek pirates have long carved the sea into competing spheres of influence. The Ottoman fleet must now impose order: all trade lanes patrolled, all wayward sailors answerable to the Porte. The Aegean will be Ottoman in fact, not merely in aspiration.\n\n§YRequires:§! At least 10 ships protecting trade. At least 25 galleys. Greatest trade power in our home trade node."
+
+ pasha_challenge_venice: "Challenge the Serenissima"
+ pasha_challenge_venice_desc: "Venice has been the preeminent naval power of the eastern Mediterranean for centuries. Their golden galleys, financed by the wealth of the Levant trade, have long checked Ottoman ambitions at sea. The Sublime Porte must now directly challenge Venetian power — through war, diplomacy, or sheer overwhelming naval strength — and force them to accept Ottoman supremacy.\n\n§YRequires:§! If Venice exists: Venice must be a subject state and our galley and heavy ship counts must equal or exceed theirs. Otherwise: At least 30 galleys and 8 heavy ships."
+
+ pasha_ottoman_lake: "The Ottoman Lake"
+ pasha_ottoman_lake_desc: "The ancient Romans called it Mare Nostrum — Our Sea. It is a title the Ottomans now have the power to claim. From the Adriatic to the Levantine coast, from Alexandria to the harbours of Anatolia, the Mediterranean must answer to a single master: the Sublime Porte. Let no sail raise anchor without Ottoman leave.\n\n§YRequires:§! Greatest trade power in our home trade node. At least 15 ships protecting trade. Total development at least 500."
+
+ # =========================================================
+ # MISSION TREE v2.0 — SLOT 4: RUMELIA & BEYOND
+ # =========================================================
+ pasha_consolidate_rumelia: "Consolidate Rumelia"
+ pasha_consolidate_rumelia_desc: "Rumelia — the Ottoman name for the European lands of the empire — is the forward bastion of Ottoman power in the west. Thrace and Bulgaria form the spine of this dominion. But the spine must be solid before the empire can thrust deeper into Europe. All local resistance must be crushed, all vassal lords brought to heel, and every province administered directly by the Porte.\n\n§YRequires:§! All provinces of the Thrace area and the Bulgaria area owned or held by a subject."
+
+ pasha_subdue_wallachia: "Subdue Wallachia and Albania"
+ pasha_subdue_wallachia_desc: "Wallachia and Albania are thorns in the empire's European flank. Wallachian princes play a double game between the Ottomans and the Hungarians, while the Albanian highlands shelter inveterate rebels. Both frontiers must be permanently settled — the Wallachian boyars brought under the Ottoman yoke and the Albanian clans pacified or crushed.\n\n§YRequires:§! All provinces of the Wallachia area and the Albania area owned or held by a subject."
+
+ pasha_take_belgrade: "The Gates of Europe"
+ pasha_take_belgrade_desc: "Belgrade — the White Fortress — sits at the confluence of the Sava and the Danube, the key that unlocks the road to central Europe. Serbian resistance has been the last organised obstacle to Ottoman expansion beyond the Balkans. With Serbia broken and Bosnia subdued, the gates to the Hungarian plain swing open before us.\n\n§YRequires:§! At least 8 provinces in the Rascia and Serbia areas owned or held. All of the Bosnia area controlled."
+
+ pasha_subjugate_hungary: "The Hungarian Frontier"
+ pasha_subjugate_hungary_desc: "Hungary has long fancied itself the shield of Christendom against the Ottoman advance. Its armies have clashed with the Porte on the Danube for decades. But shields can be broken. The Pasha Republic's armies must pour through the Hungarian plain and break the kingdom's power once and for all, securing the Danube basin and opening the road to Vienna.\n\n§YRequires:§! At least 10 provinces in the Alfold, Transdanubia, and Southern Transylvania areas owned or held."
+
+ pasha_march_on_vienna: "The March on Vienna"
+ pasha_march_on_vienna_desc: "Vienna — the Beç of the Ottomans, the imperial capital of the Habsburgs — is the great prize that has eluded every previous Ottoman campaign. To take Vienna is to shatter the Habsburg dynasty, to drive a spike into the heart of Christendom, and to prove that no power in Europe can stand before the Pasha Republic's armies. The Grand Vizier orders the march. History awaits.\n\n§YRequires:§! Vienna (province 134) owned and cored. All of the Austria Proper area owned or held."
+
+ # =========================================================
+ # MISSION TREE v2.0 — SLOT 5: THE SULTAN'S SHADOW (updated)
+ # =========================================================
+ pasha_timar_reform_mission: "Reform the Timar System"
+ pasha_timar_reform_mission_desc: "The timar system — granting land revenues to cavalry soldiers in exchange for military service — was once the engine of Ottoman martial power. But decades of corruption have diluted its effectiveness: timariots who neglect their duties, forged records, and absent troops. With the Sultan's authority reasserted and the army's traditions restored, the moment has come to purge the system of its parasites and rebuild it from the foundation.\n\n§YRequires:§! Manpower at least 75% of the maximum. Army tradition at least 45. Balance of power at least 60."
+
+ # =========================================================
+ # MISSION TREE v3.0 — SLOT 1: NEW DEVELOPMENT MISSION
+ # =========================================================
+ pasha_reform_tax_registers: "Reform the Tax Registers"
+ pasha_reform_tax_registers_desc: "The imperial tax registers have not been updated in decades. Provincial governors record phantom taxpayers, under-report harvest yields, and pocket the difference. The Grand Divan, now firmly established, must dispatch skilled kadis to audit every province — re-registering the population, re-assessing the land, and ensuring that the empire's true wealth reaches the treasury.\n\n§YRequires:§! Administrative technology at least 5. Treasury of at least 250 ducats. Corruption below 5."
+
+ # =========================================================
+ # MISSION TREE v3.0 — SLOT 3: GRAND MOBILIZATION & EAST
+ # =========================================================
+ pasha_mobilize_forces: "Mobilize for Conquest"
+ pasha_mobilize_forces_desc: "The Sublime Porte's ambitions can no longer remain theoretical. Before the empire marches to war, the full weight of Ottoman military power must be assembled: every regiment filled, every galley crewed, every cannon loaded. The Grand Vizier orders a general mobilization. Byzantium watches from behind its ancient walls — and trembles.\n\n§YRequires:§! Army at least 90% of the force limit. Navy at least 90% of the force limit."
+
+ pasha_secure_eastern_anatolia: "Secure Eastern Anatolia"
+ pasha_secure_eastern_anatolia_desc: "Eastern Anatolia — the highlands of Rum and the mountains of Erzurum — remains a patchwork of fragile loyalties and rival warlords. Trebizond still harbors independent pretensions. The Grand Vizier orders a campaign to bring these last Anatolian frontiers under the Porte's direct control. Only then can the empire look beyond the mountains, eastward.\n\n§YRequires:§! All of the Erzurum and Rum areas owned or held by subjects."
+
+ pasha_conquer_armenia: "The Armenian Crossroads"
+ pasha_conquer_armenia_desc: "Armenia is the crossroads of empires — a land where the roads from Anatolia, Persia, and the Caucasus converge. Control it, and the empire controls the gateway to the east. The Turkoman federations that hold these highlands must be broken, their fortresses taken, and their valleys secured before the push toward Azerbaijan can begin.\n\n§YRequires:§! All of the Armenia area owned or held by subjects. At least 3 provinces in the North Kurdistan area controlled."
+
+ pasha_challenge_safavids: "Challenge the Safavids"
+ pasha_challenge_safavids_desc: "The Safavid Shah — the Red Head, the Kizilbash heretic — has dared to contest Ottoman primacy in the east for too long. Tabriz, the jewel of Azerbaijan and seat of Safavid power, must fall. The theological conflict between Sunni Porte and Shia Shah is not merely religious — it is existential. One empire must dominate the east. It will be ours.\n\n§YRequires:§! All of the Tabriz and Shirvan areas owned or held by subjects."
+
+ pasha_lord_of_mesopotamia: "Lord of Mesopotamia"
+ pasha_lord_of_mesopotamia_desc: "Baghdad — the City of Peace, seat of the old Abbasid Caliphate, crossroads of the eastern trade — has passed through many hands. Now it must pass into Ottoman ones. With Mesopotamia secured from the Jazira to the Gulf, the empire controls the ancient trade artery connecting Persia to the Mediterranean. The revenues of the Tigris and Euphrates shall swell our treasury.\n\n§YRequires:§! All of the Iraq Arabi and Al-Jazira areas owned or held by subjects."
+
+ pasha_eastern_dominance: "Domination of the East"
+ pasha_eastern_dominance_desc: "The great plateau of Persia stretches vast and rich beyond the Zagros mountains. With Azerbaijan taken, Mesopotamia secured, and the Safavid heartland crumbling, the Pasha Republic stands on the threshold of a conquest that would have been unthinkable to our predecessors. Thirty provinces. That is the price of eastern dominance. Pay it.\n\n§YRequires:§! At least 30 provinces in the Persia region owned or held by subjects."
+
+ # =========================================================
+ # MISSION TREE v3.0 — SLOT 4: SOUTHERN EXPANSION
+ # =========================================================
+ pasha_into_the_levant: "Into the Levant"
+ pasha_into_the_levant_desc: "The Levant — ancient Syria and the cities of Aleppo and Damascus — has been the crossroads of civilizations since the dawn of time. The Mamluk Sultanate has grown fat and complacent ruling these rich lands. The Pasha Republic's southward march begins here. The road to the Holy Cities and Egypt runs through the valleys of Syria.\n\n§YRequires:§! All of the Aleppo and Syria areas owned or held by subjects."
+
+ pasha_establish_red_sea_fleet: "Masters of the Red Sea"
+ pasha_establish_red_sea_fleet_desc: "The Red Sea is the gateway to Mecca, to the spice trade, and to the wealth of the Indian Ocean. Without a fleet to dominate these waters, our southern conquests remain vulnerable to Portuguese ambitions and local piracy. The crescent banner must fly over the Red Sea just as it flies over the Aegean — supreme and unchallenged.\n\n§YRequires:§! At least 15 galleys. Fleet at 85% of the force limit. Total development at least 350."
+
+ # =========================================================
+ # MISSION TREE v3.0 — SLOT 5: NEW SULTAN DEVELOPMENT MISSIONS
+ # =========================================================
+ pasha_build_border_fortifications: "Fortify the Empire's Borders"
+ pasha_build_border_fortifications_desc: "The Sultan's restored authority carries a solemn duty: to defend the empire's borders against all enemies, foreign and domestic. By the imperial will, a systematic program of fortification must be undertaken — new strongholds on the frontier, repaired walls in the cities, and garrisoned watchtowers on every pass. The empire's security rests on stone and iron.\n\n§YRequires:§! Military technology at least 8. Army tradition at least 40. Balance of power at least 65."
+
+ pasha_found_sipahi_halls: "Reorganize the Sipahi Corps"
+ pasha_found_sipahi_halls_desc: "The sipahi — the mounted warrior who represents the Ottoman military ideal — has been allowed to stagnate. The timar reforms revived the system; now the Sultan must elevate it. New training halls must be established in every province, the finest horsemen recruited and drilled to perfection, and the sipahi corps forged once more into the deadliest cavalry force in the known world.\n\n§YRequires:§! Army tradition at least 60. Military technology at least 12. Balance of power at least 70."
+
+ # =========================================================
+ # MISSION TITLES — _title keys (required by EU4 mission panel)
+ # =========================================================
+
+ # Slot 1: The Porte Ascendant (7 missions)
+ pasha_convene_grand_divan_title:0 "Convene the Grand Divan"
+ pasha_reform_tax_registers_title:0 "Reform the Tax Registers"
+ pasha_mission_divan_authority_title:0 "Consolidate the Divan's Authority"
+ pasha_mission_iltizam_reform_title:0 "Reform the Iltizam System"
+ pasha_kanun_codification_title:0 "Codify the Kanun-i Pasha"
+ pasha_mission_grand_vizier_supreme_title:0 "The Grand Vizier's Supremacy"
+ pasha_mission_age_of_pashas_title:0 "An Age of Pashas"
+
+ # Slot 2: Western Expansion (5 missions, starts at pos 2)
+ pasha_consolidate_rumelia_title:0 "Consolidate Rumelia"
+ pasha_subdue_wallachia_title:0 "Subdue Wallachia and Albania"
+ pasha_take_belgrade_title:0 "The Gates of Europe"
+ pasha_subjugate_hungary_title:0 "The Hungarian Frontier"
+ pasha_march_on_vienna_title:0 "The March on Vienna"
+
+ # Slot 3: Grand Mobilization & Eastern Expansion (6 missions)
+ pasha_mobilize_forces_title:0 "Mobilize for Conquest"
+ pasha_secure_eastern_anatolia_title:0 "Secure Eastern Anatolia"
+ pasha_conquer_armenia_title:0 "The Armenian Crossroads"
+ pasha_challenge_safavids_title:0 "Challenge the Safavids"
+ pasha_lord_of_mesopotamia_title:0 "Lord of Mesopotamia"
+ pasha_eastern_dominance_title:0 "Domination of the East"
+
+ # Slot 4: Southern Expansion (5 missions, starts at pos 2)
+ pasha_into_the_levant_title:0 "Into the Levant"
+ pasha_establish_red_sea_fleet_title:0 "Masters of the Red Sea"
+ pasha_mission_guardian_holy_cities_title:0 "Guardian of the Holy Cities"
+ pasha_conquer_egypt_title:0 "The Mamluk Inheritance"
+ pasha_mission_commercial_dominance_title:0 "Commercial Supremacy"
+
+ # Slot 5: The Sultan's Shadow (7 missions)
+ pasha_mission_sultanic_authority_title:0 "Assert Sultanic Authority"
+ pasha_mission_kapikulu_excellence_title:0 "The Excellence of the Kapikulu"
+ pasha_timar_reform_mission_title:0 "Reform the Timar System"
+ pasha_build_border_fortifications_title:0 "Fortify the Empire's Borders"
+ pasha_found_sipahi_halls_title:0 "Reorganize the Sipahi Corps"
+ pasha_mission_sultan_commands_title:0 "The Sultan Commands"
+ pasha_mission_sole_sovereign_title:0 "The Sole Sovereign"
+

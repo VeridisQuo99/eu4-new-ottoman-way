@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/**)"
+      "Read(//c/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/**)",
+      "Bash(grep -E \"\\\\.\\(lua|txt|xml\\)$\")",
+      "Bash(cp \"/c/Program Files \\(x86\\)/Steam/steamapps/common/Europa Universalis IV/missions/Ottoman_Missions.txt\" \"/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/missions/Ottoman_Missions.txt\")",
+      "Bash(cp \"/c/Program Files \\(x86\\)/Steam/steamapps/common/Europa Universalis IV/missions/DOM_Ottoman_Missions.txt\" \"/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/missions/DOM_Ottoman_Missions.txt\")",
+      "Bash(cp \"/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/common/missions/00_pasha_republic_missions.txt\" \"/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/missions/00_pasha_republic_missions.txt\")",
+      "Bash(mkdir -p \"/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/Europa Universalis IV/mod/pashas_rise/missions\")",
+      "Bash(grep \"\\\\.dds$\")"
     ]
   }
 }

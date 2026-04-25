@@ -123,7 +123,6 @@ country_event = {
         hidden_effect = {
             set_country_flag = pasha_system_initialized
             change_government = republic
-            add_government_reform = pasha_council_republic
             set_variable = {
                 which = sultan_count_var
                 value = 0
@@ -137,7 +136,9 @@ country_event = {
                 age = 50
             }
             add_republican_tradition = 20
-        }        
+            add_government_reform = pasha_council_republic
+            swap_non_generic_missions = yes
+        }
     }
 
     # Option A: Historical Path
@@ -165,6 +166,8 @@ country_event = {
 			value = 20 # Güç Sultanda toplanır (Artı değer)
 		}
 
+        swap_non_generic_missions = yes
+
         ai_chance = {
 			factor = 90 # AI strongly prefers the historical Sultan path
 		}
@@ -172,7 +175,7 @@ country_event = {
 
     # Option B: Random Path
     option = {
-        name = "pasha_events.2.b" 
+        name = "pasha_events.2.b"
         set_country_flag = random_sultans_path
         random_list = {
             33 = { add_country_modifier = { name = "random_sultan_militarist" duration = -1 } }
@@ -185,6 +188,8 @@ country_event = {
 			power_type = pasha_power
 			value = -20 # Güç Paşalara/Divana kayar (Eksi değer)
 		}
+
+        swap_non_generic_missions = yes
 
         ai_chance = {
 			factor = 10 # Rare alternate history path for AI
@@ -633,6 +638,7 @@ country_event = {
 			remove_country_modifier = sultan_selim_iii_modifier
 			remove_country_modifier = sultan_mustafa_iv_modifier
 			remove_country_modifier = sultan_mahmud_ii_modifier
+            swap_non_generic_missions = yes
 		}
     }
 }
@@ -723,6 +729,7 @@ country_event = {
 			remove_country_modifier = sultan_selim_iii_modifier
 			remove_country_modifier = sultan_mustafa_iv_modifier
 			remove_country_modifier = sultan_mahmud_ii_modifier
+            swap_non_generic_missions = yes
 		}
     }
 }
