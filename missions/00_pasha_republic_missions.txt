@@ -89,11 +89,14 @@ pasha_porte_ascendant_missions = {
         position = 3
 
         trigger = {
-            NOT = {
-                has_government_power = {
-                    mechanic_type = pasha_power_mechanic
-                    power_type = pasha_power
-                    value = 31
+            custom_trigger_tooltip = {
+                tooltip = pasha_tt_power_below_30
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 31
+                    }
                 }
             }
         }
@@ -111,11 +114,14 @@ pasha_porte_ascendant_missions = {
         position = 4
 
         trigger = {
-            NOT = {
-                has_government_power = {
-                    mechanic_type = pasha_power_mechanic
-                    power_type = pasha_power
-                    value = 21
+            custom_trigger_tooltip = {
+                tooltip = pasha_tt_power_below_20
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 21
+                    }
                 }
             }
             NOT = { corruption = 3 }
@@ -154,7 +160,10 @@ pasha_porte_ascendant_missions = {
         position = 6
 
         trigger = {
-            has_country_flag = pasha_milestone_divan_ascendant
+            custom_trigger_tooltip = {
+                tooltip = pasha_tt_divan_ascendant
+                has_country_flag = pasha_milestone_divan_ascendant
+            }
         }
 
         effect = {
@@ -170,11 +179,14 @@ pasha_porte_ascendant_missions = {
         position = 7
 
         trigger = {
-            NOT = {
-                has_government_power = {
-                    mechanic_type = pasha_power_mechanic
-                    power_type = pasha_power
-                    value = 11
+            custom_trigger_tooltip = {
+                tooltip = pasha_tt_power_below_10
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 11
+                    }
                 }
             }
             faction_influence = { faction = seyfiye_faction influence = 20 }
@@ -186,12 +198,20 @@ pasha_porte_ascendant_missions = {
             add_adm_power = 100
             add_dip_power = 50
             add_mil_power = 50
+            add_republican_tradition = 15
+            add_stability = 1
             add_country_modifier = {
                 name = pasha_age_of_pashas_reward
                 duration = -1
             }
+            capital_scope = {
+                add_base_tax = 2
+                add_base_production = 2
+                add_base_manpower = 1
+            }
         }
     }
+
 }
 
 # ============================================================
@@ -246,6 +266,10 @@ pasha_western_expansion_missions = {
             add_country_modifier = {
                 name = pasha_rumelia_domination
                 duration = 1825
+            }
+            thrace_area = {
+                limit = { owned_by = ROOT }
+                add_base_manpower = 1
             }
             rascia_area = {
                 limit = {
@@ -441,6 +465,7 @@ pasha_western_expansion_missions = {
             }
         }
     }
+
 }
 
 # ============================================================
@@ -487,6 +512,13 @@ pasha_eastern_expansion_missions = {
             add_mil_power = 50
             add_manpower = 5
             151 = {
+                add_permanent_claim = ROOT
+            }
+            anatolia_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
                 add_permanent_claim = ROOT
             }
         }
@@ -660,6 +692,11 @@ pasha_eastern_expansion_missions = {
                 name = pasha_mesopotamia_dominance
                 duration = -1
             }
+            random_owned_province = {
+                limit = { area = iraq_arabi_area }
+                add_base_tax = 2
+                add_base_production = 2
+            }
         }
     }
 
@@ -685,6 +722,47 @@ pasha_eastern_expansion_missions = {
             add_mil_power = 100
             add_country_modifier = {
                 name = pasha_eastern_hegemony
+                duration = -1
+            }
+        }
+    }
+
+    pasha_empire_three_continents = {
+        icon = mission_empire
+        required_missions = { pasha_eastern_dominance }
+        position = 7
+
+        trigger = {
+            owns_core_province = 134
+            egypt_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 30
+                region = persia_region
+            }
+            total_development = 700
+            prestige = 50
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                province_id = 134
+                region = egypt_region
+                region = persia_region
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 50
+            add_adm_power = 100
+            add_dip_power = 100
+            add_mil_power = 100
+            add_stability = 1
+            add_country_modifier = {
+                name = pasha_universal_empire
                 duration = -1
             }
         }
@@ -831,6 +909,11 @@ pasha_southern_expansion_missions = {
                 name = pasha_egypt_conquered
                 duration = -1
             }
+            random_owned_province = {
+                limit = { area = bahari_area }
+                add_base_production = 3
+                add_base_tax = 1
+            }
         }
     }
 
@@ -922,7 +1005,7 @@ pasha_sultan_shadow_missions = {
 
     pasha_timar_reform_mission = {
         icon = mission_steppe_warriors
-        required_missions = { pasha_mission_kapikulu_excellence }
+        required_missions = { pasha_mission_kapikulu_excellence pasha_secure_eastern_anatolia }
         position = 3
 
         trigger = {
@@ -997,7 +1080,10 @@ pasha_sultan_shadow_missions = {
         position = 6
 
         trigger = {
-            has_country_flag = pasha_milestone_sultan_unchained
+            custom_trigger_tooltip = {
+                tooltip = pasha_tt_sultan_unchained
+                has_country_flag = pasha_milestone_sultan_unchained
+            }
             has_government_power = {
                 mechanic_type = pasha_power_mechanic
                 power_type = pasha_power
@@ -1030,6 +1116,835 @@ pasha_sultan_shadow_missions = {
             add_prestige = 25
             add_country_modifier = {
                 name = pasha_sole_sovereign_reward
+                duration = -1
+            }
+        }
+    }
+}
+
+# ============================================================
+# SLOT 2 (cont.) — THE ITALIAN DREAM
+# After Vienna falls, the Ottoman gaze turns to Italy.
+# Historical anchor: the landing at Otranto (1480).
+# ============================================================
+pasha_italian_campaign_missions = {
+    slot = 2
+    generic = no
+    ai = yes
+
+    potential_on_load = {
+        tag = TUR
+        NOT = { map_setup = map_setup_random }
+    }
+
+    potential = {
+        tag = TUR
+        has_reform = pasha_council_republic
+    }
+
+    has_country_shield = yes
+
+    pasha_adriatic_campaign = {
+        icon = mission_sea_battles
+        required_missions = { pasha_march_on_vienna }
+        position = 7
+
+        trigger = {
+            east_adriatic_coast_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            num_of_galley = 20
+        }
+
+        provinces_to_highlight = {
+            area = east_adriatic_coast_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 20
+            add_navy_tradition = 10
+            naples_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            apulia_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_otranto_landing = {
+        icon = mission_impaled_soldies
+        required_missions = { pasha_adriatic_campaign }
+        position = 8
+
+        trigger = {
+            apulia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            area = apulia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 25
+            add_mil_power = 75
+            lazio_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            tuscany_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            random_owned_province = {
+                limit = { area = apulia_area }
+                add_base_manpower = 1
+                add_base_production = 1
+            }
+        }
+    }
+
+    pasha_kingdom_of_naples = {
+        icon = mission_conquer_50_development
+        required_missions = { pasha_otranto_landing }
+        position = 9
+
+        trigger = {
+            naples_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            area = naples_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 25
+            add_dip_power = 75
+            add_country_modifier = {
+                name = pasha_italian_dominance
+                duration = 3650
+            }
+            lombardy_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_march_on_rome = {
+        icon = mission_monarch_in_throne_room
+        required_missions = { pasha_kingdom_of_naples }
+        position = 10
+
+        trigger = {
+            owns_core_province = 118
+            lazio_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                province_id = 118
+                area = lazio_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 40
+            add_stability = 1
+            add_dip_power = 100
+            italy_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_sultan_of_romans = {
+        icon = mission_empire
+        required_missions = { pasha_march_on_rome }
+        position = 11
+
+        trigger = {
+            owns_core_province = 118
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 30
+                region = italy_region
+            }
+        }
+
+        provinces_to_highlight = {
+            region = italy_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 50
+            add_dip_power = 100
+            add_adm_power = 100
+            add_stability = 1
+            add_country_modifier = {
+                name = pasha_sultan_of_romans_reward
+                duration = -1
+            }
+        }
+    }
+}
+
+# ============================================================
+# SLOT 3 (cont.) — ROAD TO INDIA
+# Beyond Persia and the Empire of Three Continents, the Pasha
+# Republic reaches toward the subcontinent via Afghanistan.
+# ============================================================
+pasha_india_campaign_missions = {
+    slot = 3
+    generic = no
+    ai = yes
+
+    potential_on_load = {
+        tag = TUR
+        NOT = { map_setup = map_setup_random }
+    }
+
+    potential = {
+        tag = TUR
+        has_reform = pasha_council_republic
+    }
+
+    has_country_shield = yes
+
+    pasha_khorasan_march = {
+        icon = mission_asian_cannon
+        required_missions = { pasha_empire_three_continents }
+        position = 8
+
+        trigger = {
+            mashhad_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            herat_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = mashhad_area
+                area = herat_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_mil_power = 75
+            add_prestige = 25
+            kabulistan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            makran_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            sistan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = pasha_central_asia_vanguard
+                duration = 3650
+            }
+        }
+    }
+
+    pasha_gateway_to_india = {
+        icon = mission_non-western_cavalry_raid
+        required_missions = { pasha_khorasan_march }
+        position = 9
+
+        trigger = {
+            kabulistan_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            sindh_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = kabulistan_area
+                area = sindh_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_mil_power = 75
+            add_prestige = 25
+            add_mercantilism = 2
+            lahore_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            multan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_mughal_frontier = {
+        icon = mission_dominate_home_trade_node
+        required_missions = { pasha_gateway_to_india }
+        position = 10
+
+        trigger = {
+            lahore_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            multan_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = lahore_area
+                area = multan_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 30
+            add_mil_power = 75
+            add_mercantilism = 3
+            west_india_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = pasha_eastern_trade_mastery
+                duration = -1
+            }
+        }
+    }
+
+    pasha_india_dominance = {
+        icon = mission_empire
+        required_missions = { pasha_mughal_frontier }
+        position = 11
+
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 30
+                region = west_india_region
+            }
+        }
+
+        provinces_to_highlight = {
+            region = west_india_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 50
+            add_mercantilism = 5
+            add_dip_power = 100
+            add_adm_power = 100
+            add_country_modifier = {
+                name = pasha_india_mandate_reward
+                duration = -1
+            }
+        }
+    }
+}
+
+# ============================================================
+# SLOT 4 (cont.) — THE MAGHREB
+# After Egypt and the Red Sea, Ottoman power pushes west
+# along the North African coast toward Morocco and beyond.
+# ============================================================
+pasha_maghreb_campaign_missions = {
+    slot = 4
+    generic = no
+    ai = yes
+
+    potential_on_load = {
+        tag = TUR
+        NOT = { map_setup = map_setup_random }
+    }
+
+    potential = {
+        tag = TUR
+        has_reform = pasha_council_republic
+    }
+
+    has_country_shield = yes
+
+    pasha_into_tripolitania = {
+        icon = mission_arabian_fort
+        required_missions = { pasha_mission_commercial_dominance }
+        position = 7
+
+        trigger = {
+            tripolitania_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            cyrenaica_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = tripolitania_area
+                area = cyrenaica_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 20
+            add_navy_tradition = 10
+            add_mercantilism = 2
+            tunisia_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            algiers_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_hafsid_subjugation = {
+        icon = mission_mosque
+        required_missions = { pasha_into_tripolitania }
+        position = 8
+
+        trigger = {
+            tunisia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            area = tunisia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 25
+            add_dip_power = 50
+            add_navy_tradition = 15
+            add_country_modifier = {
+                name = pasha_north_africa_corsair
+                duration = 3650
+            }
+            northern_morocco_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_barbary_fleet = {
+        icon = mission_galleys_in_port
+        required_missions = { pasha_hafsid_subjugation }
+        position = 9
+
+        trigger = {
+            algiers_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            num_of_galley = 30
+        }
+
+        provinces_to_highlight = {
+            area = algiers_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_navy_tradition = 20
+            add_prestige = 25
+            add_mercantilism = 3
+            western_morocco_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            southern_morocco_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_ottoman_maghreb = {
+        icon = mission_unite_home_region
+        required_missions = { pasha_barbary_fleet }
+        position = 10
+
+        trigger = {
+            maghreb_region = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            region = maghreb_region
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 30
+            add_mercantilism = 3
+            add_dip_power = 75
+            add_country_modifier = {
+                name = pasha_maghreb_mastery
+                duration = -1
+            }
+        }
+    }
+
+    pasha_beyond_pillars = {
+        icon = mission_cannons_firing
+        required_missions = { pasha_ottoman_maghreb }
+        position = 11
+
+        trigger = {
+            prestige = 60
+            total_development = 800
+            NOT = { war_exhaustion = 5 }
+        }
+
+        provinces_to_highlight = { }
+
+        effect = {
+            add_prestige = 40
+            add_mercantilism = 5
+            add_dip_power = 100
+            iberia_region = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = pasha_beyond_pillars_reward
+                duration = -1
+            }
+        }
+    }
+}
+
+# ============================================================
+# SLOT 1 (cont.) — THE BLACK SEA & NORTHERN EXPANSION
+# Once the Age of Pashas is proclaimed, the Republic projects
+# power northward: securing Moldavia, dominating the Caucasus,
+# vassalizing the Crimean Khanate, and pushing into the
+# Pontic steppe toward Astrakhan.
+# Branches from the Adriatic Campaign (Slot 2, pos 7).
+# ============================================================
+pasha_black_sea_missions = {
+    slot = 1
+    generic = no
+    ai = yes
+
+    potential_on_load = {
+        tag = TUR
+        NOT = { map_setup = map_setup_random }
+    }
+
+    potential = {
+        tag = TUR
+        has_reform = pasha_council_republic
+    }
+
+    has_country_shield = yes
+
+    pasha_control_moldavia = {
+        icon = mission_eastern_european_city
+        required_missions = { pasha_adriatic_campaign }
+        position = 8
+
+        trigger = {
+            moldavia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            area = moldavia_area
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 20
+            add_dip_power = 50
+            crimea_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            imereti_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            kartli_kakheti_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_caucasus_secured = {
+        icon = mission_non-western_cavalry_raid
+        required_missions = { pasha_control_moldavia }
+        position = 9
+
+        trigger = {
+            imereti_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            kartli_kakheti_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = imereti_area
+                area = kartli_kakheti_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 25
+            add_mil_power = 75
+            circassia_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_crimean_dominion = {
+        icon = mission_steppe_warriors
+        required_missions = { pasha_caucasus_secured }
+        position = 10
+
+        trigger = {
+            crimea_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            circassia_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = crimea_area
+                area = circassia_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 25
+            add_navy_tradition = 15
+            add_mercantilism = 3
+            lower_don_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            astrakhan_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+            add_country_modifier = {
+                name = pasha_black_sea_dominion
+                duration = -1
+            }
+        }
+    }
+
+    pasha_pontic_steppe = {
+        icon = mission_non-western_cavalry_raid
+        required_missions = { pasha_crimean_dominion }
+        position = 11
+
+        trigger = {
+            lower_don_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            astrakhan_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = lower_don_area
+                area = astrakhan_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_mil_power = 75
+            add_prestige = 25
+            add_country_modifier = {
+                name = pasha_steppe_cavalry_mastery
+                duration = -1
+            }
+            volga_area = {
+                limit = {
+                    NOT = { is_permanent_claim = ROOT }
+                    NOT = { is_core = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    pasha_gateway_to_north = {
+        icon = mission_empire
+        required_missions = { pasha_pontic_steppe }
+        position = 12
+
+        trigger = {
+            volga_area = {
+                type = all
+                country_or_non_sovereign_subject_holds = ROOT
+            }
+            astrakhan_area = {
+                type = all
+                is_core = ROOT
+            }
+            prestige = 50
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = volga_area
+                area = astrakhan_area
+            }
+            NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+
+        effect = {
+            add_prestige = 40
+            add_mil_power = 100
+            add_country_modifier = {
+                name = pasha_northern_hegemon_reward
                 duration = -1
             }
         }

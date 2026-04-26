@@ -419,6 +419,11 @@
  pasha_mission_sole_sovereign_desc: "The work is complete. The Pashas have been subdued, the Divan stands obedient, and the Sultan rules as the undisputed master of the empire. There is no crisis, no rival faction, no shadow council that dares challenge the absolute authority of the House of Osman.\n\n§YRequires:§! The balance of power >= 85. No active political crisis."
 
  ### CUSTOM TOOLTIPS ###
+ pasha_tt_power_below_30: "Imperial Authority is at most 30 — the Divan holds the upper hand."
+ pasha_tt_power_below_20: "Imperial Authority is at most 20 — the Divan holds near-total control."
+ pasha_tt_power_below_10: "Imperial Authority is at most 10 — the Divan governs without restraint."
+ pasha_tt_divan_ascendant: "The §YDivan Ascendant§! milestone has been reached — the Sultan exists in name only."
+ pasha_tt_sultan_unchained: "The §YSultan Unchained§! milestone has been reached — the Palace has broken the Divan's grip."
  crisis_resolved_tooltip: "The crisis has been definitively resolved."
  crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
  crisis_sided_with_pasha_or_padisah: "(If sided with the Pasha or Padisah) Stability must be at least 1"
@@ -460,6 +465,38 @@
  desc_pasha_mesopotamia_dominance: "The ancient lands between the Tigris and the Euphrates — the cradle of civilization — now answer to the Sublime Porte. Baghdad, seat of the old Caliphate, flies the Ottoman banner. The trade routes of Mesopotamia pour their wealth into our treasury, and the merchants of the east bow before the Pasha Republic's authority."
  pasha_eastern_hegemony: "Domination of the East"
  desc_pasha_eastern_hegemony: "The great plateau of Persia, long contested by rival dynasties, has been broken to Ottoman will. From the Caucasus to the Persian Gulf, the empire's banners stretch further east than any sultan has dared reach. The old rivalry with the Red Heads is settled — in our favor. The east belongs to the Sublime Porte."
+ pasha_universal_empire: "Empire of Three Continents"
+ desc_pasha_universal_empire: "The Pasha Republic has achieved what no power in history has managed: genuine hegemony over Europe, Asia, and Africa simultaneously. Vienna has fallen, the Nile flows under Ottoman colours, and the Safavid heartland bends the knee. The Sublime Porte does not merely rule an empire — it rules §Ythe§! empire. Three continents. One banner. One Divan."
+
+ # ---- Italian Dream Modifiers ----
+ pasha_italian_dominance: "Italian Foothold"
+ desc_pasha_italian_dominance: "The crescent banner now flies over southern Italy. Ottoman garrisons hold the passes of Apulia, and the merchants of Naples pay their taxes to the Porte. Europe watches in disbelief."
+ pasha_sultan_of_romans_reward: "Sultan of the Romans"
+ desc_pasha_sultan_of_romans_reward: "The Eternal City has fallen. Rome — seat of Popes, cradle of Caesars — answers to the Grand Vizier. The Ottoman Sultan has claimed the most prestigious title in the Western world, and no Christian power can deny it."
+
+ # ---- India Chain Modifiers ----
+ pasha_central_asia_vanguard: "Vanguard of the East"
+ desc_pasha_central_asia_vanguard: "The Ottoman armies have crossed into the ancient lands of Khorasan. The road to India lies open before them, and every soldier who marches east knows he walks in the footsteps of conquerors."
+ pasha_eastern_trade_mastery: "Master of the Eastern Routes"
+ desc_pasha_eastern_trade_mastery: "The great overland routes connecting India to the Mediterranean are under Ottoman control. Every caravan of spices, silk, and precious stones pays its toll to the Sublime Porte."
+ pasha_india_mandate_reward: "Mandate of the East"
+ desc_pasha_india_mandate_reward: "The subcontinent has been brought under Ottoman suzerainty. The wealth of India — its cotton, its spices, its gold — flows westward through Ottoman hands. The Porte has matched and exceeded the trading empires of Portugal and Venice."
+
+ # ---- Maghreb Chain Modifiers ----
+ pasha_north_africa_corsair: "The Barbary Coast"
+ desc_pasha_north_africa_corsair: "The corsairs of the Barbary Coast now fly the Ottoman crescent. Their swift galleys terror-patrol the western Mediterranean, and Christian merchants pray before setting sail."
+ pasha_maghreb_mastery: "Master of the Maghreb"
+ desc_pasha_maghreb_mastery: "From Egypt to Morocco, the entire North African coast answers to the Sublime Porte. The Barbary Coast, the Hafsid grain ports, and the Atlantic-facing harbours of Morocco are all Ottoman."
+ pasha_beyond_pillars_reward: "Beyond the Pillars"
+ desc_pasha_beyond_pillars_reward: "The ancient boundary of the known world — the Pillars of Hercules — is now an Ottoman frontier. The Porte looks north across the Strait toward Iberia and sees not a wall, but a doorway."
+
+ # ---- Black Sea Chain Modifiers ----
+ pasha_black_sea_dominion: "Lake of the Crescent"
+ desc_pasha_black_sea_dominion: "The Black Sea is an Ottoman lake. Caffa, Trebizond, Crimea, Georgia — every shore answers to the Sublime Porte. The ancient trade routes of the Pontic steppe are now Ottoman arteries."
+ pasha_steppe_cavalry_mastery: "Masters of the Steppe"
+ desc_pasha_steppe_cavalry_mastery: "The Pontic steppe, feared as the breeding ground of conquerors, has been tamed. Ottoman cavalry units trained in the steppe tradition give the empire a fearsome fast-moving arm that rivals the greatest nomadic hordes."
+ pasha_northern_hegemon_reward: "Hegemon of the North"
+ desc_pasha_northern_hegemon_reward: "The Volga basin and the Caspian shore are Ottoman. The empire that once stopped at the Danube now stretches from the Adriatic to the Caspian. The northern steppe is no longer a threat — it is a province."
 
  # =========================================================
  # MISSION TREE v2.0 — SLOT 1: THE PORTE ASCENDANT
@@ -551,6 +588,78 @@
  pasha_eastern_dominance: "Domination of the East"
  pasha_eastern_dominance_desc: "The great plateau of Persia stretches vast and rich beyond the Zagros mountains. With Azerbaijan taken, Mesopotamia secured, and the Safavid heartland crumbling, the Pasha Republic stands on the threshold of a conquest that would have been unthinkable to our predecessors. Thirty provinces. That is the price of eastern dominance. Pay it.\n\n§YRequires:§! At least 30 provinces in the Persia region owned or held by subjects."
 
+ pasha_empire_three_continents: "Empire of Three Continents"
+ pasha_empire_three_continents_desc: "The Pasha Republic has marched to Vienna, held the Nile, and broken the Safavid east. What remains is to formalize what history already knows: no power on earth rivals the Sublime Porte. Three continents. One banner. One Divan. The Grand Vizier orders the proclamation read in every capital from the Danube to the Euphrates.\n\n§YRequires:§! Vienna (134) owned and cored. All of Egypt controlled. At least 30 provinces in the Persia region. Total development at least 700. Prestige at least 50."
+
+ # =========================================================
+ # SLOT 2 (cont.) — THE ITALIAN DREAM
+ # =========================================================
+ pasha_adriatic_campaign: "The Adriatic Campaign"
+ pasha_adriatic_campaign_desc: "The eastern Adriatic shore — Dalmatia, Albania, the old Venetian possessions — is now Ottoman. With a powerful fleet and troops blooded in the Balkan wars, the Grand Vizier turns his gaze across the water. Italy awaits. The memory of the Prophet's vision — that Rome too would fall to Islam — is fresh in every Ottoman mind.\n\n§YRequires:§! The entire East Adriatic coast held. At least 20 galleys afloat."
+
+ pasha_otranto_landing: "The Landing at Otranto"
+ pasha_otranto_landing_desc: "In 1480, an Ottoman army under Gedik Ahmed Pasha seized Otranto — the first and only time Ottoman troops held territory on the Italian peninsula. Now, with the Balkans secure and the Adriatic dominated, the Pasha Republic can make that bridgehead permanent. The heel of Italy has been planted in the crescent's shadow.\n\n§YRequires:§! The entire Apulia area controlled."
+
+ pasha_kingdom_of_naples: "The Kingdom of Naples"
+ pasha_kingdom_of_naples_desc: "The Kingdom of Naples — one of the oldest crowns in Europe — has fallen to Ottoman arms. Its nobles bow to the Grand Vizier, its ports pay customs to the Porte, and its soldiers now march under the crescent. The Pope dispatches letter after desperate letter to the courts of Europe, but there is no army that can answer.\n\n§YRequires:§! The entire Naples area controlled."
+
+ pasha_march_on_rome: "The March on Rome"
+ pasha_march_on_rome_desc: "The city that has ruled the world twice — first as Republic, then as Empire, and now as the seat of the Papacy — lies within reach. The armies of the Pasha Republic stand before the walls of Rome, and history holds its breath. The Prophet Muhammad is reported to have said: 'Verily you shall conquer Constantinople, and what a wondrous army will be that, and what a wondrous commander will be their commander.' Scholars of the Ulema now whisper: 'And Rome?'\n\n§YRequires:§! Rome (province 118) owned and cored. All of the Lazio area controlled."
+
+ pasha_sultan_of_romans: "Sultan of the Romans"
+ pasha_sultan_of_romans_desc: "It is done. Rome is Ottoman. The Papal chair is empty, the great basilicas echo with the call to prayer, and thirty provinces of Italy bow to the Sublime Porte. The Grand Vizier claims a title that even Charlemagne and the Holy Roman Emperors fought for centuries to legitimize. The Ottoman Sultan is Sultan of the Romans — and this time, the title is backed by cannon.\n\n§YRequires:§! Rome owned and cored. At least 30 Italian provinces held."
+
+ # =========================================================
+ # SLOT 3 (cont.) — ROAD TO INDIA
+ # =========================================================
+ pasha_khorasan_march: "The Khorasan March"
+ pasha_khorasan_march_desc: "Beyond the plateau of Persia lies Khorasan — the vast eastern land where Timur built his empire and where the Silk Road's arteries converge on Herat. The city of Mashhad, holy to Shia pilgrims, and Herat, garden of the east, must fall to Ottoman arms before the road to India opens. The Grand Vizier orders the eastern march.\n\n§YRequires:§! The entire Mashhad and Herat areas controlled."
+
+ pasha_gateway_to_india: "The Gateway to India"
+ pasha_gateway_to_india_desc: "The Khyber Pass. The ancient road through which Alexander marched, through which Babur descended to found the Mughal Empire. Kabul — fortress of the Hindu Kush — must be Ottoman before the armies can descend into the Indus valley. And Sindh, where the great river meets the sea, secures the southern flank. The subcontinent beckons.\n\n§YRequires:§! The entire Kabulistan and Sindh areas controlled."
+
+ pasha_mughal_frontier: "The Mughal Frontier"
+ pasha_mughal_frontier_desc: "Lahore — the pearl of the Punjab, gateway to the Gangetic plain. Multan — the city of saints, the southern gateway to the Punjab. With these two great cities in Ottoman hands, the entire northwestern subcontinent is under the crescent. The Mughal empire — if it still exists — watches in disbelief as the Ottomans claim what they once thought was exclusively theirs.\n\n§YRequires:§! The entire Lahore and Multan areas controlled."
+
+ pasha_india_dominance: "Dominion over India"
+ pasha_india_dominance_desc: "Thirty provinces of the Indian subcontinent. The wealth of the Ganges and the Indus. The cotton of Gujarat and the pepper of the Malabar coast. The Ottoman Empire has done what no Western power ever achieved — it has not merely traded with India, but conquered it. The Sublime Porte now stretches from the Atlantic coast of Morocco to the rivers of India.\n\n§YRequires:§! At least 30 provinces in the West India region held."
+
+ # =========================================================
+ # SLOT 4 (cont.) — THE MAGHREB
+ # =========================================================
+ pasha_into_tripolitania: "Into Tripolitania"
+ pasha_into_tripolitania_desc: "The barren shores of Libya — ancient Tripolitania and Cyrenaica — are the western frontier of Ottoman Egypt. The Hafsid and Berber chieftains who hold these coasts must be brought under the Porte's authority. The Barbary Coast offers deep harbours, bold corsairs, and a strategic position directly threatening Christian shipping.\n\n§YRequires:§! The entire Tripolitania and Cyrenaica areas controlled."
+
+ pasha_hafsid_subjugation: "The Fall of the Hafsids"
+ pasha_hafsid_subjugation_desc: "The Hafsid Sultanate of Tunisia — successor to the great Almohad empire, ruler of Tunis and Kairouan — has long maintained uneasy relations with the Sublime Porte. The time for ambiguity is over. The greatest port of North Africa after Alexandria must fly the Ottoman crescent. The corsairs of Tunis will serve the empire, not their own purses.\n\n§YRequires:§! The entire Tunisia area controlled."
+
+ pasha_barbary_fleet: "The Barbary Fleet"
+ pasha_barbary_fleet_desc: "Algiers — city of corsairs, terror of the Mediterranean. The infamous Hayreddin Barbarossa brought it to the Ottoman fold; now the Pasha Republic must build upon that legacy. With thirty galleys flying the crescent and the Algerian harbours in Ottoman hands, the western Mediterranean becomes an Ottoman hunting ground. No Christian fleet dare cross without paying tribute.\n\n§YRequires:§! The entire Algiers area controlled. At least 30 galleys."
+
+ pasha_ottoman_maghreb: "The Ottoman Maghreb"
+ pasha_ottoman_maghreb_desc: "Morocco — the last independent Muslim kingdom of North Africa, refuge of the Marinid and Saadian dynasties, defender of the Atlantic flank. With Morocco subjugated, the entire North African coast from Egypt to the Atlantic is Ottoman. The Maghreb is not merely a frontier — it is the western face of the Ottoman Empire.\n\n§YRequires:§! The entire Maghreb region controlled."
+
+ pasha_beyond_pillars: "Beyond the Pillars"
+ pasha_beyond_pillars_desc: "The Pillars of Hercules — ancient boundary of the known world — now mark an Ottoman gateway, not an edge. Across the strait lies Iberia: the great crusader kingdoms of Castile and Portugal, the lands from which the last Muslims were expelled in 1492. The Pasha Republic will not forget Andalusia. The crescent will return to Granada.\n\n§YRequires:§! All of the Maghreb region held. Prestige at least 60. Total development at least 800."
+
+ # =========================================================
+ # SLOT 6 — THE BLACK SEA & NORTHERN EXPANSION
+ # =========================================================
+ pasha_control_moldavia: "Pacify Moldavia"
+ pasha_control_moldavia_desc: "Moldavia — the principality between the Pruth and the Dniester — plays a double game between the Ottomans, the Poles, and the Hungarians. Its princes alternate between paying tribute and seeking Christian alliances. The Porte must end this ambiguity: Moldavia must become a fully obedient subject, securing the north shore of the Black Sea approach and opening the road to the Caucasus.\n\n§YRequires:§! The entire Moldavia area controlled."
+
+ pasha_caucasus_secured: "Secure the Caucasus"
+ pasha_caucasus_secured_desc: "The Caucasus — land of a thousand tongues and a hundred kingdoms. Imereti and Kartli-Kakheti, the ancient Georgian kingdoms, have long been contested between the Ottomans and the Safavids. To secure the Black Sea's eastern shore and cut off the Safavids' northern flank, these mountain kingdoms must kneel before the Porte.\n\n§YRequires:§! The entire Imereti and Kartli-Kakheti areas controlled."
+
+ pasha_crimean_dominion: "Dominion over Crimea"
+ pasha_crimean_dominion_desc: "The Crimean Khanate — traditionally an Ottoman vassal — and the Circassian clans of the northern Caucasus must now be fully absorbed into the empire's body politic. With Crimea's ports and the Circassians' fearless cavalry under direct Ottoman command, the Black Sea becomes the empire's private lake and the steppe a recruiting ground.\n\n§YRequires:§! The entire Crimea and Circassia areas controlled."
+
+ pasha_pontic_steppe: "The Pontic Steppe"
+ pasha_pontic_steppe_desc: "The lower Don and the Astrakhan khanate — the last remnants of the Golden Horde's heirs — control the gateway between the Black Sea and the Caspian. With these river mouths in Ottoman hands, the ancient trade route connecting the Baltic to Persia is severed or taxed at Ottoman will. The steppe is no longer an alien world — it is an Ottoman frontier.\n\n§YRequires:§! The entire Lower Don and Astrakhan areas controlled."
+
+ pasha_gateway_to_north: "Gateway to the North"
+ pasha_gateway_to_north_desc: "The Volga — the great river of the east, artery of Russia — flows through Ottoman-controlled territory to a Caspian sea that the empire commands from Persia. Astrakhan, ancient city on the Volga delta, is not merely a fortress: it is the key that locks Russia out of Central Asia and opens the north to Ottoman influence. The Pasha Republic's reach now exceeds that of any Islamic empire since the Mongols.\n\n§YRequires:§! The entire Volga area controlled. Astrakhan cored. Prestige at least 50."
+
  # =========================================================
  # MISSION TREE v3.0 — SLOT 4: SOUTHERN EXPANSION
  # =========================================================
@@ -596,6 +705,34 @@
  pasha_challenge_safavids_title:0 "Challenge the Safavids"
  pasha_lord_of_mesopotamia_title:0 "Lord of Mesopotamia"
  pasha_eastern_dominance_title:0 "Domination of the East"
+ pasha_empire_three_continents_title:0 "Empire of Three Continents"
+
+ # Slot 2 (cont.) — Italian Dream (pos 7-11)
+ pasha_adriatic_campaign_title:0 "The Adriatic Campaign"
+ pasha_otranto_landing_title:0 "The Landing at Otranto"
+ pasha_kingdom_of_naples_title:0 "The Kingdom of Naples"
+ pasha_march_on_rome_title:0 "The March on Rome"
+ pasha_sultan_of_romans_title:0 "Sultan of the Romans"
+
+ # Slot 3 (cont.) — Road to India (pos 8-11)
+ pasha_khorasan_march_title:0 "The Khorasan March"
+ pasha_gateway_to_india_title:0 "The Gateway to India"
+ pasha_mughal_frontier_title:0 "The Mughal Frontier"
+ pasha_india_dominance_title:0 "Dominion over India"
+
+ # Slot 4 (cont.) — Maghreb (pos 7-11)
+ pasha_into_tripolitania_title:0 "Into Tripolitania"
+ pasha_hafsid_subjugation_title:0 "The Fall of the Hafsids"
+ pasha_barbary_fleet_title:0 "The Barbary Fleet"
+ pasha_ottoman_maghreb_title:0 "The Ottoman Maghreb"
+ pasha_beyond_pillars_title:0 "Beyond the Pillars"
+
+ # Slot 6 — Black Sea & Northern Expansion (pos 3-7)
+ pasha_control_moldavia_title:0 "Pacify Moldavia"
+ pasha_caucasus_secured_title:0 "Secure the Caucasus"
+ pasha_crimean_dominion_title:0 "Dominion over Crimea"
+ pasha_pontic_steppe_title:0 "The Pontic Steppe"
+ pasha_gateway_to_north_title:0 "Gateway to the North"
 
  # Slot 4: Southern Expansion (5 missions, starts at pos 2)
  pasha_into_the_levant_title:0 "Into the Levant"
