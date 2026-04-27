@@ -11,7 +11,9 @@
       "Bash(ls \"C:\\\\\\\\Users\\\\\\\\erYrG\\\\\\\\OneDrive\\\\\\\\Documents\\\\\\\\Paradox Interactive\\\\\\\\Europa Universalis IV\\\\\\\\\")",
       "Read(//mnt/c/Users/erYrG/OneDrive/Documents/Paradox Interactive/**)",
       "Read(//c/Program Files \\(x86\\)/Steam/steamapps/common/Europa Universalis IV/map//**)",
-      "Read(//c/Program Files/Steam/steamapps/common/Europa Universalis IV/**)"
+      "Read(//c/Program Files/Steam/steamapps/common/Europa Universalis IV/**)",
+      "Bash(sort -t= -k2 -n)",
+      "PowerShell(\\(Get-Content \"C:\\\\Program Files \\(x86\\)\\\\Steam\\\\steamapps\\\\common\\\\Europa Universalis IV\\\\missions\\\\DOM_Ottoman_Missions.txt\"\\).Count)"
     ]
   }
 }

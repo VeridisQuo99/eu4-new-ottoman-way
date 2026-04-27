@@ -1,752 +1,306 @@
 ﻿l_english:
- ### DISASTERS ###
- crisis_of_the_state: "Internal Power Struggle"
- crisis_of_the_state_desc: "The delicate balance of power between the Imperial Court and the Sublime Porte has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
-
- ### EVENT MODIFIERS ###
- angry_senate_modifier: "Senate Outrage"
- desc_angry_senate_modifier: "The Imperial Senate is furious after being bypassed. Unrest spreads through the capital and tax revenue suffers as officials drag their feet."
- sultan_mehmed_ii_modifier: "Reign of Mehmed the Conqueror"
- sultan_bayezid_ii_modifier: "Reign of Bayezid the Just"
- sultan_selim_i_modifier: "Reign of Selim the Grim"
- sultan_suleiman_i_modifier: "Reign of Suleiman the Magnificent"
- sultan_murad_iii_modifier: "Era of Murad III"
- sultan_mehmed_iii_modifier: "Era of Mehmed III"
- sultan_selim_ii_modifier: "Era of Selim II"
- sultan_ahmed_i_modifier: "Era of Ahmed I"
- sultan_osman_ii_modifier: "Era of Osman II"
- sultan_murad_iv_modifier: "Era of Murad IV"
- sultan_ibrahim_i_modifier: "Era of Ibrahim I"
- sultan_mehmed_iv_modifier: "Era of the Köprülü Restoration"
- sultan_suleiman_ii_modifier: "Era of Suleiman II"
- sultan_mustafa_ii_modifier: "Era of Mustafa II"
- sultan_ahmed_iii_modifier: "Era of Ahmed III"
- sultan_mustafa_i_modifier: "Era of Mustafa I"
- sultan_ahmed_ii_modifier: "Era of Ahmed II"
- sultan_osman_iii_modifier: "Era of Osman III"
- sultan_abdulhamid_i_modifier: "Era of Abdulhamid I"
- sultan_mahmud_i_modifier: "Era of Mahmud I"
- sultan_mustafa_iii_modifier: "Era of Mustafa III"
- sultan_selim_iii_modifier: "Era of Selim III"
- sultan_mustafa_iv_modifier: "Era of Mustafa IV"
- sultan_mahmud_ii_modifier: "Era of Mahmud II (The Adli)"
-
- random_sultan_militarist: "Militarist Sultan"
- desc_random_sultan_militarist: "The shadow Sultan is a man of war. His martial inclinations bolster the Empire's armies and inspire the troops."
- random_sultan_diplomat: "Diplomatic Sultan"
- desc_random_sultan_diplomat: "The shadow Sultan is a skilled negotiator. His influence subtly improves the Empire's standing among foreign powers."
- random_sultan_administrator: "Administrative Sultan"
- desc_random_sultan_administrator: "The shadow Sultan is a capable administrator. His careful hand strengthens the treasury and eases the burden of governance."
- political_gridlock: "Political Gridlock"
- sultan_dissolves_parliament_unrest: "Divan Dissolved (Major Outrage)"
- desc_sultan_dissolves_parliament_unrest: "The Sultan's forceful dissolution of the Divan has sparked widespread fury among the powerful factions. Unrest grips the Empire."
- sultan_dissolves_parliament_minor_unrest: "Divan Dissolved"
- desc_sultan_dissolves_parliament_minor_unrest: "The Sultan has dissolved the Divan and called for new elections. The factions are displeased but the situation remains manageable."
- sultan_dissolves_parliament_cooldown: "Recent Parliament Dissolution"
- desc_sultan_dissolves_parliament_cooldown: "The Divan was dissolved not long ago. Forcing another early dissolution so soon would be seen as a grave overreach of authority."
- faction_dominance_modifier: "Faction Dominance"
- desc_faction_dominance_modifier: "A single faction has seized overwhelming control of the Divan. Their unchecked power stifles the administration and breeds resentment among rivals."
- pasha_political_instability: "Political Instability"
- desc_pasha_political_instability: "The struggle for power between factions has created a temporary vacuum in state authority, making reform and stabilization more difficult."
- ilmiye_dominance_pressure: "Religious Court Supremacy"
- desc_ilmiye_dominance_pressure: "The Ilmiye has imposed strict religious orthodoxy across the realm. While Sunni subjects remain loyal, minorities face mounting pressure and unrest."
- kapikulu_reform_buff: "Kapikulu Reform"
- desc_kapikulu_reform_buff: "The Sultan's standing army has undergone rigorous reform by Imperial decree, restoring discipline and martial excellence to the Imperial corps."
- kapikulu_reform_cooldown: "Kapikulu Reform Exhaustion"
- desc_kapikulu_reform_cooldown: "The Kapikulu corps has recently undergone reform. Another round of reorganization cannot yet be imposed."
- hatt_humayun_buff: "Imperial Rescript"
- desc_hatt_humayun_buff: "The Sultan's Hatt-i Hümayun has been proclaimed, asserting absolute Imperial authority and bringing greater revenue and stability to the state."
- divan_strengthened_buff: "Strengthened Imperial Council"
- desc_divan_strengthened_buff: "The Divan has formalized its authority through sweeping administrative reforms, improving the efficiency of governance across the empire."
- divan_strengthened_cooldown: "Council Reform Exhaustion"
- desc_divan_strengthened_cooldown: "The Imperial Council has recently been reorganized. Further reforms must wait before another restructuring can take place."
- iltizam_reform_buff: "Tax Farm Reform"
- desc_iltizam_reform_buff: "The tax farming system has been thoroughly reformed, exposing corrupt collectors and channeling greater revenue directly to the state treasury."
- iltizam_reform_cooldown: "Iltizam Reform Exhaustion"
- desc_iltizam_reform_cooldown: "The tax farm system has recently been reformed. Another overhaul cannot be undertaken so soon."
-
- ### FACTIONS ###
- seyfiye_faction_influence: "Seyfiye Influence"
- ilmiye_faction_influence: "Ilmiye Influence"
- kalemiye_faction_influence: "Kalemiye Influence"
- seyfiye_faction: "Men of the Sword (Seyfiye)"
- seyfiye_faction_FACTION_DESC: "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, absolute discipline, and the martial glory of the Empire."
- ilmiye_faction: "Men of Learning (Ilmiye)"
- ilmiye_faction_FACTION_DESC: "The judicial and religious authorities, including the Kazaskers, Sheikh ul-Islam, and the Ulema. They focus on internal stability, legal justice, and religious devotion."
- kalemiye_faction: "Men of the Pen (Kalemiye)"
- kalemiye_faction_FACTION_DESC: "The civil and administrative bureaucracy, consisting of Defterdars, Nisancis, and clerks. They strive for economic prosperity, efficient taxation, and diplomatic finesse."
-
- ### GOVERNMENT MECHANICS ###
- pasha_power: "Imperial Authority"
- pasha_power_desc: "The scale of power between the Imperial Court (Padishah) and the Sublime Porte (The Grand Vizier and the Divan).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
-
- ### GOVERNMENT POWERS ###
- pasha_power_mechanic: "Balance of Power"
- pasha_power_mechanic_desc: "The eternal struggle for supremacy between the sovereign Imperial Court and the administrative Sublime Porte."
- ability_pasha_power_mechanic: "Balance of Power"
- pasha_power_gain_modifier: "Balance of Power Shift"
-
- ### GOVERNMENT REFORMS ###
- pasha_council_republic: "Pasha Republic"
- pasha_council_republic_desc: "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the Empire, but the administration is led by a powerful Grand Vizier elected by the state's dominant factions."
-
- # Parliament Bribes
- bribe_pasha_seyfiye: "Distribute Ulufe to the Seyfiye"
- bribe_pasha_ilmiye: "Endow a Waqf for the Ilmiye"
- bribe_pasha_kalemiye: "Grant Iltizam to the Kalemiye"
-
- # Parliament Issues
- issue_military_campaign_funding: "§PMilitary Campaign Funding§!"
- issue_military_campaign_funding_desc: "The Seyfiye demands additional funding and autonomy for the upcoming campaigns. Passing this issue will empower the military elite but drain our imperial coffers."
- issue_judicial_and_religious_reform: "§PJudicial and Religious Reform§!"
- issue_judicial_and_religious_reform_desc: "The Ilmiye seeks to expand the influence of the Ulema and standardize the empire's laws. This will increase national stability, but limit the absolute authority of the Sultan's court."
- issue_expand_trade_privileges: "§PExpand Bureaucratic Trade Privileges§!"
- issue_expand_trade_privileges_desc: "The Kalemiye proposes expanding trade privileges and restructuring tax collection. This reform will significantly boost our economy, though it may breed corruption within the civil service."
- issue_frontier_garrison_reinforcement: "§PFrontier Garrison Reinforcement§!"
- issue_frontier_garrison_reinforcement_desc: "The Seyfiye demands the reinforcement of frontier garrisons and border fortifications. Strengthening our defensive lines will bolster discipline across the army and make our borders impenetrable — though it shifts authority further toward the military elite."
- issue_naval_expansion_decree: "§PNaval Expansion Decree§!"
- issue_naval_expansion_decree_desc: "The Seyfiye, keen to extend Ottoman power across the seas, calls for a naval build-up. New galleys shall be commissioned and the fleet's traditions preserved — at the cost of further emboldening the admiralty and military commanders."
- issue_madrasah_endowment: "§PMadrasah Endowment§!"
- issue_madrasah_endowment_desc: "The Ilmiye proposes a generous endowment to the empire's madrasahs to cultivate a new generation of scholars, jurists, and administrators. Investing in knowledge will lower the cost of technology and reform, though it tilts influence toward the religious establishment."
- issue_charitable_foundation_waqf: "§PCharitable Foundation (Waqf)§!"
- issue_charitable_foundation_waqf_desc: "The Ilmiye proposes the establishment of a network of waqf (pious endowments) to fund hospitals, schools, and mosques across the empire. This act of charity will ease internal tensions and deepen the loyalty of Sunni subjects, though the Ulema's influence grows with every coin donated."
- issue_revenue_assessment_reform: "§PRevenue Assessment Reform§!"
- issue_revenue_assessment_reform_desc: "The Kalemiye proposes a thorough reassessment of the empire's revenue streams, rooting out inefficiencies and ensuring that a greater share of tax revenues reaches the central treasury. A leaner, more honest fiscal system will benefit the state — though the Divan's technocrats gain further control over the purse strings."
- issue_diplomatic_mission_fund: "§PDiplomatic Mission Fund§!"
- issue_diplomatic_mission_fund_desc: "The Kalemiye calls for increased funding of diplomatic missions and envoys. Well-resourced diplomats abroad will reduce the diplomatic friction of our expansion and hasten the resolution of foreign affairs — cementing the Kalemiye's role as the empire's indispensable intermediary with the world."
-
- ### Triggered Modifiers Localisation
- pasha_tier_1_absolute: "Absolute Pasha Authority"
- desc_pasha_tier_1_absolute: "The Pashas have seized total control over the Sublime Porte, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"
- pasha_tier_2_dominant: "Pasha Dominance"
- desc_pasha_tier_2_dominant: "The Pashas hold significant sway over state affairs and the bureaucracy.\n\n§YActive when the balance of power is between 20 and 40.§!"
- sultan_tier_3_dominant: "Sultan's Resurgence"
- desc_sultan_tier_3_dominant: "The Sultan is effectively reasserting traditional authority over the Imperial Council.\n\n§YActive when the balance of power is between 60 and 80.§!"
- sultan_tier_4_absolute: "Absolute Sultanate"
- desc_sultan_tier_4_absolute: "The Sultan rules with an iron fist, completely unchallenged by the ambitions of the Pashas.\n\n§YActive when the balance of power is between 80 and 100.§!"
-
- ### DECISIONS ###
- pasha_kapikulu_reformu_title: "Reform the Kapikulu Corps"
- pasha_kapikulu_reformu_desc: "The Sultan's personal standing army, the Kapikulu, has grown complacent. A determined reform campaign, led directly by Imperial decree, can restore their discipline and fighting spirit — but it requires the Sultan's direct authority to push past Pasha resistance."
-
- pasha_hatt_i_humayun_title: "Issue the Imperial Rescript"
- pasha_hatt_i_humayun_desc: "With the Imperial Court firmly in command, the Sultan may issue a Hatt-i Hümayun — a personal decree carrying the full weight of Imperial authority. This sweeping assertion of sovereign power will alarm the Divan, but the realm will know that the Sultan's word is law. This decree can only be issued once."
-
- pasha_divan_guclendir_title: "Strengthen the Imperial Council"
- pasha_divan_guclendir_desc: "With the balance of power firmly in the Divan's hands, the Grand Vizier may formalize the council's authority through new administrative reforms. The Porte's grip on the empire's finances and bureaucracy will be solidified, making governance more efficient — if at the cost of the Sultan's prerogatives."
-
- pasha_iltizam_reformu_title: "Reform the Tax Farm System"
- pasha_iltizam_reformu_desc: "The Iltizam system — selling tax-collection rights to the highest bidder — has bred endemic corruption. A thorough reform of the tax farms, conducted when the Divan holds unchallenged authority, can root out the worst abusers and channel more revenue directly to the state treasury."
-
- sultan_dissolves_parliament_title: "Dissolve the Imperial Senate"
- sultan_dissolves_parliament_desc: "The current Divan has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the assembly and force early elections, though this will anger the established elites."
- pasha_activate_automated_reports_title: "Delegate Faction Monitoring"
- pasha_activate_automated_reports_desc: "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive yearly reports, but the influence will continue to shift in the background."
- pasha_activate_manual_reports_title: "Demand Direct Faction Reports"
- pasha_activate_manual_reports_desc: "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving yearly visual reports from each faction."
-
- ### EVENTS ###
- # Event 1: Senate Confirmation
- pasha_events.1.t: "The Senate Confirmation"
- pasha_events.1.d: "The Imperial Senate has convened to deliberate on the appointment of our newly elected Grand Vizier. We must decide how to handle their demands to secure the new administration's legitimacy. Additionally, the inherent administrative, diplomatic, and military skills of our newly chosen leader will immediately shift the balance of power among the factions within the Divan, as detailed below."
- pasha_events.1.a: "Bribe the Senate."
- pasha_events.1.b: "Concede to the Senate's demands."
- pasha_events.1.c: "Bypass the Senate entirely."
-
- pasha_events.2.t: "The Fate of the Sultanate"
- pasha_events.2.d: "The year is 1444. The young Mehmed II sits upon the throne, but the true power brokers of the state murmur in the shadows. Candarli Halil Pasha seeks to consolidate the power of the Divan. Shall the lineage of Osman shape the future from the shadows according to their historical destinies, or shall fate take a new, unpredictable path?"
- pasha_events.2.a: "Follow the historical path of the Sultans."
- pasha_events.2.b: "Let fate decide the rulers of the shadows."
-
- pasha_events.3.t: "The Crisis of the State"
- pasha_events.3.d: "The political maneuvering has finally broken the fragile peace. Partisans of the Imperial Court and ambitious supporters of the Divan are clashing in the streets. The balance of power is entirely shattered. We must decide who to back in this civil strife, or risk watching the Empire tear itself apart."
- pasha_events.3.a: "Rally the Loyalists! The Sultan is the true ruler."
- pasha_events.3.b: "Try to maintain order. The state must endure."
- pasha_events.3.c: "The Divan is the state! Support the Pasha."
-
- pasha_events.4.t: "The Death of Mehmed the Conqueror"
- pasha_events.4.d: "The great Sultan Mehmed II has passed away. While the true administrative power remains heavily in the hands of the Pasha Republic, the ascension of his son, Bayezid II, as the figurehead Padishah brings new religious and administrative focus to the realm."
- pasha_events.4.a: "Long live Sultan Bayezid II!"
-
- pasha_events.5.t: "The Shadow Sultan Has Passed"
- pasha_events.5.d: "The Sultan who has dwelt in the shadows behind our council has departed this world. The Divan must navigate a delicate transition — who we choose to elevate next, and how we do so, will shift the balance of power between the Porte and the Palace. Factions are watching."
- pasha_events.5.a: "The Divan shall appoint a loyal and compliant candidate. Stability above all."
- pasha_events.5.b: "Let Providence decide the new Sultan's character. We shall adapt to whoever rises."
- pasha_events.5.c: "Back the strongest claimant. A capable Sultan serves the realm — whatever the cost."
-
- pasha_events.6.t: "The Restoration of the Monarchy"
- pasha_events.6.d: "The partisans of the Imperial Court have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
- pasha_events.6.a: "Absolute power to the House of Osman!"
-
- pasha_events.7.t: "A New Dynasty"
- pasha_events.7.d: "The House of Osman has been effectively cast aside. The victorious Grand Vizier has consolidated all power, eliminating royalist opposition. The Republic's facade has crumbled, giving way to a new autocracy ruled by the Pasha's own bloodline."
- pasha_events.7.a: "A new era of strongman rule begins."
-
- pasha_events.8.t: "The Sublime Porte Prevails"
- pasha_events.8.d: "Despite the chaos and bloodshed, the institutions of the Pasha Republic have survived. The radical elements of both the Palace and the dictatorial Pashas have been sidelined, restoring the delicate balance of the council. The Republic lives to see another day."
- pasha_events.8.a: "The Republic stands strong."
-
- pasha_events.9.t: "Power Struggle in the Capital"
- pasha_events.9.d: "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
- pasha_events.9.a: "The Sultan exerts his royal prerogative."
- pasha_events.9.b: "The Pashas solidify their grip on the administration."
- 
- # Event 11
- pasha_events.11.t: "Faction Overextension"
- pasha_events.11.d: "The equilibrium of our Council has been shattered. One faction has amassed overwhelming influence, pushing all rivals aside. Their unchecked ambition threatens the very foundation of the Pasha Republic. We must act before the delicate balance collapses entirely."
-
- # Seyfiye options
- pasha_events.11.seyfiye_a: "Fund the Seyfiye's campaigns. Their loyalty has its price."
- pasha_events.11.seyfiye_b: "Rein in the Janissaries. Their ambition cannot go unchecked."
-
- # Ilmiye options
- pasha_events.11.ilmiye_a: "Submit to the Ulema. Grant the religious courts expanded authority."
- pasha_events.11.ilmiye_b: "Limit the Ulema's reach. The state, not the mosque, must govern."
-
- # Kalemiye options
- pasha_events.11.kalemiye_a: "Accept the bureaucrats' terms. Grant them trade monopolies and privileges."
- pasha_events.11.kalemiye_b: "Audit the state ledgers. Expose and break bureaucratic overreach."
-
- # Event 13
- pasha_event.13.t: "Annual Divan Report: Shifting Influences"
- pasha_event.13.d: "Another year has passed, and the Divan has convened to assess the state of our Republic. The balance of power within the Imperial Council is never static; it bends to the will and capabilities of our Grand Vizier. The administrative acumen, diplomatic finesse, and military expertise of our current leader naturally empower certain factions over others. The changes in faction influence detailed below are not random occurrences, but a direct reflection of how our Vizier's personal skills are currently shaping the Kalemiye, Ilmiye, and Seyfiye."
- pasha_event.13.a: "A reflection of our leadership."
-
- # Event 17: Selim I
- pasha_events.17.t: "The Ascension of Selim I"
- pasha_events.17.d: "The calm reign of Bayezid has ended as his son Selim I, called 'Yavuz', takes the throne. A man of iron will and unmatched military brilliance, Selim looks toward the East and the South for conquest. The Divan must now brace for a Sultan who demands absolute obedience and total mobilization for war."
- pasha_events.17.a: "The world shall tremble before the Grim Sultan."
-
- # Event 18: Suleiman I
- pasha_events.18.t: "The Magnificent Era of Suleiman"
- pasha_events.18.d: "Following the swift and stormy reign of Selim, his son Suleiman has ascended. He is a ruler of law and order, seeking to balance the might of the sword with the wisdom of the pen. Under his rule, the Ottoman state shall reach its zenith in both administration and reach. The Divan finds a Sultan who respects the established order, yet commands with unparalleled prestige."
- pasha_events.18.a: "The Lawgiver has arrived."
-
- # Event 19: Selim II
- pasha_events.19.t: "The Era of Transformation: Selim II"
- pasha_events.19.d: "With the passing of Suleiman the Magnificent, his son Selim II ascends. Unlike his predecessors, the new Padishah prefers the tranquility of the palace over the hardships of the campaign trail. This shift in royal temperament has allowed the Grand Vizier, Sokollu Mehmed Pasha, and the Divan to consolidate their grip on the state's daily administration. The age of the 'Shadow Sultans' begins, where the pen of the Pasha often carries more weight than the sword of the Sovereign."
- pasha_events.19.a: "The Divan shall guide the state."
-
- pasha_events.20.t: "The Ascension of Murad III"
- pasha_events.20.d: "Sultan Selim II has passed away, and his son Murad III now claims the throne. This era is marked by a dangerous shift in the balance of power. The influence of the Harem and the sheer weight of corruption begin to crack the foundations of the state. The Divan is rife with bribery and factionalism, as the new Padishah prefers to isolate himself within the palace walls. The golden days of absolute law and expansion are fading."
- pasha_events.20.a: "The shadows lengthen."
- 
- pasha_events.21.t: "Mehmed III and the Age of Rebellions"
- pasha_events.21.d: "With the ascension of Mehmed III, the Empire faces threats from both without and within. The long, grueling wars in Hungary have drained the treasury, while in Anatolia, the fires of the Celali Rebellions have ignited. In a rare display of traditional authority, the Sultan has announced his intent to lead the army in person. The Seyfiye prepares for war, but the heartland remains in turmoil."
- pasha_events.21.a: "We must restore order by the sword."
- 
- # Event 22: Ahmed I
- pasha_events.22.t: "Ahmed I and the Kafes System"
- pasha_events.22.d: "The ascension of the young Ahmed I brings a fundamental change to the Ottoman succession. Disgusted by the practice of royal fratricide, the new Sultan has decreed that the eldest and most senior member of the dynasty shall inherit the throne. Princes are no longer to be sent as governors to the provinces, but kept secluded in the Kafes (Cage) within the Topkapi Palace. While this ends the bloody civil wars between brothers, it guarantees that future Padishahs will lack administrative and military experience, effectively handing over the reins of the Empire to the Divan, the Harem, and the Janissaries."
- pasha_events.22.a: "A new era of secluded sovereigns begins."
-
-# Event 23: Osman II
- pasha_events.23.t: "Osman II and the Rebellious Factions"
- pasha_events.23.d: "The young and ambitious Osman II has taken the throne. Unlike his recent predecessors, he refuses to be a puppet of the Divan or the Janissaries. Recognizing the deep corruption within the Seyfiye and the Kalemiye, he plans to form a new, loyal army and move the capital to break their power. However, the Pashas and the troops have sensed his intentions. The capital is a powder keg of tension, and the young Sultan's aggressive attempts to reclaim absolute power might trigger a revolt that the Empire has never seen before."
- pasha_events.23.a: "We must break the power of the Pashas!"
- 
- # Event 24: Murad IV
- pasha_events.24.t: "Murad IV: The Iron Fist"
- pasha_events.24.d: "Following years of chaos, military insubordination, and the tragic fate of Osman II, Murad IV has come of age and seized direct control of the state. The time of the 'Shadow Sultans' is brutally suspended. With an iron fist, Murad has begun executing corrupt officials, rebellious Janissaries, and overly ambitious Pashas. He has banned coffeehouses, restored the treasury, and intends to lead the armies himself. The Divan trembles in fear, for the Padishah's word is once again absolute law."
- pasha_events.24.a: "Order restored through fear."
-
- # Event 25: Ibrahim I
- pasha_events.25.t: "The Tragedy of Ibrahim I"
- pasha_events.25.d: "With the death of Murad IV, the throne passes to his brother Ibrahim. The absolute and terrifying order of the previous era has vanished overnight. Ibrahim, struggling with the weight of his new duties and the shadows of the past, has allowed the Harem and the high-ranking officials to dominate the state once more. Extravagance has returned to the palace, while the treasury suffers from mismanagement. The Divan is no longer ruled by the Sultan's sword, but by the whispers of the ambitious."
- pasha_events.25.a: "Chaos returns to the Sublime Porte."
- 
- # Event 26: Mehmed IV and the Köprülü Restoration
- pasha_events.26.t: "Mehmed IV and the Köprülü Restoration"
- pasha_events.26.d: "The young Mehmed IV has ascended the throne during a period of immense internal strife. However, the true transformation began when the Sultan granted absolute authority to Köprülü Mehmed Pasha as Grand Vizier. While the Sultan pursues his passion for hunting in Edirne, a succession of brilliant and iron-willed Pashas from the Köprülü family has begun to purge corruption and restore the Empire's might. This is the era where the Sultan reigns, but the Pasha rules."
- pasha_events.26.a: "The era of the Grand Viziers has arrived."
-
- # Event 27: Suleiman II
- pasha_events.27.t: "Suleiman II: The Burden of Defeat"
- pasha_events.27.d: "Ascending the throne after the deposition of Mehmed IV, Suleiman II finds an Empire on the brink of collapse. The Holy League continues its relentless push into Ottoman territories. While the Sultan spends his days in prayer, the Divan and the Grand Viziers struggle to reform the army and stabilize the front. The weight of the world lies on the shoulders of the Pashas."
- pasha_events.27.a: "We must hold the line."
-
- # Event 28: Mustafa II and the Treaty of Karlowitz
- pasha_events.28.t: "Mustafa II: The Final Crusade"
- pasha_events.28.d: "Mustafa II is a Sultan who refuses to stay in the palace. Determined to reverse the fortunes of the war, he leads the army in person. However, the catastrophic defeat at the Battle of Zenta has led to the humiliating Treaty of Karlowitz. For the first time, the Empire has lost significant territories. The era of Ottoman expansion is over, and the Sultan's prestige is shattered, giving more ground to the ambitious Divan."
- pasha_events.28.a: "A bitter peace is accepted."
-
- # Event 29: Ahmed III and the Tulip Period
- pasha_events.29.t: "Ahmed III: The Tulip Period"
- pasha_events.29.d: "Following the Edirne Event, Ahmed III has ascended. Under the guidance of Grand Vizier Nevsehirli Damat Ibrahim Pasha, the Empire enters a period of unprecedented peace, cultural flourish, and westernization known as the Tulip Period. While the first printing press is established and European styles influence the capital, the elite enjoy lives of immense luxury. The Pashas of the Kalemiye now dominate every aspect of state life, while the Sultan enjoys the beauty of the gardens."
- pasha_events.29.a: "Enjoy the blossoms of peace."
-
- pasha_events.33.t: "Mustafa I and the Crisis of Authority"
- pasha_events.33.d: "Following the death of Ahmed I, the rule of seniority has brought Mustafa I to the throne. However, it quickly becomes clear that the Sultan is not fit to rule. The Divan and the Harem now hold the strings of the state."
- pasha_events.33.a: "A puppet on the throne."
-
- pasha_events.34.t: "The Restoration of Mustafa I"
- pasha_events.34.d: "After the tragic end of Osman II, the Janissaries have dragged Mustafa I back to the throne. Chaos reigns in the capital."
- pasha_events.34.a: "Chaos continues."
-
- pasha_events.35.t: "Ahmed II: The War Continues"
- pasha_events.35.d: "Ahmed II ascends during a desperate war against the Holy League. His short reign is a struggle for survival."
- pasha_events.35.a: "The struggle continues."
-
- pasha_events.36.t: "Osman III and the Palace Seclusion"
- pasha_events.36.d: "Osman III brings a grim atmosphere to the palace, having spent decades in the Kafes. His lack of social experience further empowers the Grand Viziers."
- pasha_events.36.a: "The shadow of the Kafes."
-
- pasha_events.37.t: "Abdulhamid I: Seeking Stability"
- pasha_events.37.d: "After the disastrous wars, Abdulhamid I tries to stabilize the Empire and restore its broken prestige."
- pasha_events.37.a: "We must endure."
-
- pasha_events.30.t: "Mahmud I: The Military Revival"
- pasha_events.30.d: "The extravagance of the Tulip Period was drowned in the blood of the Patrona Halil Rebellion. Out of the ashes, Mahmud I has emerged as Sultan. Realizing that the Empire can no longer rely on outdated tactics, he has begun to employ foreign experts, most notably Comte de Bonneval (Humbaraci Ahmed Pasha), to modernize the artillery and the army. The Divan must adapt to these new military realities as the Sultan reclaims some of the authority lost by his predecessor."
- pasha_events.30.a: "The cannons must roar once more."
-
- pasha_events.31.t: "Mustafa III and the Imperial Naval Engineering School"
- pasha_events.31.d: "Ascending the throne during a period of relative peace, Mustafa III aims to rebuild the Empire's finances and military infrastructure. With the help of Baron de Tott, he has established the Imperial School of Naval Engineering and cast new artillery. The Kalemiye works tirelessly to keep the treasury full, anticipating the inevitable wars to come. The Sultan actively participates in the administration, pushing the Divan towards modernization."
- pasha_events.31.a: "We must build a modern fleet."
-
- pasha_events.32.t: "Selim III: The Nizam-i Cedid"
- pasha_events.32.d: "The devastating wars with Russia have laid bare the fatal weaknesses of the traditional Ottoman system. Sultan Selim III has initiated the 'Nizam-i Cedid' (The New Order), a sweeping set of reforms aimed at completely overhauling the military and the state bureaucracy along European lines. He has created a new, modern army and centralized the treasury. However, this radical shift in power has infuriated the Janissaries and the conservative elements of the Ilmiye. The Empire balances on the edge of a violent reaction."
- pasha_events.32.a: "A new order for a new age."
-
- pasha_events.38.t: "Mustafa IV and the Kabakci Mustafa Revolt"
- pasha_events.38.d: "The bold reforms of Selim III have ended in tragedy. The Janissaries, led by Kabakci Mustafa, have revolted and deposed the Sultan, placing his cousin Mustafa IV on the throne. The Nizam-i Cedid has been abolished, and the Empire is once again under the grip of the old, corrupt military order. The Divan is paralyzed by the demands of the rebellious troops."
- pasha_events.38.a: "A dark day for progress."
-
- pasha_events.39.t: "Mahmud II and the Auspicious Incident"
- pasha_events.39.d: "Following the short and turbulent reign of Mustafa IV, his brother Mahmud II has taken the throne with a singular purpose: to finish what Selim III started. In a decisive and bloody stroke known as the Auspicious Incident (Vaka-i Hayriye), he has completely annihilated the Janissary Corps. With the sword of the old order broken, the Sultan is now free to rebuild the state, the army, and the law under his absolute authority. The Pashas must now bow to a truly sovereign ruler."
- pasha_events.39.a: "The Adli Padishah reclaims the Empire."
-
- # Event 40: Milestone — Divan Ascendant
- pasha_events.40.t: "The Divan Ascendant"
- pasha_events.40.d: "The balance of power has tipped entirely. The Sultan now exists in name only — a gilded shadow confined to the inner chambers of the palace. The Divan, led by a succession of powerful Grand Viziers, has seized full control of the treasury, the army, and the machinery of the state. For the first time in memory, the Pashas rule without restraint. The Republic has reached its zenith."
- pasha_events.40.a: "The Porte governs. The Sultan watches."
-
- # Event 41: Milestone — The Sultan Unchained
- pasha_events.41.t: "The Sultan Unchained"
- pasha_events.41.d: "The long shadow of the Divan has receded. By strength of will, political cunning, and ruthless consolidation, the Sultan has clawed back absolute authority over the state. Ministers who grew too powerful have been dismissed, exiled, or worse. The people look to the Padishah once more as their singular sovereign. The Republic's age of dominance is over — at least for now."
- pasha_events.41.a: "The Sultan's word is law once more."
-
- # =========================================================
- # PERIODIC FLAVOR EVENTS (42-47)
- # =========================================================
-
- # Event 42: Tensions in the Divan
- pasha_events.42.t: "Tensions in the Divan"
- pasha_events.42.d: "A bitter dispute has erupted within the Imperial Council over the appointment of a new provincial beylerbey. Each faction believes it holds the right to fill the post, and the argument has spilled beyond the chamber doors. The capital whispers of paralysis at the Porte."
- pasha_events.42.a: "Let the Divan resolve this. The council's authority must be affirmed."
- pasha_events.42.b: "Enough. The Sultan's word settles the matter."
-
- # Event 43: The Janissary Corps Grows Restless
- pasha_events.43.t: "The Janissaries Demand Their Pay"
- pasha_events.43.d: "The ulufe — the quarterly wage of the Janissary corps — has been delayed once again. Grumbling has turned to open discontent in the barracks of Istanbul. The Seyfiye faction has made it unmistakably clear: the soldiers expect satisfaction, and they expect it soon."
- pasha_events.43.a: "Pay them in full. Their loyalty is worth the cost."
- pasha_events.43.b: "Refuse their demands. The state does not bow to the barracks."
-
- # Event 44: The Mufti's Proclamation
- pasha_events.44.t: "The Mufti's Proclamation"
- pasha_events.44.d: "The Sheikh ul-Islam has issued a sweeping fatwa touching on matters of both law and taxation, asserting that certain state practices run contrary to Islamic principle. The proclamation has been read aloud in mosques across the capital. The Ilmiye watches to see how the Divan responds."
- pasha_events.44.a: "Acknowledge the ruling. The Ulema's authority serves the order of the realm."
- pasha_events.44.b: "Quietly set it aside. The state governs by law, not by proclamation."
-
- # Event 45: A Merchant's Windfall
- pasha_events.45.t: "A Merchant's Windfall"
- pasha_events.45.d: "A consortium of wealthy merchants, well-connected to the Kalemiye, has returned from a prosperous trading expedition across the eastern seas. Flush with profits and eager for goodwill, they have offered a generous donation to the state treasury — though the full extent of their earnings remains their own secret."
- pasha_events.45.a: "Accept the donation with grace."
- pasha_events.45.b: "Demand a full accounting and seize the larger share."
-
- # Event 46: Whispers in the Palace
- pasha_events.46.t: "Whispers in the Palace"
- pasha_events.46.d: "Rumors have reached the Grand Vizier: a minor wife of the Sultan is said to be conspiring with ambitious Pashas, seeking to advance her son's claim in the event of a succession dispute. Whether this is genuine intrigue or the invention of jealous rivals, the whispers are spreading — and whispers in a palace can be as dangerous as swords."
- pasha_events.46.a: "Commission a discreet investigation."
- pasha_events.46.b: "These are idle rumors. Dismiss them."
-
- # Event 47: A Governor's Urgent Report
- pasha_events.47.t: "A Governor's Urgent Report"
- pasha_events.47.d: "A sealed letter has arrived from a distant beylerbey: the roads through his province are no longer safe. Bandits — some of them likely deserters from past campaigns — have grown bold, attacking merchant caravans and extorting villages. The governor requests either troops or funds to restore order. The Divan must decide how seriously to take his plea."
- pasha_events.47.a: "Send a detachment of soldiers to restore order."
- pasha_events.47.b: "Send funds. Let the governor solve this himself."
- pasha_events.47.c: "He is the governor. That is his problem to solve."
-
- # =========================================================
- # MISSION TREE MODIFIERS
- # =========================================================
- pasha_age_of_pashas_reward: "Age of the Grand Viziers"
- desc_pasha_age_of_pashas_reward: "The Pashas have achieved unchallenged supremacy over the Ottoman state. The Sultan reigns in name only; the Divan governs in fact. This golden age of administrative mastery and faction unity has transformed the Sublime Porte into the true seat of imperial power."
- pasha_bosphorus_mastery: "Masters of the Bosphorus"
- desc_pasha_bosphorus_mastery: "With a flourishing economy and secure heartland, Ottoman commerce dominates the straits between East and West. The empire's fleets rule the waters, and every merchant ship pays tribute to the Porte."
- pasha_holy_guardian: "Guardian of the Holy Cities"
- desc_pasha_holy_guardian: "The Padishah stands as the Khadim al-Haramayn — Servant of the Two Holy Sanctuaries. Mecca and Medina are under Ottoman protection, lending unmatched religious prestige to the state."
- pasha_commerce_mastery: "Commercial Supremacy"
- desc_pasha_commerce_mastery: "Decades of administrative reform and strategic investment have made the Ottoman treasury the envy of the world. The Kalemiye's careful stewardship ensures that wealth flows steadily to the state."
- pasha_kapikulu_excellence_buff: "Elite Kapikulu Corps"
- desc_pasha_kapikulu_excellence_buff: "The Sultan's personal standing army has reached a peak of martial excellence. Rigorous training, strict discipline, and generous wages have forged a force that is the finest in the known world."
- pasha_sole_sovereign_reward: "The Sole Sovereign"
- desc_pasha_sole_sovereign_reward: "The Sultan has extinguished all rival power within the state. With the Divan subdued and absolute authority restored to the Imperial Court, the Padishah commands with an iron will that none dares defy."
-
- # =========================================================
- # MISSION TREE — SLOT 6: THE PORTE ASCENDANT
- # =========================================================
- pasha_mission_divan_authority: "Consolidate the Divan's Authority"
- pasha_mission_divan_authority_desc: "The balance of power must tip decisively toward the Sublime Porte. By bringing the bar of Imperial Authority below thirty, the Grand Vizier proves that the Divan — not the Palace — governs the Ottoman state.\n\n§YRequires:§! The balance of power <= 30."
- pasha_mission_iltizam_reform: "Reform the Iltizam System"
- pasha_mission_iltizam_reform_desc: "The tax farm system has bred endemic corruption across the provinces. With the Divan firmly in control, the Grand Vizier can now root out the worst offenders and ensure that state revenues flow cleanly to the treasury.\n\n§YRequires:§! The balance of power <= 20. Corruption below 3."
- pasha_mission_grand_vizier_supreme: "The Grand Vizier's Supremacy"
- pasha_mission_grand_vizier_supreme_desc: "History has been made. For the first time, the Divan has crossed the threshold of absolute authority — the Sultan a mere shadow behind the council's deliberations. This milestone must be commemorated and built upon.\n\n§YRequires:§! The Divan Ascendant milestone must have been reached."
- pasha_mission_age_of_pashas: "An Age of Pashas"
- pasha_mission_age_of_pashas_desc: "The Pasha Republic has reached its zenith. The balance of power is overwhelmingly in the Divan's favour, and all three factions maintain meaningful representation within the council. This is the golden age of Grand Viziers — a moment that will echo through history.\n\n§YRequires:§! The balance of power <= 10. All three factions at >= 20 influence."
-
- # =========================================================
- # MISSION TREE — SLOT 7: THE IMPERIAL LEGACY
- # =========================================================
- pasha_mission_secure_heartland: "Secure the Imperial Heartland"
- pasha_mission_secure_heartland_desc: "The foundations of Ottoman power rest upon four cities: Constantinople, Edirne, Bursa, and Ankara. These must remain the uncontested core of the empire — fully integrated and defended against any who would challenge our supremacy.\n\n§YRequires:§! Own and core Constantinople (151), Edirne (150), Bursa (329), and Ankara (317)."
- pasha_mission_bosphorus_mastery: "Masters of the Bosphorus"
- pasha_mission_bosphorus_mastery_desc: "A prosperous and stable empire is the foundation of Ottoman greatness. As our realm expands and development flourishes, the Porte's mastery over the straits between East and West becomes unassailable.\n\n§YRequires:§! Total development >= 400. No rebel armies in the field."
- pasha_mission_guardian_holy_cities: "Guardian of the Holy Cities"
- pasha_mission_guardian_holy_cities_desc: "To hold both Mecca and Medina is to stand as Khadim al-Haramayn — Servant of the Two Holy Sanctuaries — and with it comes the undisputed moral leadership of the Sunni world. No caliph, no rival sultan, and no ambitious emir can dispute our religious legitimacy while the holiest cities of Islam are under Ottoman protection.\n\n§YRequires:§! Own and core Mecca (385) and Medina (384)."
- pasha_mission_commercial_dominance: "Commercial Supremacy"
- pasha_mission_commercial_dominance_desc: "The wealth of three continents flows through Ottoman hands. With a treasury brimming and corruption held in check, the empire demonstrates that Pasha Republic governance can produce not only stability, but extraordinary prosperity.\n\n§YRequires:§! Treasury >= 1000 ducats. Corruption below 3."
-
- # =========================================================
- # MISSION TREE — SLOT 8: THE SULTAN'S SHADOW
- # =========================================================
- pasha_mission_sultanic_authority: "Assert Sultanic Authority"
- pasha_mission_sultanic_authority_desc: "The long reign of the Pashas must end. By driving the balance of power above seventy, the Sultan reasserts the ancient prerogative of the House of Osman — that the Padishah, and no council of ministers, is the true sovereign of the Ottoman Empire.\n\n§YRequires:§! The balance of power >= 70."
- pasha_mission_kapikulu_excellence: "The Excellence of the Kapikulu"
- pasha_mission_kapikulu_excellence_desc: "With the Sultan's authority restored, attention turns to the army. The Kapikulu corps — the Sultan's personal standing force — must be drilled, funded, and elevated to the peak of martial excellence. Only then can the Sultan's word be backed by unmatched military power.\n\n§YRequires:§! Army tradition >= 50. The balance of power >= 65."
- pasha_mission_sultan_commands: "The Sultan Commands"
- pasha_mission_sultan_commands_desc: "History bears witness: the Sultan has reclaimed absolute authority over the Sublime Porte. The moment when the Divan's dominance was broken must be secured through unrelenting political pressure, ensuring that the Palace never again falls into shadow.\n\n§YRequires:§! The Sultan Unchained milestone must have been reached. The balance of power >= 80."
- pasha_mission_sole_sovereign: "The Sole Sovereign"
- pasha_mission_sole_sovereign_desc: "The work is complete. The Pashas have been subdued, the Divan stands obedient, and the Sultan rules as the undisputed master of the empire. There is no crisis, no rival faction, no shadow council that dares challenge the absolute authority of the House of Osman.\n\n§YRequires:§! The balance of power >= 85. No active political crisis."
-
- ### CUSTOM TOOLTIPS ###
- pasha_tt_power_below_30: "Imperial Authority is at most 30 — the Divan holds the upper hand."
- pasha_tt_power_below_20: "Imperial Authority is at most 20 — the Divan holds near-total control."
- pasha_tt_power_below_10: "Imperial Authority is at most 10 — the Divan governs without restraint."
- pasha_tt_divan_ascendant: "The §YDivan Ascendant§! milestone has been reached — the Sultan exists in name only."
- pasha_tt_sultan_unchained: "The §YSultan Unchained§! milestone has been reached — the Palace has broken the Divan's grip."
- crisis_resolved_tooltip: "The crisis has been definitively resolved."
- crisis_sided_with_divan: "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
- crisis_sided_with_pasha_or_padisah: "(If sided with the Pasha or Padisah) Stability must be at least 1"
-
- # Government Interaction Buttons
- pasha_favor_pashas: "Concessions to the Sublime Porte"
- pasha_favor_pashas_desc: "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
- pasha_favor_sultan: "Assert Sultanic Authority"
- pasha_favor_sultan_desc: "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."
-
- # =========================================================
- # MISSION TREE v2.0 — NEW & UPDATED MODIFIERS
- # =========================================================
- pasha_grand_divan_established: "Grand Divan Established"
- desc_pasha_grand_divan_established: "The Imperial Council has been formally constituted in the halls of the Topkapi. The presence of all three factions — sword, pen, and ulema — lends the new republic its institutional legitimacy, and the state breathes easier for it."
- pasha_kanun_buff: "Kanun-i Pasha Codified"
- desc_pasha_kanun_buff: "The grand bureaucracy of the Sublime Porte has been given a formal legal foundation. The Kanun-i Pasha, drawn up under the supervision of the Kalemiye, standardizes the laws of governance, reduces the friction of administration, and brings the empire's jurisprudence into the new age."
- pasha_anatolian_master: "Master of Anatolia"
- desc_pasha_anatolian_master: "The peninsula of Anatolia — the heartland of Ottoman power — is now unified under the banner of the Porte. From the slopes of the Taurus to the Black Sea coast, the Pasha Republic's writ is unchallenged. The depth of Anatolia now fuels the empire's armies and commerce."
- pasha_egypt_conquered: "The Mamluk Inheritance"
- desc_pasha_egypt_conquered: "The Mamluk Sultanate has fallen and its ancient lands now flow with Ottoman gold. Egypt, the granary of the world and crown jewel of the eastern trade routes, answers to the Sublime Porte. The Kalemiye's merchants rejoice as the wealth of the Nile joins the empire's commercial web."
- pasha_crescent_fleet_buff: "The Crescent Fleet Ready"
- desc_pasha_crescent_fleet_buff: "A new fleet of swift galleys has been assembled under the crescent banner. The Aegean trembles at the sight of Ottoman sails, and the empire's admirals are invigorated by the fresh smell of naval ambition."
- pasha_aegean_supremacy: "Aegean Supremacy"
- desc_pasha_aegean_supremacy: "The Aegean Sea is, in all but name, an Ottoman lake. Our merchant caravels pay no toll and our warships patrol unchallenged. The old Greek and Venetian dominance of these waters has been swept aside by the crescent fleet."
- pasha_mediterranean_supremacy: "Mare Nostrum — Our Sea"
- desc_pasha_mediterranean_supremacy: "From the Bosphorus to the Pillars of Hercules, the Mediterranean bends to the will of the Sublime Porte. Every trade route, every strategic strait, and every vital port is under the watchful eye of the Ottoman fleet. The age of Ottoman naval supremacy has arrived."
- pasha_rumelia_domination: "Rumelia Pacified"
- desc_pasha_rumelia_domination: "Thrace and Bulgaria are firmly under the empire's control. The roads through the Balkans are clear, the garrisons supplied, and the provincial governors have been reminded — with appropriate firmness — of where their loyalties lie."
- pasha_european_gateway: "Gateway to Europe"
- desc_pasha_european_gateway: "The Ottoman banners now fly over the lands that were once the frontier of Christendom. Our armies have crossed the threshold into Europe, and the western powers scramble to understand what has descended upon them. The gates are open — what lies beyond is ours to claim."
- pasha_walls_of_christendom_reward: "The Conqueror of the West"
- desc_pasha_walls_of_christendom_reward: "Vienna has fallen to Ottoman arms. The greatest fortress of Christendom could not stand against the discipline and will of the Pasha Republic's armies. News of the conquest echoes across the world, and the empire's military prestige is without equal."
- pasha_timar_reform_buff: "Reformed Timar System"
- desc_pasha_timar_reform_buff: "The timar — the feudal land grant at the foundation of Ottoman military organization — has been thoroughly reformed under the Sultan's personal direction. Corrupt timariots have been replaced with loyal warriors, supply chains tightened, and the provincial cavalry restored to its former fearsome reputation."
- pasha_border_fortifications: "Fortified Frontiers"
- desc_pasha_border_fortifications: "By the Sultan's personal decree, a network of strongholds, watchtowers, and garrison posts now guards every vulnerable stretch of the empire's borders. The frontier is no longer a line on a map — it is a wall of iron. Enemies who once probed our borders with impunity now face a prepared and vigilant defense."
- pasha_mesopotamia_dominance: "Lord of Mesopotamia"
- desc_pasha_mesopotamia_dominance: "The ancient lands between the Tigris and the Euphrates — the cradle of civilization — now answer to the Sublime Porte. Baghdad, seat of the old Caliphate, flies the Ottoman banner. The trade routes of Mesopotamia pour their wealth into our treasury, and the merchants of the east bow before the Pasha Republic's authority."
- pasha_eastern_hegemony: "Domination of the East"
- desc_pasha_eastern_hegemony: "The great plateau of Persia, long contested by rival dynasties, has been broken to Ottoman will. From the Caucasus to the Persian Gulf, the empire's banners stretch further east than any sultan has dared reach. The old rivalry with the Red Heads is settled — in our favor. The east belongs to the Sublime Porte."
- pasha_universal_empire: "Empire of Three Continents"
- desc_pasha_universal_empire: "The Pasha Republic has achieved what no power in history has managed: genuine hegemony over Europe, Asia, and Africa simultaneously. Vienna has fallen, the Nile flows under Ottoman colours, and the Safavid heartland bends the knee. The Sublime Porte does not merely rule an empire — it rules §Ythe§! empire. Three continents. One banner. One Divan."
-
- # ---- Italian Dream Modifiers ----
- pasha_italian_dominance: "Italian Foothold"
- desc_pasha_italian_dominance: "The crescent banner now flies over southern Italy. Ottoman garrisons hold the passes of Apulia, and the merchants of Naples pay their taxes to the Porte. Europe watches in disbelief."
- pasha_sultan_of_romans_reward: "Sultan of the Romans"
- desc_pasha_sultan_of_romans_reward: "The Eternal City has fallen. Rome — seat of Popes, cradle of Caesars — answers to the Grand Vizier. The Ottoman Sultan has claimed the most prestigious title in the Western world, and no Christian power can deny it."
-
- # ---- India Chain Modifiers ----
- pasha_central_asia_vanguard: "Vanguard of the East"
- desc_pasha_central_asia_vanguard: "The Ottoman armies have crossed into the ancient lands of Khorasan. The road to India lies open before them, and every soldier who marches east knows he walks in the footsteps of conquerors."
- pasha_eastern_trade_mastery: "Master of the Eastern Routes"
- desc_pasha_eastern_trade_mastery: "The great overland routes connecting India to the Mediterranean are under Ottoman control. Every caravan of spices, silk, and precious stones pays its toll to the Sublime Porte."
- pasha_india_mandate_reward: "Mandate of the East"
- desc_pasha_india_mandate_reward: "The subcontinent has been brought under Ottoman suzerainty. The wealth of India — its cotton, its spices, its gold — flows westward through Ottoman hands. The Porte has matched and exceeded the trading empires of Portugal and Venice."
-
- # ---- Maghreb Chain Modifiers ----
- pasha_north_africa_corsair: "The Barbary Coast"
- desc_pasha_north_africa_corsair: "The corsairs of the Barbary Coast now fly the Ottoman crescent. Their swift galleys terror-patrol the western Mediterranean, and Christian merchants pray before setting sail."
- pasha_maghreb_mastery: "Master of the Maghreb"
- desc_pasha_maghreb_mastery: "From Egypt to Morocco, the entire North African coast answers to the Sublime Porte. The Barbary Coast, the Hafsid grain ports, and the Atlantic-facing harbours of Morocco are all Ottoman."
- pasha_beyond_pillars_reward: "Beyond the Pillars"
- desc_pasha_beyond_pillars_reward: "The ancient boundary of the known world — the Pillars of Hercules — is now an Ottoman frontier. The Porte looks north across the Strait toward Iberia and sees not a wall, but a doorway."
-
- # ---- Black Sea Chain Modifiers ----
- pasha_black_sea_dominion: "Lake of the Crescent"
- desc_pasha_black_sea_dominion: "The Black Sea is an Ottoman lake. Caffa, Trebizond, Crimea, Georgia — every shore answers to the Sublime Porte. The ancient trade routes of the Pontic steppe are now Ottoman arteries."
- pasha_steppe_cavalry_mastery: "Masters of the Steppe"
- desc_pasha_steppe_cavalry_mastery: "The Pontic steppe, feared as the breeding ground of conquerors, has been tamed. Ottoman cavalry units trained in the steppe tradition give the empire a fearsome fast-moving arm that rivals the greatest nomadic hordes."
- pasha_northern_hegemon_reward: "Hegemon of the North"
- desc_pasha_northern_hegemon_reward: "The Volga basin and the Caspian shore are Ottoman. The empire that once stopped at the Danube now stretches from the Adriatic to the Caspian. The northern steppe is no longer a threat — it is a province."
-
- # =========================================================
- # MISSION TREE v2.0 — SLOT 1: THE PORTE ASCENDANT
- # =========================================================
- pasha_convene_grand_divan: "Convene the Grand Divan"
- pasha_convene_grand_divan_desc: "The Pasha Republic rests on a single foundation: the authority of the Imperial Council, where the men of the sword, the pen, and the faith deliberate as equals. Before the state can pursue any great ambition, the Grand Divan must be formally convened, its procedures regularized, and its prestige secured. Let the Council assemble — and let the world take notice.\n\n§YRequires:§! Stability at least 2. No active crisis. Treasury of at least 100 ducats."
-
- pasha_kanun_codification: "Codify the Kanun-i Pasha"
- pasha_kanun_codification_desc: "The Ottoman state has long been governed by a mixture of Islamic law, imperial edict, and the unwritten customs of the palace. To secure the Pasha Republic's institutional future, the Kalemiye must undertake the monumental task of codifying all administrative law into the Kanun-i Pasha — a comprehensive legal framework binding all officials of the Porte.\n\n§YRequires:§! Administrative technology at least 7. Corruption below 2. Kalemiye influence at least 30."
-
- # =========================================================
- # MISSION TREE v2.0 — SLOT 2: CRADLE OF EMPIRE
- # =========================================================
- pasha_subdue_karamanids: "The Karamanid Reckoning"
- pasha_subdue_karamanids_desc: "The Karamanid beylik, successor to a proud Anatolian tradition, remains a thorn in the empire's southern flank. Their resistance to Ottoman authority is not merely political — it is a challenge to the very legitimacy of the Porte's rule over Anatolia. The Grand Vizier must bring the Karamanid lands fully under the council's authority.\n\n§YRequires:§! All provinces of the Karaman area owned or held by a subject state."
-
- pasha_unite_anatolia: "Master of Anatolia"
- pasha_unite_anatolia_desc: "Anatolia is the heartland of Ottoman power — the source of soldiers, grain, and revenue that sustains the empire. But it remains fragmented: local princes, resistant beyliks, and independent lords dilute the Porte's authority. A sustained campaign of consolidation, taxation, and administration must bring the entire peninsula under the council's direct control.\n\n§YRequires:§! At least 20 Anatolian provinces owned or held by non-sovereign subjects."
-
- pasha_conquer_egypt: "The Mamluk Inheritance"
- pasha_conquer_egypt_desc: "Egypt is the wealthiest prize in the eastern Mediterranean — a river civilization that has sustained empires since the time of the Pharaohs. The Mamluk Sultanate, proud rulers of these ancient lands, has long been an obstacle to Ottoman southern expansion. The time has come to claim their inheritance. The Nile shall run under Ottoman colours.\n\n§YRequires:§! All provinces of the Egypt region owned or held by a subject state."
-
- # =========================================================
- # MISSION TREE v2.0 — SLOT 3: THE CRESCENT FLEET
- # =========================================================
- pasha_aegean_fleet: "The Aegean Fleet"
- pasha_aegean_fleet_desc: "The Sublime Porte commands vast armies, but the sea has long belonged to the Venetians and the Genoese. To project power across the Mediterranean and secure the empire's island flanks, the Ottoman navy must be rebuilt into a force that commands respect. The crescent must rise above the waves.\n\n§YRequires:§! At least 15 galleys at sea. Fleet strength at least 85% of the force limit."
-
- pasha_bosphorus_command: "Command of the Bosphorus"
- pasha_bosphorus_command_desc: "The Bosphorus is the throat of the world — the narrow waterway connecting the Black Sea to the Mediterranean, through which the trade of two continents must pass. Whoever commands it commands the commerce of the east. With a powerful fleet and the city of Istanbul secure, the Ottoman navy must assert undisputed mastery over these vital straits.\n\n§YRequires:§! At least 20 galleys, 90% naval force limit, Constantinople owned and cored, total development 300."
-
- pasha_aegean_mastery: "Mastery of the Aegean"
- pasha_aegean_mastery_desc: "The Aegean is a sea of a thousand islands and a thousand old grudges. Venetian merchants, Genoese traders, and Greek pirates have long carved the sea into competing spheres of influence. The Ottoman fleet must now impose order: all trade lanes patrolled, all wayward sailors answerable to the Porte. The Aegean will be Ottoman in fact, not merely in aspiration.\n\n§YRequires:§! At least 10 ships protecting trade. At least 25 galleys. Greatest trade power in our home trade node."
-
- pasha_challenge_venice: "Challenge the Serenissima"
- pasha_challenge_venice_desc: "Venice has been the preeminent naval power of the eastern Mediterranean for centuries. Their golden galleys, financed by the wealth of the Levant trade, have long checked Ottoman ambitions at sea. The Sublime Porte must now directly challenge Venetian power — through war, diplomacy, or sheer overwhelming naval strength — and force them to accept Ottoman supremacy.\n\n§YRequires:§! If Venice exists: Venice must be a subject state and our galley and heavy ship counts must equal or exceed theirs. Otherwise: At least 30 galleys and 8 heavy ships."
-
- pasha_ottoman_lake: "The Ottoman Lake"
- pasha_ottoman_lake_desc: "The ancient Romans called it Mare Nostrum — Our Sea. It is a title the Ottomans now have the power to claim. From the Adriatic to the Levantine coast, from Alexandria to the harbours of Anatolia, the Mediterranean must answer to a single master: the Sublime Porte. Let no sail raise anchor without Ottoman leave.\n\n§YRequires:§! Greatest trade power in our home trade node. At least 15 ships protecting trade. Total development at least 500."
-
- # =========================================================
- # MISSION TREE v2.0 — SLOT 4: RUMELIA & BEYOND
- # =========================================================
- pasha_consolidate_rumelia: "Consolidate Rumelia"
- pasha_consolidate_rumelia_desc: "Rumelia — the Ottoman name for the European lands of the empire — is the forward bastion of Ottoman power in the west. Thrace and Bulgaria form the spine of this dominion. But the spine must be solid before the empire can thrust deeper into Europe. All local resistance must be crushed, all vassal lords brought to heel, and every province administered directly by the Porte.\n\n§YRequires:§! All provinces of the Thrace area and the Bulgaria area owned or held by a subject."
-
- pasha_subdue_wallachia: "Subdue Wallachia and Albania"
- pasha_subdue_wallachia_desc: "Wallachia and Albania are thorns in the empire's European flank. Wallachian princes play a double game between the Ottomans and the Hungarians, while the Albanian highlands shelter inveterate rebels. Both frontiers must be permanently settled — the Wallachian boyars brought under the Ottoman yoke and the Albanian clans pacified or crushed.\n\n§YRequires:§! All provinces of the Wallachia area and the Albania area owned or held by a subject."
-
- pasha_take_belgrade: "The Gates of Europe"
- pasha_take_belgrade_desc: "Belgrade — the White Fortress — sits at the confluence of the Sava and the Danube, the key that unlocks the road to central Europe. Serbian resistance has been the last organised obstacle to Ottoman expansion beyond the Balkans. With Serbia broken and Bosnia subdued, the gates to the Hungarian plain swing open before us.\n\n§YRequires:§! At least 8 provinces in the Rascia and Serbia areas owned or held. All of the Bosnia area controlled."
-
- pasha_subjugate_hungary: "The Hungarian Frontier"
- pasha_subjugate_hungary_desc: "Hungary has long fancied itself the shield of Christendom against the Ottoman advance. Its armies have clashed with the Porte on the Danube for decades. But shields can be broken. The Pasha Republic's armies must pour through the Hungarian plain and break the kingdom's power once and for all, securing the Danube basin and opening the road to Vienna.\n\n§YRequires:§! At least 10 provinces in the Alfold, Transdanubia, and Southern Transylvania areas owned or held."
-
- pasha_march_on_vienna: "The March on Vienna"
- pasha_march_on_vienna_desc: "Vienna — the Beç of the Ottomans, the imperial capital of the Habsburgs — is the great prize that has eluded every previous Ottoman campaign. To take Vienna is to shatter the Habsburg dynasty, to drive a spike into the heart of Christendom, and to prove that no power in Europe can stand before the Pasha Republic's armies. The Grand Vizier orders the march. History awaits.\n\n§YRequires:§! Vienna (province 134) owned and cored. All of the Austria Proper area owned or held."
-
- # =========================================================
- # MISSION TREE v2.0 — SLOT 5: THE SULTAN'S SHADOW (updated)
- # =========================================================
- pasha_timar_reform_mission: "Reform the Timar System"
- pasha_timar_reform_mission_desc: "The timar system — granting land revenues to cavalry soldiers in exchange for military service — was once the engine of Ottoman martial power. But decades of corruption have diluted its effectiveness: timariots who neglect their duties, forged records, and absent troops. With the Sultan's authority reasserted and the army's traditions restored, the moment has come to purge the system of its parasites and rebuild it from the foundation.\n\n§YRequires:§! Manpower at least 75% of the maximum. Army tradition at least 45. Balance of power at least 60."
-
- # =========================================================
- # MISSION TREE v3.0 — SLOT 1: NEW DEVELOPMENT MISSION
- # =========================================================
- pasha_reform_tax_registers: "Reform the Tax Registers"
- pasha_reform_tax_registers_desc: "The imperial tax registers have not been updated in decades. Provincial governors record phantom taxpayers, under-report harvest yields, and pocket the difference. The Grand Divan, now firmly established, must dispatch skilled kadis to audit every province — re-registering the population, re-assessing the land, and ensuring that the empire's true wealth reaches the treasury.\n\n§YRequires:§! Administrative technology at least 5. Treasury of at least 250 ducats. Corruption below 5."
-
- # =========================================================
- # MISSION TREE v3.0 — SLOT 3: GRAND MOBILIZATION & EAST
- # =========================================================
- pasha_mobilize_forces: "Mobilize for Conquest"
- pasha_mobilize_forces_desc: "The Sublime Porte's ambitions can no longer remain theoretical. Before the empire marches to war, the full weight of Ottoman military power must be assembled: every regiment filled, every galley crewed, every cannon loaded. The Grand Vizier orders a general mobilization. Byzantium watches from behind its ancient walls — and trembles.\n\n§YRequires:§! Army at least 90% of the force limit. Navy at least 90% of the force limit."
-
- pasha_secure_eastern_anatolia: "Secure Eastern Anatolia"
- pasha_secure_eastern_anatolia_desc: "Eastern Anatolia — the highlands of Rum and the mountains of Erzurum — remains a patchwork of fragile loyalties and rival warlords. Trebizond still harbors independent pretensions. The Grand Vizier orders a campaign to bring these last Anatolian frontiers under the Porte's direct control. Only then can the empire look beyond the mountains, eastward.\n\n§YRequires:§! All of the Erzurum and Rum areas owned or held by subjects."
-
- pasha_conquer_armenia: "The Armenian Crossroads"
- pasha_conquer_armenia_desc: "Armenia is the crossroads of empires — a land where the roads from Anatolia, Persia, and the Caucasus converge. Control it, and the empire controls the gateway to the east. The Turkoman federations that hold these highlands must be broken, their fortresses taken, and their valleys secured before the push toward Azerbaijan can begin.\n\n§YRequires:§! All of the Armenia area owned or held by subjects. At least 3 provinces in the North Kurdistan area controlled."
-
- pasha_challenge_safavids: "Challenge the Safavids"
- pasha_challenge_safavids_desc: "The Safavid Shah — the Red Head, the Kizilbash heretic — has dared to contest Ottoman primacy in the east for too long. Tabriz, the jewel of Azerbaijan and seat of Safavid power, must fall. The theological conflict between Sunni Porte and Shia Shah is not merely religious — it is existential. One empire must dominate the east. It will be ours.\n\n§YRequires:§! All of the Tabriz and Shirvan areas owned or held by subjects."
-
- pasha_lord_of_mesopotamia: "Lord of Mesopotamia"
- pasha_lord_of_mesopotamia_desc: "Baghdad — the City of Peace, seat of the old Abbasid Caliphate, crossroads of the eastern trade — has passed through many hands. Now it must pass into Ottoman ones. With Mesopotamia secured from the Jazira to the Gulf, the empire controls the ancient trade artery connecting Persia to the Mediterranean. The revenues of the Tigris and Euphrates shall swell our treasury.\n\n§YRequires:§! All of the Iraq Arabi and Al-Jazira areas owned or held by subjects."
-
- pasha_eastern_dominance: "Domination of the East"
- pasha_eastern_dominance_desc: "The great plateau of Persia stretches vast and rich beyond the Zagros mountains. With Azerbaijan taken, Mesopotamia secured, and the Safavid heartland crumbling, the Pasha Republic stands on the threshold of a conquest that would have been unthinkable to our predecessors. Thirty provinces. That is the price of eastern dominance. Pay it.\n\n§YRequires:§! At least 30 provinces in the Persia region owned or held by subjects."
-
- pasha_empire_three_continents: "Empire of Three Continents"
- pasha_empire_three_continents_desc: "The Pasha Republic has marched to Vienna, held the Nile, and broken the Safavid east. What remains is to formalize what history already knows: no power on earth rivals the Sublime Porte. Three continents. One banner. One Divan. The Grand Vizier orders the proclamation read in every capital from the Danube to the Euphrates.\n\n§YRequires:§! Vienna (134) owned and cored. All of Egypt controlled. At least 30 provinces in the Persia region. Total development at least 700. Prestige at least 50."
-
- # =========================================================
- # SLOT 2 (cont.) — THE ITALIAN DREAM
- # =========================================================
- pasha_adriatic_campaign: "The Adriatic Campaign"
- pasha_adriatic_campaign_desc: "The eastern Adriatic shore — Dalmatia, Albania, the old Venetian possessions — is now Ottoman. With a powerful fleet and troops blooded in the Balkan wars, the Grand Vizier turns his gaze across the water. Italy awaits. The memory of the Prophet's vision — that Rome too would fall to Islam — is fresh in every Ottoman mind.\n\n§YRequires:§! The entire East Adriatic coast held. At least 20 galleys afloat."
-
- pasha_otranto_landing: "The Landing at Otranto"
- pasha_otranto_landing_desc: "In 1480, an Ottoman army under Gedik Ahmed Pasha seized Otranto — the first and only time Ottoman troops held territory on the Italian peninsula. Now, with the Balkans secure and the Adriatic dominated, the Pasha Republic can make that bridgehead permanent. The heel of Italy has been planted in the crescent's shadow.\n\n§YRequires:§! The entire Apulia area controlled."
-
- pasha_kingdom_of_naples: "The Kingdom of Naples"
- pasha_kingdom_of_naples_desc: "The Kingdom of Naples — one of the oldest crowns in Europe — has fallen to Ottoman arms. Its nobles bow to the Grand Vizier, its ports pay customs to the Porte, and its soldiers now march under the crescent. The Pope dispatches letter after desperate letter to the courts of Europe, but there is no army that can answer.\n\n§YRequires:§! The entire Naples area controlled."
-
- pasha_march_on_rome: "The March on Rome"
- pasha_march_on_rome_desc: "The city that has ruled the world twice — first as Republic, then as Empire, and now as the seat of the Papacy — lies within reach. The armies of the Pasha Republic stand before the walls of Rome, and history holds its breath. The Prophet Muhammad is reported to have said: 'Verily you shall conquer Constantinople, and what a wondrous army will be that, and what a wondrous commander will be their commander.' Scholars of the Ulema now whisper: 'And Rome?'\n\n§YRequires:§! Rome (province 118) owned and cored. All of the Lazio area controlled."
-
- pasha_sultan_of_romans: "Sultan of the Romans"
- pasha_sultan_of_romans_desc: "It is done. Rome is Ottoman. The Papal chair is empty, the great basilicas echo with the call to prayer, and thirty provinces of Italy bow to the Sublime Porte. The Grand Vizier claims a title that even Charlemagne and the Holy Roman Emperors fought for centuries to legitimize. The Ottoman Sultan is Sultan of the Romans — and this time, the title is backed by cannon.\n\n§YRequires:§! Rome owned and cored. At least 30 Italian provinces held."
-
- # =========================================================
- # SLOT 3 (cont.) — ROAD TO INDIA
- # =========================================================
- pasha_khorasan_march: "The Khorasan March"
- pasha_khorasan_march_desc: "Beyond the plateau of Persia lies Khorasan — the vast eastern land where Timur built his empire and where the Silk Road's arteries converge on Herat. The city of Mashhad, holy to Shia pilgrims, and Herat, garden of the east, must fall to Ottoman arms before the road to India opens. The Grand Vizier orders the eastern march.\n\n§YRequires:§! The entire Mashhad and Herat areas controlled."
-
- pasha_gateway_to_india: "The Gateway to India"
- pasha_gateway_to_india_desc: "The Khyber Pass. The ancient road through which Alexander marched, through which Babur descended to found the Mughal Empire. Kabul — fortress of the Hindu Kush — must be Ottoman before the armies can descend into the Indus valley. And Sindh, where the great river meets the sea, secures the southern flank. The subcontinent beckons.\n\n§YRequires:§! The entire Kabulistan and Sindh areas controlled."
-
- pasha_mughal_frontier: "The Mughal Frontier"
- pasha_mughal_frontier_desc: "Lahore — the pearl of the Punjab, gateway to the Gangetic plain. Multan — the city of saints, the southern gateway to the Punjab. With these two great cities in Ottoman hands, the entire northwestern subcontinent is under the crescent. The Mughal empire — if it still exists — watches in disbelief as the Ottomans claim what they once thought was exclusively theirs.\n\n§YRequires:§! The entire Lahore and Multan areas controlled."
-
- pasha_india_dominance: "Dominion over India"
- pasha_india_dominance_desc: "Thirty provinces of the Indian subcontinent. The wealth of the Ganges and the Indus. The cotton of Gujarat and the pepper of the Malabar coast. The Ottoman Empire has done what no Western power ever achieved — it has not merely traded with India, but conquered it. The Sublime Porte now stretches from the Atlantic coast of Morocco to the rivers of India.\n\n§YRequires:§! At least 30 provinces in the West India region held."
-
- # =========================================================
- # SLOT 4 (cont.) — THE MAGHREB
- # =========================================================
- pasha_into_tripolitania: "Into Tripolitania"
- pasha_into_tripolitania_desc: "The barren shores of Libya — ancient Tripolitania and Cyrenaica — are the western frontier of Ottoman Egypt. The Hafsid and Berber chieftains who hold these coasts must be brought under the Porte's authority. The Barbary Coast offers deep harbours, bold corsairs, and a strategic position directly threatening Christian shipping.\n\n§YRequires:§! The entire Tripolitania and Cyrenaica areas controlled."
-
- pasha_hafsid_subjugation: "The Fall of the Hafsids"
- pasha_hafsid_subjugation_desc: "The Hafsid Sultanate of Tunisia — successor to the great Almohad empire, ruler of Tunis and Kairouan — has long maintained uneasy relations with the Sublime Porte. The time for ambiguity is over. The greatest port of North Africa after Alexandria must fly the Ottoman crescent. The corsairs of Tunis will serve the empire, not their own purses.\n\n§YRequires:§! The entire Tunisia area controlled."
-
- pasha_barbary_fleet: "The Barbary Fleet"
- pasha_barbary_fleet_desc: "Algiers — city of corsairs, terror of the Mediterranean. The infamous Hayreddin Barbarossa brought it to the Ottoman fold; now the Pasha Republic must build upon that legacy. With thirty galleys flying the crescent and the Algerian harbours in Ottoman hands, the western Mediterranean becomes an Ottoman hunting ground. No Christian fleet dare cross without paying tribute.\n\n§YRequires:§! The entire Algiers area controlled. At least 30 galleys."
-
- pasha_ottoman_maghreb: "The Ottoman Maghreb"
- pasha_ottoman_maghreb_desc: "Morocco — the last independent Muslim kingdom of North Africa, refuge of the Marinid and Saadian dynasties, defender of the Atlantic flank. With Morocco subjugated, the entire North African coast from Egypt to the Atlantic is Ottoman. The Maghreb is not merely a frontier — it is the western face of the Ottoman Empire.\n\n§YRequires:§! The entire Maghreb region controlled."
-
- pasha_beyond_pillars: "Beyond the Pillars"
- pasha_beyond_pillars_desc: "The Pillars of Hercules — ancient boundary of the known world — now mark an Ottoman gateway, not an edge. Across the strait lies Iberia: the great crusader kingdoms of Castile and Portugal, the lands from which the last Muslims were expelled in 1492. The Pasha Republic will not forget Andalusia. The crescent will return to Granada.\n\n§YRequires:§! All of the Maghreb region held. Prestige at least 60. Total development at least 800."
-
- # =========================================================
- # SLOT 6 — THE BLACK SEA & NORTHERN EXPANSION
- # =========================================================
- pasha_control_moldavia: "Pacify Moldavia"
- pasha_control_moldavia_desc: "Moldavia — the principality between the Pruth and the Dniester — plays a double game between the Ottomans, the Poles, and the Hungarians. Its princes alternate between paying tribute and seeking Christian alliances. The Porte must end this ambiguity: Moldavia must become a fully obedient subject, securing the north shore of the Black Sea approach and opening the road to the Caucasus.\n\n§YRequires:§! The entire Moldavia area controlled."
-
- pasha_caucasus_secured: "Secure the Caucasus"
- pasha_caucasus_secured_desc: "The Caucasus — land of a thousand tongues and a hundred kingdoms. Imereti and Kartli-Kakheti, the ancient Georgian kingdoms, have long been contested between the Ottomans and the Safavids. To secure the Black Sea's eastern shore and cut off the Safavids' northern flank, these mountain kingdoms must kneel before the Porte.\n\n§YRequires:§! The entire Imereti and Kartli-Kakheti areas controlled."
-
- pasha_crimean_dominion: "Dominion over Crimea"
- pasha_crimean_dominion_desc: "The Crimean Khanate — traditionally an Ottoman vassal — and the Circassian clans of the northern Caucasus must now be fully absorbed into the empire's body politic. With Crimea's ports and the Circassians' fearless cavalry under direct Ottoman command, the Black Sea becomes the empire's private lake and the steppe a recruiting ground.\n\n§YRequires:§! The entire Crimea and Circassia areas controlled."
-
- pasha_pontic_steppe: "The Pontic Steppe"
- pasha_pontic_steppe_desc: "The lower Don and the Astrakhan khanate — the last remnants of the Golden Horde's heirs — control the gateway between the Black Sea and the Caspian. With these river mouths in Ottoman hands, the ancient trade route connecting the Baltic to Persia is severed or taxed at Ottoman will. The steppe is no longer an alien world — it is an Ottoman frontier.\n\n§YRequires:§! The entire Lower Don and Astrakhan areas controlled."
-
- pasha_gateway_to_north: "Gateway to the North"
- pasha_gateway_to_north_desc: "The Volga — the great river of the east, artery of Russia — flows through Ottoman-controlled territory to a Caspian sea that the empire commands from Persia. Astrakhan, ancient city on the Volga delta, is not merely a fortress: it is the key that locks Russia out of Central Asia and opens the north to Ottoman influence. The Pasha Republic's reach now exceeds that of any Islamic empire since the Mongols.\n\n§YRequires:§! The entire Volga area controlled. Astrakhan cored. Prestige at least 50."
-
- # =========================================================
- # MISSION TREE v3.0 — SLOT 4: SOUTHERN EXPANSION
- # =========================================================
- pasha_into_the_levant: "Into the Levant"
- pasha_into_the_levant_desc: "The Levant — ancient Syria and the cities of Aleppo and Damascus — has been the crossroads of civilizations since the dawn of time. The Mamluk Sultanate has grown fat and complacent ruling these rich lands. The Pasha Republic's southward march begins here. The road to the Holy Cities and Egypt runs through the valleys of Syria.\n\n§YRequires:§! All of the Aleppo and Syria areas owned or held by subjects."
-
- pasha_establish_red_sea_fleet: "Masters of the Red Sea"
- pasha_establish_red_sea_fleet_desc: "The Red Sea is the gateway to Mecca, to the spice trade, and to the wealth of the Indian Ocean. Without a fleet to dominate these waters, our southern conquests remain vulnerable to Portuguese ambitions and local piracy. The crescent banner must fly over the Red Sea just as it flies over the Aegean — supreme and unchallenged.\n\n§YRequires:§! At least 15 galleys. Fleet at 85% of the force limit. Total development at least 350."
-
- # =========================================================
- # MISSION TREE v3.0 — SLOT 5: NEW SULTAN DEVELOPMENT MISSIONS
- # =========================================================
- pasha_build_border_fortifications: "Fortify the Empire's Borders"
- pasha_build_border_fortifications_desc: "The Sultan's restored authority carries a solemn duty: to defend the empire's borders against all enemies, foreign and domestic. By the imperial will, a systematic program of fortification must be undertaken — new strongholds on the frontier, repaired walls in the cities, and garrisoned watchtowers on every pass. The empire's security rests on stone and iron.\n\n§YRequires:§! Military technology at least 8. Army tradition at least 40. Balance of power at least 65."
-
- pasha_found_sipahi_halls: "Reorganize the Sipahi Corps"
- pasha_found_sipahi_halls_desc: "The sipahi — the mounted warrior who represents the Ottoman military ideal — has been allowed to stagnate. The timar reforms revived the system; now the Sultan must elevate it. New training halls must be established in every province, the finest horsemen recruited and drilled to perfection, and the sipahi corps forged once more into the deadliest cavalry force in the known world.\n\n§YRequires:§! Army tradition at least 60. Military technology at least 12. Balance of power at least 70."
-
- # =========================================================
- # MISSION TITLES — _title keys (required by EU4 mission panel)
- # =========================================================
-
- # Slot 1: The Porte Ascendant (7 missions)
- pasha_convene_grand_divan_title:0 "Convene the Grand Divan"
- pasha_reform_tax_registers_title:0 "Reform the Tax Registers"
- pasha_mission_divan_authority_title:0 "Consolidate the Divan's Authority"
- pasha_mission_iltizam_reform_title:0 "Reform the Iltizam System"
- pasha_kanun_codification_title:0 "Codify the Kanun-i Pasha"
- pasha_mission_grand_vizier_supreme_title:0 "The Grand Vizier's Supremacy"
- pasha_mission_age_of_pashas_title:0 "An Age of Pashas"
-
- # Slot 2: Western Expansion (5 missions, starts at pos 2)
- pasha_consolidate_rumelia_title:0 "Consolidate Rumelia"
- pasha_subdue_wallachia_title:0 "Subdue Wallachia and Albania"
- pasha_take_belgrade_title:0 "The Gates of Europe"
- pasha_subjugate_hungary_title:0 "The Hungarian Frontier"
- pasha_march_on_vienna_title:0 "The March on Vienna"
-
- # Slot 3: Grand Mobilization & Eastern Expansion (6 missions)
- pasha_mobilize_forces_title:0 "Mobilize for Conquest"
- pasha_secure_eastern_anatolia_title:0 "Secure Eastern Anatolia"
- pasha_conquer_armenia_title:0 "The Armenian Crossroads"
- pasha_challenge_safavids_title:0 "Challenge the Safavids"
- pasha_lord_of_mesopotamia_title:0 "Lord of Mesopotamia"
- pasha_eastern_dominance_title:0 "Domination of the East"
- pasha_empire_three_continents_title:0 "Empire of Three Continents"
-
- # Slot 2 (cont.) — Italian Dream (pos 7-11)
- pasha_adriatic_campaign_title:0 "The Adriatic Campaign"
- pasha_otranto_landing_title:0 "The Landing at Otranto"
- pasha_kingdom_of_naples_title:0 "The Kingdom of Naples"
- pasha_march_on_rome_title:0 "The March on Rome"
- pasha_sultan_of_romans_title:0 "Sultan of the Romans"
-
- # Slot 3 (cont.) — Road to India (pos 8-11)
- pasha_khorasan_march_title:0 "The Khorasan March"
- pasha_gateway_to_india_title:0 "The Gateway to India"
- pasha_mughal_frontier_title:0 "The Mughal Frontier"
- pasha_india_dominance_title:0 "Dominion over India"
-
- # Slot 4 (cont.) — Maghreb (pos 7-11)
- pasha_into_tripolitania_title:0 "Into Tripolitania"
- pasha_hafsid_subjugation_title:0 "The Fall of the Hafsids"
- pasha_barbary_fleet_title:0 "The Barbary Fleet"
- pasha_ottoman_maghreb_title:0 "The Ottoman Maghreb"
- pasha_beyond_pillars_title:0 "Beyond the Pillars"
-
- # Slot 6 — Black Sea & Northern Expansion (pos 3-7)
- pasha_control_moldavia_title:0 "Pacify Moldavia"
- pasha_caucasus_secured_title:0 "Secure the Caucasus"
- pasha_crimean_dominion_title:0 "Dominion over Crimea"
- pasha_pontic_steppe_title:0 "The Pontic Steppe"
- pasha_gateway_to_north_title:0 "Gateway to the North"
-
- # Slot 4: Southern Expansion (5 missions, starts at pos 2)
- pasha_into_the_levant_title:0 "Into the Levant"
- pasha_establish_red_sea_fleet_title:0 "Masters of the Red Sea"
- pasha_mission_guardian_holy_cities_title:0 "Guardian of the Holy Cities"
- pasha_conquer_egypt_title:0 "The Mamluk Inheritance"
- pasha_mission_commercial_dominance_title:0 "Commercial Supremacy"
-
- # Slot 5: The Sultan's Shadow (7 missions)
- pasha_mission_sultanic_authority_title:0 "Assert Sultanic Authority"
- pasha_mission_kapikulu_excellence_title:0 "The Excellence of the Kapikulu"
- pasha_timar_reform_mission_title:0 "Reform the Timar System"
- pasha_build_border_fortifications_title:0 "Fortify the Empire's Borders"
- pasha_found_sipahi_halls_title:0 "Reorganize the Sipahi Corps"
- pasha_mission_sultan_commands_title:0 "The Sultan Commands"
- pasha_mission_sole_sovereign_title:0 "The Sole Sovereign"
-
+ crisis_of_the_state:0 "Internal Power Struggle"
+ crisis_of_the_state_desc:0 "The delicate balance of power between the Imperial Court and the Sublime Porte has collapsed. Factions arm themselves in the streets, and a shadow war for the soul of the Empire has begun. We must choose a side, or risk losing the state entirely."
+ angry_senate_modifier:0 "Senate Outrage"
+ desc_angry_senate_modifier:0 "The Imperial Senate is furious after being bypassed. Unrest spreads through the capital and tax revenue suffers as officials drag their feet."
+ sultan_mehmed_ii_modifier:0 "Reign of Mehmed the Conqueror"
+ sultan_bayezid_ii_modifier:0 "Reign of Bayezid the Just"
+ sultan_selim_i_modifier:0 "Reign of Selim the Grim"
+ sultan_suleiman_i_modifier:0 "Reign of Suleiman the Magnificent"
+ sultan_murad_iii_modifier:0 "Era of Murad III"
+ sultan_mehmed_iii_modifier:0 "Era of Mehmed III"
+ sultan_selim_ii_modifier:0 "Era of Selim II"
+ sultan_ahmed_i_modifier:0 "Era of Ahmed I"
+ sultan_osman_ii_modifier:0 "Era of Osman II"
+ sultan_murad_iv_modifier:0 "Era of Murad IV"
+ sultan_ibrahim_i_modifier:0 "Era of Ibrahim I"
+ sultan_mehmed_iv_modifier:0 "Era of the Köprülü Restoration"
+ sultan_suleiman_ii_modifier:0 "Era of Suleiman II"
+ sultan_mustafa_ii_modifier:0 "Era of Mustafa II"
+ sultan_ahmed_iii_modifier:0 "Era of Ahmed III"
+ sultan_mustafa_i_modifier:0 "Era of Mustafa I"
+ sultan_ahmed_ii_modifier:0 "Era of Ahmed II"
+ sultan_osman_iii_modifier:0 "Era of Osman III"
+ sultan_abdulhamid_i_modifier:0 "Era of Abdulhamid I"
+ sultan_mahmud_i_modifier:0 "Era of Mahmud I"
+ sultan_mustafa_iii_modifier:0 "Era of Mustafa III"
+ sultan_selim_iii_modifier:0 "Era of Selim III"
+ sultan_mustafa_iv_modifier:0 "Era of Mustafa IV"
+ sultan_mahmud_ii_modifier:0 "Era of Mahmud II (The Adli)"
+ random_sultan_militarist:0 "Militarist Sultan"
+ desc_random_sultan_militarist:0 "The shadow Sultan is a man of war. His martial inclinations bolster the Empire's armies and inspire the troops."
+ random_sultan_diplomat:0 "Diplomatic Sultan"
+ desc_random_sultan_diplomat:0 "The shadow Sultan is a skilled negotiator. His influence subtly improves the Empire's standing among foreign powers."
+ random_sultan_administrator:0 "Administrative Sultan"
+ desc_random_sultan_administrator:0 "The shadow Sultan is a capable administrator. His careful hand strengthens the treasury and eases the burden of governance."
+ political_gridlock:0 "Political Gridlock"
+ sultan_dissolves_parliament_unrest:0 "Divan Dissolved (Major Outrage)"
+ desc_sultan_dissolves_parliament_unrest:0 "The Sultan's forceful dissolution of the Divan has sparked widespread fury among the powerful factions. Unrest grips the Empire."
+ sultan_dissolves_parliament_minor_unrest:0 "Divan Dissolved"
+ desc_sultan_dissolves_parliament_minor_unrest:0 "The Sultan has dissolved the Divan and called for new elections. The factions are displeased but the situation remains manageable."
+ sultan_dissolves_parliament_cooldown:0 "Recent Parliament Dissolution"
+ desc_sultan_dissolves_parliament_cooldown:0 "The Divan was dissolved not long ago. Forcing another early dissolution so soon would be seen as a grave overreach of authority."
+ faction_dominance_modifier:0 "Faction Dominance"
+ desc_faction_dominance_modifier:0 "A single faction has seized overwhelming control of the Divan. Their unchecked power stifles the administration and breeds resentment among rivals."
+ pasha_political_instability:0 "Political Instability"
+ desc_pasha_political_instability:0 "The struggle for power between factions has created a temporary vacuum in state authority, making reform and stabilization more difficult."
+ ilmiye_dominance_pressure:0 "Religious Court Supremacy"
+ desc_ilmiye_dominance_pressure:0 "The Ilmiye has imposed strict religious orthodoxy across the realm. While Sunni subjects remain loyal, minorities face mounting pressure and unrest."
+ kapikulu_reform_buff:0 "Kapikulu Reform"
+ desc_kapikulu_reform_buff:0 "The Sultan's standing army has undergone rigorous reform by Imperial decree, restoring discipline and martial excellence to the Imperial corps."
+ kapikulu_reform_cooldown:0 "Kapikulu Reform Exhaustion"
+ desc_kapikulu_reform_cooldown:0 "The Kapikulu corps has recently undergone reform. Another round of reorganization cannot yet be imposed."
+ hatt_humayun_buff:0 "Imperial Rescript"
+ desc_hatt_humayun_buff:0 "The Sultan's Hatt-i Hümayun has been proclaimed, asserting absolute Imperial authority and bringing greater revenue and stability to the state."
+ divan_strengthened_buff:0 "Strengthened Imperial Council"
+ desc_divan_strengthened_buff:0 "The Divan has formalized its authority through sweeping administrative reforms, improving the efficiency of governance across the empire."
+ divan_strengthened_cooldown:0 "Council Reform Exhaustion"
+ desc_divan_strengthened_cooldown:0 "The Imperial Council has recently been reorganized. Further reforms must wait before another restructuring can take place."
+ iltizam_reform_buff:0 "Tax Farm Reform"
+ desc_iltizam_reform_buff:0 "The tax farming system has been thoroughly reformed, exposing corrupt collectors and channeling greater revenue directly to the state treasury."
+ iltizam_reform_cooldown:0 "Iltizam Reform Exhaustion"
+ desc_iltizam_reform_cooldown:0 "The tax farm system has recently been reformed. Another overhaul cannot be undertaken so soon."
+ seyfiye_faction_influence:0 "Seyfiye Influence"
+ ilmiye_faction_influence:0 "Ilmiye Influence"
+ kalemiye_faction_influence:0 "Kalemiye Influence"
+ seyfiye_faction:0 "Men of the Sword (Seyfiye)"
+ seyfiye_faction_FACTION_DESC:0 "The military elite, comprising the Janissary Aghas, Viziers, and Beylerbeys. They prioritize military expansion, absolute discipline, and the martial glory of the Empire."
+ ilmiye_faction:0 "Men of Learning (Ilmiye)"
+ ilmiye_faction_FACTION_DESC:0 "The judicial and religious authorities, including the Kazaskers, Sheikh ul-Islam, and the Ulema. They focus on internal stability, legal justice, and religious devotion."
+ kalemiye_faction:0 "Men of the Pen (Kalemiye)"
+ kalemiye_faction_FACTION_DESC:0 "The civil and administrative bureaucracy, consisting of Defterdars, Nisancis, and clerks. They strive for economic prosperity, efficient taxation, and diplomatic finesse."
+ pasha_power:0 "Imperial Authority"
+ pasha_power_desc:0 "The scale of power between the Imperial Court (Padishah) and the Sublime Porte (The Grand Vizier and the Divan).\n\nThe balance of power ranges from 0 to 100, automatically activating different national effects via the Triggered Modifiers system based on the current tier:\n\n§Y0 - 20:§! Absolute Pasha Authority\n§Y20 - 40:§! Pasha Dominance\n§Y40 - 60:§! Balanced Power (No Effects)\n§Y60 - 80:§! Sultan's Resurgence\n§Y80 - 100:§! Absolute Sultanate\n\nYou can always check the active tier and its exact effects in the Triggered Modifiers interface."
+ pasha_power_mechanic:0 "Balance of Power"
+ pasha_power_mechanic_desc:0 "The eternal struggle for supremacy between the sovereign Imperial Court and the administrative Sublime Porte."
+ ability_pasha_power_mechanic:0 "Balance of Power"
+ pasha_power_gain_modifier:0 "Balance of Power Shift"
+ pasha_council_republic:0 "Pasha Republic"
+ pasha_council_republic_desc:0 "A unique system of government where the true power of the state lies within the Divan. The Sultan remains a revered figurehead and symbol of the Empire, but the administration is led by a powerful Grand Vizier elected by the state's dominant factions."
+ bribe_pasha_seyfiye:0 "Distribute Ulufe to the Seyfiye"
+ bribe_pasha_ilmiye:0 "Endow a Waqf for the Ilmiye"
+ bribe_pasha_kalemiye:0 "Grant Iltizam to the Kalemiye"
+ issue_military_campaign_funding:0 "§PMilitary Campaign Funding§!"
+ issue_military_campaign_funding_desc:0 "The Seyfiye demands additional funding and autonomy for the upcoming campaigns. Passing this issue will empower the military elite but drain our imperial coffers."
+ issue_judicial_and_religious_reform:0 "§PJudicial and Religious Reform§!"
+ issue_judicial_and_religious_reform_desc:0 "The Ilmiye seeks to expand the influence of the Ulema and standardize the empire's laws. This will increase national stability, but limit the absolute authority of the Sultan's court."
+ issue_expand_trade_privileges:0 "§PExpand Bureaucratic Trade Privileges§!"
+ issue_expand_trade_privileges_desc:0 "The Kalemiye proposes expanding trade privileges and restructuring tax collection. This reform will significantly boost our economy, though it may breed corruption within the civil service."
+ issue_frontier_garrison_reinforcement:0 "§PFrontier Garrison Reinforcement§!"
+ issue_frontier_garrison_reinforcement_desc:0 "The Seyfiye demands the reinforcement of frontier garrisons and border fortifications. Strengthening our defensive lines will bolster discipline across the army and make our borders impenetrable — though it shifts authority further toward the military elite."
+ issue_naval_expansion_decree:0 "§PNaval Expansion Decree§!"
+ issue_naval_expansion_decree_desc:0 "The Seyfiye, keen to extend Ottoman power across the seas, calls for a naval build-up. New galleys shall be commissioned and the fleet's traditions preserved — at the cost of further emboldening the admiralty and military commanders."
+ issue_madrasah_endowment:0 "§PMadrasah Endowment§!"
+ issue_madrasah_endowment_desc:0 "The Ilmiye proposes a generous endowment to the empire's madrasahs to cultivate a new generation of scholars, jurists, and administrators. Investing in knowledge will lower the cost of technology and reform, though it tilts influence toward the religious establishment."
+ issue_charitable_foundation_waqf:0 "§PCharitable Foundation (Waqf)§!"
+ issue_charitable_foundation_waqf_desc:0 "The Ilmiye proposes the establishment of a network of waqf (pious endowments) to fund hospitals, schools, and mosques across the empire. This act of charity will ease internal tensions and deepen the loyalty of Sunni subjects, though the Ulema's influence grows with every coin donated."
+ issue_revenue_assessment_reform:0 "§PRevenue Assessment Reform§!"
+ issue_revenue_assessment_reform_desc:0 "The Kalemiye proposes a thorough reassessment of the empire's revenue streams, rooting out inefficiencies and ensuring that a greater share of tax revenues reaches the central treasury. A leaner, more honest fiscal system will benefit the state — though the Divan's technocrats gain further control over the purse strings."
+ issue_diplomatic_mission_fund:0 "§PDiplomatic Mission Fund§!"
+ issue_diplomatic_mission_fund_desc:0 "The Kalemiye calls for increased funding of diplomatic missions and envoys. Well-resourced diplomats abroad will reduce the diplomatic friction of our expansion and hasten the resolution of foreign affairs — cementing the Kalemiye's role as the empire's indispensable intermediary with the world."
+ pasha_tier_1_absolute:0 "Absolute Pasha Authority"
+ desc_pasha_tier_1_absolute:0 "The Pashas have seized total control over the Sublime Porte, sidelining the Sultan completely.\n\n§YActive when the balance of power is between 0 and 20.§!"
+ pasha_tier_2_dominant:0 "Pasha Dominance"
+ desc_pasha_tier_2_dominant:0 "The Pashas hold significant sway over state affairs and the bureaucracy.\n\n§YActive when the balance of power is between 20 and 40.§!"
+ sultan_tier_3_dominant:0 "Sultan's Resurgence"
+ desc_sultan_tier_3_dominant:0 "The Sultan is effectively reasserting traditional authority over the Imperial Council.\n\n§YActive when the balance of power is between 60 and 80.§!"
+ sultan_tier_4_absolute:0 "Absolute Sultanate"
+ desc_sultan_tier_4_absolute:0 "The Sultan rules with an iron fist, completely unchallenged by the ambitions of the Pashas.\n\n§YActive when the balance of power is between 80 and 100.§!"
+ pasha_kapikulu_reformu_title:0 "Reform the Kapikulu Corps"
+ pasha_kapikulu_reformu_desc:0 "The Sultan's personal standing army, the Kapikulu, has grown complacent. A determined reform campaign, led directly by Imperial decree, can restore their discipline and fighting spirit — but it requires the Sultan's direct authority to push past Pasha resistance."
+ pasha_hatt_i_humayun_title:0 "Issue the Imperial Rescript"
+ pasha_hatt_i_humayun_desc:0 "With the Imperial Court firmly in command, the Sultan may issue a Hatt-i Hümayun — a personal decree carrying the full weight of Imperial authority. This sweeping assertion of sovereign power will alarm the Divan, but the realm will know that the Sultan's word is law. This decree can only be issued once."
+ pasha_divan_guclendir_title:0 "Strengthen the Imperial Council"
+ pasha_divan_guclendir_desc:0 "With the balance of power firmly in the Divan's hands, the Grand Vizier may formalize the council's authority through new administrative reforms. The Porte's grip on the empire's finances and bureaucracy will be solidified, making governance more efficient — if at the cost of the Sultan's prerogatives."
+ pasha_iltizam_reformu_title:0 "Reform the Tax Farm System"
+ pasha_iltizam_reformu_desc:0 "The Iltizam system — selling tax-collection rights to the highest bidder — has bred endemic corruption. A thorough reform of the tax farms, conducted when the Divan holds unchallenged authority, can root out the worst abusers and channel more revenue directly to the state treasury."
+ sultan_dissolves_parliament_title:0 "Dissolve the Imperial Senate"
+ sultan_dissolves_parliament_desc:0 "The current Divan has proven incompetent, and the state suffers for it. As the rightful Padishah, we can use our political capital to dissolve the assembly and force early elections, though this will anger the established elites."
+ pasha_activate_automated_reports_title:0 "Delegate Faction Monitoring"
+ pasha_activate_automated_reports_desc:0 "The Divan is overwhelmed with paperwork. By delegating faction monitoring to lower bureaucrats, we will no longer receive yearly reports, but the influence will continue to shift in the background."
+ pasha_activate_manual_reports_title:0 "Demand Direct Faction Reports"
+ pasha_activate_manual_reports_desc:0 "The Sultan wishes to see every detail of the shifting power dynamics. We will resume receiving yearly visual reports from each faction."
+ pasha_events.1.t:0 "The Senate Confirmation"
+ pasha_events.1.d:0 "The Imperial Senate has convened to deliberate on the appointment of our newly elected Grand Vizier. We must decide how to handle their demands to secure the new administration's legitimacy. Additionally, the inherent administrative, diplomatic, and military skills of our newly chosen leader will immediately shift the balance of power among the factions within the Divan, as detailed below."
+ pasha_events.1.a:0 "Bribe the Senate."
+ pasha_events.1.b:0 "Concede to the Senate's demands."
+ pasha_events.1.c:0 "Bypass the Senate entirely."
+ pasha_events.2.t:0 "The Fate of the Sultanate"
+ pasha_events.2.d:0 "The year is 1444. The young Mehmed II sits upon the throne, but the true power brokers of the state murmur in the shadows. Candarli Halil Pasha seeks to consolidate the power of the Divan. Shall the lineage of Osman shape the future from the shadows according to their historical destinies, or shall fate take a new, unpredictable path?"
+ pasha_events.2.a:0 "Follow the historical path of the Sultans."
+ pasha_events.2.b:0 "Let fate decide the rulers of the shadows."
+ pasha_events.3.t:0 "The Crisis of the State"
+ pasha_events.3.d:0 "The political maneuvering has finally broken the fragile peace. Partisans of the Imperial Court and ambitious supporters of the Divan are clashing in the streets. The balance of power is entirely shattered. We must decide who to back in this civil strife, or risk watching the Empire tear itself apart."
+ pasha_events.3.a:0 "Rally the Loyalists! The Sultan is the true ruler."
+ pasha_events.3.b:0 "Try to maintain order. The state must endure."
+ pasha_events.3.c:0 "The Divan is the state! Support the Pasha."
+ pasha_events.4.t:0 "The Death of Mehmed the Conqueror"
+ pasha_events.4.d:0 "The great Sultan Mehmed II has passed away. While the true administrative power remains heavily in the hands of the Pasha Republic, the ascension of his son, Bayezid II, as the figurehead Padishah brings new religious and administrative focus to the realm."
+ pasha_events.4.a:0 "Long live Sultan Bayezid II!"
+ pasha_events.5.t:0 "The Shadow Sultan Has Passed"
+ pasha_events.5.d:0 "The Sultan who has dwelt in the shadows behind our council has departed this world. The Divan must navigate a delicate transition — who we choose to elevate next, and how we do so, will shift the balance of power between the Porte and the Palace. Factions are watching."
+ pasha_events.5.a:0 "The Divan shall appoint a loyal and compliant candidate. Stability above all."
+ pasha_events.5.b:0 "Let Providence decide the new Sultan's character. We shall adapt to whoever rises."
+ pasha_events.5.c:0 "Back the strongest claimant. A capable Sultan serves the realm — whatever the cost."
+ pasha_events.6.t:0 "The Restoration of the Monarchy"
+ pasha_events.6.d:0 "The partisans of the Imperial Court have emerged victorious. The rebellious Pashas have been purged, and the Divan's independent authority is broken. The Sultan has stepped out of the shadows to seize absolute control. The Republic is dead; the Empire is reborn."
+ pasha_events.6.a:0 "Absolute power to the House of Osman!"
+ pasha_events.7.t:0 "A New Dynasty"
+ pasha_events.7.d:0 "The House of Osman has been effectively cast aside. The victorious Grand Vizier has consolidated all power, eliminating royalist opposition. The Republic's facade has crumbled, giving way to a new autocracy ruled by the Pasha's own bloodline."
+ pasha_events.7.a:0 "A new era of strongman rule begins."
+ pasha_events.8.t:0 "The Sublime Porte Prevails"
+ pasha_events.8.d:0 "Despite the chaos and bloodshed, the institutions of the Pasha Republic have survived. The radical elements of both the Palace and the dictatorial Pashas have been sidelined, restoring the delicate balance of the council. The Republic lives to see another day."
+ pasha_events.8.a:0 "The Republic stands strong."
+ pasha_events.9.t:0 "Power Struggle in the Capital"
+ pasha_events.9.d:0 "The eternal dance of power between the Palace and the Divan continues. A recent political scandal has created an opportunity for one side to consolidate their influence. Who shall capitalize on this?"
+ pasha_events.9.a:0 "The Sultan exerts his royal prerogative."
+ pasha_events.9.b:0 "The Pashas solidify their grip on the administration."
+ pasha_events.11.t:0 "Faction Overextension"
+ pasha_events.11.d:0 "The equilibrium of our Council has been shattered. One faction has amassed overwhelming influence, pushing all rivals aside. Their unchecked ambition threatens the very foundation of the Pasha Republic. We must act before the delicate balance collapses entirely."
+ pasha_events.11.seyfiye_a:0 "Fund the Seyfiye's campaigns. Their loyalty has its price."
+ pasha_events.11.seyfiye_b:0 "Rein in the Janissaries. Their ambition cannot go unchecked."
+ pasha_events.11.ilmiye_a:0 "Submit to the Ulema. Grant the religious courts expanded authority."
+ pasha_events.11.ilmiye_b:0 "Limit the Ulema's reach. The state, not the mosque, must govern."
+ pasha_events.11.kalemiye_a:0 "Accept the bureaucrats' terms. Grant them trade monopolies and privileges."
+ pasha_events.11.kalemiye_b:0 "Audit the state ledgers. Expose and break bureaucratic overreach."
+ pasha_event.13.t:0 "Annual Divan Report: Shifting Influences"
+ pasha_event.13.d:0 "Another year has passed, and the Divan has convened to assess the state of our Republic. The balance of power within the Imperial Council is never static; it bends to the will and capabilities of our Grand Vizier. The administrative acumen, diplomatic finesse, and military expertise of our current leader naturally empower certain factions over others. The changes in faction influence detailed below are not random occurrences, but a direct reflection of how our Vizier's personal skills are currently shaping the Kalemiye, Ilmiye, and Seyfiye."
+ pasha_event.13.a:0 "A reflection of our leadership."
+ pasha_events.17.t:0 "The Ascension of Selim I"
+ pasha_events.17.d:0 "The calm reign of Bayezid has ended as his son Selim I, called 'Yavuz', takes the throne. A man of iron will and unmatched military brilliance, Selim looks toward the East and the South for conquest. The Divan must now brace for a Sultan who demands absolute obedience and total mobilization for war."
+ pasha_events.17.a:0 "The world shall tremble before the Grim Sultan."
+ pasha_events.18.t:0 "The Magnificent Era of Suleiman"
+ pasha_events.18.d:0 "Following the swift and stormy reign of Selim, his son Suleiman has ascended. He is a ruler of law and order, seeking to balance the might of the sword with the wisdom of the pen. Under his rule, the Ottoman state shall reach its zenith in both administration and reach. The Divan finds a Sultan who respects the established order, yet commands with unparalleled prestige."
+ pasha_events.18.a:0 "The Lawgiver has arrived."
+ pasha_events.19.t:0 "The Era of Transformation: Selim II"
+ pasha_events.19.d:0 "With the passing of Suleiman the Magnificent, his son Selim II ascends. Unlike his predecessors, the new Padishah prefers the tranquility of the palace over the hardships of the campaign trail. This shift in royal temperament has allowed the Grand Vizier, Sokollu Mehmed Pasha, and the Divan to consolidate their grip on the state's daily administration. The age of the 'Shadow Sultans' begins, where the pen of the Pasha often carries more weight than the sword of the Sovereign."
+ pasha_events.19.a:0 "The Divan shall guide the state."
+ pasha_events.20.t:0 "The Ascension of Murad III"
+ pasha_events.20.d:0 "Sultan Selim II has passed away, and his son Murad III now claims the throne. This era is marked by a dangerous shift in the balance of power. The influence of the Harem and the sheer weight of corruption begin to crack the foundations of the state. The Divan is rife with bribery and factionalism, as the new Padishah prefers to isolate himself within the palace walls. The golden days of absolute law and expansion are fading."
+ pasha_events.20.a:0 "The shadows lengthen."
+ pasha_events.21.t:0 "Mehmed III and the Age of Rebellions"
+ pasha_events.21.d:0 "With the ascension of Mehmed III, the Empire faces threats from both without and within. The long, grueling wars in Hungary have drained the treasury, while in Anatolia, the fires of the Celali Rebellions have ignited. In a rare display of traditional authority, the Sultan has announced his intent to lead the army in person. The Seyfiye prepares for war, but the heartland remains in turmoil."
+ pasha_events.21.a:0 "We must restore order by the sword."
+ pasha_events.22.t:0 "Ahmed I and the Kafes System"
+ pasha_events.22.d:0 "The ascension of the young Ahmed I brings a fundamental change to the Ottoman succession. Disgusted by the practice of royal fratricide, the new Sultan has decreed that the eldest and most senior member of the dynasty shall inherit the throne. Princes are no longer to be sent as governors to the provinces, but kept secluded in the Kafes (Cage) within the Topkapi Palace. While this ends the bloody civil wars between brothers, it guarantees that future Padishahs will lack administrative and military experience, effectively handing over the reins of the Empire to the Divan, the Harem, and the Janissaries."
+ pasha_events.22.a:0 "A new era of secluded sovereigns begins."
+ pasha_events.23.t:0 "Osman II and the Rebellious Factions"
+ pasha_events.23.d:0 "The young and ambitious Osman II has taken the throne. Unlike his recent predecessors, he refuses to be a puppet of the Divan or the Janissaries. Recognizing the deep corruption within the Seyfiye and the Kalemiye, he plans to form a new, loyal army and move the capital to break their power. However, the Pashas and the troops have sensed his intentions. The capital is a powder keg of tension, and the young Sultan's aggressive attempts to reclaim absolute power might trigger a revolt that the Empire has never seen before."
+ pasha_events.23.a:0 "We must break the power of the Pashas!"
+ pasha_events.24.t:0 "Murad IV: The Iron Fist"
+ pasha_events.24.d:0 "Following years of chaos, military insubordination, and the tragic fate of Osman II, Murad IV has come of age and seized direct control of the state. The time of the 'Shadow Sultans' is brutally suspended. With an iron fist, Murad has begun executing corrupt officials, rebellious Janissaries, and overly ambitious Pashas. He has banned coffeehouses, restored the treasury, and intends to lead the armies himself. The Divan trembles in fear, for the Padishah's word is once again absolute law."
+ pasha_events.24.a:0 "Order restored through fear."
+ pasha_events.25.t:0 "The Tragedy of Ibrahim I"
+ pasha_events.25.d:0 "With the death of Murad IV, the throne passes to his brother Ibrahim. The absolute and terrifying order of the previous era has vanished overnight. Ibrahim, struggling with the weight of his new duties and the shadows of the past, has allowed the Harem and the high-ranking officials to dominate the state once more. Extravagance has returned to the palace, while the treasury suffers from mismanagement. The Divan is no longer ruled by the Sultan's sword, but by the whispers of the ambitious."
+ pasha_events.25.a:0 "Chaos returns to the Sublime Porte."
+ pasha_events.26.t:0 "Mehmed IV and the Köprülü Restoration"
+ pasha_events.26.d:0 "The young Mehmed IV has ascended the throne during a period of immense internal strife. However, the true transformation began when the Sultan granted absolute authority to Köprülü Mehmed Pasha as Grand Vizier. While the Sultan pursues his passion for hunting in Edirne, a succession of brilliant and iron-willed Pashas from the Köprülü family has begun to purge corruption and restore the Empire's might. This is the era where the Sultan reigns, but the Pasha rules."
+ pasha_events.26.a:0 "The era of the Grand Viziers has arrived."
+ pasha_events.27.t:0 "Suleiman II: The Burden of Defeat"
+ pasha_events.27.d:0 "Ascending the throne after the deposition of Mehmed IV, Suleiman II finds an Empire on the brink of collapse. The Holy League continues its relentless push into Ottoman territories. While the Sultan spends his days in prayer, the Divan and the Grand Viziers struggle to reform the army and stabilize the front. The weight of the world lies on the shoulders of the Pashas."
+ pasha_events.27.a:0 "We must hold the line."
+ pasha_events.28.t:0 "Mustafa II: The Final Crusade"
+ pasha_events.28.d:0 "Mustafa II is a Sultan who refuses to stay in the palace. Determined to reverse the fortunes of the war, he leads the army in person. However, the catastrophic defeat at the Battle of Zenta has led to the humiliating Treaty of Karlowitz. For the first time, the Empire has lost significant territories. The era of Ottoman expansion is over, and the Sultan's prestige is shattered, giving more ground to the ambitious Divan."
+ pasha_events.28.a:0 "A bitter peace is accepted."
+ pasha_events.29.t:0 "Ahmed III: The Tulip Period"
+ pasha_events.29.d:0 "Following the Edirne Event, Ahmed III has ascended. Under the guidance of Grand Vizier Nevsehirli Damat Ibrahim Pasha, the Empire enters a period of unprecedented peace, cultural flourish, and westernization known as the Tulip Period. While the first printing press is established and European styles influence the capital, the elite enjoy lives of immense luxury. The Pashas of the Kalemiye now dominate every aspect of state life, while the Sultan enjoys the beauty of the gardens."
+ pasha_events.29.a:0 "Enjoy the blossoms of peace."
+ pasha_events.33.t:0 "Mustafa I and the Crisis of Authority"
+ pasha_events.33.d:0 "Following the death of Ahmed I, the rule of seniority has brought Mustafa I to the throne. However, it quickly becomes clear that the Sultan is not fit to rule. The Divan and the Harem now hold the strings of the state."
+ pasha_events.33.a:0 "A puppet on the throne."
+ pasha_events.34.t:0 "The Restoration of Mustafa I"
+ pasha_events.34.d:0 "After the tragic end of Osman II, the Janissaries have dragged Mustafa I back to the throne. Chaos reigns in the capital."
+ pasha_events.34.a:0 "Chaos continues."
+ pasha_events.35.t:0 "Ahmed II: The War Continues"
+ pasha_events.35.d:0 "Ahmed II ascends during a desperate war against the Holy League. His short reign is a struggle for survival."
+ pasha_events.35.a:0 "The struggle continues."
+ pasha_events.36.t:0 "Osman III and the Palace Seclusion"
+ pasha_events.36.d:0 "Osman III brings a grim atmosphere to the palace, having spent decades in the Kafes. His lack of social experience further empowers the Grand Viziers."
+ pasha_events.36.a:0 "The shadow of the Kafes."
+ pasha_events.37.t:0 "Abdulhamid I: Seeking Stability"
+ pasha_events.37.d:0 "After the disastrous wars, Abdulhamid I tries to stabilize the Empire and restore its broken prestige."
+ pasha_events.37.a:0 "We must endure."
+ pasha_events.30.t:0 "Mahmud I: The Military Revival"
+ pasha_events.30.d:0 "The extravagance of the Tulip Period was drowned in the blood of the Patrona Halil Rebellion. Out of the ashes, Mahmud I has emerged as Sultan. Realizing that the Empire can no longer rely on outdated tactics, he has begun to employ foreign experts, most notably Comte de Bonneval (Humbaraci Ahmed Pasha), to modernize the artillery and the army. The Divan must adapt to these new military realities as the Sultan reclaims some of the authority lost by his predecessor."
+ pasha_events.30.a:0 "The cannons must roar once more."
+ pasha_events.31.t:0 "Mustafa III and the Imperial Naval Engineering School"
+ pasha_events.31.d:0 "Ascending the throne during a period of relative peace, Mustafa III aims to rebuild the Empire's finances and military infrastructure. With the help of Baron de Tott, he has established the Imperial School of Naval Engineering and cast new artillery. The Kalemiye works tirelessly to keep the treasury full, anticipating the inevitable wars to come. The Sultan actively participates in the administration, pushing the Divan towards modernization."
+ pasha_events.31.a:0 "We must build a modern fleet."
+ pasha_events.32.t:0 "Selim III: The Nizam-i Cedid"
+ pasha_events.32.d:0 "The devastating wars with Russia have laid bare the fatal weaknesses of the traditional Ottoman system. Sultan Selim III has initiated the 'Nizam-i Cedid' (The New Order), a sweeping set of reforms aimed at completely overhauling the military and the state bureaucracy along European lines. He has created a new, modern army and centralized the treasury. However, this radical shift in power has infuriated the Janissaries and the conservative elements of the Ilmiye. The Empire balances on the edge of a violent reaction."
+ pasha_events.32.a:0 "A new order for a new age."
+ pasha_events.38.t:0 "Mustafa IV and the Kabakci Mustafa Revolt"
+ pasha_events.38.d:0 "The bold reforms of Selim III have ended in tragedy. The Janissaries, led by Kabakci Mustafa, have revolted and deposed the Sultan, placing his cousin Mustafa IV on the throne. The Nizam-i Cedid has been abolished, and the Empire is once again under the grip of the old, corrupt military order. The Divan is paralyzed by the demands of the rebellious troops."
+ pasha_events.38.a:0 "A dark day for progress."
+ pasha_events.39.t:0 "Mahmud II and the Auspicious Incident"
+ pasha_events.39.d:0 "Following the short and turbulent reign of Mustafa IV, his brother Mahmud II has taken the throne with a singular purpose: to finish what Selim III started. In a decisive and bloody stroke known as the Auspicious Incident (Vaka-i Hayriye), he has completely annihilated the Janissary Corps. With the sword of the old order broken, the Sultan is now free to rebuild the state, the army, and the law under his absolute authority. The Pashas must now bow to a truly sovereign ruler."
+ pasha_events.39.a:0 "The Adli Padishah reclaims the Empire."
+ pasha_events.40.t:0 "The Divan Ascendant"
+ pasha_events.40.d:0 "The balance of power has tipped entirely. The Sultan now exists in name only — a gilded shadow confined to the inner chambers of the palace. The Divan, led by a succession of powerful Grand Viziers, has seized full control of the treasury, the army, and the machinery of the state. For the first time in memory, the Pashas rule without restraint. The Republic has reached its zenith."
+ pasha_events.40.a:0 "The Porte governs. The Sultan watches."
+ pasha_events.41.t:0 "The Sultan Unchained"
+ pasha_events.41.d:0 "The long shadow of the Divan has receded. By strength of will, political cunning, and ruthless consolidation, the Sultan has clawed back absolute authority over the state. Ministers who grew too powerful have been dismissed, exiled, or worse. The people look to the Padishah once more as their singular sovereign. The Republic's age of dominance is over — at least for now."
+ pasha_events.41.a:0 "The Sultan's word is law once more."
+ pasha_events.42.t:0 "Tensions in the Divan"
+ pasha_events.42.d:0 "A bitter dispute has erupted within the Imperial Council over the appointment of a new provincial beylerbey. Each faction believes it holds the right to fill the post, and the argument has spilled beyond the chamber doors. The capital whispers of paralysis at the Porte."
+ pasha_events.42.a:0 "Let the Divan resolve this. The council's authority must be affirmed."
+ pasha_events.42.b:0 "Enough. The Sultan's word settles the matter."
+ pasha_events.43.t:0 "The Janissaries Demand Their Pay"
+ pasha_events.43.d:0 "The ulufe — the quarterly wage of the Janissary corps — has been delayed once again. Grumbling has turned to open discontent in the barracks of Istanbul. The Seyfiye faction has made it unmistakably clear: the soldiers expect satisfaction, and they expect it soon."
+ pasha_events.43.a:0 "Pay them in full. Their loyalty is worth the cost."
+ pasha_events.43.b:0 "Refuse their demands. The state does not bow to the barracks."
+ pasha_events.44.t:0 "The Mufti's Proclamation"
+ pasha_events.44.d:0 "The Sheikh ul-Islam has issued a sweeping fatwa touching on matters of both law and taxation, asserting that certain state practices run contrary to Islamic principle. The proclamation has been read aloud in mosques across the capital. The Ilmiye watches to see how the Divan responds."
+ pasha_events.44.a:0 "Acknowledge the ruling. The Ulema's authority serves the order of the realm."
+ pasha_events.44.b:0 "Quietly set it aside. The state governs by law, not by proclamation."
+ pasha_events.45.t:0 "A Merchant's Windfall"
+ pasha_events.45.d:0 "A consortium of wealthy merchants, well-connected to the Kalemiye, has returned from a prosperous trading expedition across the eastern seas. Flush with profits and eager for goodwill, they have offered a generous donation to the state treasury — though the full extent of their earnings remains their own secret."
+ pasha_events.45.a:0 "Accept the donation with grace."
+ pasha_events.45.b:0 "Demand a full accounting and seize the larger share."
+ pasha_events.46.t:0 "Whispers in the Palace"
+ pasha_events.46.d:0 "Rumors have reached the Grand Vizier: a minor wife of the Sultan is said to be conspiring with ambitious Pashas, seeking to advance her son's claim in the event of a succession dispute. Whether this is genuine intrigue or the invention of jealous rivals, the whispers are spreading — and whispers in a palace can be as dangerous as swords."
+ pasha_events.46.a:0 "Commission a discreet investigation."
+ pasha_events.46.b:0 "These are idle rumors. Dismiss them."
+ pasha_events.47.t:0 "A Governor's Urgent Report"
+ pasha_events.47.d:0 "A sealed letter has arrived from a distant beylerbey: the roads through his province are no longer safe. Bandits — some of them likely deserters from past campaigns — have grown bold, attacking merchant caravans and extorting villages. The governor requests either troops or funds to restore order. The Divan must decide how seriously to take his plea."
+ pasha_events.47.a:0 "Send a detachment of soldiers to restore order."
+ pasha_events.47.b:0 "Send funds. Let the governor solve this himself."
+ pasha_events.47.c:0 "He is the governor. That is his problem to solve."
+ pasha_age_of_pashas_reward:0 "Age of the Grand Viziers"
+ desc_pasha_age_of_pashas_reward:0 "The Pashas have achieved unchallenged supremacy over the Ottoman state. The Sultan reigns in name only; the Divan governs in fact. This golden age of administrative mastery and faction unity has transformed the Sublime Porte into the true seat of imperial power."
+ pasha_bosphorus_mastery:0 "Masters of the Bosphorus"
+ desc_pasha_bosphorus_mastery:0 "With a flourishing economy and secure heartland, Ottoman commerce dominates the straits between East and West. The empire's fleets rule the waters, and every merchant ship pays tribute to the Porte."
+ pasha_holy_guardian:0 "Guardian of the Holy Cities"
+ desc_pasha_holy_guardian:0 "The Padishah stands as the Khadim al-Haramayn — Servant of the Two Holy Sanctuaries. Mecca and Medina are under Ottoman protection, lending unmatched religious prestige to the state."
+ pasha_commerce_mastery:0 "Commercial Supremacy"
+ desc_pasha_commerce_mastery:0 "Decades of administrative reform and strategic investment have made the Ottoman treasury the envy of the world. The Kalemiye's careful stewardship ensures that wealth flows steadily to the state."
+ pasha_kapikulu_excellence_buff:0 "Elite Kapikulu Corps"
+ desc_pasha_kapikulu_excellence_buff:0 "The Sultan's personal standing army has reached a peak of martial excellence. Rigorous training, strict discipline, and generous wages have forged a force that is the finest in the known world."
+ pasha_sole_sovereign_reward:0 "The Sole Sovereign"
+ desc_pasha_sole_sovereign_reward:0 "The Sultan has extinguished all rival power within the state. With the Divan subdued and absolute authority restored to the Imperial Court, the Padishah commands with an iron will that none dares defy."
+ pasha_mission_divan_authority:0 "Consolidate the Divan's Authority"
+ pasha_mission_iltizam_reform:0 "Reform the Iltizam System"
+ pasha_mission_grand_vizier_supreme:0 "The Grand Vizier's Supremacy"
+ pasha_mission_age_of_pashas:0 "An Age of Pashas"
+ pasha_mission_secure_heartland:0 "Secure the Imperial Heartland"
+ pasha_mission_secure_heartland_desc:0 "The foundations of Ottoman power rest upon four cities: Constantinople, Edirne, Bursa, and Ankara. These must remain the uncontested core of the empire — fully integrated and defended against any who would challenge our supremacy.\n\n§YRequires:§! Own and core Constantinople (151), Edirne (150), Bursa (329), and Ankara (317)."
+ pasha_mission_bosphorus_mastery:0 "Masters of the Bosphorus"
+ pasha_mission_bosphorus_mastery_desc:0 "A prosperous and stable empire is the foundation of Ottoman greatness. As our realm expands and development flourishes, the Porte's mastery over the straits between East and West becomes unassailable.\n\n§YRequires:§! Total development >= 400. No rebel armies in the field."
+ pasha_mission_guardian_holy_cities:0 "Guardian of the Holy Cities"
+ pasha_mission_commercial_dominance:0 "Commercial Supremacy"
+ pasha_mission_sultanic_authority:0 "Assert Sultanic Authority"
+ pasha_mission_kapikulu_excellence:0 "The Excellence of the Kapikulu"
+ pasha_mission_sultan_commands:0 "The Sultan Commands"
+ pasha_mission_sole_sovereign:0 "The Sole Sovereign"
+ pasha_tt_power_below_30:0 "Imperial Authority is at most 30 — the Divan holds the upper hand."
+ pasha_tt_power_below_20:0 "Imperial Authority is at most 20 — the Divan holds near-total control."
+ pasha_tt_power_below_10:0 "Imperial Authority is at most 10 — the Divan governs without restraint."
+ pasha_tt_divan_ascendant:0 "The §YDivan Ascendant§! milestone has been reached — the Sultan exists in name only."
+ pasha_tt_sultan_unchained:0 "The §YSultan Unchained§! milestone has been reached — the Palace has broken the Divan's grip."
+ crisis_resolved_tooltip:0 "The crisis has been definitively resolved."
+ crisis_sided_with_divan:0 "(If sided with the Divan) §YPolitical Gridlock§! modifier should NOT be active AND the republican tradition must be at least 50"
+ crisis_sided_with_pasha_or_padisah:0 "(If sided with the Pasha or Padisah) Stability must be at least 1"
+ pasha_favor_pashas:0 "Concessions to the Sublime Porte"
+ pasha_favor_pashas_desc:0 "By granting the Pashas more autonomy and influence in the Imperial Council, we ensure their cooperation and stabilize the bureaucracy, though it weakens the Sultan's direct grip on power."
+ pasha_favor_sultan:0 "Assert Sultanic Authority"
+ pasha_favor_sultan_desc:0 "Reaffirming the Sultan's divine right and central authority over the administration. This will curtail the influence of the Pashas and centralize the state, though it may stir unrest among the ruling elite."
