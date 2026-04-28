@@ -29,9 +29,9 @@ country_event = {
 
     # Option A: Bribe the Senate
     option = {
-        name = "pasha_events.1.a" 
-        add_years_of_income = -0.25 
-        add_corruption = 1.0
+        name = "pasha_events.1.a"
+        add_years_of_income = -0.25
+        add_corruption = 0.5
         add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
@@ -43,36 +43,46 @@ country_event = {
 			factor = 40
 			modifier = {
 				factor = 0
-				is_in_deficit = yes # If AI is losing money, it won't bribe
+				is_in_deficit = yes
 			}
 			modifier = {
 				factor = 0
-				corruption = 5 # If corruption is already high, avoid adding more
+				corruption = 5
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_government_power = {
+						mechanic_type = pasha_power_mechanic
+						power_type = pasha_power
+						value = 20
+					}
+				}
 			}
 		}
     }
 
     # Option B: Concede to the Senate
     option = {
-        name = "pasha_events.1.b" 
-        add_prestige = -5
+        name = "pasha_events.1.b"
+        add_prestige = -10
         add_government_power = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
             value = -20
         }
-        every_owned_province = {
-            limit = {
-                has_seat_in_parliament = yes
-            }
-            add_local_autonomy = 10
-        }
 
         ai_chance = {
-			factor = 50 # Default safe option for AI
+			factor = 50
 			modifier = {
-				factor = 2
-				is_in_deficit = yes # If poor, it prefers this over bribing
+				factor = 0
+				NOT = {
+					has_government_power = {
+						mechanic_type = pasha_power_mechanic
+						power_type = pasha_power
+						value = 30
+					}
+				}
 			}
 		}
     }
@@ -394,6 +404,16 @@ country_event = {
             modifier = {
                 factor = 0
                 corruption = 7
+            }
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 20
+                    }
+                }
             }
         }
     }
@@ -810,12 +830,22 @@ country_event = {
             mechanic_type = pasha_power_mechanic
             power_type = pasha_power
             value = -10
-        } 
+        }
         add_republican_tradition = 10
         add_prestige = -10
 
         ai_chance = {
 			factor = 15
+			modifier = {
+				factor = 0
+				NOT = {
+					has_government_power = {
+						mechanic_type = pasha_power_mechanic
+						power_type = pasha_power
+						value = 20
+					}
+				}
+			}
 		}
     }
 }
@@ -849,6 +879,16 @@ country_event = {
         ai_chance = {
             factor = 20
             modifier = { factor = 0 corruption = 5 }
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 20
+                    }
+                }
+            }
         }
     }
 
@@ -857,7 +897,7 @@ country_event = {
         name = "pasha_events.11.seyfiye_b"
         trigger = { faction_influence = { faction = seyfiye_faction influence = 80 } }
         add_faction_influence = { faction = seyfiye_faction influence = -40 }
-        add_manpower = -5
+        add_prestige = -10
         add_country_modifier = { name = "pasha_political_instability" duration = 365 }
         ai_chance = { factor = 80 }
     }
@@ -874,6 +914,16 @@ country_event = {
             factor = 30
             modifier = { factor = 0 stability = 3 }
             modifier = { factor = 0 corruption = 5 }
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 20
+                    }
+                }
+            }
         }
     }
 
@@ -892,12 +942,22 @@ country_event = {
         name = "pasha_events.11.kalemiye_a"
         trigger = { faction_influence = { faction = kalemiye_faction influence = 80 } }
         add_years_of_income = 1
-        add_corruption = 2
+        add_corruption = 1
         add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -5 }
         add_country_modifier = { name = "faction_dominance_modifier" duration = 1825 }
         ai_chance = {
             factor = 20
             modifier = { factor = 0 corruption = 5 }
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 20
+                    }
+                }
+            }
         }
     }
 
@@ -2136,7 +2196,19 @@ country_event = {
             value = -5
         }
         add_adm_power = 25
-        ai_chance = { factor = 60 }
+        ai_chance = {
+            factor = 60
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 20
+                    }
+                }
+            }
+        }
     }
 
     option = {
@@ -2349,6 +2421,488 @@ country_event = {
         name = "pasha_events.47.c"
         add_stability = -1
         add_prestige = -5
+        ai_chance = { factor = 20 }
+    }
+}
+
+# =========================================================
+# ADDITIONAL FLAVOR EVENTS (48-57)
+# =========================================================
+
+# EVENT 48: A Petition from the Provinces
+# Corruption-triggered governance event
+country_event = {
+    id = pasha_events.48
+    title = "pasha_events.48.t"
+    desc = "pasha_events.48.d"
+    picture = ACCUSATION_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        corruption = 0.5
+    }
+
+    mean_time_to_happen = {
+        months = 96
+        modifier = {
+            factor = 0.7
+            corruption = 5
+        }
+    }
+
+    option = {
+        name = "pasha_events.48.a"
+        add_adm_power = -30
+        add_corruption = -1
+        ai_chance = { factor = 50 modifier = { factor = 0 NOT = { adm_power = 30 } } }
+    }
+
+    option = {
+        name = "pasha_events.48.b"
+        add_adm_power = 20
+        add_corruption = 0.5
+        ai_chance = { factor = 30 }
+    }
+
+    option = {
+        name = "pasha_events.48.c"
+        add_treasury = -75
+        add_prestige = 5
+        add_corruption = -0.5
+        ai_chance = { factor = 20 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+}
+
+# EVENT 49: The Divan's Closed Session
+# Fires when power bar is on the Divan side
+country_event = {
+    id = pasha_events.49
+    title = "pasha_events.49.t"
+    desc = "pasha_events.49.d"
+    picture = PARLIAMENT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        NOT = {
+            has_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 41
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 108
+        modifier = {
+            factor = 0.7
+            NOT = {
+                has_government_power = {
+                    mechanic_type = pasha_power_mechanic
+                    power_type = pasha_power
+                    value = 26
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "pasha_events.49.a"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
+        add_adm_power = 30
+        ai_chance = {
+            factor = 60
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_government_power = {
+                        mechanic_type = pasha_power_mechanic
+                        power_type = pasha_power
+                        value = 25
+                    }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "pasha_events.49.b"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 5
+        }
+        add_prestige = 5
+        ai_chance = { factor = 40 }
+    }
+}
+
+# EVENT 50: The Voice of the People
+# Fires during deficit or low stability
+country_event = {
+    id = pasha_events.50
+    title = "pasha_events.50.t"
+    desc = "pasha_events.50.d"
+    picture = ECONOMY_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        OR = {
+            is_in_deficit = yes
+            NOT = { stability = 2 }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 84
+        modifier = {
+            factor = 0.6
+            NOT = { stability = 1 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.50.a"
+        add_treasury = -100
+        add_stability = 1
+        ai_chance = { factor = 50 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.50.b"
+        add_adm_power = 15
+        add_country_modifier = {
+            name = pasha_political_instability
+            duration = 180
+        }
+        ai_chance = { factor = 30 }
+    }
+
+    option = {
+        name = "pasha_events.50.c"
+        add_country_modifier = {
+            name = pasha_political_instability
+            duration = 365
+        }
+        ai_chance = { factor = 20 }
+    }
+}
+
+# EVENT 51: The Sipahi's Petition
+# Seyfiye-Kalemiye conflict over timar grants
+country_event = {
+    id = pasha_events.51
+    title = "pasha_events.51.t"
+    desc = "pasha_events.51.d"
+    picture = SOLDIERS_PORTRAIT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = seyfiye_faction influence = 20 }
+        NOT = { faction_influence = { faction = seyfiye_faction influence = 60 } }
+        faction_influence = { faction = kalemiye_faction influence = 30 }
+    }
+
+    mean_time_to_happen = { months = 120 }
+
+    option = {
+        name = "pasha_events.51.a"
+        add_adm_power = -25
+        add_faction_influence = { faction = seyfiye_faction influence = 10 }
+        add_faction_influence = { faction = kalemiye_faction influence = -10 }
+        add_manpower = 2
+        ai_chance = { factor = 30 modifier = { factor = 0 NOT = { adm_power = 25 } } }
+    }
+
+    option = {
+        name = "pasha_events.51.b"
+        add_treasury = -75
+        add_army_tradition = 5
+        ai_chance = { factor = 40 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.51.c"
+        add_faction_influence = { faction = kalemiye_faction influence = 10 }
+        add_faction_influence = { faction = seyfiye_faction influence = -15 }
+        ai_chance = { factor = 30 }
+    }
+}
+
+# EVENT 52: A Fire in the Night
+# General flavor — quick player decision
+country_event = {
+    id = pasha_events.52
+    title = "pasha_events.52.t"
+    desc = "pasha_events.52.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+    }
+
+    mean_time_to_happen = { months = 180 }
+
+    option = {
+        name = "pasha_events.52.a"
+        add_adm_power = -25
+        add_prestige = 5
+        ai_chance = { factor = 40 modifier = { factor = 0 NOT = { adm_power = 25 } } }
+    }
+
+    option = {
+        name = "pasha_events.52.b"
+        add_treasury = -100
+        add_stability = 1
+        ai_chance = { factor = 40 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.52.c"
+        add_prestige = -5
+        add_corruption = 0.25
+        ai_chance = { factor = 20 }
+    }
+}
+
+# EVENT 53: The Bureau's Audit
+# Kalemiye proposes a provincial treasury audit
+country_event = {
+    id = pasha_events.53
+    title = "pasha_events.53.t"
+    desc = "pasha_events.53.d"
+    picture = ECONOMY_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = kalemiye_faction influence = 40 }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.7
+            faction_influence = { faction = kalemiye_faction influence = 60 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.53.a"
+        add_adm_power = -30
+        add_corruption = -1
+        add_faction_influence = { faction = kalemiye_faction influence = 5 }
+        ai_chance = { factor = 50 modifier = { factor = 0 NOT = { adm_power = 30 } } }
+    }
+
+    option = {
+        name = "pasha_events.53.b"
+        add_adm_power = -25
+        add_corruption = -0.5
+        ai_chance = { factor = 25 modifier = { factor = 0 NOT = { adm_power = 25 } } }
+    }
+
+    option = {
+        name = "pasha_events.53.c"
+        add_adm_power = 20
+        add_corruption = 0.5
+        ai_chance = { factor = 25 }
+    }
+}
+
+# EVENT 54: The Chief Mufti's Request
+# Ilmiye seeks funding for religious institutions
+country_event = {
+    id = pasha_events.54
+    title = "pasha_events.54.t"
+    desc = "pasha_events.54.d"
+    picture = RELIGIOUS_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        faction_influence = { faction = ilmiye_faction influence = 35 }
+    }
+
+    mean_time_to_happen = {
+        months = 108
+        modifier = {
+            factor = 0.7
+            faction_influence = { faction = ilmiye_faction influence = 55 }
+        }
+    }
+
+    option = {
+        name = "pasha_events.54.a"
+        add_treasury = -100
+        add_faction_influence = { faction = ilmiye_faction influence = 10 }
+        add_prestige = 5
+        ai_chance = { factor = 40 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.54.b"
+        add_treasury = -50
+        add_faction_influence = { faction = ilmiye_faction influence = 5 }
+        ai_chance = { factor = 30 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+
+    option = {
+        name = "pasha_events.54.c"
+        add_adm_power = 20
+        add_faction_influence = { faction = ilmiye_faction influence = -10 }
+        add_prestige = -5
+        ai_chance = { factor = 30 }
+    }
+}
+
+# EVENT 55: The Sultan's Generosity
+# Fires when power bar favors Sultan — bypasses Divan
+country_event = {
+    id = pasha_events.55
+    title = "pasha_events.55.t"
+    desc = "pasha_events.55.d"
+    picture = COURT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        has_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 55
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 108
+        modifier = {
+            factor = 0.7
+            has_government_power = {
+                mechanic_type = pasha_power_mechanic
+                power_type = pasha_power
+                value = 70
+            }
+        }
+    }
+
+    option = {
+        name = "pasha_events.55.a"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = 10
+        }
+        add_faction_influence = { faction = seyfiye_faction influence = 10 }
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.55.b"
+        add_government_power = {
+            mechanic_type = pasha_power_mechanic
+            power_type = pasha_power
+            value = -10
+        }
+        add_faction_influence = { faction = seyfiye_faction influence = -10 }
+        add_adm_power = 20
+        ai_chance = { factor = 60 }
+    }
+}
+
+# EVENT 56: Heir of Barbarossa
+# Naval flavor — corsair opportunity
+country_event = {
+    id = pasha_events.56
+    title = "pasha_events.56.t"
+    desc = "pasha_events.56.d"
+    picture = SOLDIERS_PORTRAIT_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        num_of_galley = 10
+    }
+
+    mean_time_to_happen = { months = 144 }
+
+    option = {
+        name = "pasha_events.56.a"
+        add_years_of_income = 0.5
+        add_corruption = 0.5
+        ai_chance = { factor = 40 modifier = { factor = 0 corruption = 7 } }
+    }
+
+    option = {
+        name = "pasha_events.56.b"
+        add_mil_power = -30
+        add_navy_tradition = 10
+        add_prestige = 5
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.56.c"
+        add_treasury = -50
+        add_manpower = 1
+        add_navy_tradition = 5
+        ai_chance = { factor = 20 modifier = { factor = 0 is_in_deficit = yes } }
+    }
+}
+
+# EVENT 57: The Foreign Ambassador's Visit
+# Diplomatic flavor — fires during peacetime
+country_event = {
+    id = pasha_events.57
+    title = "pasha_events.57.t"
+    desc = "pasha_events.57.d"
+    picture = EUROPEAN_POLITICS_eventPicture
+
+    trigger = {
+        has_reform = pasha_council_republic
+        has_country_flag = pasha_system_initialized
+        NOT = { has_disaster = crisis_of_the_state }
+        is_at_war = no
+    }
+
+    mean_time_to_happen = { months = 120 }
+
+    option = {
+        name = "pasha_events.57.a"
+        add_mercantilism = 1
+        add_prestige = -5
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.57.b"
+        add_prestige = 5
+        add_dip_power = 20
+        ai_chance = { factor = 40 }
+    }
+
+    option = {
+        name = "pasha_events.57.c"
+        add_prestige = 10
+        add_dip_power = -20
         ai_chance = { factor = 20 }
     }
 }

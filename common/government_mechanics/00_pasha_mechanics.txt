@@ -27,7 +27,6 @@ pasha_power_mechanic = {
                 add_adm_power = -25
                 add_government_power = { mechanic_type = pasha_power_mechanic power_type = pasha_power value = -10 }
                 add_corruption = 0.5
-                add_years_of_income = -0.5 
             }
 
             # pasha_favor_pashas butonu (Divanı güçlendirir)

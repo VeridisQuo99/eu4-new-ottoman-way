@@ -172,7 +172,7 @@ country_decisions = {
 				has_government_power = {
 					mechanic_type = pasha_power_mechanic
 					power_type = pasha_power
-					value = 21
+					value = 31
 				}
 			}
 			NOT = { has_country_modifier = iltizam_reform_cooldown }
