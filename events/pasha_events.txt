@@ -147,7 +147,6 @@ country_event = {
             }
             add_republican_tradition = 20
             add_government_reform = pasha_council_republic
-            swap_non_generic_missions = yes
         }
     }
 
@@ -176,8 +175,6 @@ country_event = {
 			value = 20 # Güç Sultanda toplanır (Artı değer)
 		}
 
-        swap_non_generic_missions = yes
-
         ai_chance = {
 			factor = 90 # AI strongly prefers the historical Sultan path
 		}
@@ -198,8 +195,6 @@ country_event = {
 			power_type = pasha_power
 			value = -20 # Güç Paşalara/Divana kayar (Eksi değer)
 		}
-
-        swap_non_generic_missions = yes
 
         ai_chance = {
 			factor = 10 # Rare alternate history path for AI

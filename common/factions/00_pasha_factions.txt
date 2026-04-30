@@ -2,7 +2,6 @@
 seyfiye_faction = {
 	monarch_power = MIL
 	modifier = {
-		discipline = 0.05
 		land_morale = 0.10
 		manpower_recovery_speed = 0.15
 		army_tradition = 0.5
