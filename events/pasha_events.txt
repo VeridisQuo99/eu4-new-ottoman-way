@@ -653,7 +653,7 @@ country_event = {
 			remove_country_modifier = sultan_selim_iii_modifier
 			remove_country_modifier = sultan_mustafa_iv_modifier
 			remove_country_modifier = sultan_mahmud_ii_modifier
-            swap_non_generic_missions = yes
+            
 		}
     }
 }
@@ -744,7 +744,7 @@ country_event = {
 			remove_country_modifier = sultan_selim_iii_modifier
 			remove_country_modifier = sultan_mustafa_iv_modifier
 			remove_country_modifier = sultan_mahmud_ii_modifier
-            swap_non_generic_missions = yes
+            
 		}
     }
 }
