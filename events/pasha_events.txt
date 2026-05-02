@@ -2355,7 +2355,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 144
+        months = 360
         modifier = {
             factor = 0.7
             has_government_power = {
@@ -2440,7 +2440,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 96
+        months = 180
         modifier = {
             factor = 0.7
             corruption = 5
@@ -2559,7 +2559,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 84
+        months = 120
         modifier = {
             factor = 0.6
             NOT = { stability = 1 }
