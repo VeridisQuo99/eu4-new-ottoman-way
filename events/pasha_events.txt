@@ -792,9 +792,9 @@ country_event = {
         has_country_flag = pasha_system_initialized
     }
 
-    # Triggers roughly every 10 years to keep the balance shifting
+    # Triggers roughly every 25 years to keep the balance shifting
     mean_time_to_happen = {
-        months = 120 
+        months = 300 
     }
 
     # Option A: The Sultan exerts influence
@@ -2170,7 +2170,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 120
+        months = 300
         modifier = {
             factor = 0.75
             NOT = {
@@ -2233,7 +2233,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 120
+        months = 300
         modifier = {
             factor = 0.6
             faction_influence = { faction = seyfiye_faction influence = 65 }
@@ -2273,7 +2273,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 120
+        months = 300
         modifier = {
             factor = 0.6
             faction_influence = { faction = ilmiye_faction influence = 65 }
@@ -2313,7 +2313,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 120
+        months = 300
         modifier = {
             factor = 0.7
             faction_influence = { faction = kalemiye_faction influence = 55 }
@@ -2492,7 +2492,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 108
+        months = 240
         modifier = {
             factor = 0.7
             NOT = {
@@ -2610,7 +2610,7 @@ country_event = {
         faction_influence = { faction = kalemiye_faction influence = 30 }
     }
 
-    mean_time_to_happen = { months = 120 }
+    mean_time_to_happen = { months = 300 }
 
     option = {
         name = "pasha_events.51.a"
@@ -2690,7 +2690,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 120
+        months = 300
         modifier = {
             factor = 0.7
             faction_influence = { faction = kalemiye_faction influence = 60 }
@@ -2736,7 +2736,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 108
+        months = 240
         modifier = {
             factor = 0.7
             faction_influence = { faction = ilmiye_faction influence = 55 }
@@ -2787,7 +2787,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 108
+        months = 240
         modifier = {
             factor = 0.7
             has_government_power = {
@@ -2878,7 +2878,7 @@ country_event = {
         is_at_war = no
     }
 
-    mean_time_to_happen = { months = 120 }
+    mean_time_to_happen = { months = 300 }
 
     option = {
         name = "pasha_events.57.a"
