@@ -2393,7 +2393,7 @@ country_event = {
         NOT = { has_disaster = crisis_of_the_state }
     }
 
-    mean_time_to_happen = { months = 108 }
+    mean_time_to_happen = { months = 240 }
 
     option = {
         name = "pasha_events.47.a"
