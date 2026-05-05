@@ -2170,7 +2170,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 300
+        months = 216
         modifier = {
             factor = 0.75
             NOT = {
@@ -2233,7 +2233,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 300
+        months = 180
         modifier = {
             factor = 0.6
             faction_influence = { faction = seyfiye_faction influence = 65 }
@@ -2273,7 +2273,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 300
+        months = 216
         modifier = {
             factor = 0.6
             faction_influence = { faction = ilmiye_faction influence = 65 }
@@ -2313,7 +2313,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 300
+        months = 216
         modifier = {
             factor = 0.7
             faction_influence = { faction = kalemiye_faction influence = 55 }
@@ -2355,7 +2355,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 360
+        months = 240
         modifier = {
             factor = 0.7
             has_government_power = {
@@ -2393,7 +2393,7 @@ country_event = {
         NOT = { has_disaster = crisis_of_the_state }
     }
 
-    mean_time_to_happen = { months = 240 }
+    mean_time_to_happen = { months = 180 }
 
     option = {
         name = "pasha_events.47.a"
@@ -2492,7 +2492,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 240
+        months = 180
         modifier = {
             factor = 0.7
             NOT = {
@@ -2610,7 +2610,7 @@ country_event = {
         faction_influence = { faction = kalemiye_faction influence = 30 }
     }
 
-    mean_time_to_happen = { months = 300 }
+    mean_time_to_happen = { months = 216 }
 
     option = {
         name = "pasha_events.51.a"
@@ -2650,7 +2650,7 @@ country_event = {
         NOT = { has_disaster = crisis_of_the_state }
     }
 
-    mean_time_to_happen = { months = 180 }
+    mean_time_to_happen = { months = 144 }
 
     option = {
         name = "pasha_events.52.a"
@@ -2690,7 +2690,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 300
+        months = 216
         modifier = {
             factor = 0.7
             faction_influence = { faction = kalemiye_faction influence = 60 }
@@ -2736,7 +2736,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 240
+        months = 180
         modifier = {
             factor = 0.7
             faction_influence = { faction = ilmiye_faction influence = 55 }
@@ -2787,7 +2787,7 @@ country_event = {
     }
 
     mean_time_to_happen = {
-        months = 240
+        months = 180
         modifier = {
             factor = 0.7
             has_government_power = {
@@ -2878,7 +2878,7 @@ country_event = {
         is_at_war = no
     }
 
-    mean_time_to_happen = { months = 300 }
+    mean_time_to_happen = { months = 180 }
 
     option = {
         name = "pasha_events.57.a"
